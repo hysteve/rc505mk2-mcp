@@ -8,10 +8,8 @@ Enhancements:
 - UX: Sticky section headers for improved scroll readability
 - Research new racks: Look up popular genres and top songs/artists in those genres; research production techniques used in their music or common styles, create new racks for those specific styles - create more performance racks and technique guides for live performance with a band, solo, more edm/dance/dj performance techniques
 - Highlight NEW RACKS or FIRE/POPULAR/TRENDING racks
-- Allow clicking on a rack to pull up an isolated view as a modal, blurring/dimming background page, and optionally adding more data, ads, actions, or options (quick links for how to setup guides, example media/videos)
-- Create-your-own rack pack - add a feature to build a rack bundle for purchase
+- Allow clicking on a rack to pull up an isolated view as a modal, blurring/dimming background page, and optionally adding more data, actions, or options (quick links for how to setup guides, example media/videos)
 - Download wallpaper; generate more artwork based on popular art and design styles
-- Sell (drop-ship on-demand print) clothing, wearable accessories, branded generic gear, etc - create a shop
 - Create a content calendar by taking small bits of content from the site and developing a script to record video demonstrations, tips, or instructables
 - Highlight artists that use loopstation and break down some of their racks/effects - look at GBB championship - integrate with editorial/blog/news and open up possibility of collabs with artists
 - Detailed breakdowns on how to use specific effects - this could be a whole new page that gets into making the existing documentation easier to navigate, explore, digest, and understand, with augmented explanations and links back to practical use guides and racks.

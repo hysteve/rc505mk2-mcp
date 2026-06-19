@@ -13,7 +13,6 @@ Earlier project directions preserved for context. The **active product** is the 
 | [pre-mcp/README.md](./pre-mcp/README.md) | Index of all recovered files |
 | [RC505mk2-Guide-Project-Summary.md](./RC505mk2-Guide-Project-Summary.md) | Copy of master continuation doc (also in `pre-mcp/`) |
 | [VISION.md](./VISION.md) | rc505guide.com vision (updated with MCP evolution note) |
-| [RC-505mk2 Guide - Monetization Wiring Playbook.md](./RC-505mk2%20Guide%20-%20Monetization%20Wiring%20Playbook.md) | Guide-site revenue wiring |
 
 ---
 

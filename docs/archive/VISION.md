@@ -26,7 +26,7 @@ This site is that bridge.
 
 **Technique-first for beatbox/voice-to-instrument racks.** The site doesn't just list FX settings for turning voice into a bass or trumpet — it includes vocal technique guidance. The FX chain refines and transforms a shaped source sound; the user needs to know how to produce that source sound with their mouth, throat, and breath. Each beatbox-to-instrument rack pairs specific technique instructions with the signal chain.
 
-**Free and open.** The guide content is free to read. Revenue comes from optional paid preset packs, affiliate links to recommended gear, display advertising, and an email list — not from gating the reference material itself.
+**Free and open.** The guide content is free to read — no paywall on the reference material.
 
 
 ## Content Structure
@@ -55,21 +55,6 @@ The site organizes content into three tiers.
 Currently the site has **39 rack presets** across **12 rack categories**, covering **28 genres** and using **55 distinct FX types**.
 
 
-## Monetization Strategy
-
-The site is designed to generate revenue without compromising the free reference content.
-
-**Preset pack ($4.99).** Every FX chain as a downloadable configuration file, plus a printable cheat sheet PDF. This is the convenience product — the guide is free, but manually entering 39 multi-slot configurations is tedious.
-
-**Affiliate gear links.** Each section recommends relevant gear (microphones, cables, the RC-505mk2 itself) with affiliate links. Recommendations are contextual and genuinely useful, not shoehorned.
-
-**Display advertising.** Reserved slots for AdSense, Carbon, or Ezoic ads are built into the layout — full-width banners between sections and a sidebar ad slot on desktop. Mobile gets a dismissible bottom banner.
-
-**Email list.** Multiple subscribe touchpoints (inline promos, exit-intent modal) build an audience for monthly rack recipes and eventual product launches.
-
-**Buy Me a Coffee.** A tip jar for users who found value in the free content.
-
-
 ## Technical Architecture
 
 The site is a single-page React application built with Vite. All content is data-driven from `racks.json`, which means adding or editing presets requires changing one JSON file — not touching React components.
@@ -78,7 +63,6 @@ Key data files:
 
 - `racks.json` — All 39 rack presets, 18 sections, filter configuration, genre templates, and metadata. Each rack includes input FX slots, track FX slots, tips, genre tags, and auto-generated FX type arrays for filtering.
 - `fx-reference.json` — Complete parameter reference for all 55+ RC-505mk2 effect types, extracted from the official documentation. Used for validation, not rendering.
-- `promoConfig.js` — Controls promotional element placement, content, and gear recommendations. Separated from editorial content for clean maintainability.
 
 Key components:
 
@@ -87,7 +71,7 @@ Key components:
 - `FilterBar.jsx` — FX type and genre multi-select dropdown filters with active pill indicators and live result counts
 - `SearchBar.jsx` — Full-text search across all racks, genres, FX names, and parameter values
 - `StaticSections.jsx` — Foundational content (overview, signal flow, saving, mastering, genre templates, performance tips)
-- `Sidebar.jsx` — Desktop sidebar with promo widgets and ad slots
+- `Sidebar.jsx` — Desktop sidebar with navigation and supplementary content
 
 The dark theme uses a five-color accent system (cyan, purple, pink, green, orange) for visual hierarchy across different content types.
 
@@ -118,4 +102,3 @@ Longer-term:
 
 - **RC-505 (original) and RC-600 variants.** The same concept adapted for Roland's other loop stations, which share many but not all FX types.
 - **Interactive rack builder.** A drag-and-drop interface where users construct their own signal chains, with parameter validation and community sharing.
-- **Course/tutorial product.** Paid video content teaching RC-505mk2 performance techniques, using the rack guide as the companion reference.

@@ -26,8 +26,7 @@ This folder preserves the research and planning trail behind the current MCP ass
 
 | File | Source | What it is |
 |------|--------|------------|
-| [RC505mk2-Guide-Project-Summary.md](./RC505mk2-Guide-Project-Summary.md) | `c1959df` | Master continuation doc — vision, build status, **technical reference**, errors v1.0→v1.1, preset generator, marketing, file inventory |
-| [RC-505mk2 Guide - Monetization Wiring Playbook.md](./RC-505mk2%20Guide%20-%20Monetization%20Wiring%20Playbook.md) | `c1959df` | Gumroad, AdSense, affiliates, email capture wiring for rc505guide.com |
+| [RC505mk2-Guide-Project-Summary.md](./RC505mk2-Guide-Project-Summary.md) | `c1959df` | Master continuation doc — vision, build status, technical reference, errors, preset generator |
 | [Enhancements.md](./Enhancements.md) | `0adff16` | Guide UX/feature backlog (tiles, modals, content calendar, artist breakdowns) |
 
 **Also archived at parent level:** [../VISION.md](../VISION.md)
