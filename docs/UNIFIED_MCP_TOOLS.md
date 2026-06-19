@@ -188,15 +188,6 @@ Reuse existing `FxModuleStore` for the fx-modules subtree; add `RackStore` and `
 
 *(Planned — not shipped.)* Creative prompt tools for rack inspiration.
 
-| Tool | Description | Phase |
-|------|-------------|-------|
-| `list_genre_templates` | Bundled 5-track session blueprints from `racks.json` | 6A |
-| `inspire_me` | Curated random or scored options (`mode: random \| options`) | 6A |
-| `inspire_wizard` | Stateless multi-step Q&A → recommendation | 6B |
-| `inspire_session` | Full session map: track roles → rack IDs + performance tip | 6B |
-
-Slash skill: `/rc505-inspire` — bundled in `.mcpb` when Phase 6 ships.
-
 ---
 
 ## MCP server metadata

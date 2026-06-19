@@ -1,18 +1,18 @@
 # RC-505mk2 MCP — Test Prompts
 
-> Copy-paste prompts for testing the MCP server, agent skills, and Claude Desktop plugin.  
+> Copy-paste prompts for testing the MCP server and Claude Desktop extension.  
 > Organized by workflow. Each section goes from **easy → hard**.
 
 **Before device tests:** connect RC-505mk2 via USB in **Storage mode** (MENU → USB → STORAGE → CONNECT).
 
 **Mode cheat sheet:**
 
-| Mode | Trigger words | Slash skill |
-|------|---------------|-------------|
-| **Adapt** | genre, style, vibe, “something for…” | `/rc505-adapt-rack` |
-| **Build** | from scratch, custom, greenfield, modules only | `/rc505-build-rack` |
-| **Upload** | slot, load, push, merge, overwrite | `/rc505-upload` |
-| **General** | anything | `/rc505mk2` |
+| Mode | Trigger words | Expected first tool |
+|------|---------------|---------------------|
+| **Adapt** | genre, style, vibe, “something for…” | `list_rack_presets` |
+| **Build** | from scratch, custom, greenfield, modules only | `list_fx_modules` |
+| **Upload** | slot, load, push, merge, overwrite | `upload_memory` or `detect_device` |
+| **General** | anything | context-dependent |
 
 **Pass signals:** calls tools by name (no meta-search), ≤ 6 tool calls for simple tasks, no BEAT_* in wrong TFX slots, tips as objects not strings.
 
@@ -359,25 +359,12 @@ Good for regression testing. Agent should pick a sensible mode without excessive
 
 ---
 
-## 11. Slash skill invocations
+## 11. Claude Desktop example prompts
 
-If your client supports slash skills, prefix with the skill name.
+Paste manually or use as starter prompts in conversation.
 
-| Skill | Example invocation |
-|-------|---------------------|
-| `/rc505mk2` | Help me set up FX for a live looping gig tonight. |
-| `/rc505-upload` | Load vocal-warm to slot 4 in merge mode. |
-| `/rc505-build-rack` | Greenfield R&B vocal chain — comp, EQ, plate, filter sweep, delay throw. |
-| `/rc505-adapt-rack` | Create an FX rack for jungle drum breaks. |
-
----
-
-## 12. Claude Desktop starter prompts
-
-These mirror `plugin/manifest.json` prompts. Use the extension UI or paste manually.
-
-| Starter | Text |
-|---------|------|
+| Use case | Text |
+|----------|------|
 | Load rack to slot | Load an RC-505mk2 FX rack to memory slot **5**. Use list_rack_presets to find a match, then upload_memory with rack_id. |
 | Adapt genre | Create an RC-505mk2 FX rack for **neo-soul** performance. Use list_rack_presets filtered by genre or tag, adapt if needed, and offer upload. |
 | Build custom | Build a custom RC-505mk2 FX rack from scratch: **R&B vocal chain with performance filter sweep and delay throw**. Use list_fx_modules for IFX and TFX, then create_rack_preset with fxModuleIds. Do not browse bundled rack presets. |
@@ -385,12 +372,12 @@ These mirror `plugin/manifest.json` prompts. Use the extension UI or paste manua
 
 ---
 
-## 13. Benchmark prompts (from MCP test runs)
+## 12. Benchmark prompts
 
-Use these to compare tool-call count across skill versions. Document results in a new `MCP Test Run N.md`.
+Use these to compare tool-call count across releases.
 
-| Run | Prompt | Target |
-|-----|--------|--------|
+| Label | Prompt | Target |
+|-------|--------|--------|
 | Adapt baseline | create an rc505 fx rack for dnb drum processing | ≤ 6 calls; no schema errors |
 | Adapt variant | create an rc505 fx rack for a modern rnb performance | No meta-search; no unnecessary clarifying questions |
 | Adapt + upload | Load the closest bundled vocal rack to memory slot 4 — pick neo-soul or R&B if available. | 3–4 calls with device connected |
@@ -399,7 +386,7 @@ Use these to compare tool-call count across skill versions. Document results in 
 
 ---
 
-## 14. Bundled rack IDs (quick reference)
+## 13. Bundled rack IDs (quick reference)
 
 Use these when you want a **specific** rack in a prompt.
 
@@ -433,6 +420,5 @@ Use these when you want a **specific** rack in a prompt.
 
 | Doc | Purpose |
 |-----|---------|
-| [SKILL.md](./SKILL.md) | Full agent workflow rules |
-| [manual-test/](./manual-test/) | MCP manual test run notes |
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | Technical design |
+| [UNIFIED_MCP_TOOLS.md](./UNIFIED_MCP_TOOLS.md) | Tool reference |

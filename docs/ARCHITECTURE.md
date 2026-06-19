@@ -42,49 +42,26 @@
 
 ---
 
-## Product evolution
-
-| Era | Direction | Status |
-|-----|-----------|--------|
-| Guide site | rc505guide.com — browse racks, dial in manually | Superseded; vision in [archive/VISION.md](./archive/VISION.md) |
-| Cloud platform | Postgres + HTTP MCP + accounts | Dropped — see [archive/CONFIG-SYSTEM-PLAN.md](./archive/CONFIG-SYSTEM-PLAN.md) |
-| **MCP server (now)** | Local tools + `.mcpb` for Claude Desktop | **Beta** |
-
-The bundled preset library (`data/fx-modules/`, `src/data/racks.json`) inherits accuracy goals from the guide project: human-readable params validated against `fx-reference.json`, server-side TFX slot rules at create time.
-
----
-
 ## Distribution model
 
-**Primary (consumer):** `.mcpb` Claude Desktop extension — double-click install, manifest starter prompts, MCP server bundled.
+| Path | Audience | Install |
+|------|----------|---------|
+| **`.mcpb`** | Claude Desktop users | GitHub Release → double-click |
+| **`npx rc505mk2-mcp`** | Developers | MCP client JSON config |
+| **Local checkout** | Contributors | `npm run build` → `dist/mcp/server.js` |
 
-**Secondary (developer):** `npx rc505mk2-mcp` + optional MCP JSON config. No npm publish required for beta; GitHub Release attaches the built `.mcpb`.
-
-**Not shipping for beta:**
-
-| Item | Status |
-|------|--------|
-| Claude marketplace listing | After beta feedback — maybe never |
-| Claude Code plugin zip | Dropped — use `npx skills add` if needed |
-| Agent slash skills | Under development — not release focus |
-| npm publish | Post-beta optional |
-
-Build: `npm run pack:plugin` → `releases/rc505mk2-v0.2.0.mcpb`
+The public repo ships the MCP server and preset library. Claude Desktop bundles (`.mcpb`) are built locally and attached to GitHub Releases — not committed to git.
 
 ---
 
-## Plugin vs Skill vs MCP server
+## MCP workflow layer
 
-Three layers, different hosts:
+| Layer | Location | Purpose |
+|-------|----------|---------|
+| **MCP server** | `src/mcp/server.ts` | 21 tools — USB, RC0, presets, validation |
+| **MCP instructions** | `src/mcp/instructions.ts` | Adapt vs Build, TFX rules, upload path — sent on initialize |
 
-| Layer | Location | Runs code? | Claude Desktop | Cursor / Claude Code |
-|-------|----------|------------|----------------|----------------------|
-| **MCP server** | `src/mcp/server.ts` | Yes | via `.mcpb` | via MCP config |
-| **MCP instructions** | `src/mcp/instructions.ts` | No | ✅ on initialize | ✅ on initialize |
-| **Manifest prompts** | `plugin/manifest.json` | No | ✅ Desktop UI | N/A |
-| **Agent skills** | `skills/rc505*/` | No | ❌ not slash cmds | Optional, WIP |
-
-**Desktop workflow:** natural language + MCP tools + server `instructions` + extension starter prompts. Slash commands (`/rc505-upload`) are Code/Cursor only and not polished for beta.
+Claude Desktop users rely on natural language + tools + initialize instructions. No slash commands in the public repo.
 
 ---
 
@@ -109,13 +86,10 @@ src/
 └── node.ts             # Node-only exports (device, file stores)
 
 data/fx-modules/        # Bundled FX module JSON
-plugin/manifest.json    # MCPB manifest
-scripts/                # embed-template, pack-plugin, sync-skills, create-icon
+scripts/embed-template.ts  # Build-time RC0 template embed
 test/                   # Vitest
-docs/manual-test/       # Manual Claude test run notes
+docs/                   # Public reference (TEST_PROMPTS, UNIFIED_MCP_TOOLS, LIBRARY)
 ```
-
-**Removed / not used:** `src/browser.ts` (dropped — MCP/CLI-only package; ZIP helpers live on main `index` export).
 
 ---
 
@@ -140,7 +114,7 @@ User presets persist to `~/.rc505mk2/` as JSON. No accounts, no backend, offline
 
 ### 2. Single npm package
 
-One repo root package (`rc505mk2-mcp`). Guide React app and `packages/web` cloud stack removed (Phase 0).
+One repo root package (`rc505mk2-mcp`). Prior guide site and cloud platform removed.
 
 ### 3. Agent UX hardening (server-side)
 
@@ -158,7 +132,7 @@ Primary test platform: macOS (`diskutil` eject, `/Volumes/` scan). Linux/Windows
 | Tool | Purpose |
 |------|---------|
 | **tsup** | Bundle `index`, `node`; ESM bins for CLI + MCP |
-| **tsx** | `embed-template`, `pack-plugin`, `sync-skills` |
+| **tsx** | Run `embed-template` at build time |
 | **Vitest** | Unit + integration tests |
 
 Build: `npm run build:template` → `tsup` → `dist/mcp/server.js` (MCP bin)
@@ -193,12 +167,19 @@ Bins:
 
 ---
 
-## Migration notes (from v1 monorepo)
+## `src/` audit (public release)
 
-| Old | New |
-|-----|-----|
-| `packages/rc505mk2-lib/src/` | `src/` |
-| Root guide React app | Removed — see `docs/archive/` |
-| `packages/web/` cloud MCP | Removed — see `docs/archive/CONFIG-SYSTEM-PLAN.md` |
+All modules are used by the MCP server, CLI, or library exports:
 
-Manual test history: [manual-test/](./manual-test/)
+| Area | Role |
+|------|------|
+| `mcp/` | MCP server, tool handlers, stores, validation, instructions |
+| `generator/`, `parser/`, `params/`, `config/`, `schemas/` | RC0 engine |
+| `device/` | USB detect / upload / eject |
+| `download/` | ZIP export helpers |
+| `fx/`, `data/`, `template/` | Bundled preset data and FX reference |
+| `cli/` | `rc505mk2` doctor / generate / detect |
+| `stores/` | File-backed user preset persistence |
+| `types/` | Shared TypeScript types |
+
+No browser bundle; no unused legacy web-app code in `src/`.

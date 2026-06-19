@@ -1,7 +1,6 @@
 /**
  * Condensed workflow instructions returned on MCP initialize.
- * Gives Claude Desktop skill-like guidance without slash commands.
- * Source of truth for full detail: docs/SKILL.md
+ * Gives Claude Desktop guidance without separate skill files.
  */
 export const SERVER_INSTRUCTIONS = `RC-505mk2 MCP — workflow rules for FX racks and device upload.
 
