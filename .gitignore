@@ -17,27 +17,27 @@ test-output/
 generated/
 rc505-backups/
 
-# IDE & agent config (local only)
-.agents/
-.claude/
-.cursor/
-.vscode/
+# Local IDE & agent config — never commit to main
+# .agents/ and .cursor/ are for repo dev/coding skills (how to work in this codebase).
+# .claude/ and .vscode/ are local editor settings.
+.agents
+.claude
+.cursor
+.vscode
 
-# Internal docs (not public)
-docs/archive/
-docs/manual-test/
-docs/SKILL.md
-
-# MCPB packaging & agent skills (local release builds)
+# RC-505 distribution packaging (local release builds — attach .mcpb via GitHub Releases)
 plugin/
 skills/
 skills-lock.json
 scripts/pack-plugin.ts
 scripts/sync-skills.ts
 scripts/create-icon.ts
-
-# Release binaries (attach via GitHub Releases)
 releases/
+
+# Internal docs (not public)
+docs/archive/
+docs/manual-test/
+docs/SKILL.md
 
 # Legacy / unused
 .next/
