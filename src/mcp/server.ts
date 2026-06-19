@@ -11,6 +11,7 @@ import {
   ListToolsRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 import { TOOL_DEFINITIONS } from './tools.js';
+import { SERVER_INSTRUCTIONS } from './instructions.js';
 import {
   handleListFxTypes,
   handleLookupFxParams,
@@ -46,6 +47,7 @@ const server = new Server(
     capabilities: {
       tools: {},
     },
+    instructions: SERVER_INSTRUCTIONS,
   },
 );
 

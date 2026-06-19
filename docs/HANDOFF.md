@@ -12,7 +12,7 @@
 | Phase 0–3.5 | ✅ Merged |
 | Phase 4A | ✅ Skills tree, `npx skills add`, dev docs |
 | Phase 4B | ✅ MCPB manifest, `pack:plugin`, build UX fixes (committed `a58e8ef`) |
-| Phase 4C | ⬜ **Next session** — host clarity, Desktop workflow layer, Claude Code plugin |
+| Phase 4C | 🔄 **In progress** — MCP instructions ✅; retest `.mcpb` + merge remaining |
 | Phase 5 | ⬜ Marketplace / GitHub Release |
 | Phase 6 | ⬜ Inspire Me — [INSPIRE.md](./INSPIRE.md) |
 
@@ -27,7 +27,7 @@
 | **MCP server** | 21 tools — USB, RC0, presets | **Yes** | ✅ Installed | ✅ via MCP config |
 | **Skill** | `SKILL.md` workflow playbook | No (ours) | ❌ **Not slash cmds** | ✅ `/rc505-*` via `npx skills add` |
 | **MCPB plugin** | Packaging for Desktop | Installs MCP + **manifest prompts** | ✅ Double-click | N/A |
-| **Claude Code plugin** | `.claude-plugin/` + `.mcp.json` | Wires MCP + slash skills | N/A | ⬜ Phase 4C/5 |
+| **Claude Code plugin** | `.claude-plugin/` + `.mcp.json` | Wires MCP + slash skills | N/A | Optional via `npx skills add` (not a bundled plugin zip) |
 
 **Key insight:** Skills bundled inside `.mcpb` are **files on disk**, not registered as `/rc505-upload` in Claude Desktop. Desktop users get **tools + extension starter prompts + natural language**. Slash commands require Claude Code plugin or `npx skills add` (Cursor/Code).
 
@@ -68,9 +68,9 @@ Priority order for getting the bundle into **ideal form**:
 
 | # | Task | Why |
 |---|------|-----|
-| 1 | **MCP server `instructions` on initialize** — condensed Adapt/Build, fxModuleId, TFX bank/slot rules | Gives Claude Desktop skill-like behavior without slash cmds |
-| 2 | **Claude Code plugin wrapper** — `plugin/claude-code/.claude-plugin/plugin.json` + `.mcp.json` + skills paths | Enables `/rc505-*` slash commands + hooks like other marketplace plugins |
-| 3 | **Clarify consumer UX in README** — Desktop = tools + manifest prompts; slash skills = Code/Cursor only | Sets correct expectations |
+| 1 | **MCP server `instructions` on initialize** — condensed Adapt/Build, fxModuleId, TFX bank/slot rules | Gives Claude Desktop skill-like behavior without slash cmds | ✅ |
+| 2 | ~~Claude Code plugin wrapper~~ | Dropped — `.mcpb` + optional `npx skills add` is the consumer path | — |
+| 3 | **Clarify consumer UX in README** — Desktop = `.mcpb` + tools; slash skills = Code/Cursor via `npx skills add` | Sets correct expectations | ⬜ |
 | 4 | **Retest breakdown rack prompt** after repack + reinstall | Verify single-shot `create_rack_preset` ([Test 5 retest](./MCP%20Test%205%20-%20Claude%20Sonnet%204%20(Plugin).md)) |
 | 5 | **Smoke test `.mcpb`** — install, prompts visible, upload flow | Phase 4B exit criteria |
 | 6 | **Merge `phase-4/distribution` → `main`** | After 4C or if 4C split to follow-up PR |
@@ -103,10 +103,10 @@ Priority order for getting the bundle into **ideal form**:
 docs/SKILL.md              # Umbrella skill source of truth
 skills/                      # npx skills add + bundled in .mcpb (not Desktop slash cmds)
 plugin/manifest.json         # MCPB — MCP server + manifest prompts
-plugin/claude-code/          # (planned) Claude Code plugin — slash skills
 scripts/pack-plugin.ts       # mcpb pack + skill ZIP
 src/mcp/normalize-rack-input.ts  # fxModuleId + param coercion
-src/mcp/server.ts            # (planned) initialize instructions
+src/mcp/instructions.ts      # MCP initialize instructions (Desktop workflow)
+src/mcp/server.ts            # MCP server (instructions on initialize)
 ```
 
 ---
