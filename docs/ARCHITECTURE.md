@@ -41,7 +41,74 @@
 
 ---
 
-## Package structure
+## Plugin vs Skill vs MCP server
+
+Three layers ship together but behave differently per host:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  Workflow layer (host-specific)                                  │
+│  ├── Skill (SKILL.md)     — playbook for the LLM                 │
+│  ├── MCP instructions     — server text on initialize (4C)     │
+│  ├── Manifest prompts     — starter prompts in plugin.json       │
+│  └── Slash commands         — Claude Code plugin only (4C)       │
+└────────────────────────────┬────────────────────────────────────┘
+                             │ guides tool use
+┌────────────────────────────▼────────────────────────────────────┐
+│  MCP server (rc505mk2-mcp) — 21 tools, stdio JSON-RPC           │
+│  Reference · Preset · Device handlers                            │
+└────────────────────────────┬────────────────────────────────────┘
+                             │ executes
+┌────────────────────────────▼────────────────────────────────────┐
+│  Core engine + Device I/O → RC0 on SD card                       │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+| Layer | Location | Runs code? | Purpose |
+|-------|----------|------------|---------|
+| **MCP server** | `src/mcp/server.ts`, bin `rc505mk2-mcp` | Yes | USB, RC0, presets, validation |
+| **Skill** | `docs/SKILL.md` → `skills/rc505*/SKILL.md` | No | Adapt/Build workflows, hardware rules |
+| **MCPB plugin** | `plugin/manifest.json` → `releases/*.mcpb` | Installs MCP | Desktop double-click distribution |
+| **Claude Code plugin** | `plugin/claude-code/` *(planned 4C)* | Wires MCP + skills | `/rc505-*` slash cmds, `.mcp.json` |
+
+### Host matrix
+
+| Host | MCP install | Slash skills | Workflow without slash |
+|------|-------------|--------------|------------------------|
+| **Claude Desktop** | `.mcpb` double-click | ❌ Not registered | Manifest **prompts** + server **instructions** (4C) |
+| **Cursor** | MCP config + `npx rc505mk2-mcp` | ✅ `npx skills add ./` | Skill files in `.cursor/skills/` |
+| **Claude Code** | `.mcp.json` in plugin | ✅ plugin `skills/` array (4C) | Same slash skills |
+
+**Important:** Skills bundled inside `.mcpb` are copied to the plugin directory but Claude Desktop does **not** expose them as `/rc505-upload` commands. That UX is Claude Code / Cursor only.
+
+### Packaging paths
+
+```
+Consumer (Desktop)     plugin/manifest.json  →  npm run pack:plugin  →  releases/*.mcpb
+Developer (Cursor)     npx skills add ./      →  skills/rc505*/
+Developer (Code)       plugin/claude-code/    →  (4C) marketplace / local install
+```
+
+See [DISTRIBUTION.md](./DISTRIBUTION.md) and [HANDOFF.md](./HANDOFF.md) for install commands.
+
+---
+
+## Planned: Phase 4C (next session)
+
+Close the workflow gap per host without changing core MCP tool contracts.
+
+| Item | Target | Notes |
+|------|--------|-------|
+| **MCP `instructions`** | `src/mcp/server.ts` | Return condensed SKILL on `initialize` — Adapt vs Build, `fxModuleId`, TFX bank/slot rules, skip redundant `lookup_fx_params` |
+| **Claude Code plugin** | `plugin/claude-code/` | `.claude-plugin/plugin.json`, `.mcp.json` pointing at `rc505mk2-mcp`, `skills/` paths for slash registration |
+| **Host docs** | README, ARCHITECTURE | Desktop ≠ Code; repack → reinstall Desktop |
+| **Retest** | MCP Test 5 breakdown rack | Verify `normalize-rack-input` + validation after repack |
+
+Optional follow-ups: `npx rc505mk2-mcp init`, npm publish checklist (Phase 4A), GitHub Release (Phase 5).
+
+Phase 6 **Inspire Me** — separate spec in [INSPIRE.md](./INSPIRE.md); new tools + skill, not part of 4C.
+
+---
 
 ```
 src/

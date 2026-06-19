@@ -4,7 +4,7 @@
 > **Consumers** install one plugin and talk to Claude in plain language.
 > **Developers** run two `npx` commands for MCP + skill. Same engine, two packaging paths.
 
-**Status:** Phase 4 in progress on `phase-4/distribution` — skills tree + MCPB packaging.
+**Status:** Phase 4A/4B done on `phase-4/distribution` (commit `a58e8ef`). **Phase 4C** (bundle polish) is next session.
 
 ---
 
@@ -47,7 +47,7 @@ rc505mk2/
 | **Consumer** | Download `rc505mk2.mcpb` → double-click → Install | RC-505 owners, Claude Desktop |
 | **Developer** | `npx rc505mk2-mcp` + `npx skills add <repo> --skill …` | Devs, Cursor, Claude Code |
 
-Slash skills (Claude `/skill` commands) ship with the dev path and inside `.mcpb` — see [Slash skills plan](#slash-skills-plan) below.
+Slash skills (`/rc505-*`) ship via **`npx skills add`** (Cursor, Claude Code) and the **Claude Code plugin** (Phase 4C). They are bundled as files inside `.mcpb` but **do not register as slash commands in Claude Desktop** — Desktop users rely on MCP tools, manifest **prompts**, and (planned) server **instructions**. See [ARCHITECTURE.md](./ARCHITECTURE.md#plugin-vs-skill-vs-mcp-server).
 
 See also: [DISTRIBUTION.md](./DISTRIBUTION.md), [UNIFIED_MCP_TOOLS.md](./UNIFIED_MCP_TOOLS.md), [ARCHITECTURE.md](./ARCHITECTURE.md), [AGENT_WORKFLOW.md](./AGENT_WORKFLOW.md), [LIBRARY.md](./LIBRARY.md).
 
@@ -69,7 +69,8 @@ Task-specific slash skills complement the umbrella `rc505mk2` skill. Each is a t
 
 - Umbrella skill stays the **source of truth** for hardware rules (IFX vs TFX, special Slot A, tips schema, merge vs overwrite).
 - Task skills are **trimmed copies** — one workflow, explicit tool budget, link to umbrella for edge cases.
-- Consumer `.mcpb` bundles all four skills + manifest starter prompts (parallel UX, not a fifth skill).
+- Consumer `.mcpb` bundles skill **files** + manifest starter prompts — not Desktop slash commands.
+- Claude Code plugin (Phase 4C) registers slash skills for `/plugin install` users.
 - Install: `npx skills add <repo> --skill rc505mk2 --skill rc505-upload --skill rc505-build-rack --skill rc505-adapt-rack` (or `-g` for all skills in repo).
 
 **Phase assignment:**
@@ -79,6 +80,8 @@ Task-specific slash skills complement the umbrella `rc505mk2` skill. Each is a t
 | `rc505mk2` (umbrella) | Phase 4A — sync from `docs/SKILL.md` |
 | `rc505-upload`, `rc505-build-rack`, `rc505-adapt-rack` | Phase 4A or early Phase 5 — author after umbrella ships |
 | Bundle all skills in `.mcpb` + skill ZIP | Phase 4B |
+| Claude Code plugin (slash skills + `.mcp.json`) | Phase 4C |
+| MCP server `instructions` on initialize (Desktop workflow) | Phase 4C |
 
 **Not planned:** per-genre slash skills (`/rc505-dnb`, `/rc505-neosoul`) — genre is a filter on Adapt/Build, not a separate skill surface.
 
@@ -179,11 +182,29 @@ Task-specific slash skills complement the umbrella `rc505mk2` skill. Each is a t
 | Package built server + `data/` into `.mcpb` | ✅ |
 | Smoke test: double-click install in Claude Desktop | ⬜ |
 | README: consumer install (download-first) | ✅ |
-| Optional: Claude plugin wrapper (`.claude-plugin/` + `.mcp.json`) | ⬜ |
+| Build-mode UX: `normalize-rack-input`, TFX bank validation | ✅ |
+| [MCP Test 5 (Plugin)](./MCP%20Test%205%20-%20Claude%20Sonnet%204%20(Plugin).md) documented | ✅ |
 
 **Exit criteria:** Non-dev user downloads `.mcpb`, installs, uploads a bundled rack via natural language.
 
 **Branch:** `phase-4/distribution`
+
+#### 4C — Bundle polish & host clarity *(next session)*
+
+**Goal:** Close the gap between “tools work” and “workflow feels guided” per host. Clarify Plugin vs Skill vs MCP.
+
+| Task | Status |
+|------|--------|
+| MCP server **`instructions` on `initialize`** — condensed SKILL.md (Adapt/Build, fxModuleId, TFX layout) | ⬜ |
+| **Claude Code plugin** — `plugin/claude-code/.claude-plugin/plugin.json` + `.mcp.json` + skills array | ⬜ |
+| Document **host matrix** in ARCHITECTURE (Desktop vs Code vs Cursor) | ⬜ |
+| README: Desktop = tools + prompts; slash skills = Code/Cursor only | ⬜ |
+| Retest breakdown rack prompt after repack ([Test 5](./MCP%20Test%205%20-%20Claude%20Sonnet%204%20(Plugin).md)) | ⬜ |
+| Merge `phase-4/distribution` → `main` | ⬜ |
+
+**Exit criteria:** Claude Desktop users get workflow guidance without slash cmds; Claude Code users get `/rc505-*` via plugin install.
+
+**Branch:** `phase-4/distribution` (or `phase-4/bundle-polish`)
 
 ---
 
@@ -195,6 +216,7 @@ Task-specific slash skills complement the umbrella `rc505mk2` skill. Each is a t
 |------|--------|
 | GitHub Releases for `.mcpb` + skill ZIP | ⬜ |
 | Submit to Claude Desktop Extensions directory | ⬜ |
+| Submit **Claude Code plugin** to claude-plugins-official (or external) | ⬜ |
 | Optional: skills.sh / agent skill registry listing | ⬜ |
 | Claude.ai skill ZIP + upload instructions | ⬜ |
 | Linux/Windows device upload hardening | ⬜ |
@@ -219,7 +241,7 @@ Task-specific slash skills complement the umbrella `rc505mk2` skill. Each is a t
 | Variety history (`~/.rc505mk2/inspire-history.json`) | ⬜ |
 | `skills/rc505-inspire/` slash skill | ⬜ |
 | Plugin manifest starter prompt + bundle in `.mcpb` | ⬜ |
-| Tests + MCP Test Run 5 doc | ⬜ |
+| Tests + MCP Test Run 5 doc | ✅ (Plugin test — see [Test 5](./MCP%20Test%205%20-%20Claude%20Sonnet%204%20(Plugin).md)) |
 | Update `UNIFIED_MCP_TOOLS.md`, `TEST_PROMPTS.md` | ⬜ |
 
 **Exit criteria:** *“Inspire me”* returns 1–3 curated picks in one tool call; genre templates browsable.
@@ -255,12 +277,13 @@ Task-specific slash skills complement the umbrella `rc505mk2` skill. Each is a t
 
 ## Distribution summary
 
-| Audience | MCP | Skill | Command |
-|----------|-----|-------|---------|
-| Consumer | `.mcpb` | embedded in plugin | double-click install |
-| Developer | `npx rc505mk2-mcp` | `npx skills add …` (umbrella + task skills) | 2 commands |
+| Audience | Host | MCP | Workflow layer | Install |
+|----------|------|-----|----------------|---------|
+| Consumer | Claude Desktop | `.mcpb` | manifest **prompts** + server **instructions** (4C) | double-click |
+| Developer | Cursor / Claude Code | `npx rc505mk2-mcp` | **`npx skills add`** → `/rc505-*` slash skills | 2 commands |
+| Developer | Claude Code | plugin `.mcp.json` | plugin **skills/** + **commands/** (4C) | `/plugin install` |
 
-Full detail: [DISTRIBUTION.md](./DISTRIBUTION.md).
+Full detail: [DISTRIBUTION.md](./DISTRIBUTION.md) · [ARCHITECTURE.md](./ARCHITECTURE.md#plugin-vs-skill-vs-mcp-server).
 
 ---
 
