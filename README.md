@@ -172,6 +172,7 @@ npm test              # 421 tests
 | [SKILL.md](./docs/SKILL.md) | Agent workflow reference (WIP) |
 | [LIBRARY.md](./docs/LIBRARY.md) | TypeScript library API |
 | [archive/VISION.md](./docs/archive/VISION.md) | Original guide-site vision (2026) |
+| [archive/pre-mcp/](./docs/archive/pre-mcp/) | **Pre-MCP research archive** — RC0 findings, param verification, guide specs |
 | [manual-test/](./docs/manual-test/) | MCP manual test run notes |
 
 ---
