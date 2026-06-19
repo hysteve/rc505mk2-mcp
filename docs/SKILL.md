@@ -393,8 +393,5 @@ Upload backs up existing files to `./rc505-backups/` by default. Call `eject_dev
 | [UNIFIED_MCP_TOOLS.md](./UNIFIED_MCP_TOOLS.md) | Full tool list and storage layout |
 | [LIBRARY.md](./LIBRARY.md) | Param transforms, inheritance, merge internals |
 | [README.md](../README.md) | Install and MCP client config |
-| [MCP Test Run 1 - Claude Sonnet 4.md](./MCP%20Test%20Run%201%20-%20Claude%20Sonnet%204.md) | Baseline session (pre skill/UX fixes) |
-| [MCP Test Run 2 - Claude Sonnet 4.md](./MCP%20Test%20Run%202%20-%20Claude%20Sonnet%204.md) | Post Phase 3.5 session notes |
-| [MCP Test Run 3 - Claude Sonnet 4.md](./MCP%20Test%20Run%203%20-%20Claude%20Sonnet%204.md) | Build-mode test (partial fail) |
-| [MCP Test Run 4 - Claude Sonnet 4.md](./MCP%20Test%20Run%204%20-%20Claude%20Sonnet%204.md) | Build-mode retest (handler simulation pass) |
-| [HANDOFF.md](./HANDOFF.md) | Session handoff → Phase 4 |
+| [manual-test/](./manual-test/) | MCP manual test run notes |
+| [ARCHITECTURE.md](./ARCHITECTURE.md) | Technical design |

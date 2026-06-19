@@ -132,4 +132,4 @@ Live agent overwrote this rack via `update_rack_preset` with `rhythmic-delay` in
 ## Related
 
 - [Test Run 3](./MCP%20Test%20Run%203%20-%20Claude%20Sonnet%204.md) — partial fail (meta-search + get fallback)
-- [HANDOFF.md](./HANDOFF.md) — Phase 3 complete → Phase 4
+- [manual-test/README.md](./README.md) — test run index

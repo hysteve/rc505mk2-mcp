@@ -186,7 +186,7 @@ Reuse existing `FxModuleStore` for the fx-modules subtree; add `RackStore` and `
 
 ## Planned tools (Phase 6 — Inspire Me)
 
-See [INSPIRE.md](./INSPIRE.md) for full spec.
+*(Planned — not shipped.)* Creative prompt tools for rack inspiration.
 
 | Tool | Description | Phase |
 |------|-------------|-------|

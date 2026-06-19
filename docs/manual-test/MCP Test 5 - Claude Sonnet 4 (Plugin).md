@@ -105,5 +105,5 @@ Pass if: single successful `create_rack_preset`, no `lookup_fx_params`, no slot/
 ## Related
 
 - [Test Run 4](./MCP%20Test%20Run%204%20-%20Claude%20Sonnet%204.md) — Build mode duplicate-id fix
-- [SKILL.md](./SKILL.md) — Track FX bank vs slot
-- [TEST_PROMPTS.md](./TEST_PROMPTS.md) — Build mode prompts
+- [SKILL.md](../SKILL.md) — Track FX bank vs slot
+- [TEST_PROMPTS.md](../TEST_PROMPTS.md) — Build mode prompts

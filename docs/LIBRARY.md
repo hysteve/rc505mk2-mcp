@@ -356,13 +356,13 @@ const buffer = generatePresetZipBuffer(template, rack, 42, 'A')
 // Returns a Uint8Array — write to disk or convert to Blob
 ```
 
-In the browser, use the `/browser` export for DOM helpers:
+In the browser, use `generatePresetZipBuffer` from the main export and trigger downloads with a small DOM helper (the package is MCP/Node-first; no separate browser bundle).
 
 ```typescript
-import { generatePresetZipBuffer, downloadBlob, zipBufferToBlob } from '@rc505mk2/lib/browser'
+import { generatePresetZipBuffer } from 'rc505mk2-mcp'
 
 const buffer = generatePresetZipBuffer(template, rack, 42)
-downloadBlob(zipBufferToBlob(buffer), 'MEMORY042.zip')
+// Convert to Blob and trigger download in your UI layer
 ```
 
 ### Compose multiple racks into one memory slot
@@ -423,15 +423,14 @@ if (device) {
 
 ## Package Exports
 
-The library ships three entry points to support different environments:
+The library ships two entry points:
 
 | Import Path | Environment | Contents |
 |-------------|-------------|----------|
-| `@rc505mk2/lib` | Universal | Types, schemas, FX constants, transforms, generator, parser, config, download, template |
-| `@rc505mk2/lib/browser` | Browser | ZIP generation + DOM helpers (`downloadBlob`, `zipBufferToBlob`) |
-| `@rc505mk2/lib/node` | Node.js | Device detection (`detectDevice`), upload (`uploadToDevice`), slot checking |
+| `rc505mk2-mcp` | Universal | Types, schemas, FX constants, transforms, generator, parser, config, download, template |
+| `rc505mk2-mcp/node` | Node.js | Device detection, upload, file stores |
 
-Both ESM and CJS builds are included for the main and Node exports. The browser export is ESM only.
+Both ESM and CJS builds are included for the main and Node exports.
 
 ## CLI
 
@@ -600,7 +599,6 @@ Once the server is connected, you can ask Claude things like:
 ├── data/          fx-modules/ (33 presets), racks.json
 ├── mcp/           Model Context Protocol server and tool handlers
 ├── cli/           Command-line interface
-├── browser.ts     DOM utilities (downloadBlob, zipBufferToBlob)
 └── node.ts        Node.js device exports
 ```
 

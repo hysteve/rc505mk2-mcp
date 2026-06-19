@@ -1,5 +1,7 @@
 # RC-505mk2 FX Rack Guide — Project Vision
 
+> **Archived (2026).** This document describes the original rc505guide.com direction. The project evolved into a **local Claude MCP assistant** that generates and uploads presets from natural language. See the root [README](../../README.md) and [ARCHITECTURE.md](../ARCHITECTURE.md). The accuracy and practical-rack principles below still inform the bundled preset library.
+
 ## What This Is
 
 A free, web-based reference site for the Roland RC-505mk2 loop station. The site provides ready-to-use FX rack configurations — complete signal chains with exact parameter names and values that users can dial into their device immediately. It targets live loopers, beatboxers, vocalists, and guitarists who use or are considering the RC-505mk2.

@@ -136,4 +136,4 @@ Use a **unique title** to avoid duplicate-id path:
 
 - [Test Run 1](./MCP%20Test%20Run%201%20-%20Claude%20Sonnet%204.md) — baseline
 - [Test Run 2](./MCP%20Test%20Run%202%20-%20Claude%20Sonnet%204.md) — Adapt mode + meta-search
-- [HANDOFF.md](./HANDOFF.md) — session handoff for Phase 4
+- [manual-test/README.md](./README.md) — test run index

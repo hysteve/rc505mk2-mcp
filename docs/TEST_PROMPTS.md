@@ -434,7 +434,5 @@ Use these when you want a **specific** rack in a prompt.
 | Doc | Purpose |
 |-----|---------|
 | [SKILL.md](./SKILL.md) | Full agent workflow rules |
-| [MCP Test Run 1](./MCP%20Test%20Run%201%20-%20Claude%20Sonnet%204.md) | Pre-skill baseline |
-| [MCP Test Run 2](./MCP%20Test%20Run%202%20-%20Claude%20Sonnet%204.md) | Adapt friction notes |
-| [MCP Test Run 4](./MCP%20Test%20Run%204%20-%20Claude%20Sonnet%204.md) | Build-mode regression |
-| [HANDOFF.md](./HANDOFF.md) | Current phase status |
+| [manual-test/](./manual-test/) | MCP manual test run notes |
+| [ARCHITECTURE.md](./ARCHITECTURE.md) | Technical design |
