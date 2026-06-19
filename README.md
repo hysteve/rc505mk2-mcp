@@ -2,6 +2,8 @@
 
 Local assistant for the Roland RC-505mk2 loop station. Browse FX modules and rack presets, build memory configs, and upload directly to your device via USB — from Claude, in plain language. No cloud, no API keys.
 
+> **Beta** — [GitHub Releases](https://github.com/hysteve/rc505mk2-react/releases) for the Claude Desktop `.mcpb`. Feedback welcome via [Issues](https://github.com/hysteve/rc505mk2-react/issues). Agent slash skills are **under development** and not required for Desktop.
+
 ## Install (recommended for most users)
 
 1. Download `rc505mk2-v0.2.0.mcpb` from [Releases](https://github.com/hysteve/rc505mk2-react/releases) (or build locally: `npm run pack:plugin`)
@@ -10,23 +12,22 @@ Local assistant for the Roland RC-505mk2 loop station. Browse FX modules and rac
 4. Connect your RC-505mk2 via USB in **Storage mode** (MENU → USB → STORAGE → CONNECT)
 5. Try: *"Load the vocal plate rack to slot 5"*
 
-No terminal or JSON editing required. The bundle includes the MCP server, preset library, and agent workflow skills.
+No terminal or JSON editing required. The bundle includes the MCP server, preset library, and starter prompts in Claude Desktop.
+
+**Skeptical of the download?** Clone this repo and build your own `.mcpb` — `npm install && npm run build && npm run pack:plugin` → `releases/rc505mk2-v0.2.0.mcpb`. Same output as the GitHub Release.
 
 ## Install (developers)
 
-Two commands — MCP server + agent skills:
+Two commands — MCP server (+ optional skills, WIP):
 
 ```bash
-# MCP tools (USB, presets, RC0 generation)
+# MCP tools (USB, presets, RC0 generation) — required
 claude mcp add rc505mk2 -- npx -y rc505mk2-mcp
 
-# Workflow skills (umbrella + task shortcuts)
-npx skills add hysteve/rc505mk2-react \
-  --skill rc505mk2 \
-  --skill rc505-upload \
-  --skill rc505-build-rack \
-  --skill rc505-adapt-rack \
-  -g -y
+# Optional: workflow skills (under development — not polished for beta)
+# npx skills add hysteve/rc505mk2-react \
+#   --skill rc505mk2 --skill rc505-upload --skill rc505-build-rack --skill rc505-adapt-rack \
+#   -g -y
 ```
 
 From a local checkout:
@@ -43,7 +44,9 @@ npx skills add ./ \
 
 Verify: `npx rc505mk2 doctor`
 
-### Slash skills
+### Slash skills (under development)
+
+Optional for Claude Code / Cursor only. **Not part of the beta release** — current skills need a rewrite for practical use. Desktop users: talk naturally; the MCP server includes workflow instructions on connect.
 
 | Command | Purpose |
 |---------|---------|
@@ -52,7 +55,7 @@ Verify: `npx rc505mk2 doctor`
 | `/rc505-build-rack` | Greenfield rack from FX modules |
 | `/rc505-adapt-rack` | Genre rack from bundled presets |
 
-See [docs/SKILL.md](./docs/SKILL.md) for the full workflow reference.
+See [docs/SKILL.md](./docs/SKILL.md) for the workflow reference (WIP).
 
 ### Other MCP clients (Cursor, VS Code, Claude Desktop JSON)
 
@@ -192,7 +195,9 @@ npm test
 
 | Doc | Description |
 |-----|-------------|
-| [DISTRIBUTION.md](./docs/DISTRIBUTION.md) | **Install strategy** — MCPB, Agent Skills, marketplace |
+| [MARKETING.md](./docs/MARKETING.md) | **Beta messaging** — pitch, FAQ, sample prompts |
+| [BETA_RELEASE_CHECKLIST.md](./docs/BETA_RELEASE_CHECKLIST.md) | Pre-launch checklist |
+| [DISTRIBUTION.md](./docs/DISTRIBUTION.md) | Install strategy — MCPB, dev path |
 | [SKILL.md](./docs/SKILL.md) | Agent workflow reference (source of truth) |
 | [TEST_PROMPTS.md](./docs/TEST_PROMPTS.md) | **Copy-paste test prompts** by category |
 | [INSPIRE.md](./docs/INSPIRE.md) | **Inspire Me** feature spec (Phase 6) |

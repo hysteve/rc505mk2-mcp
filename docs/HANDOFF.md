@@ -1,7 +1,7 @@
 # Session Handoff — RC-505mk2 MCP (June 2026)
 
 > Short reference so the next session can continue without re-reading the full chat.  
-> **Branch:** `phase-4/distribution` — Phase 4 mostly done; **4C bundle polish** next.
+> **Branch:** `phase-4/distribution` — **Phase 4 ~done**; beta distribution next.
 
 ---
 
@@ -12,9 +12,11 @@
 | Phase 0–3.5 | ✅ Merged |
 | Phase 4A | ✅ Skills tree, `npx skills add`, dev docs |
 | Phase 4B | ✅ MCPB manifest, `pack:plugin`, build UX fixes (committed `a58e8ef`) |
-| Phase 4C | 🔄 **In progress** — MCP instructions ✅; retest `.mcpb` + merge remaining |
-| Phase 5 | ⬜ Marketplace / GitHub Release |
+| Phase 4C | ✅ **~done** — MCP instructions, plugin zip path dropped, marketing docs |
+| Phase 5 | ⬜ Beta via GitHub Release — marketplace TBD after feedback |
 | Phase 6 | ⬜ Inspire Me — [INSPIRE.md](./INSPIRE.md) |
+
+**Beta:** [MARKETING.md](./MARKETING.md) · [BETA_RELEASE_CHECKLIST.md](./BETA_RELEASE_CHECKLIST.md)
 
 **Plan:** [PROJECT_PLAN_V2.md](./PROJECT_PLAN_V2.md) · **Architecture:** [ARCHITECTURE.md](./ARCHITECTURE.md#plugin-vs-skill-vs-mcp-server) · **Distribution:** [DISTRIBUTION.md](./DISTRIBUTION.md)
 
@@ -35,14 +37,17 @@
 
 ---
 
-## Slash skills (dev / Claude Code / Cursor)
+## Slash skills (under development — not beta focus)
+
+> **Status: WIP.** Skills exist for Cursor/Claude Code but are **not polished or practical enough** for the release story. Beta testers should use **natural language + MCP tools** (Desktop) or dev MCP config — not slash commands.  
+> **Next:** Redesign skills for real-world workflows (upload-before-gig, genre quick-picks, merge vs overwrite guardrails).
 
 | Command | Skill dir | Status |
 |---------|-----------|--------|
-| `/rc505mk2` | `skills/rc505mk2/` | ✅ |
-| `/rc505-upload` | `skills/rc505-upload/` | ✅ |
-| `/rc505-build-rack` | `skills/rc505-build-rack/` | ✅ |
-| `/rc505-adapt-rack` | `skills/rc505-adapt-rack/` | ✅ |
+| `/rc505mk2` | `skills/rc505mk2/` | 🚧 Under development |
+| `/rc505-upload` | `skills/rc505-upload/` | 🚧 Under development |
+| `/rc505-build-rack` | `skills/rc505-build-rack/` | 🚧 Under development |
+| `/rc505-adapt-rack` | `skills/rc505-adapt-rack/` | 🚧 Under development |
 
 ```bash
 npx skills add ./ --skill rc505mk2 --skill rc505-upload --skill rc505-build-rack --skill rc505-adapt-rack -a cursor -a claude-code
@@ -62,22 +67,20 @@ npx skills add ./ --skill rc505mk2 --skill rc505-upload --skill rc505-build-rack
 
 ---
 
-## Next session — Phase 4C todos
+## Next session — beta launch
 
-Priority order for getting the bundle into **ideal form**:
+| # | Task | Status |
+|---|------|--------|
+| 1 | Merge `phase-4/distribution` → `main` | ⬜ |
+| 2 | GitHub Release + `.mcpb` attach | ⬜ |
+| 3 | Smoke test + screenshot for Reddit | ⬜ |
+| 4 | Post beta (see [MARKETING.md](./MARKETING.md)) | ⬜ |
+| 5 | **Improve skills** — practical workflows, de-emphasize until ready | ⬜ Backlog |
+| 6 | Marketplace listing | ⬜ After beta — maybe never |
 
-| # | Task | Why |
-|---|------|-----|
-| 1 | **MCP server `instructions` on initialize** — condensed Adapt/Build, fxModuleId, TFX bank/slot rules | Gives Claude Desktop skill-like behavior without slash cmds | ✅ |
-| 2 | ~~Claude Code plugin wrapper~~ | Dropped — `.mcpb` + optional `npx skills add` is the consumer path | — |
-| 3 | **Clarify consumer UX in README** — Desktop = `.mcpb` + tools; slash skills = Code/Cursor via `npx skills add` | Sets correct expectations | ⬜ |
-| 4 | **Retest breakdown rack prompt** after repack + reinstall | Verify single-shot `create_rack_preset` ([Test 5 retest](./MCP%20Test%205%20-%20Claude%20Sonnet%204%20(Plugin).md)) |
-| 5 | **Smoke test `.mcpb`** — install, prompts visible, upload flow | Phase 4B exit criteria |
-| 6 | **Merge `phase-4/distribution` → `main`** | After 4C or if 4C split to follow-up PR |
-| 7 | Optional: **`npx rc505mk2-mcp init`** — auto-write MCP config | Dev polish |
-| 8 | Optional: **npm publish checklist** | Phase 4A exit |
+**Phase 4C (done):** MCP instructions ✅ · plugin zip dropped ✅ · marketing docs ✅
 
-**Not next session:** Phase 6 Inspire Me, GitHub Release (Phase 5) — unless 4C finishes early.
+**Optional before post:** retest breakdown rack ([Test 5](./MCP%20Test%205%20-%20Claude%20Sonnet%204%20(Plugin).md)) · [BETA_RELEASE_CHECKLIST.md](./BETA_RELEASE_CHECKLIST.md)
 
 ---
 
@@ -85,8 +88,10 @@ Priority order for getting the bundle into **ideal form**:
 
 | Task | Phase |
 |------|-------|
-| GitHub Release for `.mcpb` + skill ZIP | 5 |
-| Claude Desktop Extensions directory submit | 5 |
+| GitHub Release for `.mcpb` | 5 — **beta now** |
+| Reddit / beta outreach | 5 |
+| **Redesign agent skills** — more practical workflows | Post-beta |
+| Claude Desktop Extensions directory submit | 5 — after beta, if at all |
 | `npx rc505mk2-mcp init` | 4A optional |
 | npm publish checklist | 4A |
 | Inspire Me tools + skill | 6 — [INSPIRE.md](./INSPIRE.md) |
@@ -115,6 +120,7 @@ src/mcp/server.ts            # MCP server (instructions on initialize)
 
 - **Primary users are non-technical** — `.mcpb` is the main path  
 - **MCP server does device/RC0** — skills are workflow docs, not a replacement  
-- **Claude Desktop ≠ Claude Code** — slash skills and hooks are Code/Cursor; Desktop gets MCP tools + prompts  
+- **Skills are under development** — not the beta release focus; improve post-feedback  
+- **Claude Desktop ≠ Claude Code** — slash skills are Code/Cursor only; Desktop gets MCP tools + prompts + instructions  
 - **Adapt vs Build** — genre prompts default to Adapt; explicit "from scratch" = Build  
 - **Repack → reinstall** — Desktop keeps a copy; doesn't hot-reload from `releases/`

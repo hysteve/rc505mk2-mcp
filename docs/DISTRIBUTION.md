@@ -77,9 +77,9 @@ No global install required. `npx` fetches the package on first run.
 
 **Future polish:** `npx rc505mk2-mcp init` — detect client, write MCP config automatically (Phase 4 dev track).
 
-### Agent skill — `npx skills add`
+### Agent skill — `npx skills add` *(under development)*
 
-[Vercel Skills CLI](https://github.com/vercel-labs/skills) — cross-agent skill install (Claude Code, Cursor, Copilot, 38+ agents).
+> **Not beta focus.** Skills ship in-repo for future Cursor/Claude Code use but need redesign for practical workflows. Desktop beta = MCP tools + manifest prompts + server `instructions`.
 
 Repo layout for compatibility:
 

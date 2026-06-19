@@ -4,7 +4,7 @@
 > **Consumers** install one plugin and talk to Claude in plain language.
 > **Developers** run two `npx` commands for MCP + skill. Same engine, two packaging paths.
 
-**Status:** Phase 4A/4B done on `phase-4/distribution` (commit `a58e8ef`). **Phase 4C** (bundle polish) is next session.
+**Status:** Phase 4 ~complete on `phase-4/distribution`. **Beta** via GitHub Release next; marketplace TBD after feedback.
 
 ---
 
