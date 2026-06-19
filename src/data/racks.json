@@ -1,0 +1,7097 @@
+{
+  "meta": {
+    "title": "RC-505mk2 FX Rack Guide",
+    "subtitle": "Signal chains, FX racks & workflows for real-world looping",
+    "version": "1.3.0",
+    "device": "Roland RC-505mk2",
+    "lastUpdated": "2026-02-16"
+  },
+  "racks": [
+    {
+      "id": "perc-acoustic",
+      "section": "percussion",
+      "title": "Tight Acoustic Percussion Rack",
+      "icon": "\ud83e\udd41",
+      "genres": [
+        "Hip Hop",
+        "Acoustic"
+      ],
+      "inputType": "mic",
+      "description": "Designed for hand percussion, cajon, or tapping. The chain tightens transients, adds body, and places the sound in a controlled space. Emphasizes punch without boominess.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Tighten",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "NATURALCOMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Dynamics",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "NATURALCOMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "12"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Tone",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "3"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "-2"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "800 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "0"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "3.15 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "4"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Space",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "1.5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "75"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "20"
+            }
+          ]
+        }
+      ],
+      "trackFx": [
+        {
+          "slot": "A",
+          "effect": "LPF",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "50"
+            },
+            {
+              "name": "DEPTH",
+              "value": "50"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "50"
+            },
+            {
+              "name": "CUTOFF",
+              "value": "50"
+            },
+            {
+              "name": "STEP RATE",
+              "value": "OFF"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "effect": "PATTERN SLICER",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "50"
+            },
+            {
+              "name": "DUTY",
+              "value": "50"
+            },
+            {
+              "name": "ATTACK",
+              "value": "35"
+            },
+            {
+              "name": "PATTERN",
+              "value": "P03"
+            },
+            {
+              "name": "DEPTH",
+              "value": "50"
+            },
+            {
+              "name": "COMP THRESHOLD",
+              "value": "0"
+            },
+            {
+              "name": "COMP GAIN",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "effect": "BEAT REPEAT",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "FORWARD"
+            },
+            {
+              "name": "LENGTH",
+              "value": "1/16"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "effect": "LO-FI",
+          "params": [
+            {
+              "name": "BITDEPTH",
+              "value": "8"
+            },
+            {
+              "name": "SAMPLERATE",
+              "value": "1/4"
+            },
+            {
+              "name": "BALANCE",
+              "value": "30"
+            }
+          ]
+        }
+      ],
+      "tips": [
+        {
+          "type": "performance",
+          "title": "Performance Technique",
+          "text": "Record your base groove with Slot A\u2013C on, Slot D (reverb) at a low level. On playback, engage the Filter Track FX and sweep it for builds. Hit Beat Repeat at transitions for glitchy fills. Turn on Lo-Fi briefly to add texture to a breakdown, then disengage for the drop."
+        },
+        {
+          "type": "setup",
+          "title": "Input Comp & Noise Suppress",
+          "text": "The RC-505mk2 has dedicated Input Compressor and Noise Suppress controls separate from the FX slots. Configure these at MENU > INPUT: set NS THRESHOLD (30-45 for percussion), and INPUT COMP to taste. These work alongside your FX rack \u2014 use Input Comp for basic level control and DYNAMICS in an FX slot for creative compression."
+        }
+      ],
+      "fxTypes": [
+        "BEAT REPEAT",
+        "DYNAMICS",
+        "EQ",
+        "LO-FI",
+        "LPF",
+        "PATTERN SLICER",
+        "REVERB"
+      ],
+      "tags": [
+        "Hip Hop",
+        "Acoustic",
+        "mic"
+      ]
+    },
+    {
+      "id": "perc-electronic",
+      "section": "percussion",
+      "title": "Electronic Percussion Processing Rack",
+      "icon": "\u26a1",
+      "genres": [
+        "EDM",
+        "Dubstep",
+        "Techno"
+      ],
+      "inputType": "mic",
+      "description": "Transforms acoustic percussion input into hard-hitting electronic drum textures. Uses aggressive compression, bitcrushing, and resonant filtering to create machine-like percussion from organic sources.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Crush",
+          "effect": "LO-FI",
+          "params": [
+            {
+              "name": "BITDEPTH",
+              "value": "8"
+            },
+            {
+              "name": "SAMPLERATE",
+              "value": "1/2"
+            },
+            {
+              "name": "BALANCE",
+              "value": "80"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Dynamics",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "DANCE COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "15"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Filter",
+          "effect": "BPF",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "50"
+            },
+            {
+              "name": "DEPTH",
+              "value": "50"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "40"
+            },
+            {
+              "name": "CUTOFF",
+              "value": "70"
+            },
+            {
+              "name": "STEP RATE",
+              "value": "OFF"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Width",
+          "effect": "AUTO PAN",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "50"
+            },
+            {
+              "name": "WAVEFORM",
+              "value": "50"
+            },
+            {
+              "name": "DEPTH",
+              "value": "50"
+            },
+            {
+              "name": "INIT PHASE",
+              "value": "0"
+            },
+            {
+              "name": "STEP RATE",
+              "value": "OFF"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Layering Technique",
+          "text": "Record your crushed electronic percussion on Track 1 at full level. Then switch Input FX to the Acoustic Percussion rack (toggle Slot A off) and layer a clean percussion loop on Track 2 at ~60% volume. The blend of clean + crushed creates depth and punch that neither achieves alone."
+        }
+      ],
+      "fxTypes": [
+        "AUTO PAN",
+        "BPF",
+        "DYNAMICS",
+        "LO-FI"
+      ],
+      "tags": [
+        "EDM",
+        "Dubstep",
+        "Techno",
+        "mic"
+      ]
+    },
+    {
+      "id": "beatbox-clean",
+      "section": "beatbox-foundation",
+      "title": "Clean Beatbox Foundation",
+      "icon": "\ud83d\udc44",
+      "genres": [
+        "Hip Hop",
+        "Beatbox"
+      ],
+      "inputType": "mic",
+      "description": "Optimized for clear, punchy vocal percussion. Manages proximity effect and plosives while enhancing the natural snap and thud of beatbox sounds. The chain keeps things tight and defined.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Gate & Tighten",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "CLEAN COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Punch",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "CLEAN COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Shape",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "5"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "-3"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "500 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "0"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "3.15 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "4"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Optional Color",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "0.8"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "85"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "12"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "setup",
+          "title": "Noise Suppress at Input Level",
+          "text": "Slot A in this rack uses DYNAMICS for gating. For even better noise control, enable Input-level Noise Suppress at MENU > INPUT > NS THRESHOLD (set around 30-40 for beatbox). This works alongside your FX slots for a tighter signal before the chain begins."
+        }
+      ],
+      "fxTypes": [
+        "DYNAMICS",
+        "EQ",
+        "REVERB"
+      ],
+      "tags": [
+        "Hip Hop",
+        "Beatbox",
+        "mic"
+      ]
+    },
+    {
+      "id": "beatbox-synth",
+      "badge": "trending",
+      "section": "beatbox-foundation",
+      "title": "Synth Beatbox / Robo-Percussion",
+      "icon": "\ud83e\udd16",
+      "genres": [
+        "EDM",
+        "Dubstep",
+        "Electronic"
+      ],
+      "inputType": "mic",
+      "description": "Transforms vocal percussion into synthetic, electronic-sounding hits. Uses the built-in SYNTH effect to reshape mouth sounds into something that sounds closer to a drum machine than a human.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Synth Layer",
+          "effect": "SYNTH",
+          "params": [
+            {
+              "name": "FREQUENCY",
+              "value": "70"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "40"
+            },
+            {
+              "name": "DECAY",
+              "value": "50"
+            },
+            {
+              "name": "BALANCE",
+              "value": "65"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Crush",
+          "effect": "LO-FI",
+          "params": [
+            {
+              "name": "BITDEPTH",
+              "value": "8"
+            },
+            {
+              "name": "SAMPLERATE",
+              "value": "1/4"
+            },
+            {
+              "name": "BALANCE",
+              "value": "70"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Dynamics",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "DANCE COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "12"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Space",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "250"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "4"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "70"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "30"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "performance",
+          "title": "Sound Switching",
+          "text": "Record your synth-processed beatbox on Track 1. Then toggle Input FX A (SYNTH) off mid-set \u2014 now your mic captures clean vocals for the next track. Toggle it back on for the next drum layer. Use CTL1/CTL2 assigns to map this toggle for one-button switching between beatbox and vocal modes."
+        }
+      ],
+      "fxTypes": [
+        "DELAY",
+        "DYNAMICS",
+        "LO-FI",
+        "SYNTH"
+      ],
+      "tags": [
+        "EDM",
+        "Dubstep",
+        "Electronic",
+        "mic"
+      ]
+    },
+    {
+      "id": "vocal-tuned",
+      "badge": "popular",
+      "section": "vocal-autotune",
+      "title": "Autotune Vocals (Vocoder + MIDI)",
+      "icon": "\ud83c\udfa4",
+      "genres": [
+        "Hip Hop",
+        "Pop"
+      ],
+      "inputType": "mic",
+      "description": "Creates the hard-tuned, robotic vocal effect popular in modern hip hop and pop. The Vocoder locks pitch to defined intervals while compression and EQ keep the vocal present and polished.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Pitch Lock",
+          "effect": "VOCODER",
+          "params": [
+            {
+              "name": "CARRIER",
+              "value": "INST1-L"
+            },
+            {
+              "name": "TONE",
+              "value": "10"
+            },
+            {
+              "name": "ATTACK",
+              "value": "50"
+            },
+            {
+              "name": "MOD SENS",
+              "value": "0"
+            },
+            {
+              "name": "BALANCE",
+              "value": "75"
+            },
+            {
+              "name": "CARRIER THRU",
+              "value": "OFF"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Body",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "NATURALCOMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Polish",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "-2"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "0"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "800 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "2"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "2.5 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "3"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Depth",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "2.5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "65"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "30"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "setup",
+          "title": "Vocoder Setup Required",
+          "text": "The VOCODER effect requires a carrier signal. Connect a MIDI keyboard's audio output to the RC-505mk2 INST1 input, then set CARRIER to INST1-L. Set MIDI VOICE channel (MENU > MIDI > VOICE CH) to match your keyboard. Play and hold notes on the keyboard while singing \u2014 the vocoder locks your voice to those pitches. Without a carrier audio source, the vocoder will not produce sound. For simpler pitch effects without external gear, try ROBOT, ELECTRIC, or OSC VOC instead."
+        }
+      ],
+      "fxTypes": [
+        "DYNAMICS",
+        "EQ",
+        "REVERB",
+        "VOCODER"
+      ],
+      "tags": [
+        "Hip Hop",
+        "Pop",
+        "mic",
+        "midi-required"
+      ]
+    },
+    {
+      "id": "vocal-harmony",
+      "section": "vocal-layers",
+      "title": "Vocal Harmony / Octave Stack",
+      "icon": "\ud83c\udfb6",
+      "genres": [
+        "All Genres",
+        "Pop"
+      ],
+      "inputType": "mic",
+      "description": "Creates instant vocal harmonies using the Octave and Transpose effects. Great for building vocal stacks on the fly \u2014 record each harmony to a different track for full control.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Harmony",
+          "effect": "OCTAVE",
+          "params": [
+            {
+              "name": "OCTAVE",
+              "value": "-1OCT"
+            },
+            {
+              "name": "MODE",
+              "value": "1"
+            },
+            {
+              "name": "OCT.LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Shift",
+          "effect": "TRANSPOSE",
+          "params": [
+            {
+              "name": "TRANS",
+              "value": "5"
+            },
+            {
+              "name": "MODE",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Glue",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "NATURALCOMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Air",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "2.5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "70"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "30"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "how",
+          "title": "Multi-Pass Harmony Technique",
+          "text": "Pass 1: Record your lead vocal with Octave OFF, Transpose OFF \u2192 Track 1.\nPass 2: Enable Transpose at +5 semi, record harmony \u2192 Track 2.\nPass 3: Shift to +7 semi, record \u2192 Track 3.\nPass 4: Enable Octave -1OCT for bass vocal \u2192 Track 4.\nNow you have a full choir-style stack with individual track volume control."
+        }
+      ],
+      "fxTypes": [
+        "DYNAMICS",
+        "OCTAVE",
+        "REVERB",
+        "TRANSPOSE"
+      ],
+      "tags": [
+        "All Genres",
+        "Pop",
+        "mic"
+      ]
+    },
+    {
+      "id": "vocal-warm",
+      "section": "vocal-creative",
+      "title": "Warm Radio Vocal",
+      "icon": "\ud83c\udf99\ufe0f",
+      "genres": [
+        "R&B",
+        "Pop",
+        "Soul"
+      ],
+      "inputType": "mic",
+      "description": "A polished, present vocal sound \u2014 compression for consistency, EQ for warmth and presence, gentle reverb for depth. Suitable for clean singing loops.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Dynamics",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "NATURALCOMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "7"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Tone",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "-2"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "0"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "800 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "3"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "3 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "2"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Echo",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "500"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "3"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "80"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "20"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Space",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "2.25"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "75"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "25"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [],
+      "fxTypes": [
+        "DELAY",
+        "DYNAMICS",
+        "EQ",
+        "REVERB"
+      ],
+      "tags": [
+        "R&B",
+        "Pop",
+        "Soul",
+        "mic"
+      ]
+    },
+    {
+      "id": "vocal-ambient",
+      "section": "vocal-creative",
+      "title": "Ambient / Ethereal Vocal Wash",
+      "icon": "\ud83c\udf0a",
+      "genres": [
+        "Ambient",
+        "Chillwave",
+        "Downtempo"
+      ],
+      "inputType": "mic",
+      "description": "Creates atmospheric, floating vocal textures \u2014 perfect for ambient pads built from voice. Heavy reverb and delay with pitch shifting for an otherworldly quality.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Shimmer",
+          "effect": "TRANSPOSE",
+          "params": [
+            {
+              "name": "TRANS",
+              "value": "12"
+            },
+            {
+              "name": "MODE",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Time",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "750"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "11"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Wash",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "30"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "80"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Motion",
+          "effect": "FLANGER",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "10"
+            },
+            {
+              "name": "DEPTH",
+              "value": "70"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "50"
+            },
+            {
+              "name": "MANUAL",
+              "value": "50"
+            },
+            {
+              "name": "STEP RATE",
+              "value": "OFF"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "SEPARATION",
+              "value": "50"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Vocal Pad Building",
+          "text": "Sing a sustained note or chord tone into this rack and loop it on a track set to Overdub mode. Each pass layers another shifted, delayed, reverbed voice \u2014 within 3\u20134 passes you have a lush, evolving vocal pad. Set the track's Play Mode to MULTI for seamless looping."
+        }
+      ],
+      "fxTypes": [
+        "DELAY",
+        "FLANGER",
+        "REVERB",
+        "TRANSPOSE"
+      ],
+      "tags": [
+        "Ambient",
+        "Chillwave",
+        "Downtempo",
+        "mic"
+      ]
+    },
+    {
+      "id": "vocal-aggressive",
+      "section": "vocal-creative",
+      "title": "Aggressive Vocal FX (Distorted / Glitch)",
+      "icon": "\ud83d\udd25",
+      "genres": [
+        "Dubstep",
+        "Rock",
+        "Industrial"
+      ],
+      "inputType": "mic",
+      "description": "Harsh, distorted vocal processing for aggressive genres. Transforms clean vocals into gritty, processed textures for breakdowns, drops, and heavy sections.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Distortion",
+          "effect": "PREAMP",
+          "params": [
+            {
+              "name": "AMP TYPE",
+              "value": "CORE METAL"
+            },
+            {
+              "name": "SPK TYPE",
+              "value": "4x12\""
+            },
+            {
+              "name": "GAIN",
+              "value": "80"
+            },
+            {
+              "name": "T-COMP",
+              "value": "5"
+            },
+            {
+              "name": "BASS",
+              "value": "50"
+            },
+            {
+              "name": "MIDDLE",
+              "value": "60"
+            },
+            {
+              "name": "TREBLE",
+              "value": "40"
+            },
+            {
+              "name": "PRESENCE",
+              "value": "50"
+            },
+            {
+              "name": "MIC TYPE",
+              "value": "DYN57"
+            },
+            {
+              "name": "MIC DIS",
+              "value": "OFF MIC"
+            },
+            {
+              "name": "MIC POS",
+              "value": "CENTER"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Shape",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "3"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "5"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "1.5 kHz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "0"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "3.15 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "-2"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Crush",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "HARD COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "15"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Tail",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "250"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "80"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "20"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "warning",
+          "title": "Gain Staging Note",
+          "text": "When using PREAMP on vocals, the gain structure is very different from actual guitar input. Lower your input level to ~60% before engaging this effect, or you'll get uncontrolled clipping. Adjust the GAIN parameter to taste \u2014 on vocals, even GAIN at 50 sounds heavily distorted."
+        }
+      ],
+      "fxTypes": [
+        "DELAY",
+        "DYNAMICS",
+        "EQ",
+        "PREAMP"
+      ],
+      "tags": [
+        "Dubstep",
+        "Rock",
+        "Industrial",
+        "mic"
+      ]
+    },
+    {
+      "id": "guitar-clean",
+      "section": "guitar-clean",
+      "title": "Clean / Neo-Soul / Lo-Fi Guitar",
+      "icon": "\ud83c\udfb8",
+      "genres": [
+        "Lo-Fi Hip Hop",
+        "Neo-Soul",
+        "Chill"
+      ],
+      "inputType": "inst",
+      "description": "Warm, round clean guitar tone \u2014 the kind used in lo-fi beats, neo-soul jams, and chill production. Gentle chorus for width, compression for evenness.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Amp",
+          "effect": "PREAMP",
+          "params": [
+            {
+              "name": "AMP TYPE",
+              "value": "JC-120"
+            },
+            {
+              "name": "SPK TYPE",
+              "value": "ORIGINAL"
+            },
+            {
+              "name": "GAIN",
+              "value": "15"
+            },
+            {
+              "name": "T-COMP",
+              "value": "0"
+            },
+            {
+              "name": "BASS",
+              "value": "50"
+            },
+            {
+              "name": "MIDDLE",
+              "value": "55"
+            },
+            {
+              "name": "TREBLE",
+              "value": "50"
+            },
+            {
+              "name": "PRESENCE",
+              "value": "50"
+            },
+            {
+              "name": "MIC TYPE",
+              "value": "DYN57"
+            },
+            {
+              "name": "MIC DIS",
+              "value": "OFF MIC"
+            },
+            {
+              "name": "MIC POS",
+              "value": "CENTER"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "80"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Width",
+          "effect": "CHORUS",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "20"
+            },
+            {
+              "name": "DEPTH",
+              "value": "40"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "40"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Sustain",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "NATURALCOMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Space",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "750"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "80"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "20"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [],
+      "fxTypes": [
+        "CHORUS",
+        "DELAY",
+        "DYNAMICS",
+        "PREAMP"
+      ],
+      "tags": [
+        "Lo-Fi Hip Hop",
+        "Neo-Soul",
+        "Chill",
+        "inst"
+      ]
+    },
+    {
+      "id": "guitar-distorted",
+      "section": "guitar-driven",
+      "title": "Distorted / Rock / Metal Guitar",
+      "icon": "\ud83d\udd25",
+      "genres": [
+        "Rock",
+        "Metal",
+        "Industrial"
+      ],
+      "inputType": "inst",
+      "description": "High-gain guitar processing for rock and metal \u2014 drive, tight low-end, and presence. Uses PREAMP's heavier amp models with sculpted EQ for modern tones.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Amp",
+          "effect": "PREAMP",
+          "params": [
+            {
+              "name": "AMP TYPE",
+              "value": "HIGAIN STACK"
+            },
+            {
+              "name": "SPK TYPE",
+              "value": "4x12\""
+            },
+            {
+              "name": "GAIN",
+              "value": "80"
+            },
+            {
+              "name": "T-COMP",
+              "value": "5"
+            },
+            {
+              "name": "BASS",
+              "value": "50"
+            },
+            {
+              "name": "MIDDLE",
+              "value": "60"
+            },
+            {
+              "name": "TREBLE",
+              "value": "55"
+            },
+            {
+              "name": "PRESENCE",
+              "value": "60"
+            },
+            {
+              "name": "MIC TYPE",
+              "value": "DYN57"
+            },
+            {
+              "name": "MIC DIS",
+              "value": "OFF MIC"
+            },
+            {
+              "name": "MIC POS",
+              "value": "CENTER"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "75"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Tighten",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "-3"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "0"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "100 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "3"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "2 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "2"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Tighten",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "HARD COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Ambience",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "1.2"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "90"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "12"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [],
+      "fxTypes": [
+        "DYNAMICS",
+        "EQ",
+        "PREAMP",
+        "REVERB"
+      ],
+      "tags": [
+        "Rock",
+        "Metal",
+        "Industrial",
+        "inst"
+      ]
+    },
+    {
+      "id": "guitar-ambient",
+      "section": "guitar-atmospheric",
+      "title": "Ambient / Post-Rock Guitar",
+      "icon": "\ud83c\udf0c",
+      "genres": [
+        "Ambient",
+        "Post-Rock",
+        "Shoegaze"
+      ],
+      "inputType": "inst",
+      "description": "Swelling, washy guitar textures for ambient soundscapes. Uses Slow Gear for volume swells, with heavy delay and reverb to create evolving, cinematic layers.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Swell",
+          "effect": "SLOW GEAR",
+          "params": [
+            {
+              "name": "SENS",
+              "value": "60"
+            },
+            {
+              "name": "RISE TIME",
+              "value": "50"
+            },
+            {
+              "name": "LEVEL",
+              "value": "80"
+            },
+            {
+              "name": "MODE",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Shimmer",
+          "effect": "TRANSPOSE",
+          "params": [
+            {
+              "name": "TRANS",
+              "value": "12"
+            },
+            {
+              "name": "MODE",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Time",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "750"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "12"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Wash",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "20"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "80"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "performance",
+          "title": "Ambient Building",
+          "text": "Set a track to Overdub mode. Play a chord, let the Slow Gear swell it in, and the delay/reverb will smear it into a wash. Each overdub pass adds another layer. After 3\u20134 passes, stop recording but keep playing back \u2014 you now have a rich ambient bed. Add Track FX Filter (LPF) and slowly close it for a fading, cinematic effect."
+        }
+      ],
+      "fxTypes": [
+        "DELAY",
+        "REVERB",
+        "SLOW GEAR",
+        "TRANSPOSE"
+      ],
+      "tags": [
+        "Ambient",
+        "Post-Rock",
+        "Shoegaze",
+        "inst"
+      ]
+    },
+    {
+      "id": "keys-clean",
+      "section": "keys",
+      "title": "Clean Keys / Electric Piano",
+      "icon": "\ud83c\udfb9",
+      "genres": [
+        "Neo-Soul",
+        "Jazz",
+        "Pop"
+      ],
+      "inputType": "inst",
+      "description": "For Rhodes, Wurlitzer, or clean synth patches. Adds warmth, subtle motion, and space without coloring the keyboard's native tone too heavily.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Motion",
+          "effect": "PHASER",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "12"
+            },
+            {
+              "name": "DEPTH",
+              "value": "40"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "30"
+            },
+            {
+              "name": "MANUAL",
+              "value": "50"
+            },
+            {
+              "name": "STEP RATE",
+              "value": "OFF"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "STAGE",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Dynamics",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "NATURALCOMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Warmth",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "2"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "0"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "150 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "-1"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "1 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "2"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Space",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "1.75"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "80"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "20"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [],
+      "fxTypes": [
+        "DYNAMICS",
+        "EQ",
+        "PHASER",
+        "REVERB"
+      ],
+      "tags": [
+        "Neo-Soul",
+        "Jazz",
+        "Pop",
+        "inst"
+      ]
+    },
+    {
+      "id": "keys-synth",
+      "section": "keys",
+      "title": "Synth Lead / Bass Processing",
+      "icon": "\u26a1",
+      "genres": [
+        "EDM",
+        "Dubstep",
+        "Synthwave"
+      ],
+      "inputType": "inst",
+      "description": "For external synths and bass synths \u2014 adds movement, grit, and rhythmic interest using the RC-505mk2's own FX chain on top of your synth's sound.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Movement",
+          "effect": "LPF",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "30"
+            },
+            {
+              "name": "DEPTH",
+              "value": "60"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "50"
+            },
+            {
+              "name": "CUTOFF",
+              "value": "70"
+            },
+            {
+              "name": "STEP RATE",
+              "value": "OFF"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Grit",
+          "effect": "LO-FI",
+          "params": [
+            {
+              "name": "BITDEPTH",
+              "value": "8"
+            },
+            {
+              "name": "SAMPLERATE",
+              "value": "1/4"
+            },
+            {
+              "name": "BALANCE",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Punch",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "DANCE COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Feedback",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "125"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "8"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "75"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "25"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [],
+      "fxTypes": [
+        "DELAY",
+        "DYNAMICS",
+        "LO-FI",
+        "LPF"
+      ],
+      "tags": [
+        "EDM",
+        "Dubstep",
+        "Synthwave",
+        "inst"
+      ]
+    },
+    {
+      "id": "vocal-robot",
+      "section": "vocal-autotune",
+      "title": "Robot Voice / Daft Punk Style",
+      "icon": "\ud83e\udd16",
+      "genres": [
+        "EDM",
+        "Pop",
+        "Electronic"
+      ],
+      "inputType": "mic",
+      "description": "Classic robotic vocal effect \u2014 locks pitch to a fixed note for that iconic Daft Punk sound. No MIDI keyboard required. Change the NOTE parameter between takes to create melodies.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Robot",
+          "effect": "ROBOT",
+          "params": [
+            {
+              "name": "NOTE",
+              "value": "C"
+            },
+            {
+              "name": "FORMANT",
+              "value": "0"
+            },
+            {
+              "name": "MODE",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Body",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "VOCAL COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Width",
+          "effect": "CHORUS",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "20"
+            },
+            {
+              "name": "DEPTH",
+              "value": "40"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Space",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "1.5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "20"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "60"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "30"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "performance",
+          "title": "Melody Building",
+          "text": "ROBOT locks your voice to a fixed pitch set by the NOTE parameter. Change NOTE between takes to create melodies \u2014 C for verse, E for pre-chorus, G for chorus. Use CTL assigns to switch NOTE values on the fly. For chords, record each note to a separate track with different NOTE values."
+        }
+      ],
+      "fxTypes": [
+        "CHORUS",
+        "DYNAMICS",
+        "REVERB",
+        "ROBOT"
+      ],
+      "tags": [
+        "EDM",
+        "Pop",
+        "Electronic",
+        "mic"
+      ]
+    },
+    {
+      "id": "vocal-electric",
+      "section": "vocal-autotune",
+      "title": "Electric Pitch Correction (No MIDI)",
+      "icon": "\u26a1",
+      "genres": [
+        "Pop",
+        "Hip Hop",
+        "R&B"
+      ],
+      "inputType": "mic",
+      "description": "Subtle to aggressive pitch correction using ELECTRIC effect. Set SCALE to your song's key for automatic pitch snapping. No external gear required \u2014 great T-Pain alternative without MIDI.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Pitch Correct",
+          "effect": "ELECTRIC",
+          "params": [
+            {
+              "name": "SHIFT",
+              "value": "0"
+            },
+            {
+              "name": "FORMANT",
+              "value": "0"
+            },
+            {
+              "name": "SPEED",
+              "value": "3"
+            },
+            {
+              "name": "STABILITY",
+              "value": "5"
+            },
+            {
+              "name": "SCALE",
+              "value": "C (Am)"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Body",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "VOCAL COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Polish",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "-2"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "0"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "800 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "2"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "3 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "2"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Echo",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "375"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "3"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "80"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "8 kHz"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "20"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Speed Controls the Vibe",
+          "text": "SPEED controls how aggressively the pitch snaps. Low values (2-3) give smooth, natural correction \u2014 your voice glides to the correct note. Higher values (7-10) create the hard, robotic T-Pain snap. SCALE must match your song's key or the correction will sound wrong. STABILITY controls how easily pitch changes \u2014 higher values resist pitch changes more."
+        }
+      ],
+      "fxTypes": [
+        "DELAY",
+        "DYNAMICS",
+        "ELECTRIC",
+        "EQ"
+      ],
+      "tags": [
+        "Pop",
+        "Hip Hop",
+        "R&B",
+        "mic"
+      ]
+    },
+    {
+      "id": "vocal-oscvoc",
+      "section": "vocal-autotune",
+      "title": "OSC Vocoder (No MIDI Required)",
+      "icon": "\ud83c\udf9b\ufe0f",
+      "genres": [
+        "EDM",
+        "Electronic",
+        "Synthwave"
+      ],
+      "inputType": "mic",
+      "description": "Creates a vocoder sound using a built-in oscillator as the carrier \u2014 no MIDI keyboard needed. Your voice shapes the oscillator's tone for that classic talk-box/vocoder texture.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Vocoder",
+          "effect": "OSC VOC",
+          "params": [
+            {
+              "name": "CARRIER",
+              "value": "SAW"
+            },
+            {
+              "name": "TONE",
+              "value": "0"
+            },
+            {
+              "name": "ATTACK",
+              "value": "50"
+            },
+            {
+              "name": "OCTAVE",
+              "value": "0"
+            },
+            {
+              "name": "MOD SENS",
+              "value": "0"
+            },
+            {
+              "name": "RELEASE",
+              "value": "50"
+            },
+            {
+              "name": "BALANCE",
+              "value": "70"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Body",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "NATURALCOMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Width",
+          "effect": "CHORUS",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "15"
+            },
+            {
+              "name": "DEPTH",
+              "value": "30"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "60"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "40"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Space",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "2"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "10"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "60"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "25"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Waveform Selection",
+          "text": "Change the CARRIER waveform for different textures: SAW is bright and buzzy (classic vocoder), VINTAGE SAW is warmer, SQUARE is hollow and synthetic, RECT is nasal. OCTAVE shifts the oscillator pitch \u2014 try -1OCT for a deep vocoder bass or +1OCT for a chipmunk effect. Requires MIDI keyboard for pitch control."
+        }
+      ],
+      "fxTypes": [
+        "CHORUS",
+        "DYNAMICS",
+        "OSC VOC",
+        "REVERB"
+      ],
+      "tags": [
+        "EDM",
+        "Electronic",
+        "Synthwave",
+        "mic",
+        "midi-required"
+      ]
+    },
+    {
+      "id": "vocal-lofi",
+      "section": "vocal-creative",
+      "title": "Lo-Fi / Vintage Vocal",
+      "icon": "\ud83d\udcfb",
+      "genres": [
+        "Lo-Fi",
+        "Hip Hop",
+        "Chill"
+      ],
+      "inputType": "mic",
+      "description": "Authentic vintage vocal character \u2014 bitcrushing combined with tape echo creates the sound of recording on a worn cassette deck. Perfect for lo-fi hip hop vocal samples.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Degrade",
+          "effect": "LO-FI",
+          "params": [
+            {
+              "name": "BITDEPTH",
+              "value": "12"
+            },
+            {
+              "name": "SAMPLERATE",
+              "value": "1/4"
+            },
+            {
+              "name": "BALANCE",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Tape",
+          "effect": "TAPE ECHO1",
+          "params": [
+            {
+              "name": "REPEAT RATE",
+              "value": "40"
+            },
+            {
+              "name": "INTENSITY",
+              "value": "30"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "60"
+            },
+            {
+              "name": "BASS",
+              "value": "10"
+            },
+            {
+              "name": "TREBLE",
+              "value": "-10"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "30"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Glue",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "SOFT COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Room",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "1.5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "30"
+            },
+            {
+              "name": "DENSITY",
+              "value": "3"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "70"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "200 Hz"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "6 kHz"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "20"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Vintage Vibe",
+          "text": "LO-FI bitcrushing + TAPE ECHO creates an authentic vintage/cassette feel. The LOW CUT and HIGH CUT on the reverb narrow the frequency range for that old recording sound. Boost TAPE ECHO BASS for a warmer tone, or increase LO-FI BITDEPTH degradation (lower number = more crushed)."
+        }
+      ],
+      "fxTypes": [
+        "DYNAMICS",
+        "LO-FI",
+        "REVERB",
+        "TAPE ECHO1"
+      ],
+      "tags": [
+        "Lo-Fi",
+        "Hip Hop",
+        "Chill",
+        "mic"
+      ]
+    },
+    {
+      "id": "vocal-telephone",
+      "section": "vocal-creative",
+      "title": "Telephone / Radio Voice",
+      "icon": "\u260e\ufe0f",
+      "genres": [
+        "Hip Hop",
+        "Pop",
+        "Electronic"
+      ],
+      "inputType": "mic",
+      "description": "Narrow-band vocal processing that mimics a telephone line or old radio broadcast. Great for breakdowns, intros, and dramatic contrast against clean vocals.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Radio",
+          "effect": "RADIO",
+          "params": [
+            {
+              "name": "LO-FI",
+              "value": "5"
+            },
+            {
+              "name": "LEVEL",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Narrow",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "-15"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "-5"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "200 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "5"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "2 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "4"
+            },
+            {
+              "name": "HIGH",
+              "value": "-10"
+            },
+            {
+              "name": "LEVEL",
+              "value": "55"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Phone",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "PHONE VOX"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Ambience",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "100"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "2"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "80"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "300 Hz"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "4 kHz"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "15"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "performance",
+          "title": "Dramatic Contrast",
+          "text": "Layer this as a breakdown or bridge vocal on a separate track. Switch to this rack mid-performance for dramatic contrast against your clean vocal \u2014 the sudden narrow bandwidth is an ear-catching effect. Try singing the first line of a chorus through this rack, then switching to a full-range rack for the rest."
+        }
+      ],
+      "fxTypes": [
+        "DELAY",
+        "DYNAMICS",
+        "EQ",
+        "RADIO"
+      ],
+      "tags": [
+        "Hip Hop",
+        "Pop",
+        "Electronic",
+        "mic"
+      ]
+    },
+    {
+      "id": "vocal-glitch",
+      "section": "vocal-creative",
+      "title": "Vocal Chop / Glitch Machine",
+      "icon": "\ud83d\udd00",
+      "genres": [
+        "EDM",
+        "Dubstep",
+        "Electronic"
+      ],
+      "inputType": "mic",
+      "description": "Transforms sustained vocals into rhythmic glitch patterns. Granular delay + pattern slicer chops and stutters your voice into something entirely new.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Compress",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "HARD COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "15"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Grain",
+          "effect": "GRANULAR DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "30"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "80"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Chop",
+          "effect": "PATTERN SLICER",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "50"
+            },
+            {
+              "name": "DUTY",
+              "value": "50"
+            },
+            {
+              "name": "ATTACK",
+              "value": "35"
+            },
+            {
+              "name": "PATTERN",
+              "value": "P05"
+            },
+            {
+              "name": "DEPTH",
+              "value": "80"
+            },
+            {
+              "name": "COMP THRESHOLD",
+              "value": "-10"
+            },
+            {
+              "name": "COMP GAIN",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Space",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "250"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "6"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "40"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Glitch Technique",
+          "text": "Sing sustained notes or short phrases into this rack. The Granular Delay + Pattern Slicer combination chops and stutters your voice into rhythmic glitch patterns. Record the result, then overdub clean vocals on top for a textured contrast. Try different PATTERN values (P01-P20) for different rhythmic feels."
+        }
+      ],
+      "fxTypes": [
+        "DELAY",
+        "DYNAMICS",
+        "GRANULAR DELAY",
+        "PATTERN SLICER"
+      ],
+      "tags": [
+        "EDM",
+        "Dubstep",
+        "Electronic",
+        "mic"
+      ]
+    },
+    {
+      "id": "vocal-whisper",
+      "section": "vocal-creative",
+      "title": "Whisper to Scream (Extreme Dynamics)",
+      "icon": "\ud83c\udf2a\ufe0f",
+      "genres": [
+        "Rock",
+        "Industrial",
+        "Electronic"
+      ],
+      "inputType": "mic",
+      "description": "Heavy limiting makes whispers nearly as loud as shouts, while distortion adds natural grit that increases with input level. Whispers stay clean, loud singing breaks up.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Limit",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "HARD LIM"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "18"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Grit",
+          "effect": "DIST",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "VOCAL"
+            },
+            {
+              "name": "TONE",
+              "value": "0"
+            },
+            {
+              "name": "DIST",
+              "value": "30"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Shape",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "-5"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "3"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "1 kHz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "5"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "4 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HIGH",
+              "value": "3"
+            },
+            {
+              "name": "LEVEL",
+              "value": "55"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Space",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "2"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "35"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "warning",
+          "title": "Dynamics Control",
+          "text": "HARD LIM with high DYNAMICS compresses whispers to be nearly as loud as shouts. The DIST (VOCAL type) adds grit that increases with input level \u2014 whispers stay clean, louder singing breaks up naturally. Great for building intensity within a single take. Watch your monitoring levels \u2014 the limiting makes everything loud."
+        }
+      ],
+      "fxTypes": [
+        "DIST",
+        "DYNAMICS",
+        "EQ",
+        "REVERB"
+      ],
+      "tags": [
+        "Rock",
+        "Industrial",
+        "Electronic",
+        "mic"
+      ]
+    },
+    {
+      "id": "vocal-choir",
+      "section": "vocal-layers",
+      "title": "Choir Builder / Vocal Pad",
+      "icon": "\ud83d\udc65",
+      "genres": [
+        "All Genres",
+        "Pop",
+        "Ambient"
+      ],
+      "inputType": "mic",
+      "description": "Builds lush vocal pads and choir textures through overdub layering. Transpose + chorus + long reverb glues multiple vocal passes into a cohesive pad.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Harmony",
+          "effect": "TRANSPOSE",
+          "params": [
+            {
+              "name": "TRANS",
+              "value": "7"
+            },
+            {
+              "name": "MODE",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Thicken",
+          "effect": "CHORUS",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "10"
+            },
+            {
+              "name": "DEPTH",
+              "value": "60"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Glue",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "VOCAL COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Wash",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "30"
+            },
+            {
+              "name": "DENSITY",
+              "value": "8"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "40"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "100 Hz"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "8 kHz"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "60"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "how",
+          "title": "Multi-Pass Choir",
+          "text": "Use Overdub mode to stack vocal layers. Pass 1: Sing root notes with TRANS at +7 (perfect 5th). Pass 2: Change TRANS to +5 (major 3rd). Pass 3: Change TRANS to +12 (octave). Pass 4: Set TRANS to 0 and sing the root. Each pass adds another harmony layer. The heavy chorus + long reverb glues layers into a pad-like wash."
+        }
+      ],
+      "fxTypes": [
+        "CHORUS",
+        "DYNAMICS",
+        "REVERB",
+        "TRANSPOSE"
+      ],
+      "tags": [
+        "All Genres",
+        "Pop",
+        "Ambient",
+        "mic"
+      ]
+    },
+    {
+      "id": "vocal-double",
+      "section": "vocal-layers",
+      "title": "Double-Tracked Vocals",
+      "icon": "\ud83c\udf99\ufe0f",
+      "genres": [
+        "Pop",
+        "Rock",
+        "R&B",
+        "All Genres"
+      ],
+      "inputType": "mic",
+      "description": "Creates the illusion of two voices singing together using a very short modulated delay. Thickens any vocal without sounding obviously processed.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Dynamics",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "NATURALCOMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Double",
+          "effect": "MOD DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "30"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "1"
+            },
+            {
+              "name": "MOD DEPTH",
+              "value": "40"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "70"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Shape",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "-1"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "0"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "800 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "2"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "3 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "1"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Wide",
+          "effect": "STEREO ENHANCE",
+          "params": [
+            {
+              "name": "LOW CUT",
+              "value": "200 Hz"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "ENHANCE",
+              "value": "60"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Natural Doubling",
+          "text": "MOD DELAY with very short TIME (25-35ms) and single repeat creates a natural doubling effect \u2014 like two voices singing slightly out of sync. STEREO ENHANCE widens the image. This thickens any vocal without sounding obviously effected. Works on lead vocals, harmonies, and even spoken word."
+        }
+      ],
+      "fxTypes": [
+        "DYNAMICS",
+        "EQ",
+        "MOD DELAY",
+        "STEREO ENHANCE"
+      ],
+      "tags": [
+        "Pop",
+        "Rock",
+        "R&B",
+        "All Genres",
+        "mic"
+      ]
+    },
+    {
+      "id": "bb-subbass",
+      "section": "beatbox-instruments",
+      "title": "Voice \u2192 Sub-Bass / 808 Kick",
+      "icon": "\ud83d\udca5",
+      "genres": [
+        "Hip Hop",
+        "EDM",
+        "Dubstep"
+      ],
+      "inputType": "mic",
+      "description": "Transforms vocal bass sounds into deep sub-bass and 808-style kicks using G2B and Octave effects. The foundation of any beatbox bass line.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Bass Gen",
+          "effect": "G2B",
+          "params": [
+            {
+              "name": "BALANCE",
+              "value": "75"
+            },
+            {
+              "name": "MODE",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Sub Layer",
+          "effect": "OCTAVE",
+          "params": [
+            {
+              "name": "OCTAVE",
+              "value": "-1OCT"
+            },
+            {
+              "name": "MODE",
+              "value": "2"
+            },
+            {
+              "name": "OCT.LEVEL",
+              "value": "70"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Thump",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "LOW BOOST"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "15"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Shape",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "10"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "-5"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "200 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "-10"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "2 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "-15"
+            },
+            {
+              "name": "LEVEL",
+              "value": "55"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "how",
+          "title": "808 Kick Technique",
+          "text": "TECHNIQUE: Hum a low 'mmm' sound from your chest, not your throat. Place the mic close to (or touching) your throat for maximum bass pickup. For a punchy 808 kick, make a sharp 'BOH' sound using your diaphragm \u2014 keep it short and explosive. G2B tracks your pitch and generates bass. For sustained sub-bass, hold a steady low hum and let G2B + OCTAVE generate the sub frequencies."
+        }
+      ],
+      "fxTypes": [
+        "DYNAMICS",
+        "EQ",
+        "G2B",
+        "OCTAVE"
+      ],
+      "tags": [
+        "Hip Hop",
+        "EDM",
+        "Dubstep",
+        "mic"
+      ]
+    },
+    {
+      "id": "bb-bass",
+      "section": "beatbox-instruments",
+      "title": "Voice \u2192 Electric Bass Line",
+      "icon": "\ud83c\udfb8",
+      "genres": [
+        "Hip Hop",
+        "R&B",
+        "Neo-Soul",
+        "All Genres"
+      ],
+      "inputType": "mic",
+      "description": "Creates playable electric bass tones from your voice using dual octave generation and filtered warmth. Sing melodies and the RC-505mk2 turns them into bass lines.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Octaves",
+          "effect": "OCTAVE",
+          "params": [
+            {
+              "name": "OCTAVE",
+              "value": "-1OCT&-2OCT"
+            },
+            {
+              "name": "MODE",
+              "value": "2"
+            },
+            {
+              "name": "OCT.LEVEL",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Punch",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "DANCE COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "12"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Warmth",
+          "effect": "LPF",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "50"
+            },
+            {
+              "name": "DEPTH",
+              "value": "50"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "30"
+            },
+            {
+              "name": "CUTOFF",
+              "value": "60"
+            },
+            {
+              "name": "STEP RATE",
+              "value": "OFF"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Shape",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "8"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "3"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "300 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "-5"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "2 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "-8"
+            },
+            {
+              "name": "LEVEL",
+              "value": "55"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "how",
+          "title": "Bass Line Technique",
+          "text": "TECHNIQUE: Sing a sustained 'doo' or 'daa' at a comfortable mid-range pitch. The OCTAVE effect adds both -1 and -2 octave harmonics below your voice. Articulate each note cleanly \u2014 sloppy transitions between notes create pitch tracking artifacts. Use your tongue ('da-da-da') for a more plucked/fingered bass feel. For a slap bass sound, use a sharp 'Pa' or 'Ta' attack."
+        }
+      ],
+      "fxTypes": [
+        "DYNAMICS",
+        "EQ",
+        "LPF",
+        "OCTAVE"
+      ],
+      "tags": [
+        "Hip Hop",
+        "R&B",
+        "Neo-Soul",
+        "All Genres",
+        "mic"
+      ]
+    },
+    {
+      "id": "bb-trumpet",
+      "section": "beatbox-instruments",
+      "title": "Voice \u2192 Trumpet / Brass",
+      "icon": "\ud83c\udfba",
+      "genres": [
+        "Jazz",
+        "Hip Hop",
+        "Soul",
+        "All Genres"
+      ],
+      "inputType": "mic",
+      "description": "Mimics brass instrument tone by adding harmonic overtones to lip buzzing. Distortion adds the resonant quality of a brass bell while EQ shapes the characteristic presence peak.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Brass",
+          "effect": "DIST",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "BOOST"
+            },
+            {
+              "name": "TONE",
+              "value": "20"
+            },
+            {
+              "name": "DIST",
+              "value": "25"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "40"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Shape",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "-5"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "3"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "500 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "8"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "2.5 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "4"
+            },
+            {
+              "name": "HIGH",
+              "value": "3"
+            },
+            {
+              "name": "LEVEL",
+              "value": "55"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Body",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "NATURALCOMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Room",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "1.5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "20"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "60"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "200 Hz"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "25"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "how",
+          "title": "Brass Sound Technique",
+          "text": "TECHNIQUE: Buzz your lips together like blowing a raspberry, but with more control and steady pitch. Press the mic directly against your lips to capture the buzz. Shape notes by changing the tightness of your lip buzz \u2014 tighter = higher pitch. The DIST (BOOST) adds harmonic overtones that mimic brass resonance, while the EQ boosts the 2-3 kHz presence range where brass instruments naturally project."
+        }
+      ],
+      "fxTypes": [
+        "DIST",
+        "DYNAMICS",
+        "EQ",
+        "REVERB"
+      ],
+      "tags": [
+        "Jazz",
+        "Hip Hop",
+        "Soul",
+        "All Genres",
+        "mic"
+      ]
+    },
+    {
+      "id": "bb-strings",
+      "section": "beatbox-instruments",
+      "title": "Voice \u2192 Violin / Strings",
+      "icon": "\ud83c\udfbb",
+      "genres": [
+        "Ambient",
+        "Pop",
+        "All Genres"
+      ],
+      "inputType": "mic",
+      "description": "Creates bowed string instrument textures from hummed notes. Slow Gear provides natural volume swells like bow strokes while chorus and reverb add ensemble width.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Bow Swell",
+          "effect": "SLOW GEAR",
+          "params": [
+            {
+              "name": "SENS",
+              "value": "70"
+            },
+            {
+              "name": "RISE TIME",
+              "value": "60"
+            },
+            {
+              "name": "LEVEL",
+              "value": "80"
+            },
+            {
+              "name": "MODE",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Pitch",
+          "effect": "TRANSPOSE",
+          "params": [
+            {
+              "name": "TRANS",
+              "value": "0"
+            },
+            {
+              "name": "MODE",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Ensemble",
+          "effect": "CHORUS",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "8"
+            },
+            {
+              "name": "DEPTH",
+              "value": "50"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Hall",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "3"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "20"
+            },
+            {
+              "name": "DENSITY",
+              "value": "7"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "100 Hz"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "40"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "how",
+          "title": "String Sound Technique",
+          "text": "TECHNIQUE: Hum a sustained 'eee' through your nose with slight vibrato. The nasal resonance mimics the thin, harmonic-rich quality of bowed strings. SLOW GEAR creates natural volume swells like a bow stroke. Stack multiple passes on Overdub mode \u2014 change TRANS between passes (+5, +7, +12) to build a full string section. Keep each note long and steady for the most realistic result."
+        }
+      ],
+      "fxTypes": [
+        "CHORUS",
+        "REVERB",
+        "SLOW GEAR",
+        "TRANSPOSE"
+      ],
+      "tags": [
+        "Ambient",
+        "Pop",
+        "All Genres",
+        "mic"
+      ]
+    },
+    {
+      "id": "bb-wobble",
+      "badge": "new",
+      "section": "beatbox-electronic",
+      "title": "Dubstep Wobble Bass from Voice",
+      "icon": "\ud83d\udd0a",
+      "genres": [
+        "Dubstep",
+        "EDM",
+        "Electronic"
+      ],
+      "inputType": "mic",
+      "description": "Transforms lip bass into a classic dubstep wobble using the SYNTH effect with a resonant sweeping filter. Assign LPF cutoff to a knob for live wobble control.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Synth",
+          "effect": "SYNTH",
+          "params": [
+            {
+              "name": "FREQUENCY",
+              "value": "40"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "70"
+            },
+            {
+              "name": "DECAY",
+              "value": "60"
+            },
+            {
+              "name": "BALANCE",
+              "value": "80"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Wobble",
+          "effect": "LPF",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "30"
+            },
+            {
+              "name": "DEPTH",
+              "value": "80"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "60"
+            },
+            {
+              "name": "CUTOFF",
+              "value": "40"
+            },
+            {
+              "name": "STEP RATE",
+              "value": "OFF"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Dirt",
+          "effect": "DIST",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "METAL"
+            },
+            {
+              "name": "TONE",
+              "value": "-10"
+            },
+            {
+              "name": "DIST",
+              "value": "40"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "30"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "70"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Crush",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "HARD COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "15"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "how",
+          "title": "Wobble Bass Technique",
+          "text": "TECHNIQUE: Make a sustained lip bass or throat bass \u2014 a continuous 'brrr' vibration with your lips barely touching. The SYNTH reshapes this into a synth tone, the LPF with high RESONANCE creates the wobble sweep. Assign LPF CUTOFF to a CTL knob and sweep it manually in rhythm for a live wobble. For automated wobble, lower the LPF RATE value."
+        }
+      ],
+      "fxTypes": [
+        "DIST",
+        "DYNAMICS",
+        "LPF",
+        "SYNTH"
+      ],
+      "tags": [
+        "Dubstep",
+        "EDM",
+        "Electronic",
+        "mic"
+      ]
+    },
+    {
+      "id": "bb-synthlead",
+      "section": "beatbox-electronic",
+      "title": "Voice \u2192 EDM Synth Lead",
+      "icon": "\ud83c\udfb9",
+      "genres": [
+        "EDM",
+        "Electronic",
+        "Synthwave"
+      ],
+      "inputType": "mic",
+      "description": "Transforms clean singing into synthesizer lead tones. The SYNTH effect tracks your pitch while overdrive and delay add character and dimension.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Synth",
+          "effect": "SYNTH",
+          "params": [
+            {
+              "name": "FREQUENCY",
+              "value": "60"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "50"
+            },
+            {
+              "name": "DECAY",
+              "value": "40"
+            },
+            {
+              "name": "BALANCE",
+              "value": "70"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Drive",
+          "effect": "DIST",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "OD"
+            },
+            {
+              "name": "TONE",
+              "value": "10"
+            },
+            {
+              "name": "DIST",
+              "value": "30"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "40"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Echo",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "375"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "4"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "60"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "6 kHz"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "35"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Space",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "1.5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "60"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "25"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "how",
+          "title": "Synth Lead Technique",
+          "text": "TECHNIQUE: Sing or hum clean, sustained notes. The SYNTH effect tracks your pitch and generates a synthesizer tone. Articulate precisely \u2014 each note should start clean. For a plucked synth sound, use short 'da' or 'ta' syllables. For sustained leads, use 'ooo' with steady breath support. Higher FREQUENCY values make the synth brighter; lower values make it darker."
+        }
+      ],
+      "fxTypes": [
+        "DELAY",
+        "DIST",
+        "REVERB",
+        "SYNTH"
+      ],
+      "tags": [
+        "EDM",
+        "Electronic",
+        "Synthwave",
+        "mic"
+      ]
+    },
+    {
+      "id": "bb-drummachine",
+      "section": "beatbox-electronic",
+      "title": "Vocal Drum Machine",
+      "icon": "\ud83e\udd41",
+      "genres": [
+        "Electronic",
+        "Hip Hop",
+        "Synthwave"
+      ],
+      "inputType": "mic",
+      "description": "Heavy bitcrushing and compression transform organic mouth percussion into tight, digital drum machine hits. Gate reverb adds the punchy 80s drum machine ambience.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Crush",
+          "effect": "LO-FI",
+          "params": [
+            {
+              "name": "BITDEPTH",
+              "value": "6"
+            },
+            {
+              "name": "SAMPLERATE",
+              "value": "1/2"
+            },
+            {
+              "name": "BALANCE",
+              "value": "80"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Smash",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "HARD COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "18"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Shape",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "5"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "-3"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "400 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "5"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "5 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HIGH",
+              "value": "3"
+            },
+            {
+              "name": "LEVEL",
+              "value": "55"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Gate",
+          "effect": "GATE REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "0.5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "THRESHOLD",
+              "value": "60"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "70"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "30"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "how",
+          "title": "Drum Machine Technique",
+          "text": "TECHNIQUE: Use classic beatbox sounds: 'B' for kick (sharp lip pop from diaphragm), 'Pf' for snare (push air between lips), 'Ts' for hi-hat (tongue against teeth), 'K' for rimshot (tongue click). The heavy bitcrushing + compression transforms organic mouth sounds into tight digital drum machine hits. GATE REVERB adds the punchy, cut-off ambience of an 80s drum machine."
+        }
+      ],
+      "fxTypes": [
+        "DYNAMICS",
+        "EQ",
+        "GATE REVERB",
+        "LO-FI"
+      ],
+      "tags": [
+        "Electronic",
+        "Hip Hop",
+        "Synthwave",
+        "mic"
+      ]
+    },
+    {
+      "id": "bb-filthbass",
+      "section": "beatbox-electronic",
+      "title": "Expressive Dubstep / Filth Bass",
+      "icon": "\ud83d\udd25",
+      "genres": [
+        "Dubstep",
+        "Electronic",
+        "EDM"
+      ],
+      "inputType": "mic",
+      "description": "Aggressive, expressive bass sounds using PREAMP distortion with resonant filtering. The 'talking bass' sound used in heavy dubstep \u2014 your jaw movements control the formant sweep.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Distort",
+          "effect": "PREAMP",
+          "params": [
+            {
+              "name": "AMP TYPE",
+              "value": "CORE METAL"
+            },
+            {
+              "name": "SPK TYPE",
+              "value": "4x12\""
+            },
+            {
+              "name": "GAIN",
+              "value": "90"
+            },
+            {
+              "name": "T-COMP",
+              "value": "5"
+            },
+            {
+              "name": "BASS",
+              "value": "70"
+            },
+            {
+              "name": "MIDDLE",
+              "value": "40"
+            },
+            {
+              "name": "TREBLE",
+              "value": "30"
+            },
+            {
+              "name": "PRESENCE",
+              "value": "40"
+            },
+            {
+              "name": "MIC TYPE",
+              "value": "DYN57"
+            },
+            {
+              "name": "MIC DIS",
+              "value": "ON MIC"
+            },
+            {
+              "name": "MIC POS",
+              "value": "CENTER"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Filter",
+          "effect": "BPF",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "50"
+            },
+            {
+              "name": "DEPTH",
+              "value": "50"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "70"
+            },
+            {
+              "name": "CUTOFF",
+              "value": "50"
+            },
+            {
+              "name": "STEP RATE",
+              "value": "OFF"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Crush",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "HARD LIM"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "18"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Sub",
+          "effect": "OCTAVE",
+          "params": [
+            {
+              "name": "OCTAVE",
+              "value": "-1OCT"
+            },
+            {
+              "name": "MODE",
+              "value": "2"
+            },
+            {
+              "name": "OCT.LEVEL",
+              "value": "60"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "how",
+          "title": "Filth Bass Technique",
+          "text": "TECHNIQUE: Create a 'yoi-yoi' sound by opening and closing your jaw while sustaining a vocal fry or throat bass. The jaw movement naturally sweeps formant frequencies, creating the expressive dubstep 'talking bass' sound. PREAMP with heavy GAIN adds aggressive distortion, BPF shapes the midrange character, and OCTAVE thickens it an octave down. For extra grit, try a lip oscillation bass instead."
+        }
+      ],
+      "fxTypes": [
+        "BPF",
+        "DYNAMICS",
+        "OCTAVE",
+        "PREAMP"
+      ],
+      "tags": [
+        "Dubstep",
+        "Electronic",
+        "EDM",
+        "mic"
+      ]
+    },
+    {
+      "id": "guitar-jazz",
+      "section": "guitar-clean",
+      "title": "Jazz / Smooth Clean",
+      "icon": "\ud83c\udfb7",
+      "genres": [
+        "Jazz",
+        "Neo-Soul",
+        "Chill"
+      ],
+      "inputType": "inst",
+      "description": "Classic warm jazz guitar tone \u2014 very low gain JC-120 amp with rolled-off treble. The CND87 condenser mic model adds a smooth, hi-fi quality perfect for jazz chord work.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Amp",
+          "effect": "PREAMP",
+          "params": [
+            {
+              "name": "AMP TYPE",
+              "value": "JC-120"
+            },
+            {
+              "name": "SPK TYPE",
+              "value": "1x12\""
+            },
+            {
+              "name": "GAIN",
+              "value": "8"
+            },
+            {
+              "name": "T-COMP",
+              "value": "0"
+            },
+            {
+              "name": "BASS",
+              "value": "55"
+            },
+            {
+              "name": "MIDDLE",
+              "value": "45"
+            },
+            {
+              "name": "TREBLE",
+              "value": "35"
+            },
+            {
+              "name": "PRESENCE",
+              "value": "30"
+            },
+            {
+              "name": "MIC TYPE",
+              "value": "CND87"
+            },
+            {
+              "name": "MIC DIS",
+              "value": "OFF MIC"
+            },
+            {
+              "name": "MIC POS",
+              "value": "CENTER"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "70"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Width",
+          "effect": "CHORUS",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "8"
+            },
+            {
+              "name": "DEPTH",
+              "value": "25"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "60"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "40"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Tone",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "2"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "1"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "400 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "-3"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "3 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HIGH",
+              "value": "-2"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Room",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "2"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "15"
+            },
+            {
+              "name": "DENSITY",
+              "value": "6"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "70"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "8 kHz"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "20"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Jazz Tone Tips",
+          "text": "Keep GAIN very low (5-10) and roll off the treble for a warm, round tone. The JC-120 is the classic clean jazz amp. The CND87 mic model adds a slightly scooped, hi-fi quality. For a warmer sound, try NATURAL CLEAN amp type. Roll your guitar's tone knob down to about 5-6 for the classic jazz neck pickup tone."
+        }
+      ],
+      "fxTypes": [
+        "CHORUS",
+        "EQ",
+        "PREAMP",
+        "REVERB"
+      ],
+      "tags": [
+        "Jazz",
+        "Neo-Soul",
+        "Chill",
+        "inst"
+      ]
+    },
+    {
+      "id": "guitar-indie",
+      "section": "guitar-clean",
+      "title": "Indie / Jangle Clean",
+      "icon": "\ud83c\udf1f",
+      "genres": [
+        "Indie",
+        "Pop",
+        "Rock"
+      ],
+      "inputType": "inst",
+      "description": "Bright, chimey clean tone with subtle modulation \u2014 the jangly guitar sound of indie rock. COMBO amp with higher treble and presence for that sparkling top end.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Amp",
+          "effect": "PREAMP",
+          "params": [
+            {
+              "name": "AMP TYPE",
+              "value": "COMBO"
+            },
+            {
+              "name": "SPK TYPE",
+              "value": "2x12\""
+            },
+            {
+              "name": "GAIN",
+              "value": "20"
+            },
+            {
+              "name": "T-COMP",
+              "value": "0"
+            },
+            {
+              "name": "BASS",
+              "value": "40"
+            },
+            {
+              "name": "MIDDLE",
+              "value": "50"
+            },
+            {
+              "name": "TREBLE",
+              "value": "65"
+            },
+            {
+              "name": "PRESENCE",
+              "value": "60"
+            },
+            {
+              "name": "MIC TYPE",
+              "value": "DYN57"
+            },
+            {
+              "name": "MIC DIS",
+              "value": "OFF MIC"
+            },
+            {
+              "name": "MIC POS",
+              "value": "CENTER"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "75"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Swirl",
+          "effect": "PHASER",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "8"
+            },
+            {
+              "name": "DEPTH",
+              "value": "30"
+            },
+            {
+              "name": "RESONANCE",
+              "value": "25"
+            },
+            {
+              "name": "MANUAL",
+              "value": "50"
+            },
+            {
+              "name": "STEP RATE",
+              "value": "OFF"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "60"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "40"
+            },
+            {
+              "name": "STAGE",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Echo",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "500"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "4"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "80"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "6 kHz"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "25"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Room",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "1.5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "10"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "70"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "25"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Jangle Tone",
+          "text": "COMBO amp with moderate treble and presence gives that chimey, jangly tone characteristic of bands like The Smiths and R.E.M. The subtle phaser adds movement without being obvious. Keep delay and reverb modest \u2014 this should sound like a bright, live room."
+        }
+      ],
+      "fxTypes": [
+        "DELAY",
+        "PHASER",
+        "PREAMP",
+        "REVERB"
+      ],
+      "tags": [
+        "Indie",
+        "Pop",
+        "Rock",
+        "inst"
+      ]
+    },
+    {
+      "id": "guitar-blues",
+      "section": "guitar-driven",
+      "title": "Blues / Classic Crunch",
+      "icon": "\ud83c\udfb8",
+      "genres": [
+        "Blues",
+        "Rock"
+      ],
+      "inputType": "inst",
+      "description": "Classic blues breakup tone \u2014 clean when you play softly, gritty when you dig in. CRUNCH amp at moderate gain preserves the touch sensitivity that makes blues expressive.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Amp",
+          "effect": "PREAMP",
+          "params": [
+            {
+              "name": "AMP TYPE",
+              "value": "CRUNCH"
+            },
+            {
+              "name": "SPK TYPE",
+              "value": "2x12\""
+            },
+            {
+              "name": "GAIN",
+              "value": "45"
+            },
+            {
+              "name": "T-COMP",
+              "value": "3"
+            },
+            {
+              "name": "BASS",
+              "value": "55"
+            },
+            {
+              "name": "MIDDLE",
+              "value": "60"
+            },
+            {
+              "name": "TREBLE",
+              "value": "50"
+            },
+            {
+              "name": "PRESENCE",
+              "value": "50"
+            },
+            {
+              "name": "MIC TYPE",
+              "value": "DYN57"
+            },
+            {
+              "name": "MIC DIS",
+              "value": "OFF MIC"
+            },
+            {
+              "name": "MIC POS",
+              "value": "CENTER"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "70"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Sustain",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "NATURALCOMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Tone",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "1"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "2"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "600 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "1"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "2 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "1"
+            },
+            {
+              "name": "HIGH",
+              "value": "1"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Room",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "1.5"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "10"
+            },
+            {
+              "name": "DENSITY",
+              "value": "5"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "75"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "18"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Blues Touch",
+          "text": "CRUNCH amp at moderate GAIN gives classic blues breakup \u2014 clean when you play softly, gritty when you dig in. This dynamic response is what makes blues tone expressive. Keep the DYNAMICS light to preserve touch sensitivity. Roll your guitar volume knob for instant clean-to-crunch transitions."
+        }
+      ],
+      "fxTypes": [
+        "DYNAMICS",
+        "EQ",
+        "PREAMP",
+        "REVERB"
+      ],
+      "tags": [
+        "Blues",
+        "Rock",
+        "inst"
+      ]
+    },
+    {
+      "id": "guitar-punk",
+      "section": "guitar-driven",
+      "title": "Punk / Garage Rock",
+      "icon": "\u26a1",
+      "genres": [
+        "Punk",
+        "Rock",
+        "Indie"
+      ],
+      "inputType": "inst",
+      "description": "Tight, aggressive crunch with short, dry reverb. STACK CRUNCH provides a saturated mid-range grind with added OD distortion for that raw garage energy.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Amp",
+          "effect": "PREAMP",
+          "params": [
+            {
+              "name": "AMP TYPE",
+              "value": "STACK CRUNCH"
+            },
+            {
+              "name": "SPK TYPE",
+              "value": "4x12\""
+            },
+            {
+              "name": "GAIN",
+              "value": "65"
+            },
+            {
+              "name": "T-COMP",
+              "value": "5"
+            },
+            {
+              "name": "BASS",
+              "value": "50"
+            },
+            {
+              "name": "MIDDLE",
+              "value": "55"
+            },
+            {
+              "name": "TREBLE",
+              "value": "60"
+            },
+            {
+              "name": "PRESENCE",
+              "value": "55"
+            },
+            {
+              "name": "MIC TYPE",
+              "value": "DYN57"
+            },
+            {
+              "name": "MIC DIS",
+              "value": "ON MIC"
+            },
+            {
+              "name": "MIC POS",
+              "value": "CENTER"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "70"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Drive",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "ROCK"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Dirt",
+          "effect": "DIST",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "OD"
+            },
+            {
+              "name": "TONE",
+              "value": "10"
+            },
+            {
+              "name": "DIST",
+              "value": "30"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "50"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Tight",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "0.8"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "DENSITY",
+              "value": "3"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "80"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "15"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Garage Energy",
+          "text": "STACK CRUNCH gives a tight, aggressive mid-range crunch. Adding the OD distortion on top pushes it into garage territory. Keep reverb very short and dry \u2014 punk/garage tone is upfront and in-your-face. Power chord riffs sound best with this chain."
+        }
+      ],
+      "fxTypes": [
+        "DIST",
+        "DYNAMICS",
+        "PREAMP",
+        "REVERB"
+      ],
+      "tags": [
+        "Punk",
+        "Rock",
+        "Indie",
+        "inst"
+      ]
+    },
+    {
+      "id": "guitar-djent",
+      "section": "guitar-driven",
+      "title": "Djent / Modern Metal",
+      "icon": "\ud83e\udd18",
+      "genres": [
+        "Metal",
+        "Rock"
+      ],
+      "inputType": "inst",
+      "description": "Ultra-tight modern metal tone with the classic djent mid-scoop at 200 Hz. CORE METAL amp with high T-COMP for percussive palm-muted playing. Gate reverb replaces a noise gate.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Amp",
+          "effect": "PREAMP",
+          "params": [
+            {
+              "name": "AMP TYPE",
+              "value": "CORE METAL"
+            },
+            {
+              "name": "SPK TYPE",
+              "value": "4x12\""
+            },
+            {
+              "name": "GAIN",
+              "value": "90"
+            },
+            {
+              "name": "T-COMP",
+              "value": "8"
+            },
+            {
+              "name": "BASS",
+              "value": "40"
+            },
+            {
+              "name": "MIDDLE",
+              "value": "55"
+            },
+            {
+              "name": "TREBLE",
+              "value": "60"
+            },
+            {
+              "name": "PRESENCE",
+              "value": "65"
+            },
+            {
+              "name": "MIC TYPE",
+              "value": "DYN421"
+            },
+            {
+              "name": "MIC DIS",
+              "value": "ON MIC"
+            },
+            {
+              "name": "MIC POS",
+              "value": "3 cm"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "70"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Scoop",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "-5"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "-3"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "200 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "4"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "3"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "3 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HIGH",
+              "value": "2"
+            },
+            {
+              "name": "LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Tighten",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "HARD COMP"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Gate",
+          "effect": "GATE REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "0.3"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "0"
+            },
+            {
+              "name": "THRESHOLD",
+              "value": "70"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "90"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "80 Hz"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "10"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Djent Tone",
+          "text": "The tight GATE REVERB replaces the noise gate that metal players need \u2014 it cuts reverb tails sharply for palm-muted clarity. The EQ scoops low-mids at 200 Hz (the classic djent scoop) while boosting presence. T-COMP at 8 tightens the amp's response for percussive playing. DYN421 mic model at 3cm gives maximum attack definition."
+        }
+      ],
+      "fxTypes": [
+        "DYNAMICS",
+        "EQ",
+        "GATE REVERB",
+        "PREAMP"
+      ],
+      "tags": [
+        "Metal",
+        "Rock",
+        "inst"
+      ]
+    },
+    {
+      "id": "guitar-shoegaze",
+      "section": "guitar-atmospheric",
+      "title": "Shoegaze / Wall of Sound",
+      "icon": "\ud83c\udf0a",
+      "genres": [
+        "Shoegaze",
+        "Post-Rock",
+        "Ambient"
+      ],
+      "inputType": "inst",
+      "description": "Massive, enveloping guitar wash \u2014 fuzz distortion through reverse delay and ocean-deep reverb. Layer on overdub mode for the classic shoegaze wall of sound.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Fuzz",
+          "effect": "DIST",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "FUZZ"
+            },
+            {
+              "name": "TONE",
+              "value": "-20"
+            },
+            {
+              "name": "DIST",
+              "value": "50"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "30"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "70"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Shimmer",
+          "effect": "CHORUS",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "15"
+            },
+            {
+              "name": "DEPTH",
+              "value": "70"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "40"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "60"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Reverse",
+          "effect": "REVERSE DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "500"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "8"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "40"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "6 kHz"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "50"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Ocean",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "8"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "30"
+            },
+            {
+              "name": "DENSITY",
+              "value": "8"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "30"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "70"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Wall of Sound",
+          "text": "Layer on overdub mode \u2014 each pass adds more density to the wall of sound. The REVERSE DELAY creates signature backwards-sounding swells. FUZZ with dark TONE keeps things thick but not harsh. This rack lives at high volumes. For even more density, add Track FX FLANGER at a slow rate."
+        }
+      ],
+      "fxTypes": [
+        "CHORUS",
+        "DIST",
+        "REVERB",
+        "REVERSE DELAY"
+      ],
+      "tags": [
+        "Shoegaze",
+        "Post-Rock",
+        "Ambient",
+        "inst"
+      ]
+    },
+    {
+      "id": "guitar-acoustic-clean",
+      "section": "guitar-acoustic",
+      "title": "Acoustic Guitar Enhancement",
+      "icon": "\ud83e\ude95",
+      "genres": [
+        "Acoustic",
+        "Pop",
+        "All Genres"
+      ],
+      "inputType": "inst",
+      "description": "Cleans up common acoustic pickup issues \u2014 cuts the 250 Hz boxiness, boosts sparkle, and adds subtle width. The ACOUSTIC dynamics type is designed specifically for acoustic guitar.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Shape",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "-2"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "-3"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "250 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "3"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "5 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HIGH",
+              "value": "2"
+            },
+            {
+              "name": "LEVEL",
+              "value": "52"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Dynamics",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "ACOUSTIC"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Width",
+          "effect": "CHORUS",
+          "params": [
+            {
+              "name": "RATE",
+              "value": "5"
+            },
+            {
+              "name": "DEPTH",
+              "value": "15"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "70"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "200 Hz"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "30"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Room",
+          "effect": "REVERB",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "2"
+            },
+            {
+              "name": "PRE DELAY",
+              "value": "20"
+            },
+            {
+              "name": "DENSITY",
+              "value": "6"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "70"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "100 Hz"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "25"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Acoustic Pickup Fix",
+          "text": "The EQ cuts the 250 Hz boxiness common with acoustic pickups and boosts the 5 kHz sparkle. DYNAMICS set to ACOUSTIC is specifically designed for acoustic guitar dynamics. Very subtle CHORUS adds width without sounding obviously processed. Works with both piezo and magnetic pickups."
+        }
+      ],
+      "fxTypes": [
+        "CHORUS",
+        "DYNAMICS",
+        "EQ",
+        "REVERB"
+      ],
+      "tags": [
+        "Acoustic",
+        "Pop",
+        "All Genres",
+        "inst"
+      ]
+    },
+    {
+      "id": "guitar-fingerstyle",
+      "section": "guitar-acoustic",
+      "title": "Acoustic Fingerstyle / Percussive",
+      "icon": "\ud83d\udc46",
+      "genres": [
+        "Acoustic",
+        "Pop",
+        "All Genres"
+      ],
+      "inputType": "inst",
+      "description": "Optimized for percussive fingerstyle players who tap, slap, and pluck. Higher dynamics capture both quiet fingerpicked notes and percussive body hits with equal clarity.",
+      "inputFx": [
+        {
+          "slot": "A",
+          "label": "Dynamics",
+          "effect": "DYNAMICS",
+          "params": [
+            {
+              "name": "TYPE",
+              "value": "ACOUSTIC"
+            },
+            {
+              "name": "DYNAMICS",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "slot": "B",
+          "label": "Shape",
+          "effect": "EQ",
+          "params": [
+            {
+              "name": "LO",
+              "value": "3"
+            },
+            {
+              "name": "LO-MID GAIN",
+              "value": "-2"
+            },
+            {
+              "name": "LO-MID FREQ",
+              "value": "300 Hz"
+            },
+            {
+              "name": "LO-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HI-MID GAIN",
+              "value": "4"
+            },
+            {
+              "name": "HI-MID FREQ",
+              "value": "4 kHz"
+            },
+            {
+              "name": "HI-MID Q",
+              "value": "2"
+            },
+            {
+              "name": "HIGH",
+              "value": "3"
+            },
+            {
+              "name": "LEVEL",
+              "value": "52"
+            }
+          ]
+        },
+        {
+          "slot": "C",
+          "label": "Wide",
+          "effect": "STEREO ENHANCE",
+          "params": [
+            {
+              "name": "LOW CUT",
+              "value": "150 Hz"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "FLAT"
+            },
+            {
+              "name": "ENHANCE",
+              "value": "40"
+            }
+          ]
+        },
+        {
+          "slot": "D",
+          "label": "Echo",
+          "effect": "DELAY",
+          "params": [
+            {
+              "name": "TIME",
+              "value": "500"
+            },
+            {
+              "name": "FEEDBACK",
+              "value": "3"
+            },
+            {
+              "name": "D.LEVEL",
+              "value": "75"
+            },
+            {
+              "name": "LOW CUT",
+              "value": "200 Hz"
+            },
+            {
+              "name": "HIGH CUT",
+              "value": "6 kHz"
+            },
+            {
+              "name": "E.LEVEL",
+              "value": "20"
+            }
+          ]
+        }
+      ],
+      "trackFx": [],
+      "tips": [
+        {
+          "type": "tip",
+          "title": "Percussive Playing",
+          "text": "Higher DYNAMICS value captures both the quiet fingerpicked notes and the percussive body hits. The EQ boosts both the bass thump (body percussion) and the treble sparkle (harmonics and picks). STEREO ENHANCE widens the stereo image for a more immersive sound. Great for Andy McKee / Mike Dawes style playing."
+        }
+      ],
+      "fxTypes": [
+        "DELAY",
+        "DYNAMICS",
+        "EQ",
+        "STEREO ENHANCE"
+      ],
+      "tags": [
+        "Acoustic",
+        "Pop",
+        "All Genres",
+        "inst"
+      ]
+    },
+    {
+      "id": "tfx-dj-filter",
+      "section": "tfx-performance",
+      "title": "DJ Filter Sweep",
+      "icon": "\ud83c\udf9b\ufe0f",
+      "genres": [
+        "EDM",
+        "House",
+        "Techno",
+        "All Genres"
+      ],
+      "inputType": "any",
+      "description": "Classic DJ-style filter manipulation for recorded loops. HPF sweep strips lows for buildups, LPF sweep removes highs for breakdowns. Delay adds depth to filtered signal. Pattern slicer creates rhythmic gating. Ideal for live performance transitions.",
+      "inputFx": [],
+      "trackFx": [
+        {
+          "slot": "A",
+          "bank": "A",
+          "label": "Hi-Pass Sweep",
+          "effect": "HPF",
+          "params": [
+            { "name": "RATE", "value": "0" },
+            { "name": "DEPTH", "value": "0" },
+            { "name": "RESONANCE", "value": "65" },
+            { "name": "CUTOFF", "value": "0" },
+            { "name": "STEP RATE", "value": "0" }
+          ]
+        },
+        {
+          "slot": "B",
+          "bank": "A",
+          "label": "Lo-Pass Sweep",
+          "effect": "LPF",
+          "params": [
+            { "name": "RATE", "value": "0" },
+            { "name": "DEPTH", "value": "0" },
+            { "name": "RESONANCE", "value": "60" },
+            { "name": "CUTOFF", "value": "100" },
+            { "name": "STEP RATE", "value": "0" }
+          ]
+        },
+        {
+          "slot": "C",
+          "bank": "A",
+          "label": "Filtered Echo",
+          "effect": "DELAY",
+          "params": [
+            { "name": "TIME", "value": "375" },
+            { "name": "FEEDBACK", "value": "30" },
+            { "name": "D.LEVEL", "value": "80" },
+            { "name": "LOW CUT", "value": "200" },
+            { "name": "HIGH CUT", "value": "8000" },
+            { "name": "E.LEVEL", "value": "25" }
+          ]
+        },
+        {
+          "slot": "D",
+          "bank": "A",
+          "label": "Rhythmic Gate",
+          "effect": "PATTERN SLICER",
+          "params": [
+            { "name": "RATE", "value": "6" },
+            { "name": "DUTY", "value": "50" },
+            { "name": "ATTACK", "value": "50" },
+            { "name": "PATTERN", "value": "0" },
+            { "name": "DEPTH", "value": "100" }
+          ]
+        }
+      ],
+      "tips": [
+        {
+          "type": "performance",
+          "title": "Build & Drop",
+          "text": "Engage HPF and slowly sweep CUTOFF from 0 to 80+ to strip lows during a build. At the drop, disengage HPF. For breakdowns, engage LPF and sweep CUTOFF down from 100. Combine with the delay for filtered echo trails."
+        }
+      ],
+      "fxTypes": ["HPF", "LPF", "DELAY", "PATTERN SLICER"],
+      "tags": ["EDM", "House", "Techno", "All Genres", "tfx", "dj"]
+    },
+    {
+      "id": "tfx-beat-mangle",
+      "section": "tfx-performance",
+      "title": "Beat Mangler",
+      "icon": "\ud83e\udde8",
+      "genres": [
+        "EDM",
+        "Dubstep",
+        "Techno",
+        "Electronic"
+      ],
+      "inputType": "any",
+      "description": "Aggressive beat manipulation rack for performable glitch and stutter effects on recorded loops. Beat scatter rearranges slices, beat repeat creates fills, roll adds stutter, and the lo-fi degrades the signal for texture. Perfect for DJ transitions and drops.",
+      "inputFx": [],
+      "trackFx": [
+        {
+          "slot": "A",
+          "bank": "A",
+          "label": "Scatter",
+          "effect": "BEAT SCATTER",
+          "params": [
+            { "name": "TYPE", "value": "P2" },
+            { "name": "LENGTH", "value": "8" }
+          ]
+        },
+        {
+          "slot": "B",
+          "bank": "A",
+          "label": "Stutter",
+          "effect": "ROLL",
+          "params": [
+            { "name": "TIME", "value": "50" },
+            { "name": "REPEAT", "value": "80" },
+            { "name": "ROLL", "value": "1/8" },
+            { "name": "BALANCE", "value": "80" }
+          ]
+        },
+        {
+          "slot": "C",
+          "bank": "A",
+          "label": "Lo-Fi Crunch",
+          "effect": "LO-FI",
+          "params": [
+            { "name": "BITDEPTH", "value": "12" },
+            { "name": "SAMPLERATE", "value": "30" },
+            { "name": "BALANCE", "value": "50" }
+          ]
+        },
+        {
+          "slot": "D",
+          "bank": "A",
+          "label": "Space",
+          "effect": "REVERB",
+          "params": [
+            { "name": "TIME", "value": "30" },
+            { "name": "PRE DELAY", "value": "10" },
+            { "name": "DENSITY", "value": "50" },
+            { "name": "LOW CUT", "value": "200" },
+            { "name": "HIGH CUT", "value": "8000" },
+            { "name": "D.LEVEL", "value": "100" },
+            { "name": "E.LEVEL", "value": "20" }
+          ]
+        },
+        {
+          "slot": "A",
+          "bank": "B",
+          "label": "Repeat",
+          "effect": "BEAT REPEAT",
+          "params": [
+            { "name": "TYPE", "value": "FORWARD" },
+            { "name": "LENGTH", "value": "4" }
+          ]
+        },
+        {
+          "slot": "B",
+          "bank": "B",
+          "label": "Warp",
+          "effect": "WARP",
+          "params": [
+            { "name": "LEVEL", "value": "100" }
+          ]
+        },
+        {
+          "slot": "C",
+          "bank": "B",
+          "label": "Twist Up",
+          "effect": "TWIST",
+          "params": [
+            { "name": "RELEASE", "value": "FALL" },
+            { "name": "RISE", "value": "50" },
+            { "name": "FALL", "value": "50" },
+            { "name": "LEVEL", "value": "100" }
+          ]
+        },
+        {
+          "slot": "D",
+          "bank": "B",
+          "label": "Freeze",
+          "effect": "FREEZE",
+          "params": [
+            { "name": "ATTACK", "value": "10" },
+            { "name": "RELEASE", "value": "30" },
+            { "name": "DECAY", "value": "80" },
+            { "name": "SUSTAIN", "value": "80" },
+            { "name": "BALANCE", "value": "80" }
+          ]
+        }
+      ],
+      "tips": [
+        {
+          "type": "performance",
+          "title": "Glitch Fill",
+          "text": "Bank A is for rhythmic manipulation: engage Scatter for slice rearrangement, Roll for rapid stutter fills. Bank B is for dramatic moments: Repeat for build fills, Twist for risers, Warp for tape-stop effects, Freeze for sustain drones. Switch banks mid-performance for variety."
+        },
+        {
+          "type": "tip",
+          "title": "Special TFX Rule",
+          "text": "BEAT SCATTER, BEAT REPEAT, BEAT SHIFT, and VINYL FLICK can only go in Slot A of each bank — one per bank. This rack puts SCATTER in Bank A Slot A and REPEAT in Bank B Slot A."
+        }
+      ],
+      "fxTypes": ["BEAT SCATTER", "ROLL", "LO-FI", "REVERB", "BEAT REPEAT", "WARP", "TWIST", "FREEZE"],
+      "tags": ["EDM", "Dubstep", "Techno", "Electronic", "tfx", "dj", "glitch"]
+    },
+    {
+      "id": "tfx-ambient-wash",
+      "section": "tfx-performance",
+      "title": "Ambient Loop Wash",
+      "icon": "\ud83c\udf0a",
+      "genres": [
+        "Ambient",
+        "Chill",
+        "Downtempo",
+        "Post-Rock"
+      ],
+      "inputType": "any",
+      "description": "Transform any recorded loop into ambient textures. Reverse reverb creates ethereal swells, chorus adds shimmer, HPF removes mud, and tremolo adds movement. Works beautifully on vocals, guitar, or any melodic content.",
+      "inputFx": [],
+      "trackFx": [
+        {
+          "slot": "A",
+          "bank": "A",
+          "label": "Clean Up",
+          "effect": "HPF",
+          "params": [
+            { "name": "RATE", "value": "0" },
+            { "name": "DEPTH", "value": "0" },
+            { "name": "RESONANCE", "value": "20" },
+            { "name": "CUTOFF", "value": "30" },
+            { "name": "STEP RATE", "value": "0" }
+          ]
+        },
+        {
+          "slot": "B",
+          "bank": "A",
+          "label": "Shimmer",
+          "effect": "CHORUS",
+          "params": [
+            { "name": "RATE", "value": "30" },
+            { "name": "DEPTH", "value": "60" },
+            { "name": "LOW CUT", "value": "200" },
+            { "name": "HIGH CUT", "value": "8000" },
+            { "name": "D.LEVEL", "value": "80" },
+            { "name": "E.LEVEL", "value": "50" }
+          ]
+        },
+        {
+          "slot": "C",
+          "bank": "A",
+          "label": "Pulse",
+          "effect": "TREMOLO",
+          "params": [
+            { "name": "RATE", "value": "20" },
+            { "name": "DEPTH", "value": "40" },
+            { "name": "WAVEFORM", "value": "0" },
+            { "name": "LEVEL", "value": "100" }
+          ]
+        },
+        {
+          "slot": "D",
+          "bank": "A",
+          "label": "Wash",
+          "effect": "REVERSE REVERB",
+          "params": [
+            { "name": "TIME", "value": "80" },
+            { "name": "PRE DELAY", "value": "20" },
+            { "name": "GATE TIME", "value": "80" },
+            { "name": "LOW CUT", "value": "150" },
+            { "name": "HIGH CUT", "value": "10000" },
+            { "name": "D.LEVEL", "value": "60" },
+            { "name": "E.LEVEL", "value": "60" }
+          ]
+        }
+      ],
+      "tips": [
+        {
+          "type": "performance",
+          "title": "Ambient Layering",
+          "text": "Record a simple vocal phrase or guitar chord. Engage the full TFX chain to transform it into a lush ambient pad. Use the HPF cutoff to thin or thicken the texture. Adjust tremolo rate for faster or slower pulsing. Great for building atmosphere underneath other loop layers."
+        }
+      ],
+      "fxTypes": ["HPF", "CHORUS", "TREMOLO", "REVERSE REVERB"],
+      "tags": ["Ambient", "Chill", "Downtempo", "Post-Rock", "tfx", "ambient"]
+    },
+    {
+      "id": "tfx-vinyl-dj",
+      "section": "tfx-performance",
+      "title": "Vinyl DJ Toolkit",
+      "icon": "\ud83d\udcbf",
+      "genres": [
+        "Hip Hop",
+        "EDM",
+        "House",
+        "All Genres"
+      ],
+      "inputType": "any",
+      "description": "Turntablist-inspired track manipulation. Vinyl flick for scratch stops, isolator for DJ-style band kills, phaser for sweeps, and panning delay for spatial fills. Bank B adds beat shift and flanger for more variety.",
+      "inputFx": [],
+      "trackFx": [
+        {
+          "slot": "A",
+          "bank": "A",
+          "label": "Scratch Stop",
+          "effect": "VINYL FLICK",
+          "params": [
+            { "name": "FLICK", "value": "50" }
+          ]
+        },
+        {
+          "slot": "B",
+          "bank": "A",
+          "label": "Band Kill",
+          "effect": "ISOLATOR",
+          "params": [
+            { "name": "BAND", "value": "LOW" },
+            { "name": "RATE", "value": "0" },
+            { "name": "BAND LEVEL", "value": "0" },
+            { "name": "DEPTH", "value": "0" },
+            { "name": "STEP RATE", "value": "0" },
+            { "name": "WAVEFORM", "value": "TRI" }
+          ]
+        },
+        {
+          "slot": "C",
+          "bank": "A",
+          "label": "Sweep",
+          "effect": "PHASER",
+          "params": [
+            { "name": "RATE", "value": "30" },
+            { "name": "DEPTH", "value": "80" },
+            { "name": "RESONANCE", "value": "70" },
+            { "name": "MANUAL", "value": "50" },
+            { "name": "D.LEVEL", "value": "80" },
+            { "name": "E.LEVEL", "value": "60" },
+            { "name": "STAGE", "value": "8" }
+          ]
+        },
+        {
+          "slot": "D",
+          "bank": "A",
+          "label": "Ping Pong",
+          "effect": "PANNING DELAY",
+          "params": [
+            { "name": "TIME", "value": "250" },
+            { "name": "FEEDBACK", "value": "40" },
+            { "name": "D.LEVEL", "value": "80" },
+            { "name": "LOW CUT", "value": "200" },
+            { "name": "HIGH CUT", "value": "8000" },
+            { "name": "E.LEVEL", "value": "30" }
+          ]
+        },
+        {
+          "slot": "A",
+          "bank": "B",
+          "label": "Time Shift",
+          "effect": "BEAT SHIFT",
+          "params": [
+            { "name": "TYPE", "value": "FUTURE" },
+            { "name": "SHIFT", "value": "50" }
+          ]
+        },
+        {
+          "slot": "B",
+          "bank": "B",
+          "label": "Jet Sweep",
+          "effect": "FLANGER",
+          "params": [
+            { "name": "RATE", "value": "20" },
+            { "name": "DEPTH", "value": "80" },
+            { "name": "RESONANCE", "value": "70" },
+            { "name": "MANUAL", "value": "50" },
+            { "name": "D.LEVEL", "value": "80" },
+            { "name": "E.LEVEL", "value": "50" },
+            { "name": "SEPARATION", "value": "50" }
+          ]
+        },
+        {
+          "slot": "C",
+          "bank": "B",
+          "label": "Auto Sweep",
+          "effect": "AUTO PAN",
+          "params": [
+            { "name": "RATE", "value": "30" },
+            { "name": "WAVEFORM", "value": "0" },
+            { "name": "DEPTH", "value": "80" },
+            { "name": "INIT PHASE", "value": "0" }
+          ]
+        },
+        {
+          "slot": "D",
+          "bank": "B",
+          "label": "Tape Echo",
+          "effect": "TAPE ECHO",
+          "params": [
+            { "name": "TIME", "value": "300" },
+            { "name": "FEEDBACK", "value": "50" },
+            { "name": "D.LEVEL", "value": "80" },
+            { "name": "LOW CUT", "value": "300" },
+            { "name": "HIGH CUT", "value": "6000" },
+            { "name": "E.LEVEL", "value": "25" }
+          ]
+        }
+      ],
+      "tips": [
+        {
+          "type": "performance",
+          "title": "Turntablist Workflow",
+          "text": "Bank A: Use Vinyl Flick for dramatic stops, Isolator to kill frequency bands (change BAND param to LOW/MIDDLE/HIGH), Phaser for sweeping transitions, and Panning Delay for spatial fills. Bank B: Beat Shift for time-displaced glitches, Flanger for jet sweeps, Auto Pan for stereo movement."
+        }
+      ],
+      "fxTypes": ["VINYL FLICK", "ISOLATOR", "PHASER", "PANNING DELAY", "BEAT SHIFT", "FLANGER", "AUTO PAN", "TAPE ECHO"],
+      "tags": ["Hip Hop", "EDM", "House", "All Genres", "tfx", "dj", "vinyl"]
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Architecture at a Glance",
+      "tag": "Foundations",
+      "tagColor": "accent",
+      "type": "static"
+    },
+    {
+      "id": "signal",
+      "title": "Signal Flow Deep Dive",
+      "tag": "Routing",
+      "tagColor": "accent2",
+      "type": "static"
+    },
+    {
+      "id": "saving",
+      "title": "Saving & Applying FX Racks",
+      "tag": "Workflow",
+      "tagColor": "accent4",
+      "type": "static"
+    },
+    {
+      "id": "installation",
+      "title": "Installing Downloaded Presets",
+      "tag": "Setup",
+      "tagColor": "accent5",
+      "type": "static"
+    },
+    {
+      "id": "vocal-autotune",
+      "title": "Autotune & Pitch Effects",
+      "tag": "Input: Mic",
+      "tagColor": "accent",
+      "type": "racks"
+    },
+    {
+      "id": "vocal-creative",
+      "title": "Creative Vocal FX",
+      "tag": "Input: Mic",
+      "tagColor": "accent2",
+      "type": "racks"
+    },
+    {
+      "id": "vocal-layers",
+      "title": "Vocal Layers & Harmonies",
+      "tag": "Input: Mic",
+      "tagColor": "accent3",
+      "type": "racks"
+    },
+    {
+      "id": "beatbox-foundation",
+      "title": "Beatbox Foundations",
+      "tag": "Input: Mic",
+      "tagColor": "accent4",
+      "type": "racks"
+    },
+    {
+      "id": "beatbox-instruments",
+      "title": "Beatbox \u2192 Instruments",
+      "tag": "Input: Mic",
+      "tagColor": "accent5",
+      "type": "racks"
+    },
+    {
+      "id": "beatbox-electronic",
+      "title": "Beatbox \u2192 Electronic",
+      "tag": "Input: Mic",
+      "tagColor": "electronic",
+      "type": "racks"
+    },
+    {
+      "id": "percussion",
+      "title": "Percussion Processing",
+      "tag": "Input: Mic",
+      "tagColor": "accent5",
+      "type": "racks"
+    },
+    {
+      "id": "guitar-clean",
+      "title": "Guitar: Clean & Warm",
+      "tag": "Input: Inst",
+      "tagColor": "accent",
+      "type": "racks"
+    },
+    {
+      "id": "guitar-driven",
+      "title": "Guitar: Drive & Distortion",
+      "tag": "Input: Inst",
+      "tagColor": "accent2",
+      "type": "racks"
+    },
+    {
+      "id": "guitar-atmospheric",
+      "title": "Guitar: Ambient & Atmospheric",
+      "tag": "Input: Inst",
+      "tagColor": "accent3",
+      "type": "racks"
+    },
+    {
+      "id": "guitar-acoustic",
+      "title": "Guitar: Acoustic Enhancement",
+      "tag": "Input: Inst",
+      "tagColor": "accent4",
+      "type": "racks"
+    },
+    {
+      "id": "keys",
+      "title": "Keyboard & Synth Input",
+      "tag": "Input: Inst",
+      "tagColor": "accent5",
+      "type": "racks"
+    },
+    {
+      "id": "tfx-performance",
+      "title": "Track FX: DJ & Performance",
+      "tag": "Track FX",
+      "tagColor": "electronic",
+      "type": "racks"
+    },
+    {
+      "id": "mastering",
+      "title": "Master Processing & Bus FX",
+      "tag": "Master Bus",
+      "tagColor": "accent3",
+      "type": "static"
+    },
+    {
+      "id": "genre",
+      "title": "Full Genre Performance Templates",
+      "tag": "Templates",
+      "tagColor": "electronic",
+      "type": "static"
+    },
+    {
+      "id": "performance",
+      "title": "Performance Techniques & Advanced Tips",
+      "tag": "Live",
+      "tagColor": "accent",
+      "type": "static"
+    }
+  ],
+  "genreTemplates": [
+    {
+      "id": "hiphop",
+      "title": "Hip Hop / Boom Bap Looping Session",
+      "icon": "\ud83c\udfa4",
+      "description": "5-track layout: beatbox drums \u2192 bass vocal \u2192 melody/sample \u2192 vocal verse \u2192 vocal hook. Designed for building a full beat with just a mic.",
+      "tracks": [
+        {
+          "track": 1,
+          "purpose": "Beatbox Drums",
+          "input": "MIC",
+          "inputFxKey": "DYNAMICS (DANCE COMP, DYNAMICS: 15) \u2192 EQ (LO: 5)",
+          "trackFxKey": "PATTERN SLICER, BEAT REPEAT"
+        },
+        {
+          "track": 2,
+          "purpose": "Bass Line (vocal)",
+          "input": "MIC",
+          "inputFxKey": "OCTAVE (-1OCT) \u2192 DYNAMICS \u2192 EQ",
+          "trackFxKey": "LPF"
+        },
+        {
+          "track": 3,
+          "purpose": "Melody / Sample",
+          "input": "MIC or INST",
+          "inputFxKey": "TRANSPOSE \u2192 REVERB",
+          "trackFxKey": "LO-FI, DELAY"
+        },
+        {
+          "track": 4,
+          "purpose": "Vocal Verse",
+          "input": "MIC",
+          "inputFxKey": "DYNAMICS (NATURALCOMP) \u2192 EQ \u2192 DELAY",
+          "trackFxKey": "LPF (for transitions)"
+        },
+        {
+          "track": 5,
+          "purpose": "Vocal Hook",
+          "input": "MIC",
+          "inputFxKey": "VOCODER \u2192 DYNAMICS \u2192 REVERB",
+          "trackFxKey": "PHASER, AUTO PAN"
+        }
+      ],
+      "performanceTip": "Start with Track 1 \u2014 lay your drum pattern (2\u20134 bars). Switch Input FX and drop a bass line on Track 2. Build up the melody on Track 3 with everything playing. For the verse, mute tracks 3 and 5, engage Track 4 and spit bars over tracks 1+2. Unmute everything for the hook on Track 5."
+    },
+    {
+      "id": "edm",
+      "title": "EDM / House Build & Drop",
+      "icon": "\u26a1",
+      "description": "Structured for the classic build \u2192 drop format. Tracks dedicated to kick, bass, lead, pads, and a vocal chop layer.",
+      "tracks": [
+        {
+          "track": 1,
+          "purpose": "Kick / Perc",
+          "input": "MIC",
+          "inputFxKey": "LO-FI (BITDEPTH: 8) \u2192 DYNAMICS (DANCE COMP)",
+          "trackFxKey": "LPF (HPF sweep for build)"
+        },
+        {
+          "track": 2,
+          "purpose": "Bass",
+          "input": "INST",
+          "inputFxKey": "LPF \u2192 DYNAMICS",
+          "trackFxKey": "PATTERN SLICER (rhythmic chop)"
+        },
+        {
+          "track": 3,
+          "purpose": "Lead Synth",
+          "input": "INST",
+          "inputFxKey": "PHASER \u2192 DELAY",
+          "trackFxKey": "BEAT REPEAT, LPF"
+        },
+        {
+          "track": 4,
+          "purpose": "Pad / Atmos",
+          "input": "MIC/INST",
+          "inputFxKey": "TRANSPOSE (+12) \u2192 REVERB (long)",
+          "trackFxKey": "FLANGER (slow)"
+        },
+        {
+          "track": 5,
+          "purpose": "Vocal Chop",
+          "input": "MIC",
+          "inputFxKey": "VOCODER \u2192 LO-FI \u2192 DELAY",
+          "trackFxKey": "AUTO PAN, PATTERN SLICER"
+        }
+      ],
+      "performanceTip": "Build: Start all 5 tracks playing. Engage Track FX LPF on Track 1 and sweep the CUTOFF up. Simultaneously sweep Track 3's LPF CUTOFF up. Engage BEAT REPEAT on Track 5 at FORWARD mode for a stuttering riser. Drop: At the peak, simultaneously disengage ALL Track FX with a single assigned button (CTL1 \u2192 ALL TRK FX OFF)."
+    },
+    {
+      "id": "dubstep",
+      "title": "Dubstep / Bass Music",
+      "icon": "\ud83d\udd0a",
+      "description": "Heavy sub-bass focus, aggressive processing, and performable wobble effects using Track FX automation.",
+      "tracks": [
+        {
+          "track": 1,
+          "purpose": "Half-time Drums",
+          "input": "MIC",
+          "inputFxKey": "DYNAMICS (DANCE COMP) \u2192 EQ (LO: 8)",
+          "trackFxKey": "BEAT REPEAT (FORWARD)"
+        },
+        {
+          "track": 2,
+          "purpose": "Sub Bass",
+          "input": "MIC/INST",
+          "inputFxKey": "OCTAVE (-1OCT) \u2192 DYNAMICS \u2192 LPF",
+          "trackFxKey": "PATTERN SLICER (wobble pattern)"
+        },
+        {
+          "track": 3,
+          "purpose": "Mid Bass / Growl",
+          "input": "MIC/INST",
+          "inputFxKey": "PREAMP (HIGAIN STACK, GAIN: 80) \u2192 BPF",
+          "trackFxKey": "LPF (automate CUTOFF = wobble)"
+        },
+        {
+          "track": 4,
+          "purpose": "Lead / Stab",
+          "input": "INST",
+          "inputFxKey": "VOCODER \u2192 LO-FI",
+          "trackFxKey": "DELAY (250ms), AUTO PAN"
+        },
+        {
+          "track": 5,
+          "purpose": "Vocal / FX",
+          "input": "MIC",
+          "inputFxKey": "TRANSPOSE \u2192 REVERB",
+          "trackFxKey": "BEAT REPEAT, LO-FI"
+        }
+      ],
+      "performanceTip": "Assign the Track FX LPF CUTOFF on Track 3 to a knob (CTRL knob). Record a sustained bass note, then on playback, manually sweep the knob back and forth in rhythm for a classic dubstep wobble bass."
+    },
+    {
+      "id": "rock",
+      "title": "Modern Rock / Alternative",
+      "icon": "\ud83c\udfb8",
+      "description": "Guitar-centric looping with dedicated tracks for rhythm, lead, bass, vocals, and ambient textures.",
+      "tracks": [
+        {
+          "track": 1,
+          "purpose": "Rhythm Guitar",
+          "input": "INST",
+          "inputFxKey": "PREAMP (HIGAIN STACK, GAIN: 60) \u2192 DYNAMICS \u2192 EQ",
+          "trackFxKey": "CHORUS (DEPTH: 40)"
+        },
+        {
+          "track": 2,
+          "purpose": "Lead Guitar",
+          "input": "INST",
+          "inputFxKey": "PREAMP (HIGAIN STACK) \u2192 DELAY (750ms)",
+          "trackFxKey": "PHASER, REVERB"
+        },
+        {
+          "track": 3,
+          "purpose": "Bass (vocal/inst)",
+          "input": "MIC/INST",
+          "inputFxKey": "OCTAVE (-1OCT) \u2192 DYNAMICS (DANCE COMP)",
+          "trackFxKey": "LPF"
+        },
+        {
+          "track": 4,
+          "purpose": "Percussion",
+          "input": "MIC",
+          "inputFxKey": "DYNAMICS \u2192 EQ",
+          "trackFxKey": "PATTERN SLICER, BEAT REPEAT"
+        },
+        {
+          "track": 5,
+          "purpose": "Vocals",
+          "input": "MIC",
+          "inputFxKey": "DYNAMICS (NATURALCOMP) \u2192 EQ \u2192 REVERB",
+          "trackFxKey": "DELAY, FLANGER"
+        }
+      ],
+      "performanceTip": "Build your rhythm guitar foundation on Track 1, then layer bass on Track 3. Add percussion on Track 4, lead on Track 2, and finish with vocals on Track 5."
+    },
+    {
+      "id": "synthwave",
+      "title": "Synthwave / Retrowave",
+      "icon": "\ud83c\udf06",
+      "description": "80s-inspired electronic production \u2014 arpeggiated synths, gated drums, lush pads, and vocoded vocals.",
+      "tracks": [
+        {
+          "track": 1,
+          "purpose": "Drum Machine",
+          "input": "MIC/INST",
+          "inputFxKey": "LO-FI (BITDEPTH: 8) \u2192 DYNAMICS \u2192 REVERB",
+          "trackFxKey": "AUTO PAN"
+        },
+        {
+          "track": 2,
+          "purpose": "Bass Synth",
+          "input": "INST",
+          "inputFxKey": "LPF \u2192 DYNAMICS",
+          "trackFxKey": "CHORUS"
+        },
+        {
+          "track": 3,
+          "purpose": "Arp / Lead",
+          "input": "INST",
+          "inputFxKey": "PHASER \u2192 DELAY (750ms)",
+          "trackFxKey": "FLANGER, CHORUS"
+        },
+        {
+          "track": 4,
+          "purpose": "Pad",
+          "input": "INST",
+          "inputFxKey": "CHORUS \u2192 REVERB (TIME: 5)",
+          "trackFxKey": "LPF (slow sweep)"
+        },
+        {
+          "track": 5,
+          "purpose": "Vocoded Vocal",
+          "input": "MIC",
+          "inputFxKey": "VOCODER \u2192 CHORUS \u2192 DELAY",
+          "trackFxKey": "PHASER"
+        }
+      ],
+      "performanceTip": "Start with the drum machine groove, layer the bass synth, then add the arp. The pad goes on Track 4 for atmosphere. Finish with vocoded vocals for that classic 80s feel."
+    }
+  ],
+  "masterSettings": {
+    "allPurpose": {
+      "comp": {
+        "threshold": "-8 to -12 dB",
+        "ratio": "2:1 \u2013 4:1",
+        "attack": "10\u201320 ms",
+        "level": "+3 dB (makeup)"
+      },
+      "eq": {
+        "low": {
+          "gain": "+1 to +2 dB",
+          "freq": "80 Hz"
+        },
+        "mid": {
+          "gain": "0 to -1 dB",
+          "freq": "800 Hz"
+        },
+        "high": {
+          "gain": "+1 to +2 dB",
+          "freq": "8 kHz"
+        }
+      }
+    },
+    "genreSpecific": [
+      {
+        "genre": "Hip Hop",
+        "compRatio": "4:1",
+        "compThreshold": "-10 dB",
+        "lowEq": "+3 dB @ 60 Hz",
+        "midEq": "-2 dB @ 400 Hz",
+        "highEq": "+2 dB @ 10 kHz",
+        "masterFx": "REVERB (TIME: 1, E.LEVEL: 10)"
+      },
+      {
+        "genre": "EDM / House",
+        "compRatio": "3:1",
+        "compThreshold": "-8 dB",
+        "lowEq": "+2 dB @ 80 Hz",
+        "midEq": "0 dB",
+        "highEq": "+3 dB @ 12 kHz",
+        "masterFx": "LPF (CUTOFF: 80, RESONANCE: 50)"
+      },
+      {
+        "genre": "Dubstep",
+        "compRatio": "6:1",
+        "compThreshold": "-12 dB",
+        "lowEq": "+4 dB @ 50 Hz",
+        "midEq": "+2 dB @ 1 kHz",
+        "highEq": "+1 dB",
+        "masterFx": "ISOLATOR (BAND: LOW, BAND LEVEL: 50)"
+      },
+      {
+        "genre": "Rock",
+        "compRatio": "3:1",
+        "compThreshold": "-10 dB",
+        "lowEq": "+2 dB @ 100 Hz",
+        "midEq": "+1 dB @ 2 kHz",
+        "highEq": "+2 dB @ 6 kHz",
+        "masterFx": "REVERB (TIME: 1.2, E.LEVEL: 15)"
+      },
+      {
+        "genre": "Ambient",
+        "compRatio": "2:1",
+        "compThreshold": "-6 dB",
+        "lowEq": "+1 dB @ 100 Hz",
+        "midEq": "-1 dB @ 800 Hz",
+        "highEq": "+2 dB @ 10 kHz",
+        "masterFx": "REVERB (TIME: 5, E.LEVEL: 30)"
+      }
+    ]
+  },
+  "vocoderGuide": {
+    "title": "Using the Vocoder & Pitch Effects",
+    "intro": "The RC-505mk2 offers several pitch-related effects. Understanding which to use \u2014 and their requirements \u2014 is key.",
+    "effects": [
+      {
+        "name": "VOCODER",
+        "requirement": "Requires MIDI keyboard connected to MIDI IN",
+        "setup": "Set MIDI VOICE channel at MENU > MIDI > VOICE CH. Use CARRIER, TONE, ATTACK, MOD SENS, BALANCE, CARRIER THRU params. Play notes on keyboard while singing. Voice is locked to played pitches.",
+        "bestFor": "T-Pain / auto-tune vocal style, vocoded pads, robotic singing",
+        "difficulty": "Advanced \u2014 requires external MIDI controller"
+      },
+      {
+        "name": "OSC VOC",
+        "requirement": "No external gear needed \u2014 uses built-in oscillator as carrier",
+        "setup": "Select OSC VOC in any Input FX slot. Adjust CARRIER (SAW, VINTAGE SAW, etc.), TONE, ATTACK, OCTAVE, MOD SENS, RELEASE, and BALANCE params.",
+        "bestFor": "Quick robotic/synthetic vocal texture without MIDI setup",
+        "difficulty": "Easy \u2014 works standalone"
+      },
+      {
+        "name": "ROBOT",
+        "requirement": "No external gear needed",
+        "setup": "Select ROBOT in any Input FX slot. Adjust NOTE, FORMANT, and MODE params.",
+        "bestFor": "Classic robotic voice effect (Daft Punk style)",
+        "difficulty": "Easy \u2014 works standalone"
+      },
+      {
+        "name": "ELECTRIC",
+        "requirement": "No external gear needed",
+        "setup": "Select ELECTRIC in any Input FX slot. Adjust SHIFT, FORMANT, SPEED, STABILITY, and SCALE params.",
+        "bestFor": "Electronic voice modulation, pitch shifting on the fly",
+        "difficulty": "Easy \u2014 works standalone"
+      },
+      {
+        "name": "TRANSPOSE",
+        "requirement": "No external gear needed",
+        "setup": "Select TRANSPOSE in any Input FX slot. Set TRANS (-12 to +12 semitones) and MODE params.",
+        "bestFor": "Harmonies, octave doubling, pitch-shifted layers",
+        "difficulty": "Easy \u2014 works standalone"
+      },
+      {
+        "name": "HRM AUTO",
+        "requirement": "Requires MIDI keyboard for chord input",
+        "setup": "Connect MIDI keyboard. Set VOICE channel. Use VOICE, FORMANT, PAN, HRM MODE, KEY, D.LEVEL, HRM LEVEL params. Harmonizer follows played chords.",
+        "bestFor": "Intelligent harmonies that follow chord progression",
+        "difficulty": "Advanced \u2014 requires external MIDI controller"
+      }
+    ],
+    "inputCompNote": "The RC-505mk2 also has a dedicated INPUT COMPRESSOR (MENU > INPUT > COMP) and NOISE SUPPRESS (MENU > INPUT > NS). These are separate from the 4 Input FX slots A-D. Use Input Comp for basic level control and use the DYNAMICS effect in an FX slot for creative, tunable compression."
+  },
+  "gearRecommendations": {
+    "percussion": [
+      {
+        "name": "Shure SM58",
+        "desc": "Industry-standard dynamic mic",
+        "affiliateUrl": "#"
+      },
+      {
+        "name": "Roland RC-505mk2",
+        "desc": "Loop station",
+        "affiliateUrl": "#"
+      },
+      {
+        "name": "XLR Cable (10ft)",
+        "desc": "Mogami Gold quality",
+        "affiliateUrl": "#"
+      }
+    ],
+    "beatbox": [
+      {
+        "name": "Sennheiser e835",
+        "desc": "Warm dynamic for beatbox",
+        "affiliateUrl": "#"
+      },
+      {
+        "name": "Pop Filter",
+        "desc": "Reduces plosives",
+        "affiliateUrl": "#"
+      },
+      {
+        "name": "Roland RC-505mk2",
+        "desc": "Loop station",
+        "affiliateUrl": "#"
+      }
+    ],
+    "vocal-tune": [
+      {
+        "name": "Audio-Technica AT2020",
+        "desc": "Condenser mic for vocals",
+        "affiliateUrl": "#"
+      },
+      {
+        "name": "Mic Stand (boom)",
+        "desc": "Adjustable boom stand",
+        "affiliateUrl": "#"
+      },
+      {
+        "name": "Roland RC-505mk2",
+        "desc": "Loop station",
+        "affiliateUrl": "#"
+      }
+    ],
+    "guitar": [
+      {
+        "name": "Mogami Guitar Cable",
+        "desc": "Low-noise instrument cable",
+        "affiliateUrl": "#"
+      },
+      {
+        "name": "Roland RC-505mk2",
+        "desc": "Loop station",
+        "affiliateUrl": "#"
+      },
+      {
+        "name": "Audio-Technica ATH-M50x",
+        "desc": "Monitor headphones",
+        "affiliateUrl": "#"
+      }
+    ],
+    "keys": [
+      {
+        "name": "1/4\" TRS Cable",
+        "desc": "Balanced stereo cable",
+        "affiliateUrl": "#"
+      },
+      {
+        "name": "Roland RC-505mk2",
+        "desc": "Loop station",
+        "affiliateUrl": "#"
+      },
+      {
+        "name": "Sustain Pedal",
+        "desc": "Universal keyboard pedal",
+        "affiliateUrl": "#"
+      }
+    ]
+  },
+  "promoConfig": {
+    "types": [
+      "ad",
+      "presetPack",
+      "checkPrice",
+      "subscribe"
+    ],
+    "presetPack": [
+      {
+        "headline": "Download All 20 Rack Presets",
+        "subtext": "Every FX chain in this guide as a ready-to-use RC-505mk2 backup file + printable cheat sheet.",
+        "price": "$4.99",
+        "cta": "Get the Pack \u2192",
+        "url": "#"
+      },
+      {
+        "headline": "Instant Rack Setup \u2014 Skip the Dial-In",
+        "subtext": "Stop entering parameters one by one. Load professionally tuned FX racks directly into your RC-505mk2.",
+        "price": "$4.99",
+        "cta": "Download Now \u2192",
+        "url": "#"
+      }
+    ],
+    "checkPrice": [
+      {
+        "headline": "Roland RC-505mk2",
+        "subtext": "The loop station this guide is built for. 5 tracks, 4 FX slots, 99 memories.",
+        "cta": "Check Price \u2192",
+        "url": "#"
+      }
+    ],
+    "subscribe": [
+      {
+        "headline": "New Racks Monthly",
+        "subtext": "Get fresh FX chain recipes and performance techniques delivered to your inbox.",
+        "cta": "Subscribe Free",
+        "url": "#"
+      },
+      {
+        "headline": "Join 1,000+ RC-505 Loopers",
+        "subtext": "Tips, tricks, and new rack configurations every month. No spam.",
+        "cta": "Sign Up \u2192",
+        "url": "#"
+      }
+    ],
+    "ad": [
+      {
+        "size": "responsive",
+        "label": "Advertisement",
+        "placeholder": "Your ad here \u2014 AdSense / Carbon / Ezoic"
+      }
+    ]
+  },
+  "filterConfig": {
+    "fxTypes": [
+      "LPF",
+      "HPF",
+      "BPF",
+      "PHASER",
+      "FLANGER",
+      "RING.MOD",
+      "SYNTH",
+      "G2B",
+      "SUSTAINER",
+      "LO-FI",
+      "RADIO",
+      "AUTO RIFF",
+      "PITCH BEND",
+      "ROBOT",
+      "ELECTRIC",
+      "SLOW GEAR",
+      "TRANSPOSE",
+      "VOCODER",
+      "OSC VOC",
+      "HRM MANUAL",
+      "HRM AUTO",
+      "OSC BOT",
+      "DIST",
+      "DYNAMICS",
+      "EQ",
+      "PREAMP",
+      "ISOLATOR",
+      "OCTAVE",
+      "AUTO PAN",
+      "MANUAL PAN",
+      "STEREO ENHANCE",
+      "TREMOLO",
+      "VIBRATO",
+      "PATTERN SLICER",
+      "STEP SLICER",
+      "DELAY",
+      "PANNING DELAY",
+      "REVERSE DELAY",
+      "MOD DELAY",
+      "TAPE ECHO1",
+      "TAPE ECHO2",
+      "GRANULAR DELAY",
+      "WARP",
+      "TWIST",
+      "FREEZE",
+      "CHORUS",
+      "REVERB",
+      "GATE REVERB",
+      "REVERSE REVERB",
+      "ROLL1",
+      "ROLL2",
+      "BEAT SCATTER",
+      "BEAT REPEAT",
+      "BEAT SHIFT",
+      "VINYL FLICK"
+    ],
+    "genres": [
+      "Acoustic",
+      "All Genres",
+      "Ambient",
+      "Beatbox",
+      "Blues",
+      "Chill",
+      "Chillwave",
+      "Downtempo",
+      "Dubstep",
+      "EDM",
+      "Electronic",
+      "Hip Hop",
+      "Indie",
+      "Industrial",
+      "Jazz",
+      "Lo-Fi",
+      "Lo-Fi Hip Hop",
+      "Metal",
+      "Neo-Soul",
+      "Pop",
+      "Post-Rock",
+      "Punk",
+      "R&B",
+      "Rock",
+      "Shoegaze",
+      "Soul",
+      "Synthwave",
+      "Techno"
+    ],
+    "inputTypes": [
+      "mic",
+      "inst"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "slapback-delay",
+  "effect": "DELAY",
+  "title": "Slapback Delay",
+  "category": "time",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Short single-repeat delay that adds thickness and depth without obvious echo. Classic technique for vocals — makes a solo voice sound fuller and more present in the mix.",
+  "params": [
+    {
+      "name": "TIME",
+      "value": "80"
+    },
+    {
+      "name": "FEEDBACK",
+      "value": "5"
+    },
+    {
+      "name": "HIGH CUT",
+      "value": "4 kHz"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "35"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "vocals",
+    "thickness",
+    "subtle",
+    "classic"
+  ],
+  "pairsWith": [
+    "gentle-comp",
+    "warm-eq",
+    "vocal-plate"
+  ]
+}

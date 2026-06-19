@@ -1,0 +1,44 @@
+{
+  "id": "lpf-sweep",
+  "effect": "LPF",
+  "title": "Low-Pass Filter Sweep",
+  "category": "transition",
+  "context": [
+    "tfx"
+  ],
+  "usage": "individual",
+  "description": "Sweeps out the highs, leaving only a muffled, bass-heavy version of the loop. The opposite of HPF sweep — use to create underwater/distant effects or smooth transitions where the energy drops before rebuilding.",
+  "params": [
+    {
+      "name": "RATE",
+      "value": "0"
+    },
+    {
+      "name": "DEPTH",
+      "value": "0"
+    },
+    {
+      "name": "CUTOFF",
+      "value": "40"
+    },
+    {
+      "name": "RESONANCE",
+      "value": "10"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "transition",
+    "filter",
+    "dj",
+    "muffled",
+    "breakdown"
+  ],
+  "pairsWith": [
+    "echo-fadeout",
+    "hall-wash"
+  ]
+}

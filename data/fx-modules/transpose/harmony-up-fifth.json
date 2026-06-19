@@ -1,0 +1,35 @@
+{
+  "id": "harmony-up-fifth",
+  "effect": "TRANSPOSE",
+  "title": "Harmony +5 (Up a Fourth)",
+  "category": "pitch",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Transposes input up 5 semitones for instant harmony. Record your lead vocal, then enable this module for a second pass to build harmonies. Works best with the dry signal removed (D.LEVEL high, E.LEVEL at blend point).",
+  "params": [
+    {
+      "name": "SEMI",
+      "value": "5"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "80"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "pitch",
+    "harmony",
+    "vocals",
+    "layering"
+  ],
+  "pairsWith": [
+    "gentle-comp",
+    "vocal-plate"
+  ]
+}

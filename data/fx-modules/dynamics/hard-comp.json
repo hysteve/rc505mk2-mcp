@@ -1,0 +1,31 @@
+{
+  "id": "hard-comp",
+  "effect": "DYNAMICS",
+  "title": "Hard Compression",
+  "category": "dynamics",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Aggressive compression for maximum sustain and punch. Brings up quieter details and glues the signal. Great for beatbox or percussion that needs to cut through.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "HARDCOMP"
+    },
+    {
+      "name": "DYNAMICS",
+      "value": "18"
+    }
+  ],
+  "tags": [
+    "beatbox",
+    "percussion",
+    "aggressive",
+    "punch"
+  ],
+  "pairsWith": [
+    "presence-eq",
+    "tight-room"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "beat-repeat-fill",
+  "effect": "BEAT REPEAT",
+  "title": "Beat Repeat Fill",
+  "category": "performance",
+  "context": [
+    "tfx"
+  ],
+  "usage": "individual",
+  "description": "Stutters and repeats a slice of the loop for rhythmic fills and transitions. A signature performance effect — trigger it on a loop to create rapid-fire repeats that build energy before a drop or section change. Must be placed in Track FX Slot A.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "REPEAT"
+    },
+    {
+      "name": "LENGTH",
+      "value": "8TH"
+    },
+    {
+      "name": "GATE",
+      "value": "100"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "performance",
+    "fill",
+    "stutter",
+    "dj",
+    "energy",
+    "glitch"
+  ],
+  "pairsWith": [
+    "hpf-sweep",
+    "echo-fadeout"
+  ]
+}

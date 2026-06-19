@@ -1,0 +1,31 @@
+{
+  "id": "noise-gate",
+  "effect": "DYNAMICS",
+  "title": "Noise Gate",
+  "category": "dynamics",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Cuts signal below threshold to eliminate bleed and background noise between phrases. Essential for live mic setups in noisy environments.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "NOISESUP"
+    },
+    {
+      "name": "DYNAMICS",
+      "value": "30"
+    }
+  ],
+  "tags": [
+    "mic",
+    "cleanup",
+    "noise",
+    "foundation"
+  ],
+  "pairsWith": [
+    "gentle-comp",
+    "warm-eq"
+  ]
+}

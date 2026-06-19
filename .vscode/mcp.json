@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "rc505mk2": {
+      "command": "npx",
+      "args": ["-y", "rc505mk2-mcp"]
+    },
+    "rc505mk2-dev": {
+      "command": "node",
+      "args": ["${workspaceFolder}/dist/mcp/server.js"]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "beat-scatter-glitch",
+  "effect": "BEAT SCATTER",
+  "title": "Beat Scatter Glitch",
+  "category": "performance",
+  "context": [
+    "tfx"
+  ],
+  "usage": "individual",
+  "description": "Rearranges and glitches loop slices for chaotic, IDM-style manipulation. More unpredictable than Beat Repeat — use for experimental breakdowns and controlled chaos. Must be placed in Track FX Slot A.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "SCATTER1"
+    },
+    {
+      "name": "LENGTH",
+      "value": "16TH"
+    },
+    {
+      "name": "GATE",
+      "value": "100"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "performance",
+    "glitch",
+    "experimental",
+    "idm",
+    "chaos"
+  ],
+  "pairsWith": [
+    "lpf-sweep",
+    "echo-fadeout"
+  ]
+}

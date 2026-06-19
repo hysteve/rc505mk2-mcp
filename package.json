@@ -1,0 +1,78 @@
+{
+  "name": "rc505mk2-mcp",
+  "version": "0.2.0",
+  "description": "Local MCP server for the Roland RC-505mk2 — FX presets, RC0 generation, and USB upload",
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "rc505",
+    "rc505mk2",
+    "roland",
+    "loop-station",
+    "mcp",
+    "model-context-protocol",
+    "audio",
+    "fx",
+    "presets"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hysteve/rc505mk2-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hysteve/rc505mk2-react/issues"
+  },
+  "homepage": "https://github.com/hysteve/rc505mk2-react#readme",
+  "scripts": {
+    "build:template": "tsx scripts/embed-template.ts",
+    "build": "npm run build:template && tsup",
+    "sync:skills": "tsx scripts/sync-skills.ts",
+    "pack:plugin": "tsx scripts/pack-plugin.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./browser": {
+      "types": "./dist/browser.d.ts",
+      "import": "./dist/browser.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "import": "./dist/node.js",
+      "require": "./dist/node.cjs"
+    }
+  },
+  "bin": {
+    "rc505mk2": "./dist/cli/generate-memories.js",
+    "rc505mk2-mcp": "./dist/mcp/server.js"
+  },
+  "files": [
+    "dist",
+    "data",
+    "README.md"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "fflate": "^0.8.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}

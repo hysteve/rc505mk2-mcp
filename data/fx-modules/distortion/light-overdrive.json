@@ -1,0 +1,44 @@
+{
+  "id": "light-overdrive",
+  "effect": "DISTORTION",
+  "title": "Light Overdrive",
+  "category": "character",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Subtle harmonic saturation that adds edge and presence without harsh distortion. Warms up a signal with tube-style coloring — works on vocals, guitar, or any source that needs grit without destruction.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "OVERDRIVE"
+    },
+    {
+      "name": "DRIVE",
+      "value": "25"
+    },
+    {
+      "name": "TONE",
+      "value": "50"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "60"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "character",
+    "warmth",
+    "grit",
+    "saturation",
+    "guitar"
+  ],
+  "pairsWith": [
+    "gentle-comp",
+    "warm-eq"
+  ]
+}

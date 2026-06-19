@@ -1,0 +1,36 @@
+{
+  "id": "octave-down",
+  "effect": "OCTAVE",
+  "title": "Octave Down",
+  "category": "pitch",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Drops the pitch one octave for sub-bass vocals, bass beatbox, or synthetic bass lines from voice. Tracks monophonic input best — keep phrases simple for clean tracking.",
+  "params": [
+    {
+      "name": "MODE",
+      "value": "-1OCT"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "100"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "pitch",
+    "bass",
+    "sub",
+    "vocals",
+    "beatbox"
+  ],
+  "pairsWith": [
+    "hard-comp",
+    "bass-boost-eq"
+  ]
+}

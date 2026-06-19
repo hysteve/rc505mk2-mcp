@@ -1,0 +1,46 @@
+{
+  "id": "tape-echo-vintage",
+  "effect": "TAPE ECHO",
+  "title": "Vintage Tape Echo",
+  "category": "time",
+  "context": [
+    "ifx",
+    "tfx"
+  ],
+  "usage": "both",
+  "description": "Warm, degrading tape echo with wow and flutter. Each repeat darkens and wobbles like a worn tape machine. On Input FX, adds vintage character to recordings. On Track FX, transforms clean loops into lo-fi, dub-style echoes.",
+  "params": [
+    {
+      "name": "TIME",
+      "value": "QUARTER"
+    },
+    {
+      "name": "FEEDBACK",
+      "value": "45"
+    },
+    {
+      "name": "HIGH CUT",
+      "value": "2.5 kHz"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "55"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "vintage",
+    "tape",
+    "dub",
+    "warm",
+    "character"
+  ],
+  "pairsWith": [
+    "gentle-comp",
+    "warm-eq",
+    "slow-phaser"
+  ]
+}

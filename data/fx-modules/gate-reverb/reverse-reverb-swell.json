@@ -1,0 +1,56 @@
+{
+  "id": "reverse-reverb-swell",
+  "effect": "GATE REVERB",
+  "title": "Reverse Reverb Swell",
+  "category": "space",
+  "context": [
+    "tfx"
+  ],
+  "usage": "individual",
+  "description": "Reverse reverb effect that creates an eerie swell-up into the source material. Perfect as a Track FX transition — switch to this bank to transform a loop into a rising wash that builds tension before a drop or section change.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "REVERSE"
+    },
+    {
+      "name": "TIME",
+      "value": "3.5"
+    },
+    {
+      "name": "PRE DELAY",
+      "value": "0"
+    },
+    {
+      "name": "DENSITY",
+      "value": "8"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "100"
+    },
+    {
+      "name": "LOW CUT",
+      "value": "FLAT"
+    },
+    {
+      "name": "HIGH CUT",
+      "value": "FLAT"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "transition",
+    "build",
+    "tension",
+    "performance",
+    "dramatic"
+  ],
+  "pairsWith": [
+    "echo-fadeout",
+    "hpf-sweep"
+  ]
+}

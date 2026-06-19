@@ -1,0 +1,59 @@
+{
+  "id": "presence-eq",
+  "effect": "EQ",
+  "title": "Presence & Clarity",
+  "category": "tone",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Cuts mud from low-mids and boosts upper-mid presence for articulation and cut-through. Great for beatbox, percussion, or vocals that need to punch through a dense loop stack.",
+  "params": [
+    {
+      "name": "LO",
+      "value": "0"
+    },
+    {
+      "name": "LO-MID GAIN",
+      "value": "-4"
+    },
+    {
+      "name": "LO-MID FREQ",
+      "value": "250 Hz"
+    },
+    {
+      "name": "LO-MID Q",
+      "value": "2"
+    },
+    {
+      "name": "HI-MID GAIN",
+      "value": "5"
+    },
+    {
+      "name": "HI-MID FREQ",
+      "value": "3.15 kHz"
+    },
+    {
+      "name": "HI-MID Q",
+      "value": "1"
+    },
+    {
+      "name": "HIGH",
+      "value": "3"
+    },
+    {
+      "name": "LEVEL",
+      "value": "50"
+    }
+  ],
+  "tags": [
+    "clarity",
+    "cut-through",
+    "articulation",
+    "beatbox"
+  ],
+  "pairsWith": [
+    "hard-comp",
+    "tight-room"
+  ]
+}

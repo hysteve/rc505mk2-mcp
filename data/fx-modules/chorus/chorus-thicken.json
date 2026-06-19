@@ -1,0 +1,40 @@
+{
+  "id": "chorus-thicken",
+  "effect": "CHORUS",
+  "title": "Chorus Thicken",
+  "category": "modulation",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Classic chorus for doubling and thickening vocals or instruments. Adds subtle detuning and delay that makes a single source sound like multiple layers.",
+  "params": [
+    {
+      "name": "RATE",
+      "value": "QUARTER"
+    },
+    {
+      "name": "DEPTH",
+      "value": "40"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "60"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "modulation",
+    "thickness",
+    "doubling",
+    "vocals"
+  ],
+  "pairsWith": [
+    "gentle-comp",
+    "warm-eq",
+    "vocal-plate"
+  ]
+}

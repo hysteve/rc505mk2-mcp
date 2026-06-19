@@ -1,0 +1,63 @@
+{
+  "manifest_version": "0.3",
+  "name": "rc505mk2",
+  "display_name": "RC-505mk2 Assistant",
+  "version": "0.2.0",
+  "description": "Browse FX racks, build memory configs, and upload to your Roland RC-505mk2 via USB.",
+  "long_description": "Local assistant for the Roland RC-505mk2 loop station. Browse bundled FX modules and rack presets, compose custom racks, generate RC0 memory files, and upload directly to your device — no cloud, no API keys.\n\nConnect your RC-505 in USB Storage mode (MENU → USB → STORAGE → CONNECT) before using device tools.",
+  "author": {
+    "name": "Steve Mason",
+    "url": "https://github.com/hysteve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hysteve/rc505mk2-react.git"
+  },
+  "homepage": "https://github.com/hysteve/rc505mk2-react#readme",
+  "documentation": "https://github.com/hysteve/rc505mk2-react/blob/main/docs/SKILL.md",
+  "support": "https://github.com/hysteve/rc505mk2-react/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/mcp/server.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/mcp/server.js"]
+    }
+  },
+  "prompts": [
+    {
+      "name": "load-rack-to-slot",
+      "description": "Load a bundled FX rack to a device memory slot",
+      "arguments": ["slot"],
+      "text": "Load an RC-505mk2 FX rack to memory slot ${arguments.slot}. Use list_rack_presets to find a match, then upload_memory with rack_id. Device must be in USB Storage mode."
+    },
+    {
+      "name": "adapt-genre-rack",
+      "description": "Create or adapt an FX rack for a genre or style",
+      "arguments": ["genre"],
+      "text": "Create an RC-505mk2 FX rack for ${arguments.genre} performance. Use list_rack_presets filtered by genre or tag, adapt if needed, and offer upload."
+    },
+    {
+      "name": "build-custom-rack",
+      "description": "Build a greenfield FX rack from modules",
+      "arguments": ["description"],
+      "text": "Build a custom RC-505mk2 FX rack from scratch: ${arguments.description}. Use list_fx_modules for IFX and TFX, then create_rack_preset with fxModuleIds. Do not browse bundled rack presets."
+    },
+    {
+      "name": "check-device",
+      "description": "Check if the RC-505mk2 is connected via USB",
+      "text": "Check if my Roland RC-505mk2 is connected. Use detect_device. Remind me to enable USB Storage mode if not detected."
+    }
+  ],
+  "keywords": ["rc505", "roland", "loop-station", "fx", "audio", "mcp"],
+  "license": "UNLICENSED",
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "privacy_policies": []
+}

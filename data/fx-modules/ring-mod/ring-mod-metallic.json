@@ -1,0 +1,36 @@
+{
+  "id": "ring-mod-metallic",
+  "effect": "RING MOD",
+  "title": "Ring Mod Metallic",
+  "category": "character",
+  "context": [
+    "tfx"
+  ],
+  "usage": "individual",
+  "description": "Ring modulation for alien, metallic, robotic textures. Transforms any loop into something otherworldly. Use sparingly as a momentary performance effect for dramatic contrast.",
+  "params": [
+    {
+      "name": "FREQ",
+      "value": "300"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "75"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "character",
+    "experimental",
+    "metallic",
+    "alien",
+    "momentary"
+  ],
+  "pairsWith": [
+    "echo-fadeout",
+    "beat-scatter-glitch"
+  ]
+}

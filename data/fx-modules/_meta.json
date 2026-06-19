@@ -1,0 +1,13 @@
+{
+  "title": "RC-505mk2 FX Module Presets",
+  "description": "Individual FX module presets — purpose-driven single-FX configurations for assembling custom racks. Each module is a ready-to-use FX with dialed-in parameters for a specific sonic purpose. Use these as building blocks: chain them in slots A→D for cumulative processing, or load them into separate banks for on-demand switching during performance.",
+  "version": "1.0.0",
+  "device": "Roland RC-505mk2",
+  "lastUpdated": "2026-03-13",
+  "usagePatterns": {
+    "chain": "Multiple FX in series (slots A→B→C→D) for cumulative signal processing. Common for Input FX — e.g., a dynamics module in slot A tightening transients, followed by an EQ module in slot B shaping tone, then a reverb module in slot D adding space. Each module processes the output of the previous one.",
+    "individual": "Single FX or pairs loaded into separate banks (A/B/C/D) for on-demand switching. Common for Track FX performance — e.g., bank A has a beat repeat for fills, bank B has an HPF sweep for transitions, bank C has a long reverb wash for fadeouts. Switch banks mid-performance to trigger different effects on recorded loops.",
+    "inputFxContext": "Input FX are applied live to the mic/instrument signal BEFORE recording. They shape what gets captured to the loop. Chains are the dominant pattern here — you want consistent processing across all recorded material. Individual modules still work for switching between recording modes (e.g., clean vocals vs. processed beatbox).",
+    "trackFxContext": "Track FX are applied to ALREADY-RECORDED loops during playback. They are performance tools for manipulating loops in real time. Individual modules and pairs shine here — DJ-style transitions, rhythmic glitch effects, dramatic washes. Banks let you have multiple performance effects ready to trigger. Chains work too for layered processing of playback."
+  }
+}

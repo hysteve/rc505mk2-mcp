@@ -1,0 +1,41 @@
+{
+  "id": "lo-fi-crush",
+  "effect": "LO-FI",
+  "title": "Lo-Fi Crush",
+  "category": "character",
+  "context": [
+    "ifx",
+    "tfx"
+  ],
+  "usage": "both",
+  "description": "Bit-crushes and degrades the signal for a gritty, retro texture. On Input FX, records crushed material directly. On Track FX, destroys a clean loop in real time for contrast and energy.",
+  "params": [
+    {
+      "name": "LO-FI",
+      "value": "12"
+    },
+    {
+      "name": "TONE",
+      "value": "30"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "80"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "character",
+    "retro",
+    "gritty",
+    "texture",
+    "destruction"
+  ],
+  "pairsWith": [
+    "hard-comp",
+    "presence-eq"
+  ]
+}

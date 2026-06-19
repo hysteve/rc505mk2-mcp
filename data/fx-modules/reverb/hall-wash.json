@@ -1,0 +1,57 @@
+{
+  "id": "hall-wash",
+  "effect": "REVERB",
+  "title": "Hall Wash",
+  "category": "space",
+  "context": [
+    "ifx",
+    "tfx"
+  ],
+  "usage": "both",
+  "description": "Long, lush hall reverb for ambient pads and atmospheric textures. On Input FX, it transforms any source into a pad-like wash. On Track FX, it can drown a loop in reverb for dramatic transitions or ambient breakdowns.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "HALL"
+    },
+    {
+      "name": "TIME",
+      "value": "5.0"
+    },
+    {
+      "name": "PRE DELAY",
+      "value": "30"
+    },
+    {
+      "name": "DENSITY",
+      "value": "9"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "90"
+    },
+    {
+      "name": "LOW CUT",
+      "value": "100 Hz"
+    },
+    {
+      "name": "HIGH CUT",
+      "value": "FLAT"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "ambient",
+    "atmospheric",
+    "wash",
+    "pads",
+    "transition"
+  ],
+  "pairsWith": [
+    "echo-fadeout",
+    "reverse-reverb-swell"
+  ]
+}

@@ -1,0 +1,1720 @@
+{
+  "meta": {
+    "title": "RC-505mk2 Complete FX Parameter Reference",
+    "source": "RC-505mk2_Parameter_eng04_W.pdf, pages 34-43",
+    "version": "1.0.0",
+    "notes": "All parameter names, value ranges, and options are extracted verbatim from the official Roland documentation. This file serves as the single source of truth for parameter validation."
+  },
+  "inputAndTrackFx": {
+    "LPF": {
+      "description": "Low pass filter. Reduces the volume of all frequencies above the cutoff frequency.",
+      "params": {
+        "RATE": {
+          "range": "0-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": null,
+          "knob": false,
+          "description": "Sets the rate of modulation."
+        },
+        "DEPTH": {
+          "range": "0-50-100",
+          "default": 50,
+          "knob": false,
+          "fxSeqTarget": true,
+          "description": "Sets the depth of modulation."
+        },
+        "RESONANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "knob": false,
+          "description": "Sets the intensity of the effect."
+        },
+        "CUTOFF": {
+          "range": "0-50-100",
+          "default": 50,
+          "knob": false,
+          "fxSeqTarget": true,
+          "description": "Sets the cutoff frequency of the filter."
+        },
+        "STEP RATE": {
+          "range": "OFF, 4MEAS, 2MEAS, 1MEAS, note values, 0-100",
+          "default": "OFF",
+          "knob": false,
+          "description": "Sets the rate of the stepped change for the effect."
+        }
+      }
+    },
+    "HPF": {
+      "description": "High pass filter. Cuts the frequencies in the region below the cutoff frequency.",
+      "params": {
+        "RATE": {
+          "range": "0-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": null,
+          "description": "Sets the rate of modulation."
+        },
+        "DEPTH": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the depth of modulation."
+        },
+        "RESONANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the intensity of the effect."
+        },
+        "CUTOFF": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the cutoff frequency of the filter."
+        },
+        "STEP RATE": {
+          "range": "OFF, 4MEAS, 2MEAS, 1MEAS, note values, 0-100",
+          "default": "OFF",
+          "description": "Sets the rate of the stepped change for the effect."
+        }
+      }
+    },
+    "BPF": {
+      "description": "Band pass filter. Leaves only the frequencies in the region of the cutoff frequency, and cuts the rest.",
+      "params": {
+        "RATE": {
+          "range": "0-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": null,
+          "description": "Sets the rate of modulation."
+        },
+        "DEPTH": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the depth of modulation."
+        },
+        "RESONANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the intensity of the effect."
+        },
+        "CUTOFF": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the cutoff frequency of the filter."
+        },
+        "STEP RATE": {
+          "range": "OFF, 4MEAS, 2MEAS, 1MEAS, note values, 0-100",
+          "default": "OFF",
+          "description": "Sets the rate of the stepped change for the effect."
+        }
+      }
+    },
+    "PHASER": {
+      "description": "Gives the sound a swishing quality by adding a phase-shifted sound.",
+      "params": {
+        "RATE": {
+          "range": "0-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": null,
+          "description": "Sets the speed of the effect."
+        },
+        "DEPTH": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the richness of the effect."
+        },
+        "RESONANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the intensity of the effect."
+        },
+        "MANUAL": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the center frequency of the phaser effect."
+        },
+        "STEP RATE": {
+          "range": "OFF, 4MEAS, 2MEAS, 1MEAS, note values, 0-100",
+          "default": "OFF",
+          "description": "Sets the rate of the stepped change for the effect."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "fxSeqTarget": true,
+          "description": "Sets the volume of the direct sound."
+        },
+        "E.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume level of the effect sound."
+        },
+        "STAGE": {
+          "range": "4, 8, 12, BI-PHASE",
+          "default": null,
+          "description": "Selects the number of stages that the phaser effect will use."
+        }
+      }
+    },
+    "FLANGER": {
+      "description": "Produces a metallic resonance reminiscent of a jet airplane taking off and landing.",
+      "params": {
+        "RATE": {
+          "range": "0-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": null,
+          "description": "Sets the speed of the effect."
+        },
+        "DEPTH": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the richness of the effect."
+        },
+        "RESONANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the intensity of the effect."
+        },
+        "MANUAL": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the center frequency of the flanger effect."
+        },
+        "STEP RATE": {
+          "range": "OFF, 4MEAS, 2MEAS, 1MEAS, note values, 0-100",
+          "default": "OFF",
+          "description": "Sets the rate of the stepped change for the effect."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "fxSeqTarget": true,
+          "description": "Sets the volume of the direct sound."
+        },
+        "E.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the effect sound."
+        },
+        "SEPARATION": {
+          "range": "0-100",
+          "default": null,
+          "fxSeqTarget": true,
+          "description": "Sets the amount of separation (how wide the sound seems)."
+        }
+      }
+    },
+    "RING.MOD": {
+      "description": "Gives a metallic character to the sound, creating the impression that the sound is going out of focus.",
+      "params": {
+        "FREQUENCY": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the frequency of the internal oscillator."
+        },
+        "BALANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume balance between the direct sound and the effect sound."
+        },
+        "MODE": {
+          "range": "1, 2",
+          "default": 1,
+          "description": "Specifies the operating mode. 1=previous RC series algorithm, 2=new algorithm."
+        }
+      }
+    },
+    "SYNTH": {
+      "description": "Generates a synthesizer sound.",
+      "params": {
+        "FREQUENCY": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the frequency of the filter."
+        },
+        "RESONANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the intensity of the effect."
+        },
+        "DECAY": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the time over which the filter frequency will change."
+        },
+        "BALANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume balance between the direct sound and the synth sound."
+        }
+      }
+    },
+    "G2B": {
+      "description": "Transforms a guitar sound into a bass sound.",
+      "params": {
+        "BALANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume balance between the direct sound and the effect sound."
+        },
+        "MODE": {
+          "range": "1, 2",
+          "default": 1,
+          "description": "Specifies the operating mode. 1=previous RC series, 2=new algorithm."
+        }
+      }
+    },
+    "SUSTAINER": {
+      "description": "Brings down loud input sound and makes quiet input sound louder, giving the original sound a long sustaining quality without adding distortion.",
+      "params": {
+        "ATTACK": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the strength of the attack when picking."
+        },
+        "RELEASE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the range (time) over which signals are adjusted to a certain volume. Larger values result in longer sustain."
+        },
+        "LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the effect sound."
+        },
+        "LOW GAIN": {
+          "range": "-20 to +20 dB",
+          "default": 0,
+          "description": "Sets the gain for the low frequency range."
+        },
+        "HI GAIN": {
+          "range": "-20 to +20 dB",
+          "default": 0,
+          "description": "Sets the gain for the high frequency range."
+        },
+        "SUSTAIN": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the sustain time."
+        }
+      }
+    },
+    "LO-FI": {
+      "description": "Intentionally degrades the sound to create a distinctive character.",
+      "params": {
+        "BITDEPTH": {
+          "range": "OFF, 31-8-1",
+          "default": 8,
+          "description": "Sets the bit depth. When OFF, the sound quality is not degraded."
+        },
+        "SAMPLERATE": {
+          "range": "OFF, 1/2-1/4-1/32",
+          "default": "1/4",
+          "description": "Sets the sampling rate."
+        },
+        "BALANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume balance between the direct sound and the effect sound."
+        }
+      }
+    },
+    "RADIO": {
+      "description": "Produces a radio voice.",
+      "params": {
+        "LO-FI": {
+          "range": "1-5-10",
+          "default": 5,
+          "description": "Sets the amount of blurring."
+        },
+        "LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the effect sound."
+        }
+      }
+    },
+    "AUTO RIFF": {
+      "description": "Automatically creates phrases based on the input sound. Chords (two or more sounds played simultaneously) cannot be played.",
+      "params": {
+        "PHRASE": {
+          "range": "P1-30",
+          "default": null,
+          "description": "Selects the phrase for creating the auto riff."
+        },
+        "TEMPO": {
+          "range": "0-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": null,
+          "description": "Sets the speed of the phrase."
+        },
+        "HOLD": {
+          "range": "OFF, ON",
+          "default": "OFF",
+          "description": "If ON after you pick a note, the effect sound will continue even after there is no input signal."
+        },
+        "ATTACK": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the loudness of the attack sound added to each phrase."
+        },
+        "LOOP": {
+          "range": "OFF, ON",
+          "default": "OFF",
+          "description": "If ON, the phrase will be played back continuously."
+        },
+        "KEY": {
+          "range": "C (Am) - B (G#m)",
+          "default": null,
+          "description": "Sets the key of the phrase."
+        },
+        "BALANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume balance between the direct sound and the effect sound."
+        }
+      }
+    },
+    "PITCH BEND": {
+      "description": "Creates a pitch bend effect.",
+      "params": {
+        "PITCH": {
+          "range": "-3 to +4 OCT",
+          "default": null,
+          "description": "Sets the amount of pitch shift in octave steps."
+        },
+        "BEND": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the amount of bend within the range specified by the PITCH value."
+        },
+        "MODE": {
+          "range": "1, 2",
+          "default": 1,
+          "description": "Specifies the operating mode. 1=previous RC series, 2=new algorithm."
+        }
+      }
+    },
+    "ROBOT": {
+      "description": "Cyber-robot voice.",
+      "params": {
+        "NOTE": {
+          "range": "C-B",
+          "default": null,
+          "description": "Sets the pitch (fixed) for the robot voice."
+        },
+        "FORMANT": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Negative settings give a more masculine character, positive settings make the voice more feminine."
+        },
+        "MODE": {
+          "range": "1, 2",
+          "default": 1,
+          "description": "Specifies the operating mode. 1=previous RC series, 2=new algorithm."
+        }
+      }
+    },
+    "ELECTRIC": {
+      "description": "Adjusts the pitch in steps to make the sound more mechanical.",
+      "params": {
+        "SHIFT": {
+          "range": "-12 to +12",
+          "default": 0,
+          "description": "Sets how much the pitch changes."
+        },
+        "FORMANT": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Negative settings give a more masculine character, positive settings make the voice more feminine."
+        },
+        "SPEED": {
+          "range": "0-5-10",
+          "default": 5,
+          "description": "Sets how quickly the pitch changes."
+        },
+        "STABILITY": {
+          "range": "-10 to +10",
+          "default": 0,
+          "description": "Adjusts how easily the pitch changes. Larger values make the pitch more stable."
+        },
+        "SCALE": {
+          "range": "CHROMATIC, C (Am) - B (G#m)",
+          "default": "CHROMATIC",
+          "description": "CHROMATIC adjusts pitch in semitones. SCALE adjusts pitch to match the key."
+        }
+      }
+    },
+    "SLOW GEAR": {
+      "description": "Produces a volume-swell effect (violin-like sound).",
+      "params": {
+        "SENS": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the effect's sensitivity when you're picking."
+        },
+        "RISE TIME": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the time needed for the volume to reach its maximum from the moment you begin picking."
+        },
+        "LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the effect sound."
+        },
+        "MODE": {
+          "range": "1, 2",
+          "default": 1,
+          "description": "Specifies the operating mode. 1=previous RC series, 2=new algorithm."
+        }
+      }
+    },
+    "TRANSPOSE": {
+      "description": "Transposes the sound when you turn the FX on.",
+      "params": {
+        "TRANS": {
+          "range": "-12 to +12",
+          "default": 0,
+          "fxSeqTarget": true,
+          "description": "Sets the amount of transposition in semitone units that will occur when the FX is on."
+        },
+        "MODE": {
+          "range": "1, 2",
+          "default": 1,
+          "description": "Specifies the operating mode. 1=previous RC series, 2=new algorithm."
+        }
+      }
+    },
+    "VOCODER": {
+      "description": "Vocoder sound that uses the audio input to modulate the sound of the track you specify.",
+      "params": {
+        "CARRIER": {
+          "range": "MIC1, MIC2, INST1-L, INST1-R, INST2-L, INST2-R, TRACK1-5",
+          "default": null,
+          "description": "Sets the input or track that will be used as the basis (carrier) of the vocoder sound. If the specified track is empty, you won't hear the vocoder."
+        },
+        "TONE": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Adjusts the tonal character of the vocoder part."
+        },
+        "ATTACK": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the attack of the sound."
+        },
+        "MOD SENS": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Sets the sensitivity by which the audio input will control the modulation."
+        },
+        "BALANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume balance between the direct sound and the vocoder sound."
+        },
+        "CARRIER THRU": {
+          "range": "OFF, ON",
+          "default": "OFF",
+          "description": "When OFF, the carrier output is muted while the effect is on. Available if CARRIER is set to input (MIC1-INST2-R)."
+        }
+      }
+    },
+    "OSC VOC": {
+      "description": "Creates a vocoder sound based on the MIDI note messages received.",
+      "params": {
+        "CARRIER": {
+          "range": "SAW, VINTAGE SAW, DETUNE SAW, SQUARE, RECT",
+          "default": "SAW",
+          "description": "Selects the carrier waveform (the basic sound)."
+        },
+        "TONE": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Adjusts the tonal character of the vocoder part."
+        },
+        "ATTACK": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the attack of the sound."
+        },
+        "OCTAVE": {
+          "range": "-2OCT, -1OCT, 0, +1OCT",
+          "default": "0",
+          "description": "Sets the pitch of the sound."
+        },
+        "MOD SENS": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Sets the sensitivity by which the audio input will control the modulation."
+        },
+        "RELEASE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the decay time (release time) for sound initiated by a note message."
+        },
+        "BALANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume balance between the direct sound and the vocoder sound."
+        }
+      }
+    },
+    "HRM MANUAL": {
+      "description": "Adds a harmony to match the value set for the KEY.",
+      "params": {
+        "VOICE": {
+          "range": "OCT-, OCT+, -6-4TH, -3RD, +3RD, +4-6TH, UNISON",
+          "default": null,
+          "description": "Selects the type of harmony."
+        },
+        "FORMANT": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Adjusts the vocal character of the harmony part."
+        },
+        "PAN": {
+          "range": "L50-CENTER-R50",
+          "default": "CENTER",
+          "description": "Sets the panning of the harmony part."
+        },
+        "KEY": {
+          "range": "C (Am) - B (G#m)",
+          "default": null,
+          "description": "Sets the key used when adding harmony."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "HRM LEVEL": {
+          "range": "0-80-100",
+          "default": 80,
+          "description": "Sets the volume of the harmony sound."
+        }
+      }
+    },
+    "HRM AUTO": {
+      "description": "Adds harmony based on the MIDI note messages received (chords and chord progressions).",
+      "params": {
+        "VOICE": {
+          "range": "OCT-, OCT+, LOWER, LOW, HIGH, HIGHER, UNISON",
+          "default": null,
+          "description": "Selects the type of harmony."
+        },
+        "FORMANT": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Adjusts the vocal character of the harmony part."
+        },
+        "PAN": {
+          "range": "L50-CENTER-R50",
+          "default": "CENTER",
+          "description": "Adjusts the panning of the harmony part."
+        },
+        "HRM MODE": {
+          "range": "HYBRID, AUTO",
+          "default": "HYBRID",
+          "description": "HYBRID: harmony based on key + MIDI chords. AUTO: based on inputted chords and progressions."
+        },
+        "KEY": {
+          "range": "C (Am) - B (G#m)",
+          "default": null,
+          "description": "Sets the key used when adding harmony."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "HRM LEVEL": {
+          "range": "0-80-100",
+          "default": 80,
+          "description": "Sets the volume of the harmony sound."
+        }
+      }
+    },
+    "OSC BOT": {
+      "description": "Plays the oscillator to match the value in the NOTE parameter. Plays melodies and other phrases in combination with the sequencer.",
+      "params": {
+        "OSC": {
+          "range": "SAW, VINTAGE SAW, DETUNE SAW, SQUARE, RECT",
+          "default": "SAW",
+          "description": "Selects the oscillator waveform."
+        },
+        "TONE": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Adjusts the tonal character of the oscillator."
+        },
+        "ATTACK": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the attack of the sound."
+        },
+        "NOTE": {
+          "range": "C1-C2-G9",
+          "default": "C2",
+          "fxSeqTarget": true,
+          "description": "Sets the note used to make the oscillator sound."
+        },
+        "MOD SENS": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Sets the sensitivity by which the audio input will control the modulation."
+        },
+        "BALANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume balance between the direct sound and the effect sound."
+        }
+      }
+    },
+    "DIST": {
+      "description": "Distortion effects that distort the sound.",
+      "params": {
+        "TYPE": {
+          "range": "VOCAL, BOOST, OD, DS, METAL, FUZZ",
+          "default": null,
+          "description": "Selects the distortion type."
+        },
+        "TONE": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Sets the tonal character."
+        },
+        "DIST": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the degree of distortion."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "E.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the effect sound."
+        }
+      }
+    },
+    "DYNAMICS": {
+      "description": "Makes the volume more consistent, and produces a more evenly balanced low-frequency range.",
+      "params": {
+        "TYPE": {
+          "range": "NATURALCOMP, MIXER COMP, LIVE COMP, NATURAL LIM, HARD LIM, JINGL COMP, HARD COMP, SOFT COMP, CLEAN COMP, DANCE COMP, ORCH COMP, VOCAL COMP, ACOUSTIC, ROCK BAND, ORCHESTRA, LOW BOOST, BRIGHTEN, DJs VOICE, PHONE VOX",
+          "default": "NATURALCOMP",
+          "description": "Selects the type of the DYNAMICS effect."
+        },
+        "DYNAMICS": {
+          "range": "-20 to +20",
+          "default": 0,
+          "description": "Adjusts the amount of difference between soft and loud."
+        }
+      }
+    },
+    "EQ": {
+      "description": "Adjusts the tone as an equalizer.",
+      "params": {
+        "LO": {
+          "range": "-20 to +20 dB",
+          "default": 0,
+          "description": "Adjusts the low frequency range tone."
+        },
+        "LO-MID GAIN": {
+          "range": "-20 to +20 dB",
+          "default": 0,
+          "description": "Adjusts the low-middle frequency range tone."
+        },
+        "LO-MID FREQ": {
+          "range": "20.0 Hz - 10.0 kHz",
+          "default": "800 Hz",
+          "description": "Specifies the center of the frequency range that will be adjusted by the LO-MID."
+        },
+        "LO-MID Q": {
+          "range": "0.5, 1, 2, 4, 8, 16",
+          "default": null,
+          "description": "Adjusts the width of the area affected by the equalizer centered at the LO-MID FREQ. Higher values narrow the area."
+        },
+        "HI-MID GAIN": {
+          "range": "-20 to +20 dB",
+          "default": 0,
+          "description": "Adjusts the high-middle frequency range tone."
+        },
+        "HI-MID FREQ": {
+          "range": "20.0 Hz - 10.0 kHz",
+          "default": "3.15 kHz",
+          "description": "Specifies the center of the frequency range that will be adjusted by the HI-MID."
+        },
+        "HI-MID Q": {
+          "range": "0.5, 1, 2, 4, 8, 16",
+          "default": null,
+          "description": "Adjusts the width of the area affected by the equalizer centered at the HI-MID FREQ. Higher values narrow the area."
+        },
+        "HIGH": {
+          "range": "-20 to +20 dB",
+          "default": 0,
+          "description": "Adjusts the high frequency range tone."
+        },
+        "LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the overall volume of the equalizer."
+        }
+      }
+    },
+    "PREAMP": {
+      "description": "Simulates the characteristics of a guitar amplifier.",
+      "params": {
+        "AMP TYPE": {
+          "range": "JC-120, NATURAL CLEAN, FULL RANGE, COMBO CRUNCH, STACK CRUNCH, HIGAIN STACK, POWER DRIVE, EXTREM LEAD, CORE METAL",
+          "default": "JC-120",
+          "description": "Selects the preamp type."
+        },
+        "SPK TYPE": {
+          "range": "OFF, ORIGINAL, 1x8\", 1x10\", 1x12\", 2x12\", 4x10\", 4x12\", 8x12\"",
+          "default": "ORIGINAL",
+          "description": "Selects the speaker type."
+        },
+        "GAIN": {
+          "range": "0-50-120",
+          "default": 50,
+          "description": "Sets the distortion of the amp."
+        },
+        "T-COMP": {
+          "range": "-10 to +10",
+          "default": 0,
+          "description": "Adjusts the sense of compression of the amp."
+        },
+        "BASS": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the tone for the low frequency range."
+        },
+        "MIDDLE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the tone for the middle frequency range."
+        },
+        "TREBLE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the tone for the high frequency range."
+        },
+        "PRESENCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the tone for the ultra high frequency range."
+        },
+        "MIC TYPE": {
+          "range": "DYN57, DYN421, CND451, CND87, FLAT",
+          "default": null,
+          "description": "Selects the mic type."
+        },
+        "MIC DIS": {
+          "range": "OFF MIC, ON MIC",
+          "default": null,
+          "description": "Sets the distance between the mic and speaker."
+        },
+        "MIC POS": {
+          "range": "CENTER, 1-10 cm",
+          "default": "CENTER",
+          "description": "Sets the mic position."
+        },
+        "E.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the effect sound."
+        }
+      }
+    },
+    "ISOLATOR": {
+      "description": "Divides the audio input into three ranges (LO, MID, HI) and cuts the specified region. You can cut in synchronization with the tempo.",
+      "params": {
+        "BAND": {
+          "range": "LOW, MIDDLE, HIGH",
+          "default": null,
+          "description": "Selects the range that will be cut."
+        },
+        "RATE": {
+          "range": "0-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": null,
+          "description": "Sets the rate of modulation."
+        },
+        "BAND LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the amount of cut."
+        },
+        "DEPTH": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the depth of modulation."
+        },
+        "STEP RATE": {
+          "range": "OFF, 4MEAS, 2MEAS, 1MEAS, note values, 0-100",
+          "default": "OFF",
+          "description": "Sets the rate of the stepped change for the effect."
+        },
+        "WAVEFORM": {
+          "range": "TRI, SQR",
+          "default": "TRI",
+          "description": "Sets how the volume level changes (the curve)."
+        }
+      }
+    },
+    "OCTAVE": {
+      "description": "Adds a note one (or two) octave lower, creating a richer sound.",
+      "params": {
+        "OCTAVE": {
+          "range": "-1OCT, -2OCT, -1OCT&-2OCT",
+          "default": "-1OCT",
+          "description": "Selects the octave that will be sounded."
+        },
+        "MODE": {
+          "range": "1, 2",
+          "default": 1,
+          "description": "Specifies the operating mode. 1=previous RC series, 2=new algorithm."
+        },
+        "OCT.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the volume level of the octave sound."
+        }
+      }
+    },
+    "AUTO PAN": {
+      "description": "Cyclically varies the stereo position (panning) of the sound.",
+      "params": {
+        "RATE": {
+          "range": "0-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": null,
+          "description": "Sets the rate of change in the pan position."
+        },
+        "WAVEFORM": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts how the volume level changes (the curve). Higher values create more abrupt change."
+        },
+        "DEPTH": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the depth by which pan will change."
+        },
+        "INIT PHASE": {
+          "range": "0-180",
+          "default": 0,
+          "description": "Specifies the rotational angle of the phase from the default (when the effect is turned on) of 0 (center)."
+        },
+        "STEP RATE": {
+          "range": "OFF, 4MEAS, 2MEAS, 1MEAS, note values, 0-100",
+          "default": "OFF",
+          "description": "Sets the rate of the stepped change for the effect."
+        }
+      }
+    },
+    "MANUAL PAN": {
+      "description": "Lets you use the INPUT FX and TRACK FX knobs to change the stereo position (panning).",
+      "params": {
+        "POSITION": {
+          "range": "L50-CENTER-R50",
+          "default": "CENTER",
+          "fxSeqTarget": true,
+          "description": "Sets the pan."
+        }
+      }
+    },
+    "STEREO ENHANCE": {
+      "description": "Gives a stereo feeling to a mono signal.",
+      "params": {
+        "LOW CUT": {
+          "range": "FLAT, 20.0 Hz - 12.5 kHz",
+          "default": "FLAT",
+          "description": "Specifies the frequency at which the low cut filter begins to take effect. When FLAT, the low cut filter will have no effect."
+        },
+        "HIGH CUT": {
+          "range": "20.0 Hz - 12.5 kHz, FLAT",
+          "default": "FLAT",
+          "description": "Specifies the frequency at which the high cut filter begins to take effect. When FLAT, the high cut filter will have no effect."
+        },
+        "ENHANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the depth of enhance."
+        }
+      }
+    },
+    "TREMOLO": {
+      "description": "Tremolo is an effect that creates a cyclic change in volume.",
+      "params": {
+        "RATE": {
+          "range": "0-85-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": 85,
+          "fxSeqTarget": true,
+          "description": "Sets the frequency (speed) of the change."
+        },
+        "DEPTH": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the depth of the effect."
+        },
+        "WAVEFORM": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Adjusts how the volume level changes (the curve). Higher values create more abrupt change."
+        }
+      }
+    },
+    "VIBRATO": {
+      "description": "Creates vibrato by slightly modulating the pitch.",
+      "params": {
+        "RATE": {
+          "range": "0-50-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": 50,
+          "description": "Sets the rate of the vibrato."
+        },
+        "DEPTH": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the depth of the vibrato."
+        },
+        "COLOR": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Higher settings produce more complex modulation."
+        },
+        "D.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the volume of the direct sound."
+        },
+        "E.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "fxSeqTarget": true,
+          "description": "Sets the volume of the effect sound."
+        }
+      }
+    },
+    "PATTERN SLICER": {
+      "description": "Consecutively interrupts the sound to create the impression that a rhythm backing phrase is being played.",
+      "params": {
+        "RATE": {
+          "range": "0-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": null,
+          "description": "Sets the rate at which the sound will be cut."
+        },
+        "DUTY": {
+          "range": "1-50-99",
+          "default": 50,
+          "description": "Adjusts the length of the sound for the slice pattern."
+        },
+        "ATTACK": {
+          "range": "0-35-100",
+          "default": 35,
+          "description": "Sets the attack volume of the slice pattern."
+        },
+        "PATTERN": {
+          "range": "P01-20",
+          "default": null,
+          "description": "Selects the slice pattern that will be used to cut the sound."
+        },
+        "DEPTH": {
+          "range": "0-100",
+          "default": null,
+          "description": "Adjusts the depth to which the slice pattern is applied."
+        },
+        "COMP THRESHOLD": {
+          "range": "-30 to 0 dB",
+          "default": 0,
+          "description": "Adjust for the input signal. When the input signal level exceeds this threshold level, compression will be applied."
+        },
+        "COMP GAIN": {
+          "range": "0 to +20 dB",
+          "default": "+2",
+          "description": "Sets the volume of the sound."
+        }
+      }
+    },
+    "STEP SLICER": {
+      "description": "Continuously slices the sound according to the step settings.",
+      "params": {
+        "RATE": {
+          "range": "0-100, 4MEAS, 2MEAS, 1MEAS, note values",
+          "default": null,
+          "description": "Sets the rate at which the sound will be cut."
+        },
+        "STEP MAX": {
+          "range": "1-16",
+          "default": null,
+          "description": "Sets the maximum number of steps."
+        },
+        "STEP LENGTH": {
+          "range": "1-50-100",
+          "default": 50,
+          "description": "Sets the length of one step."
+        },
+        "STEP LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of one step."
+        },
+        "DEPTH": {
+          "range": "0-100",
+          "default": null,
+          "description": "Adjusts the depth to which the slice pattern is applied."
+        },
+        "COMP THRESHOLD": {
+          "range": "-30 to 0 dB",
+          "default": 0,
+          "description": "Adjust for the input signal. When the input signal level exceeds this threshold, compression will be applied."
+        },
+        "COMP GAIN": {
+          "range": "0 to +20 dB",
+          "default": "+6",
+          "description": "Sets the volume of the sound."
+        }
+      }
+    },
+    "DELAY": {
+      "description": "Adds a delayed sound to the direct sound, giving the sound greater depth or creating special effects.",
+      "params": {
+        "TIME": {
+          "range": "1-200-2000 ms, note values",
+          "default": 200,
+          "description": "Sets the delay time."
+        },
+        "FEEDBACK": {
+          "range": "1-16",
+          "default": null,
+          "description": "Sets the number of delay repeats."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "LOW CUT": {
+          "range": "FLAT, 20.0 Hz - 12.5 kHz",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the low cut filter begins to take effect. When FLAT, the low cut filter will have no effect."
+        },
+        "HIGH CUT": {
+          "range": "20.0 Hz - 12.5 kHz, FLAT",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the high cut filter begins to take effect. When FLAT, the high cut filter will have no effect."
+        },
+        "E.LEVEL": {
+          "range": "0-50-120",
+          "default": 50,
+          "description": "Sets the volume of the delay sound."
+        }
+      }
+    },
+    "PANNING DELAY": {
+      "description": "Delay specifically for stereo output. Obtains the tap delay effect that divides the delay time, then delivers them to L and R channels.",
+      "params": {
+        "TIME": {
+          "range": "1-200-2000 ms, note values",
+          "default": 200,
+          "description": "Sets the delay time."
+        },
+        "FEEDBACK": {
+          "range": "1-16",
+          "default": null,
+          "description": "Sets the number of delay repeats."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "LOW CUT": {
+          "range": "FLAT, 20.0 Hz - 12.5 kHz",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the low cut filter begins to take effect."
+        },
+        "HIGH CUT": {
+          "range": "20.0 Hz - 12.5 kHz, FLAT",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the high cut filter begins to take effect."
+        },
+        "E.LEVEL": {
+          "range": "0-50-120",
+          "default": 50,
+          "description": "Sets the volume of the delay sound."
+        }
+      }
+    },
+    "REVERSE DELAY": {
+      "description": "Produces an effect where the sound is played back in reverse.",
+      "params": {
+        "TIME": {
+          "range": "1-200-2000 ms, note values",
+          "default": 200,
+          "description": "Sets the delay time."
+        },
+        "FEEDBACK": {
+          "range": "1-16",
+          "default": null,
+          "description": "Sets the number of delay repeats."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "LOW CUT": {
+          "range": "FLAT, 20.0 Hz - 12.5 kHz",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the low cut filter begins to take effect."
+        },
+        "HIGH CUT": {
+          "range": "20.0 Hz - 12.5 kHz, FLAT",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the high cut filter begins to take effect."
+        },
+        "E.LEVEL": {
+          "range": "0-50-120",
+          "default": 50,
+          "description": "Sets the volume of the delay sound."
+        }
+      }
+    },
+    "MOD DELAY": {
+      "description": "A delay with a pleasant chorus-type effect added to the delay repeats.",
+      "params": {
+        "TIME": {
+          "range": "1-200-2000 ms, note values",
+          "default": 200,
+          "description": "Sets the delay time."
+        },
+        "FEEDBACK": {
+          "range": "1-16",
+          "default": null,
+          "description": "Sets the number of delay repeats."
+        },
+        "MOD DEPTH": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the modulation depth of the delay sound."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "LOW CUT": {
+          "range": "FLAT, 20.0 Hz - 12.5 kHz",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the low cut filter begins to take effect."
+        },
+        "HIGH CUT": {
+          "range": "20.0 Hz - 12.5 kHz, FLAT",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the high cut filter begins to take effect."
+        },
+        "E.LEVEL": {
+          "range": "0-50-120",
+          "default": 50,
+          "description": "Sets the volume of the delay sound."
+        }
+      }
+    },
+    "TAPE ECHO1": {
+      "description": "A virtual tape echo that produces a realistic tape delay sound. Operates using the algorithm from the previous RC series.",
+      "params": {
+        "REPEAT RATE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the tape speed."
+        },
+        "INTENSITY": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the amount of delay repeats."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "BASS": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Adjusts the tone for the low frequency range."
+        },
+        "TREBLE": {
+          "range": "-50 to +50",
+          "default": 0,
+          "description": "Adjusts the tone for the high frequency range."
+        },
+        "E.LEVEL": {
+          "range": "0-50-120",
+          "default": 50,
+          "description": "Sets the volume of the effect sound."
+        }
+      }
+    },
+    "TAPE ECHO2": {
+      "description": "A virtual tape echo that produces a realistic tape delay sound. Operates using a new algorithm.",
+      "params": {
+        "REPEAT RATE": {
+          "range": "1-200-2000 ms, note values",
+          "default": 200,
+          "description": "Sets the tape speed."
+        },
+        "INTENSITY": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the amount of delay repeats."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "LOW CUT": {
+          "range": "FLAT, 20.0 Hz - 12.5 kHz",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the low cut filter begins to take effect."
+        },
+        "HIGH CUT": {
+          "range": "20.0 Hz - 12.5 kHz, FLAT",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the high cut filter begins to take effect."
+        },
+        "E.LEVEL": {
+          "range": "0-50-120",
+          "default": 50,
+          "description": "Sets the volume of the effect sound."
+        }
+      }
+    },
+    "GRANULAR DELAY": {
+      "description": "Repeats a short portion of the input sound, giving it a buzzy character or producing the effect of playing a roll.",
+      "params": {
+        "TIME": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the spacing of the repeats."
+        },
+        "FEEDBACK": {
+          "range": "0-70-100",
+          "default": 70,
+          "description": "Sets the length that will be repeated."
+        },
+        "E.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the effect sound."
+        }
+      }
+    },
+    "WARP": {
+      "description": "Produces a dream-like sound.",
+      "params": {
+        "LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume of the effect sound."
+        }
+      }
+    },
+    "TWIST": {
+      "description": "Produces an aggressive sense of rotation.",
+      "params": {
+        "RELEASE": {
+          "range": "FALL, FADE",
+          "default": "FALL",
+          "description": "FALL: Rotation stops when you switch to off. FADE: Fadeout occurs while continuing the rotation."
+        },
+        "RISE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the amount of time it is to take for the effect to transition to the maximum."
+        },
+        "FALL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the time to fade-out when RELEASE is set to FADE."
+        },
+        "LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the effect sound."
+        }
+      }
+    },
+    "ROLL1": {
+      "description": "Loops the input sound over a short cycle, splitting the length. Uses the algorithm from the previous RC series.",
+      "params": {
+        "TIME": {
+          "range": "1-1000 ms, note values",
+          "default": null,
+          "description": "Sets the loop rate."
+        },
+        "FEEDBACK": {
+          "range": "1-50-100",
+          "default": 50,
+          "description": "Sets the number of repetitions for ROLL when ROLL is OFF."
+        },
+        "ROLL": {
+          "range": "OFF, 1/2, 1/4, 1/8, 1/16",
+          "default": "OFF",
+          "description": "Splits and changes the loop cycle set in the TIME parameter."
+        },
+        "BALANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume balance between the direct sound and the effect sound."
+        }
+      }
+    },
+    "ROLL2": {
+      "description": "Loops the input sound over a short cycle, splitting the length. Uses a new algorithm.",
+      "params": {
+        "TIME": {
+          "range": "1-1000 ms, note values",
+          "default": null,
+          "description": "Sets the loop rate."
+        },
+        "REPEAT": {
+          "range": "1-50-100, INF",
+          "default": 50,
+          "description": "Sets the number of repetitions for ROLL when ROLL is OFF."
+        },
+        "ROLL": {
+          "range": "OFF, 1/2, 1/4, 1/8, 1/16",
+          "default": "OFF",
+          "description": "Splits and changes the loop cycle set in the TIME parameter."
+        },
+        "BALANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume balance between the direct sound and the effect sound."
+        }
+      }
+    },
+    "FREEZE": {
+      "description": "Freeze function gives the effect of making sounds sustain indefinitely.",
+      "params": {
+        "ATTACK": {
+          "range": "0-30-100",
+          "default": 30,
+          "description": "Sets the fade time until the effect sound is output."
+        },
+        "RELEASE": {
+          "range": "0-30-100",
+          "default": 30,
+          "description": "Sets the fade time over which the effect sound disappears."
+        },
+        "DECAY": {
+          "range": "0-30-100",
+          "default": 30,
+          "description": "Adjusts the decay of the effect sound."
+        },
+        "SUSTAIN": {
+          "range": "0-30-100",
+          "default": 30,
+          "description": "Adjusts the sustain of the effect sound."
+        },
+        "BALANCE": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Adjusts the volume balance between the direct sound and the effect sound."
+        }
+      }
+    },
+    "CHORUS": {
+      "description": "A slightly detuned sound is added to the original sound to add depth and breadth.",
+      "params": {
+        "RATE": {
+          "range": "0-50-100, note values",
+          "default": 50,
+          "description": "Sets the rate of the chorus effect."
+        },
+        "DEPTH": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the depth of the chorus effect."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "LOW CUT": {
+          "range": "FLAT, 20.0 Hz - 12.5 kHz",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the low cut filter begins to take effect."
+        },
+        "HIGH CUT": {
+          "range": "20.0 Hz - 12.5 kHz, FLAT",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the high cut filter begins to take effect."
+        },
+        "E.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the chorus sound."
+        }
+      }
+    },
+    "REVERB": {
+      "description": "Adds reverberation to the sound.",
+      "params": {
+        "TIME": {
+          "range": "0.1-3-10 s",
+          "default": 3,
+          "description": "Sets the length (time) of reverberation."
+        },
+        "PRE DELAY": {
+          "range": "0-500 ms",
+          "default": 0,
+          "description": "Sets the time until the reverb sound appears."
+        },
+        "DENSITY": {
+          "range": "1-5-10",
+          "default": 5,
+          "description": "Sets the density of the reverb sound."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "LOW CUT": {
+          "range": "FLAT, 20.0 Hz - 12.5 kHz",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the low cut filter begins to take effect."
+        },
+        "HIGH CUT": {
+          "range": "20.0 Hz - 12.5 kHz, FLAT",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the high cut filter begins to take effect."
+        },
+        "E.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the reverb sound."
+        }
+      }
+    },
+    "GATE REVERB": {
+      "description": "A special type of reverb in which the reverberant sound is cut off before its natural length.",
+      "params": {
+        "TIME": {
+          "range": "0.1-3-10 s",
+          "default": 3,
+          "description": "Sets the length (time) of reverberation."
+        },
+        "PRE DELAY": {
+          "range": "0-500 ms",
+          "default": 0,
+          "description": "Sets the time until the reverb sound appears."
+        },
+        "THRESHOLD": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the level at which the reverberation is cut. The reverberation is cut once its level falls below this setting."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "LOW CUT": {
+          "range": "FLAT, 20.0 Hz - 12.5 kHz",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the low cut filter begins to take effect."
+        },
+        "HIGH CUT": {
+          "range": "20.0 Hz - 12.5 kHz, FLAT",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the high cut filter begins to take effect."
+        },
+        "E.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the reverb sound."
+        }
+      }
+    },
+    "REVERSE REVERB": {
+      "description": "A gate reverb whose reverberations gradually get louder (fading in), rather than decaying (fading out).",
+      "params": {
+        "TIME": {
+          "range": "0.1-3-10 s",
+          "default": 3,
+          "description": "Sets the length (time) of reverberation."
+        },
+        "PRE DELAY": {
+          "range": "0-500 ms",
+          "default": 0,
+          "description": "Sets the time until the reverb sound appears."
+        },
+        "GATE TIME": {
+          "range": "0.1-0.5-1 s",
+          "default": 0.5,
+          "description": "Sets the time at which the reverberations start getting louder."
+        },
+        "D.LEVEL": {
+          "range": "0-100",
+          "default": null,
+          "description": "Sets the volume of the direct sound."
+        },
+        "LOW CUT": {
+          "range": "FLAT, 20.0 Hz - 12.5 kHz",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the low cut filter begins to take effect."
+        },
+        "HIGH CUT": {
+          "range": "20.0 Hz - 12.5 kHz, FLAT",
+          "default": "FLAT",
+          "description": "Sets the frequency at which the high cut filter begins to take effect."
+        },
+        "E.LEVEL": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the volume of the reverb sound."
+        }
+      }
+    }
+  },
+  "trackFxOnly": {
+    "BEAT SCATTER": {
+      "description": "The track will be scrubbed in time with the beat. Only available for Track FX Slot A when TRACK FX MODE is set to MULTI.",
+      "params": {
+        "TYPE": {
+          "range": "P1-4",
+          "default": null,
+          "description": "Sets the type of scrub playback."
+        },
+        "LENGTH": {
+          "range": "THRU, note values",
+          "default": "THRU",
+          "description": "Sets the length of scrub playback."
+        }
+      }
+    },
+    "BEAT REPEAT": {
+      "description": "Plays the track repeatedly in time with the beat. Only available for Track FX Slot A when TRACK FX MODE is set to MULTI.",
+      "params": {
+        "TYPE": {
+          "range": "FORWARD, REWIND, MIX",
+          "default": "FORWARD",
+          "description": "Sets the direction in which repeat playback will occur. FORWARD=plays back forward, REWIND=plays back in reverse, MIX=alternates between forward and reverse."
+        },
+        "LENGTH": {
+          "range": "THRU, note values",
+          "default": "THRU",
+          "description": "Sets the repeat length."
+        }
+      }
+    },
+    "BEAT SHIFT": {
+      "description": "The track will play shifted by the length of the beat. Only available for Track FX Slot A when TRACK FX MODE is set to MULTI.",
+      "params": {
+        "TYPE": {
+          "range": "FUTURE, PAST",
+          "default": "FUTURE",
+          "description": "Sets the direction in which the playback position will be shifted."
+        },
+        "SHIFT": {
+          "range": "THRU, note values",
+          "default": "THRU",
+          "description": "Sets the amount by which the playback position will be shifted."
+        }
+      }
+    },
+    "VINYL FLICK": {
+      "description": "The track will sound as though you are touching the turntable. Only available for Track FX Slot A when TRACK FX MODE is set to MULTI.",
+      "params": {
+        "FLICK": {
+          "range": "0-50-100",
+          "default": 50,
+          "description": "Sets the playback speed of the turntable."
+        }
+      }
+    }
+  },
+  "sequencer": {
+    "description": "FX sequencer configuration. All FX with fxSeqTarget params share a common sequencer structure (tags A-V in <XX_FX_SEQ> blocks). The TARGET param is an index into the parent FX's fxSeqTarget param names.",
+    "commonParams": {
+      "SW": {
+        "tag": "A",
+        "range": "OFF, ON",
+        "default": "OFF",
+        "description": "Turns the sequencer on/off."
+      },
+      "SYNC": {
+        "tag": "B",
+        "range": "OFF, ON",
+        "default": "ON",
+        "description": "When ON, sequencer syncs to the master tempo."
+      },
+      "RETRIG": {
+        "tag": "C",
+        "range": "OFF, ON",
+        "default": "OFF",
+        "description": "When ON, the sequence restarts each time the FX is triggered."
+      },
+      "TARGET": {
+        "tag": "D",
+        "range": "FX-specific enum (0-indexed into fxSeqTarget params)",
+        "default": 0,
+        "description": "Selects which parameter of the parent FX the sequencer will modulate."
+      },
+      "SEQ RATE": {
+        "tag": "E",
+        "range": "4MEAS, 2MEAS, 1MEAS, note values, 0-100",
+        "default": null,
+        "description": "Sets the rate of the sequencer. Same layout as RATE (no OFF value)."
+      },
+      "SEQ MAX": {
+        "tag": "F",
+        "range": "1-16",
+        "default": 16,
+        "description": "Sets the number of active steps in the sequence. Stored 0-indexed (xml 0 = display 1)."
+      },
+      "STEP 1-16": {
+        "tags": "G-V",
+        "range": "Depends on TARGET param's value type",
+        "default": 0,
+        "description": "Per-step values for the sequence. 16 steps stored in tags G through V."
+      }
+    },
+    "fxTargets": {
+      "LPF_SEQ": ["DEPTH", "CUTOFF"],
+      "BPF_SEQ": ["DEPTH", "CUTOFF"],
+      "HPF_SEQ": ["DEPTH", "CUTOFF"],
+      "PHASER_SEQ": ["DEPTH", "RESONANCE", "MANUAL"],
+      "FLANGER_SEQ": ["DEPTH", "RESONANCE", "MANUAL", "D.LEVEL", "SEPARATION"],
+      "SYNTH_SEQ": ["FREQUENCY", "RESONANCE", "DECAY"],
+      "RING_MODULATOR_SEQ": ["FREQUENCY"],
+      "TRANSPOSE_SEQ": ["TRANS"],
+      "PITCH_BEND_SEQ": ["BEND"],
+      "OSC_BOT_SEQ": ["NOTE"],
+      "ISOLATOR_SEQ": ["DEPTH"],
+      "OCTAVE_SEQ": ["OCT.LEVEL"],
+      "MANUAL_PAN_SEQ": ["POSITION"],
+      "TREMOLO_SEQ": ["RATE", "WAVEFORM"],
+      "VIBRATO_SEQ": ["COLOR", "D.LEVEL", "E.LEVEL"]
+    }
+  }
+}

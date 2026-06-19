@@ -1,0 +1,44 @@
+{
+  "id": "hpf-sweep",
+  "effect": "HPF",
+  "title": "High-Pass Filter Sweep",
+  "category": "transition",
+  "context": [
+    "tfx"
+  ],
+  "usage": "individual",
+  "description": "Classic DJ transition tool — sweeps out the low end from a loop, thinning it down to just highs. Use on Track FX to create filter-sweep transitions between sections. Automate or use the knob to sweep the cutoff up for a build, then release for the drop.",
+  "params": [
+    {
+      "name": "RATE",
+      "value": "0"
+    },
+    {
+      "name": "DEPTH",
+      "value": "0"
+    },
+    {
+      "name": "CUTOFF",
+      "value": "60"
+    },
+    {
+      "name": "RESONANCE",
+      "value": "15"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "transition",
+    "filter",
+    "dj",
+    "sweep",
+    "build"
+  ],
+  "pairsWith": [
+    "echo-fadeout",
+    "beat-repeat-fill"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "echo-fadeout",
+  "effect": "DELAY",
+  "title": "Echo Fadeout",
+  "category": "transition",
+  "context": [
+    "tfx"
+  ],
+  "usage": "individual",
+  "description": "Long feedback delay that trails off into cascading echoes. A performance staple for Track FX — engage this on a loop as you fade it out for a dramatic echo tail that fills the gap before the next section. Pairs naturally with a reverse reverb swell in an adjacent bank.",
+  "params": [
+    {
+      "name": "TIME",
+      "value": "QUARTER"
+    },
+    {
+      "name": "FEEDBACK",
+      "value": "70"
+    },
+    {
+      "name": "HIGH CUT",
+      "value": "2.5 kHz"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "85"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "transition",
+    "fadeout",
+    "performance",
+    "dramatic",
+    "dj"
+  ],
+  "pairsWith": [
+    "reverse-reverb-swell",
+    "hpf-sweep"
+  ]
+}

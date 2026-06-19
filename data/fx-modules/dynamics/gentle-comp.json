@@ -1,0 +1,32 @@
+{
+  "id": "gentle-comp",
+  "effect": "DYNAMICS",
+  "title": "Gentle Compression",
+  "category": "dynamics",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Transparent dynamic control that evens out volume without squashing. Ideal as a first-in-chain module for vocals or acoustic instruments.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "NATURALCOMP"
+    },
+    {
+      "name": "DYNAMICS",
+      "value": "8"
+    }
+  ],
+  "tags": [
+    "vocals",
+    "acoustic",
+    "subtle",
+    "foundation"
+  ],
+  "pairsWith": [
+    "warm-eq",
+    "tight-room",
+    "vocal-plate"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "warm-eq",
+  "effect": "EQ",
+  "title": "Warm Tone",
+  "category": "tone",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Adds warmth and body by gently boosting low-mids and rolling off harsh highs. Flattering for thin-sounding mics or vocals that need fullness.",
+  "params": [
+    {
+      "name": "LO",
+      "value": "4"
+    },
+    {
+      "name": "LO-MID GAIN",
+      "value": "3"
+    },
+    {
+      "name": "LO-MID FREQ",
+      "value": "400 Hz"
+    },
+    {
+      "name": "LO-MID Q",
+      "value": "2"
+    },
+    {
+      "name": "HI-MID GAIN",
+      "value": "-1"
+    },
+    {
+      "name": "HI-MID FREQ",
+      "value": "4 kHz"
+    },
+    {
+      "name": "HI-MID Q",
+      "value": "1"
+    },
+    {
+      "name": "HIGH",
+      "value": "-2"
+    },
+    {
+      "name": "LEVEL",
+      "value": "50"
+    }
+  ],
+  "tags": [
+    "vocals",
+    "warmth",
+    "body",
+    "tone"
+  ],
+  "pairsWith": [
+    "gentle-comp",
+    "vocal-plate"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "granular-freeze",
+  "effect": "GRANULAR",
+  "title": "Granular Freeze",
+  "category": "performance",
+  "context": [
+    "tfx"
+  ],
+  "usage": "individual",
+  "description": "Granular processing that captures and sustains a moment from the loop as a shimmering, evolving texture. Freezes a slice of audio and stretches it indefinitely — use for ambient transitions, drone buildups, or sustained pads from any source material.",
+  "params": [
+    {
+      "name": "SPEED",
+      "value": "0"
+    },
+    {
+      "name": "GRAIN",
+      "value": "60"
+    },
+    {
+      "name": "BALANCE",
+      "value": "80"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "90"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "ambient",
+    "freeze",
+    "texture",
+    "drone",
+    "performance",
+    "experimental"
+  ],
+  "pairsWith": [
+    "hall-wash",
+    "slow-phaser"
+  ]
+}

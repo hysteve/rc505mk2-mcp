@@ -1,0 +1,133 @@
+/**
+ * RC-505mk2 FX type names and special Track FX designations.
+ *
+ * All const enums from the original code are converted to `as const` objects
+ * for compatibility with isolatedModules, esbuild, and swc.
+ */
+
+export const RC0_FX_NAMES = {
+  LPF: "LPF",
+  LPF_SEQ: "LPF_SEQ",
+  BPF: "BPF",
+  BPF_SEQ: "BPF_SEQ",
+  HPF: "HPF",
+  HPF_SEQ: "HPF_SEQ",
+  PHASER: "PHASER",
+  PHASER_SEQ: "PHASER_SEQ",
+  FLANGER: "FLANGER",
+  FLANGER_SEQ: "FLANGER_SEQ",
+  SYNTH: "SYNTH",
+  SYNTH_SEQ: "SYNTH_SEQ",
+  LOFI: "LOFI",
+  RADIO: "RADIO",
+  RING_MODULATOR: "RING_MODULATOR",
+  RING_MODULATOR_SEQ: "RING_MODULATOR_SEQ",
+  G2B: "G2B",
+  SUSTAINER: "SUSTAINER",
+  AUTO_RIFF: "AUTO_RIFF",
+  SLOW_GEAR: "SLOW_GEAR",
+  TRANSPOSE: "TRANSPOSE",
+  TRANSPOSE_SEQ: "TRANSPOSE_SEQ",
+  PITCH_BEND: "PITCH_BEND",
+  PITCH_BEND_SEQ: "PITCH_BEND_SEQ",
+  ROBOT: "ROBOT",
+  ELECTRIC: "ELECTRIC",
+  HARMONIST_MANUAL: "HARMONIST_MANUAL",
+  HARMONIST_AUTO: "HARMONIST_AUTO",
+  VOCODER: "VOCODER",
+  OSC_VOCODER: "OSC_VOCODER",
+  OSC_BOT: "OSC_BOT",
+  OSC_BOT_SEQ: "OSC_BOT_SEQ",
+  PREAMP: "PREAMP",
+  DIST: "DIST",
+  DYNAMICS: "DYNAMICS",
+  EQ: "EQ",
+  ISOLATOR: "ISOLATOR",
+  ISOLATOR_SEQ: "ISOLATOR_SEQ",
+  OCTAVE: "OCTAVE",
+  OCTAVE_SEQ: "OCTAVE_SEQ",
+  AUTO_PAN: "AUTO_PAN",
+  MANUAL_PAN: "MANUAL_PAN",
+  MANUAL_PAN_SEQ: "MANUAL_PAN_SEQ",
+  STEREO_ENHANCE: "STEREO_ENHANCE",
+  TREMOLO: "TREMOLO",
+  TREMOLO_SEQ: "TREMOLO_SEQ",
+  VIBRATO: "VIBRATO",
+  VIBRATO_SEQ: "VIBRATO_SEQ",
+  PATTERN_SLICER: "PATTERN_SLICER",
+  STEP_SLICER: "STEP_SLICER",
+  DELAY: "DELAY",
+  PANNING_DELAY: "PANNING_DELAY",
+  REVERSE_DELAY: "REVERSE_DELAY",
+  MOD_DELAY: "MOD_DELAY",
+  TAPE_ECHO: "TAPE_ECHO",           // Tape Echo 2
+  TAPE_ECHO_V505V2: "TAPE_ECHO_V505V2", // Tape Echo 1
+  GRANULAR_DELAY: "GRANULAR_DELAY",
+  WARP: "WARP",
+  TWIST: "TWIST",
+  ROLL: "ROLL",
+  ROLL_V505V2: "ROLL_V505V2",
+  FREEZE: "FREEZE",
+  CHORUS: "CHORUS",
+  REVERB: "REVERB",
+  GATE_REVERB: "GATE_REVERB",
+  REVERSE_REVERB: "REVERSE_REVERB",
+} as const;
+
+export type RC0FxName = typeof RC0_FX_NAMES[keyof typeof RC0_FX_NAMES];
+
+export const RC0_SPECIAL_TRACK_FX_NAMES = {
+  BEAT_SCATTER: "BEAT_SCATTER",
+  BEAT_REPEAT: "BEAT_REPEAT",
+  BEAT_SHIFT: "BEAT_SHIFT",
+  VINYL_FLICK: "VINYL_FLICK",
+} as const;
+
+export type RC0SpecialTrackFxName = typeof RC0_SPECIAL_TRACK_FX_NAMES[keyof typeof RC0_SPECIAL_TRACK_FX_NAMES];
+
+/** Set of special Track FX names (only allowed in TFX Slot A, one per bank) */
+export const SPECIAL_TRACK_FX = new Set<string>([
+  "BEAT_SCATTER",
+  "BEAT_REPEAT",
+  "BEAT_SHIFT",
+  "VINYL_FLICK",
+]);
+
+/** FX context: Input FX or Track FX */
+export type FxContext = "ifx" | "tfx";
+
+/**
+ * Sequencer FX map: root FX type -> sequencer variant name.
+ * Sequenced FX share a common sequencer structure.
+ */
+export const RC0_SEQ_FX_MAP: Record<string, string> = {
+  LPF: "LPF_SEQ",
+  BPF: "BPF_SEQ",
+  HPF: "HPF_SEQ",
+  PHASER: "PHASER_SEQ",
+  FLANGER: "FLANGER_SEQ",
+  SYNTH: "SYNTH_SEQ",
+  RING_MODULATOR: "RING_MODULATOR_SEQ",
+  TRANSPOSE: "TRANSPOSE_SEQ",
+  PITCH_BEND: "PITCH_BEND_SEQ",
+  OSC_BOT: "OSC_BOT_SEQ",
+  ISOLATOR: "ISOLATOR_SEQ",
+  OCTAVE: "OCTAVE_SEQ",
+  MANUAL_PAN: "MANUAL_PAN_SEQ",
+  TREMOLO: "TREMOLO_SEQ",
+  VIBRATO: "VIBRATO_SEQ",
+};
+
+/** Ordered list of FX names as they appear in the device UI */
+export const RC0_FX_NAME_LIST: string[] = [
+  "LPF", "BPF", "HPF", "PHASER", "FLANGER", "SYNTH", "LOFI", "RADIO",
+  "RING_MODULATOR", "G2B", "SUSTAINER", "AUTO_RIFF", "SLOW_GEAR",
+  "TRANSPOSE", "PITCH_BEND", "ROBOT", "ELECTRIC", "HARMONIST_MANUAL",
+  "HARMONIST_AUTO", "VOCODER", "OSC_VOCODER", "OSC_BOT", "PREAMP",
+  "DIST", "DYNAMICS", "EQ", "ISOLATOR", "OCTAVE", "AUTO_PAN",
+  "MANUAL_PAN", "STEREO_ENHANCE", "TREMOLO", "VIBRATO", "PATTERN_SLICER",
+  "STEP_SLICER", "DELAY", "PANNING_DELAY", "REVERSE_DELAY", "MOD_DELAY",
+  "TAPE_ECHO", "GRANULAR_DELAY", "WARP", "TWIST", "ROLL", "FREEZE",
+  "CHORUS", "REVERB", "GATE_REVERB", "REVERSE_REVERB",
+  "BEAT_SCATTER", "BEAT_REPEAT", "BEAT_SHIFT", "VINYL_FLICK",
+];

@@ -1,0 +1,41 @@
+{
+  "id": "isolator-kill",
+  "effect": "ISOLATOR",
+  "title": "Isolator Kill",
+  "category": "transition",
+  "context": [
+    "tfx"
+  ],
+  "usage": "individual",
+  "description": "3-band frequency isolator for DJ-style frequency kills. Cut the bass, mids, or highs from a loop independently. Essential performance tool for creating breakdowns and builds by selectively removing and reintroducing frequency bands.",
+  "params": [
+    {
+      "name": "BAND",
+      "value": "LOW"
+    },
+    {
+      "name": "LEVEL",
+      "value": "0"
+    },
+    {
+      "name": "RATE",
+      "value": "0"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "transition",
+    "dj",
+    "frequency",
+    "kill",
+    "breakdown",
+    "performance"
+  ],
+  "pairsWith": [
+    "beat-repeat-fill",
+    "hpf-sweep"
+  ]
+}

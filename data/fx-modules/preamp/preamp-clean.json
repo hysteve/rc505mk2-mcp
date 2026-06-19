@@ -1,0 +1,60 @@
+{
+  "id": "preamp-clean",
+  "effect": "PREAMP",
+  "title": "Clean Preamp",
+  "category": "tone",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Clean amp modeling for guitar or bass input. Adds amp-like character and response without distortion — a foundation module for instrument players using the RC-505mk2.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "JC-120"
+    },
+    {
+      "name": "GAIN",
+      "value": "30"
+    },
+    {
+      "name": "BASS",
+      "value": "50"
+    },
+    {
+      "name": "MIDDLE",
+      "value": "50"
+    },
+    {
+      "name": "TREBLE",
+      "value": "50"
+    },
+    {
+      "name": "PRESENCE",
+      "value": "50"
+    },
+    {
+      "name": "LEVEL",
+      "value": "50"
+    },
+    {
+      "name": "BRIGHT",
+      "value": "OFF"
+    },
+    {
+      "name": "SP TYPE",
+      "value": "JC-120"
+    }
+  ],
+  "tags": [
+    "guitar",
+    "bass",
+    "instrument",
+    "clean",
+    "amp"
+  ],
+  "pairsWith": [
+    "slapback-delay",
+    "vocal-plate"
+  ]
+}

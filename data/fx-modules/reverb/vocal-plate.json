@@ -1,0 +1,55 @@
+{
+  "id": "vocal-plate",
+  "effect": "REVERB",
+  "title": "Vocal Plate",
+  "category": "space",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Classic plate reverb with medium decay — smooth, diffuse tail that flatters vocals without overwhelming. A go-to end-of-chain module for singer-songwriter and spoken word.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "PLATE"
+    },
+    {
+      "name": "TIME",
+      "value": "2.2"
+    },
+    {
+      "name": "PRE DELAY",
+      "value": "20"
+    },
+    {
+      "name": "DENSITY",
+      "value": "7"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "65"
+    },
+    {
+      "name": "LOW CUT",
+      "value": "160 Hz"
+    },
+    {
+      "name": "HIGH CUT",
+      "value": "8 kHz"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "vocals",
+    "singing",
+    "smooth",
+    "classic"
+  ],
+  "pairsWith": [
+    "gentle-comp",
+    "warm-eq"
+  ]
+}

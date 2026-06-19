@@ -1,0 +1,28 @@
+{
+  "id": "vinyl-stop",
+  "effect": "VINYL FLICK",
+  "title": "Vinyl Stop",
+  "category": "performance",
+  "context": [
+    "tfx"
+  ],
+  "usage": "individual",
+  "description": "Simulates a turntable stop/start for DJ-style loop manipulation. Engage to slow the loop to a stop, then release for a wind-up restart. Classic transition move. Must be placed in Track FX Slot A.",
+  "params": [
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "performance",
+    "dj",
+    "turntable",
+    "transition",
+    "vinyl"
+  ],
+  "pairsWith": [
+    "beat-repeat-fill",
+    "hpf-sweep"
+  ]
+}

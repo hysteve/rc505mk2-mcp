@@ -1,0 +1,36 @@
+{
+  "id": "robot-voice",
+  "effect": "ROBOT",
+  "title": "Robot Voice",
+  "category": "character",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Locks voice to a fixed pitch for robotic, vocoder-like effect without needing a carrier signal. Simpler alternative to VOCODER — just sing or speak and the pitch is quantized to a single note.",
+  "params": [
+    {
+      "name": "KEY",
+      "value": "C"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "100"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "character",
+    "robot",
+    "pitch",
+    "vocals",
+    "electronic"
+  ],
+  "pairsWith": [
+    "rhythmic-delay",
+    "presence-eq"
+  ]
+}

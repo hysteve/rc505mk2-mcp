@@ -1,0 +1,44 @@
+{
+  "id": "rhythmic-delay",
+  "effect": "DELAY",
+  "title": "Rhythmic Delay",
+  "category": "time",
+  "context": [
+    "ifx",
+    "tfx"
+  ],
+  "usage": "both",
+  "description": "Tempo-synced dotted-eighth delay for rhythmic interest. On Input FX, adds movement to recorded material. On Track FX, creates rhythmic complexity from existing loops — great for breakdowns.",
+  "params": [
+    {
+      "name": "TIME",
+      "value": "DOTTED 8TH"
+    },
+    {
+      "name": "FEEDBACK",
+      "value": "35"
+    },
+    {
+      "name": "HIGH CUT",
+      "value": "3.15 kHz"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "50"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "rhythmic",
+    "movement",
+    "synced",
+    "musical"
+  ],
+  "pairsWith": [
+    "gentle-comp",
+    "presence-eq"
+  ]
+}

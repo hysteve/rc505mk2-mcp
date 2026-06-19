@@ -1,0 +1,40 @@
+{
+  "id": "auto-pan-wide",
+  "effect": "AUTO PAN",
+  "title": "Wide Auto Pan",
+  "category": "modulation",
+  "context": [
+    "ifx",
+    "tfx"
+  ],
+  "usage": "both",
+  "description": "Sweeps the signal across the stereo field for movement and width. On Input FX, adds spatial motion to recorded material. On Track FX, animates a static loop with stereo movement — subtle rates for atmosphere, fast rates for psychedelic effects.",
+  "params": [
+    {
+      "name": "RATE",
+      "value": "QUARTER"
+    },
+    {
+      "name": "DEPTH",
+      "value": "80"
+    },
+    {
+      "name": "WAVE",
+      "value": "TRI"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "modulation",
+    "stereo",
+    "movement",
+    "width"
+  ],
+  "pairsWith": [
+    "rhythmic-delay",
+    "hall-wash"
+  ]
+}

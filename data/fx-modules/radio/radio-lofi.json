@@ -1,0 +1,41 @@
+{
+  "id": "radio-lofi",
+  "effect": "RADIO",
+  "title": "Radio Lo-Fi",
+  "category": "character",
+  "context": [
+    "ifx",
+    "tfx"
+  ],
+  "usage": "both",
+  "description": "Simulates a lo-fi AM radio or telephone effect with heavy band-pass filtering. On Input FX, creates a vintage vocal tone. On Track FX, dramatically thins out a loop for contrast before returning to full bandwidth.",
+  "params": [
+    {
+      "name": "RADIO",
+      "value": "LOFI2"
+    },
+    {
+      "name": "TONE",
+      "value": "40"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "100"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "character",
+    "vintage",
+    "telephone",
+    "thin",
+    "contrast"
+  ],
+  "pairsWith": [
+    "gentle-comp",
+    "slapback-delay"
+  ]
+}

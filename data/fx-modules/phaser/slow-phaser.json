@@ -1,0 +1,48 @@
+{
+  "id": "slow-phaser",
+  "effect": "PHASER",
+  "title": "Slow Phaser",
+  "category": "modulation",
+  "context": [
+    "ifx",
+    "tfx"
+  ],
+  "usage": "both",
+  "description": "Slow, deep phaser sweep for psychedelic, swirling textures. Adds organic movement that evolves over time — works on any source material.",
+  "params": [
+    {
+      "name": "RATE",
+      "value": "15"
+    },
+    {
+      "name": "DEPTH",
+      "value": "70"
+    },
+    {
+      "name": "RESONANCE",
+      "value": "50"
+    },
+    {
+      "name": "STAGE",
+      "value": "8STAGE"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "70"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "modulation",
+    "psychedelic",
+    "swirl",
+    "movement"
+  ],
+  "pairsWith": [
+    "hall-wash",
+    "rhythmic-delay"
+  ]
+}

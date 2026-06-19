@@ -1,0 +1,56 @@
+{
+  "id": "tight-room",
+  "effect": "REVERB",
+  "title": "Tight Room",
+  "category": "space",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Short, controlled room ambience that adds dimension without washing out the signal. Essential end-of-chain module for percussion and beatbox — keeps things punchy but not dry.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "ROOM"
+    },
+    {
+      "name": "TIME",
+      "value": "0.6"
+    },
+    {
+      "name": "PRE DELAY",
+      "value": "0"
+    },
+    {
+      "name": "DENSITY",
+      "value": "3"
+    },
+    {
+      "name": "D.LEVEL",
+      "value": "40"
+    },
+    {
+      "name": "LOW CUT",
+      "value": "200 Hz"
+    },
+    {
+      "name": "HIGH CUT",
+      "value": "FLAT"
+    },
+    {
+      "name": "E.LEVEL",
+      "value": "100"
+    }
+  ],
+  "tags": [
+    "percussion",
+    "beatbox",
+    "tight",
+    "subtle"
+  ],
+  "pairsWith": [
+    "gentle-comp",
+    "hard-comp",
+    "presence-eq"
+  ]
+}

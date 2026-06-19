@@ -1,0 +1,60 @@
+{
+  "id": "bass-boost-eq",
+  "effect": "EQ",
+  "title": "Bass Boost",
+  "category": "tone",
+  "context": [
+    "ifx",
+    "tfx"
+  ],
+  "usage": "both",
+  "description": "Focused low-end boost with sub-bass emphasis. Use on Input FX for bass-heavy beatbox recording, or on Track FX to fatten up an existing loop.",
+  "params": [
+    {
+      "name": "LO",
+      "value": "8"
+    },
+    {
+      "name": "LO-MID GAIN",
+      "value": "2"
+    },
+    {
+      "name": "LO-MID FREQ",
+      "value": "160 Hz"
+    },
+    {
+      "name": "LO-MID Q",
+      "value": "2"
+    },
+    {
+      "name": "HI-MID GAIN",
+      "value": "0"
+    },
+    {
+      "name": "HI-MID FREQ",
+      "value": "2.5 kHz"
+    },
+    {
+      "name": "HI-MID Q",
+      "value": "1"
+    },
+    {
+      "name": "HIGH",
+      "value": "-1"
+    },
+    {
+      "name": "LEVEL",
+      "value": "50"
+    }
+  ],
+  "tags": [
+    "bass",
+    "sub",
+    "low-end",
+    "beatbox"
+  ],
+  "pairsWith": [
+    "hard-comp",
+    "tight-room"
+  ]
+}

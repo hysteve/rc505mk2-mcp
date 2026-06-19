@@ -1,0 +1,31 @@
+{
+  "id": "limiter",
+  "effect": "DYNAMICS",
+  "title": "Limiter",
+  "category": "dynamics",
+  "context": [
+    "ifx"
+  ],
+  "usage": "chain",
+  "description": "Brick-wall limiter to prevent clipping on loud transients. Place at the end of your Input FX chain as a safety net.",
+  "params": [
+    {
+      "name": "TYPE",
+      "value": "LIMITER"
+    },
+    {
+      "name": "DYNAMICS",
+      "value": "50"
+    }
+  ],
+  "tags": [
+    "safety",
+    "loud",
+    "protection",
+    "end-of-chain"
+  ],
+  "pairsWith": [
+    "hard-comp",
+    "presence-eq"
+  ]
+}
