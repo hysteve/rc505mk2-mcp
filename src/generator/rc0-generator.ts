@@ -5,6 +5,7 @@
  * by merging settings into the 25,504-line template.
  */
 
+import { SCHEMA_VERSIONS } from '../schemas/document-version.js';
 import type { Rack, FxSlotData, PresetSettings, TrackSettings, MasterSettings } from '../types/rack.js';
 import type { MemoryConfig, MemoryFxSection, MemoryBank, MemoryFxSlot } from '../types/memory-config.js';
 import { EFFECT_NAME_MAP } from '../params/effect-map.js';
@@ -283,6 +284,7 @@ export function memoryConfigToRc0(
   countValue?: string,
 ): string {
   const rack: Rack = {
+    schemaVersion: SCHEMA_VERSIONS.rack,
     id: config.sourceRackId ?? `memory-${config.slotNumber}`,
     section: '',
     title: config.name,

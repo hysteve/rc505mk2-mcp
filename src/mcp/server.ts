@@ -44,11 +44,12 @@ import {
   handleExportZip,
   handleImportZip,
 } from './handlers-zip.js';
+import { getPackageVersion } from '../version.js';
 
 const server = new Server(
   {
     name: 'rc505mk2',
-    version: '0.4.0',
+    version: getPackageVersion(),
   },
   {
     capabilities: {

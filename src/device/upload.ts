@@ -3,7 +3,7 @@
  */
 
 import { existsSync, readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'fs';
-import { join } from 'path';
+import { join, resolve } from 'path';
 import { formatSlotNumber } from '../download/rc0-download.js';
 import { resolveUserBackupsDir } from '../stores/paths.js';
 import { DEVICE_DATA_DIR } from './constants.js';

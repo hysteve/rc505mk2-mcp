@@ -226,7 +226,7 @@ Recipient:
 ```json
 {
   "name": "rc505mk2",
-  "version": "0.4.0"
+  "version": "<from package.json>"
 }
 ```
 

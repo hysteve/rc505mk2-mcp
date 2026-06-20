@@ -30,7 +30,7 @@ New to the terminology? Start with **[docs/CONCEPTS.md](./docs/CONCEPTS.md)** �
 
 ### Claude Desktop (recommended)
 
-1. Download `rc505mk2-v{version}.mcpb` from [Releases](https://github.com/hysteve/rc505mk2-mcp/releases/latest) (currently **v0.4.0**)
+1. Download `rc505mk2-v{version}.mcpb` from [Releases](https://github.com/hysteve/rc505mk2-mcp/releases/latest)
 2. Double-click → **Install** in Claude Desktop
 3. Connect RC-505mk2 via USB → **MENU → USB → STORAGE → CONNECT**
 4. Try: *"List bundled rack presets"* or *"Load the vocal plate rack to slot 5"*
@@ -129,6 +129,8 @@ npm run build
 npm test
 npm run pack:mcpb     # → releases/rc505mk2-v{version}.mcpb (Claude Desktop bundle)
 ```
+
+Contributing and releases: [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 Bundle source: `mcpb/manifest.json` + `mcpb/icon.png`. See [mcpb/README.md](./mcpb/README.md).
 
