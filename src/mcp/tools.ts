@@ -241,6 +241,90 @@ export const PRESET_TOOL_DEFINITIONS = [
     },
   },
   {
+    name: 'get_memory_config',
+    description: 'Get a saved MemoryConfig snapshot by id from ~/.rc505mk2/memories/.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        memory_id: { type: 'string', description: 'Saved memory config id from list_memory_configs.' },
+      },
+      required: ['memory_id'],
+    },
+  },
+  {
+    name: 'export_share',
+    description:
+      'Export a portable rc505mk2-share JSON envelope for memory, rack, or fx_module scope. ' +
+      'Sources: config, device slot_number, rack_id, or fx_module_id. ' +
+      'For partial exports use kind rack/fx_module with section, bank, and slot selectors. ' +
+      'Set write_to_exports: true to save to ~/.rc505mk2/exports/.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        kind: { type: 'string', enum: ['memory', 'rack', 'fx_module'] },
+        config: { type: 'object', description: 'MemoryConfig source for memory or partial export.' },
+        slot_number: { type: 'number', description: 'Read memory from device slot (1-99).' },
+        device_path: { type: 'string', description: 'Optional device mount path.' },
+        rack_id: { type: 'string', description: 'Export a saved rack preset by id.' },
+        fx_module_id: { type: 'string', description: 'Export a saved FX module by id.' },
+        section: { type: 'string', enum: ['inputFx', 'trackFx'], description: 'FX section for partial export.' },
+        bank: { type: 'string', enum: ['A', 'B', 'C', 'D'], description: 'Bank for partial export.' },
+        slot: { type: 'string', enum: ['A', 'B', 'C', 'D'], description: 'Slot for fx_module partial export.' },
+        source: { type: 'string', enum: ['device', 'user', 'bundled'] },
+        notes: { type: 'string' },
+        write_to_exports: { type: 'boolean', description: 'Write pretty JSON to ~/.rc505mk2/exports/.' },
+      },
+      required: ['kind'],
+    },
+  },
+  {
+    name: 'import_share',
+    description:
+      'Parse and validate an rc505mk2-share JSON envelope. ' +
+      'Optional actions: save_to_store (memory), create_rack_preset, create_fx_module.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        envelope: { type: 'object', description: 'Parsed share envelope object.' },
+        json: { type: 'string', description: 'Share envelope as JSON string.' },
+        save_to_store: { type: 'boolean', description: 'Save memory payload to ~/.rc505mk2/memories/.' },
+        create_rack_preset: { type: 'boolean', description: 'Save rack payload to user store.' },
+        create_fx_module: { type: 'boolean', description: 'Save fx_module payload to user store.' },
+        write_to_exports: { type: 'boolean', description: 'Also write validated envelope to exports dir.' },
+      },
+    },
+  },
+  {
+    name: 'export_zip',
+    description:
+      'Generate a hardware-native RC0 ZIP (MEMORYnnnA/B.RC0) from config, rack_id + slot_number, or device slot. ' +
+      'Returns base64 ZIP. Set write_to_exports: true to save to ~/.rc505mk2/exports/.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        config: { type: 'object', description: 'MemoryConfig to pack.' },
+        rack_id: { type: 'string', description: 'Build from rack preset + slot_number.' },
+        slot_number: { type: 'number', description: 'Slot number for rack or device read.' },
+        name: { type: 'string', description: 'Optional name override when using rack_id.' },
+        device_path: { type: 'string' },
+        write_to_exports: { type: 'boolean' },
+      },
+    },
+  },
+  {
+    name: 'import_zip',
+    description:
+      'Import RC0 ZIP (base64) and parse to MemoryConfig. Optional save_to_store writes to ~/.rc505mk2/memories/.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        zip_base64: { type: 'string', description: 'Base64-encoded RC0 ZIP file.' },
+        save_to_store: { type: 'boolean' },
+      },
+      required: ['zip_base64'],
+    },
+  },
+  {
     name: 'generate_memory',
     description:
       'Generate RC0 binary data for a memory config. Resolves fxModuleId inheritance and returns ' +
@@ -413,6 +497,31 @@ const REFERENCE_AND_DEVICE_TOOLS = [
     },
   },
   {
+    name: 'read_device_slot',
+    description:
+      'Read a memory slot from a connected RC-505mk2 device. Parses both MEMORYnnnA/B.RC0 files ' +
+      'and returns the active-side MemoryConfig. Use for tweak/reupload workflows.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        slot_number: { type: 'number', description: 'Memory slot number (1-99).' },
+        device_path: { type: 'string', description: 'Optional device mount path from detect_device.' },
+      },
+      required: ['slot_number'],
+    },
+  },
+  {
+    name: 'list_device_slots',
+    description:
+      'List occupied memory slots on a connected RC-505mk2 device with optional preset names.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        device_path: { type: 'string', description: 'Optional device mount path from detect_device.' },
+      },
+    },
+  },
+  {
     name: 'eject_device',
     description:
       'Safely eject a connected RC-505mk2 device. ' +
@@ -430,5 +539,5 @@ const REFERENCE_AND_DEVICE_TOOLS = [
   },
 ];
 
-/** All 20 unified MCP tools — preset browse/CRUD/generate + reference + device. */
+/** All unified MCP tools — preset browse/CRUD/generate + share + reference + device. */
 export const TOOL_DEFINITIONS = [...PRESET_TOOL_DEFINITIONS, ...REFERENCE_AND_DEVICE_TOOLS];

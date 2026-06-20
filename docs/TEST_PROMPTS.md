@@ -206,6 +206,39 @@ Use `/rc505-upload` or natural language. Prefer `upload_memory { rack_id, slot_n
 
 ---
 
+## 4b. Read, tweak, share
+
+Requires device connected for read/upload paths.
+
+### Read from device
+
+| # | Prompt |
+|---|--------|
+| 1 | What's in memory slot 3 on my 505? |
+| 2 | List all occupied memory slots on my device. |
+| 3 | Read slot 5 and show me the input FX on bank A. |
+
+### Tweak and reupload
+
+| # | Prompt |
+|---|--------|
+| 1 | Read slot 3, change the master tempo to 95, and merge it back. |
+| 2 | Pull slot 7, tweak only TFX bank A, upload with merge mode. |
+| 3 | Read slot 2 and overwrite it with a cleaned-up version (same name, less FX). |
+
+### Share export/import
+
+| # | Prompt |
+|---|--------|
+| 1 | Export memory slot 5 as a shareable JSON file. |
+| 2 | Export just the TFX bank A from slot 3 as a rack share. |
+| 3 | Import this share JSON and save it to my user store. |
+| 4 | Export slot 4 as an RC0 ZIP I can copy to USB manually. |
+
+**Pass signals:** uses `read_device_slot` not manual file copy; `export_share` with correct `kind`; merge vs overwrite explained.
+
+---
+
 ## 5. Browse & explore
 
 Low-stakes discovery — good for testing list/get tools.

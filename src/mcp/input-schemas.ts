@@ -131,6 +131,71 @@ export const ResolveRackInputSchema = z.object({
   rack_id: z.string().min(1),
 });
 
+export const ReadDeviceSlotInputSchema = z.object({
+  slot_number: z.number().int().min(1).max(99),
+  device_path: z.string().optional(),
+});
+
+export const ListDeviceSlotsInputSchema = z.object({
+  device_path: z.string().optional(),
+});
+
+export const GetMemoryConfigInputSchema = z.object({
+  memory_id: z.string().min(1),
+});
+
+const ShareKindEnum = z.enum(['memory', 'rack', 'fx_module']);
+const FxSectionEnum = z.enum(['inputFx', 'trackFx']);
+const BankSlotEnum = z.enum(['A', 'B', 'C', 'D']);
+const ShareSourceEnum = z.enum(['device', 'user', 'bundled']);
+
+export const ExportShareInputSchema = z.object({
+  kind: ShareKindEnum,
+  config: MemoryConfigSchema.optional(),
+  slot_number: z.number().int().min(1).max(99).optional(),
+  device_path: z.string().optional(),
+  rack_id: z.string().optional(),
+  fx_module_id: z.string().optional(),
+  section: FxSectionEnum.optional(),
+  bank: BankSlotEnum.optional(),
+  slot: BankSlotEnum.optional(),
+  source: ShareSourceEnum.optional(),
+  notes: z.string().optional(),
+  write_to_exports: z.boolean().optional(),
+});
+
+export const ImportShareInputSchema = z
+  .object({
+    envelope: z.record(z.unknown()).optional(),
+    json: z.string().optional(),
+    save_to_store: z.boolean().optional(),
+    create_rack_preset: z.boolean().optional(),
+    create_fx_module: z.boolean().optional(),
+    write_to_exports: z.boolean().optional(),
+  })
+  .superRefine((data, ctx) => {
+    if (!data.envelope && !data.json) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Provide envelope object or json string.',
+      });
+    }
+  });
+
+export const ExportZipInputSchema = z.object({
+  config: MemoryConfigSchema.optional(),
+  rack_id: z.string().optional(),
+  slot_number: z.number().int().min(1).max(99).optional(),
+  name: z.string().optional(),
+  device_path: z.string().optional(),
+  write_to_exports: z.boolean().optional(),
+});
+
+export const ImportZipInputSchema = z.object({
+  zip_base64: z.string().min(1),
+  save_to_store: z.boolean().optional(),
+});
+
 // ── Validation helper ───────────────────────────────────────────────
 
 /**

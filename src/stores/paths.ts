@@ -53,6 +53,10 @@ export function resolveUserMemoriesDir(): string {
   return join(resolveUserDataDir(), 'memories');
 }
 
+export function resolveUserExportsDir(): string {
+  return join(resolveUserDataDir(), 'exports');
+}
+
 /** Slugify a title into a kebab-case id. */
 export function slugifyId(title: string): string {
   return title

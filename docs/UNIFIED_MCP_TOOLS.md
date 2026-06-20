@@ -49,6 +49,8 @@ Default: `~/.rc505mk2/` (override via env `RC505MK2_DATA_DIR`).
 │   └── my-vocal-rack.json
 ├── memories/                # saved MemoryConfig snapshots
 │   └── slot-03-vocal.json
+├── exports/                 # optional share JSON / RC0 ZIP exports (write_to_exports)
+│   └── memory-vocal-plate-2026-06-20.rc505mk2.json
 └── meta.json                # optional: schema version, last migration
 ```
 
@@ -115,6 +117,18 @@ Reuse existing `FxModuleStore` for the fx-modules subtree; add `RackStore` and `
 | `get_rack_preset` | Full rack by ID | |
 | `resolve_rack` | Expand fxModuleId inheritance to full params | Read-only inspection |
 | `list_memory_configs` | Browse saved memory configs | Filters: genre, slot_number |
+| `get_memory_config` | Fetch saved memory config by id | From `~/.rc505mk2/memories/` |
+
+### Share (community JSON + RC0 ZIP)
+
+| Tool | Description | Notes |
+|------|-------------|-------|
+| `export_share` | Build `.rc505mk2.json` envelope | kind: `memory` \| `rack` \| `fx_module`; optional `write_to_exports` |
+| `import_share` | Parse/validate envelope | Optional `save_to_store`, `create_rack_preset`, `create_fx_module` |
+| `export_zip` | RC0 ZIP (MEMORYnnnA/B.RC0) as base64 | From config, rack, or device slot |
+| `import_zip` | Parse RC0 ZIP → MemoryConfig | Optional `save_to_store` |
+
+See [SHARING.md](./SHARING.md) for when to use JSON vs ZIP.
 
 ### Build & generate
 
@@ -141,10 +155,12 @@ Reuse existing `FxModuleStore` for the fx-modules subtree; add `RackStore` and `
 | Tool | Description | Notes |
 |------|-------------|-------|
 | `detect_device` | Find RC-505mk2 USB volume | Looks for `ROLAND/DATA` |
+| `read_device_slot` | Read slot → MemoryConfig | Parses A+B pair, active side |
+| `list_device_slots` | List occupied slots 1–99 | Optional preset names |
 | `upload_memory` | Generate + write RC0 to device slot | `merge` (default) or `overwrite` |
 | `eject_device` | Safe unmount | Call after upload |
 
-**Total: 20 tools** (6 existing + 14 from former cloud MCP, minus redundant auth gates).
+**Total: 28 tools** (reference + browse + build + persist + share + device).
 
 ---
 
@@ -172,15 +188,31 @@ Reuse existing `FxModuleStore` for the fx-modules subtree; add `RackStore` and `
 6. eject_device
 ```
 
-### Inspect what’s on the device
+### Inspect or tweak what’s on the device
 
 ```
 1. detect_device
-2. (read MEMORY003A.RC0 from device path manually, or future read_device_slot tool)
-3. parse_memory
+2. list_device_slots           → browse occupied slots (optional)
+3. read_device_slot            → { slot_number: 3 } → MemoryConfig
+4. (edit config, or export_share for community)
+5. upload_memory               → { config, slot_number, mode: "merge" }  # tweak one bank
+   upload_memory               → { config, slot_number, mode: "overwrite" }  # full replace
+6. eject_device
 ```
 
-**Future tool (Phase 7):** `read_device_slot` — read RC0 from connected device without manual file access.
+`read_device_slot` reads both MEMORYnnnA.RC0 and MEMORYnnnB.RC0 and returns the active-side config — no manual USB file copy needed.
+
+### Share a preset with the community
+
+```
+1. read_device_slot or build_rack_config
+2. export_share                → kind: memory | rack | fx_module, write_to_exports: true
+3. Post the .rc505mk2.json file (GitHub gist, Reddit, etc.)
+
+Recipient:
+1. import_share                → validate; optional create_rack_preset / save_to_store
+2. upload_memory or export_zip for hardware-native sharing
+```
 
 ---
 
@@ -195,7 +227,7 @@ Reuse existing `FxModuleStore` for the fx-modules subtree; add `RackStore` and `
 ```json
 {
   "name": "rc505mk2",
-  "version": "0.2.1"
+  "version": "0.4.0"
 }
 ```
 

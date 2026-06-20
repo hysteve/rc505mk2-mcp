@@ -28,6 +28,7 @@ import {
   GenerateMemoryInputSchema,
   BuildRackConfigInputSchema,
   ResolveRackInputSchema,
+  GetMemoryConfigInputSchema,
 } from './input-schemas.js';
 import { validateRackFxPlacement } from './validate-rack.js';
 import { normalizeRackPresetArgs } from './normalize-rack-input.js';
@@ -290,6 +291,23 @@ export function handleListMemoryConfigs(args: Record<string, unknown>): object {
     slotNumber: v.data.slot_number,
   });
   return { configs, count: configs.length };
+}
+
+export function handleGetMemoryConfig(args: Record<string, unknown>): object {
+  const v = validateInput(GetMemoryConfigInputSchema, args);
+  if (!v.success) return { error: v.error };
+
+  const saved = store.getMemoryConfig(v.data.memory_id);
+  if (!saved) {
+    return { error: `Memory config not found: ${v.data.memory_id}.` };
+  }
+  return {
+    id: saved.id,
+    config: saved.config,
+    genres: saved.genres,
+    sourceRackId: saved.sourceRackId,
+    savedAt: saved.savedAt,
+  };
 }
 
 // ── Generation Handlers ──────────────────────────────────────────

@@ -9,3 +9,5 @@ export { uploadToDevice, checkDeviceSlot } from './upload.js';
 export type { UploadResult, UploadOptions } from './upload.js';
 export { ejectDevice } from './eject.js';
 export type { EjectResult } from './eject.js';
+export { readDeviceSlot, listDeviceSlots } from './read.js';
+export type { DeviceSlotSummary, ReadDeviceSlotResult } from './read.js';

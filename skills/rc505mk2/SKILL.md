@@ -241,11 +241,13 @@ Preset names are max **12 ASCII characters**.
 
 ```
 detect_device
-# Read MEMORY00NA.RC0 from device ROLAND/DATA path (manual today)
-parse_memory { xml, slot_number: N }
+list_device_slots                    # optional browse
+read_device_slot { slot_number: N }  # returns MemoryConfig (A+B active side)
 ```
 
-Future: `read_device_slot` (Phase 4).
+Tweak workflow: edit config → `upload_memory { config, slot_number: N, mode: "merge" }` → `eject_device`.
+
+Share: `export_share { kind: "memory", config }` or `export_zip { config }`. See docs/SHARING.md.
 
 ### 4. Save config without device
 
