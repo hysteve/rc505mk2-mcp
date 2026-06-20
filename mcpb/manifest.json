@@ -51,7 +51,7 @@
     }
   ],
   "keywords": ["rc505", "roland", "loop-station", "fx", "audio", "mcp"],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "compatibility": {
     "claude_desktop": ">=0.10.0",
     "platforms": ["darwin", "win32", "linux"],

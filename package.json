@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "Local MCP server for the Roland RC-505mk2 — FX presets, RC0 generation, and USB upload",
   "type": "module",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "engines": {
     "node": ">=18"
   },
@@ -57,7 +57,8 @@
   "files": [
     "dist",
     "data",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",

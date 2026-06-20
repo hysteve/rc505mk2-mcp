@@ -123,6 +123,6 @@ Workflow rules for the MCP server live in `src/mcp/instructions.ts` (returned on
 
 ## License
 
-UNLICENSED — private until published to npm.
+MIT — see [LICENSE](./LICENSE). Free to use, modify, and share; keep the copyright notice.
 
 Not affiliated with Roland or Anthropic.

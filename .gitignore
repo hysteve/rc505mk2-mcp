@@ -29,9 +29,6 @@ rc505-backups/
 releases/
 .mcpb-staging/
 
-# Legacy plugin/ layout (replaced by mcpb/) — safe to delete locally
-plugin/
-
 # Optional local skill source (sync:skills → skills/rc505mk2/)
 docs/SKILL.md
 skills-lock.json
