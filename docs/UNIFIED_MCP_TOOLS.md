@@ -195,7 +195,7 @@ Reuse existing `FxModuleStore` for the fx-modules subtree; add `RackStore` and `
 ```json
 {
   "name": "rc505mk2",
-  "version": "0.2.0"
+  "version": "0.2.1"
 }
 ```
 

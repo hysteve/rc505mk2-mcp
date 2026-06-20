@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "rc505mk2",
   "display_name": "RC-505mk2 Assistant",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Browse FX racks, build memory configs, and upload to your Boss RC-505mk2 via USB.",
   "long_description": "Local assistant for the Boss RC-505mk2 loop station (https://www.boss.info/us/products/rc-505mk2/). Browse bundled FX modules and rack presets, compose custom racks, generate RC0 memory files, and upload directly to your device — no cloud, no API keys.\n\nConnect your RC-505 in USB Storage mode (MENU → USB → STORAGE → CONNECT) before using device tools.\n\nOfficial docs: Owner's Manual https://static.roland.com/assets/media/pdf/RC-505mk2_eng02_W.pdf · Parameter Guide https://static.roland.com/assets/media/pdf/RC-505mk2_Parameter_eng02_W.pdf\n\nNot affiliated with Boss, Roland Corporation, or Anthropic.",
   "author": {

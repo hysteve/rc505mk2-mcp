@@ -26,7 +26,7 @@ A free, local Claude Desktop extension for the [Boss RC-505mk2](https://www.boss
 
 ### Claude Desktop (recommended)
 
-1. Download `rc505mk2-v0.2.0.mcpb` from [Releases](https://github.com/hysteve/rc505mk2-mcp/releases)
+1. Download `rc505mk2-v0.2.1.mcpb` from [Releases](https://github.com/hysteve/rc505mk2-mcp/releases/latest)
 2. Double-click → **Install** in Claude Desktop
 3. Connect RC-505mk2 via USB → **MENU → USB → STORAGE → CONNECT**
 4. Try: *"List bundled rack presets"* or *"Load the vocal plate rack to slot 5"*
@@ -105,7 +105,7 @@ rc505mk2 lookup-fx REVERB
 npm install
 npm run build
 npm test              # 421 tests
-npm run pack:mcpb     # → releases/rc505mk2-v0.2.0.mcpb (Claude Desktop bundle)
+npm run pack:mcpb     # → releases/rc505mk2-v0.2.1.mcpb (Claude Desktop bundle)
 ```
 
 Bundle source: `mcpb/manifest.json` + `mcpb/icon.png`. See [mcpb/README.md](./mcpb/README.md).

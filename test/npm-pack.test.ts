@@ -43,7 +43,7 @@ describe('npm pack install smoke', () => {
       expect(parsed.dir).toContain('data/fx-modules');
     } finally {
       rmSync(tmpInstall, { recursive: true, force: true });
-      for (const f of ['rc505mk2-mcp-0.2.0.tgz']) {
+      for (const f of ['rc505mk2-mcp-0.2.1.tgz']) {
         try { rmSync(join(repoRoot, f)); } catch { /* ignore */ }
       }
     }
