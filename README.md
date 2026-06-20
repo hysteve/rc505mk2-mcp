@@ -4,7 +4,7 @@
 
 A free, local Claude Desktop extension for the Roland RC-505mk2. Talk in plain language — *"neo-soul vocal rack"*, *"DnB drum processing"*, *"breakdown with HPF sweep and reverse reverb"* — and get a real memory preset on your device over USB. No menu diving, no hand-editing RC0 files, no cloud account.
 
-> **Beta** — download the `.mcpb` from [GitHub Releases](https://github.com/hysteve/rc505mk2-react/releases). Feedback via [Issues](https://github.com/hysteve/rc505mk2-react/issues).
+> **Beta** — download the `.mcpb` from [GitHub Releases](https://github.com/hysteve/rc505mk2-mcp/releases). Feedback via [Issues](https://github.com/hysteve/rc505mk2-mcp/issues).
 
 ---
 
@@ -26,7 +26,7 @@ A free, local Claude Desktop extension for the Roland RC-505mk2. Talk in plain l
 
 ### Claude Desktop (recommended)
 
-1. Download `rc505mk2-v0.2.0.mcpb` from [Releases](https://github.com/hysteve/rc505mk2-react/releases)
+1. Download `rc505mk2-v0.2.0.mcpb` from [Releases](https://github.com/hysteve/rc505mk2-mcp/releases)
 2. Double-click → **Install** in Claude Desktop
 3. Connect RC-505mk2 via USB → **MENU → USB → STORAGE → CONNECT**
 4. Try: *"List bundled rack presets"* or *"Load the vocal plate rack to slot 5"*
@@ -36,8 +36,8 @@ A free, local Claude Desktop extension for the Roland RC-505mk2. Talk in plain l
 ### From source (MCP config)
 
 ```bash
-git clone https://github.com/hysteve/rc505mk2-react.git
-cd rc505mk2-react
+git clone https://github.com/hysteve/rc505mk2-mcp.git
+cd rc505mk2-mcp
 npm install && npm run build
 npx rc505mk2 doctor
 ```

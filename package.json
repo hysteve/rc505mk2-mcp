@@ -20,12 +20,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hysteve/rc505mk2-react.git"
+    "url": "git+https://github.com/hysteve/rc505mk2-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/hysteve/rc505mk2-react/issues"
+    "url": "https://github.com/hysteve/rc505mk2-mcp/issues"
   },
-  "homepage": "https://github.com/hysteve/rc505mk2-react#readme",
+  "homepage": "https://github.com/hysteve/rc505mk2-mcp#readme",
   "scripts": {
     "build:template": "tsx scripts/embed-template.ts",
     "build": "npm run build:template && tsup",

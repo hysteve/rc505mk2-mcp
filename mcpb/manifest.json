@@ -11,11 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hysteve/rc505mk2-react.git"
+    "url": "https://github.com/hysteve/rc505mk2-mcp.git"
   },
-  "homepage": "https://github.com/hysteve/rc505mk2-react#readme",
-  "documentation": "https://github.com/hysteve/rc505mk2-react/blob/main/docs/TEST_PROMPTS.md",
-  "support": "https://github.com/hysteve/rc505mk2-react/issues",
+  "homepage": "https://github.com/hysteve/rc505mk2-mcp#readme",
+  "documentation": "https://github.com/hysteve/rc505mk2-mcp/blob/main/docs/TEST_PROMPTS.md",
+  "support": "https://github.com/hysteve/rc505mk2-mcp/issues",
   "icon": "icon.png",
   "server": {
     "type": "node",
