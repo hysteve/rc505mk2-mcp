@@ -162,7 +162,7 @@ export const PRESET_TOOL_DEFINITIONS = [
       'Omit sequencer unless using 16-step seq — never send sequencer as {}. Numeric override values (e.g. TIME: 30) are coerced to strings server-side. ' +
       'IFX slots use slot A-D only (no bank field). ' +
       'BEAT_SCATTER, BEAT_REPEAT, BEAT_SHIFT, VINYL_FLICK must be TFX Slot A only (one per bank). ' +
-      'tips must be objects { type: "tip"|"performance"|"how"|"warning", title, text } — not strings. ' +
+      'tips must be objects { type: "tip"|"performance"|"how"|"warning"|"setup", title, text } — not strings. ' +
       'Prefer fxModuleId from list_fx_modules with overrides; skip lookup_fx_params when using fxModuleId (params: [] is enough). ' +
       'After saving, use build_rack_config with rack_id to generate MemoryConfig for upload.',
     inputSchema: {
@@ -187,7 +187,7 @@ export const PRESET_TOOL_DEFINITIONS = [
         tips: {
           type: 'array',
           description:
-            'Usage tips. Each item: { type: "tip"|"performance"|"how"|"warning", title: string, text: string }.',
+            'Usage tips. Each item: { type: "tip"|"performance"|"how"|"warning"|"setup", title: string, text: string }.',
         },
         tags: { type: 'array', items: { type: 'string' }, description: 'Tags.' },
       },
@@ -252,53 +252,12 @@ export const PRESET_TOOL_DEFINITIONS = [
     },
   },
   {
-    name: 'export_share',
-    description:
-      'Export a portable rc505mk2-share JSON envelope for memory, rack, or fx_module scope. ' +
-      'Sources: config, device slot_number, rack_id, or fx_module_id. ' +
-      'For partial exports use kind rack/fx_module with section, bank, and slot selectors. ' +
-      'Set write_to_exports: true to save to ~/.rc505mk2/exports/.',
-    inputSchema: {
-      type: 'object' as const,
-      properties: {
-        kind: { type: 'string', enum: ['memory', 'rack', 'fx_module'] },
-        config: { type: 'object', description: 'MemoryConfig source for memory or partial export.' },
-        slot_number: { type: 'number', description: 'Read memory from device slot (1-99).' },
-        device_path: { type: 'string', description: 'Optional device mount path.' },
-        rack_id: { type: 'string', description: 'Export a saved rack preset by id.' },
-        fx_module_id: { type: 'string', description: 'Export a saved FX module by id.' },
-        section: { type: 'string', enum: ['inputFx', 'trackFx'], description: 'FX section for partial export.' },
-        bank: { type: 'string', enum: ['A', 'B', 'C', 'D'], description: 'Bank for partial export.' },
-        slot: { type: 'string', enum: ['A', 'B', 'C', 'D'], description: 'Slot for fx_module partial export.' },
-        source: { type: 'string', enum: ['device', 'user', 'bundled'] },
-        notes: { type: 'string' },
-        write_to_exports: { type: 'boolean', description: 'Write pretty JSON to ~/.rc505mk2/exports/.' },
-      },
-      required: ['kind'],
-    },
-  },
-  {
-    name: 'import_share',
-    description:
-      'Parse and validate an rc505mk2-share JSON envelope. ' +
-      'Optional actions: save_to_store (memory), create_rack_preset, create_fx_module.',
-    inputSchema: {
-      type: 'object' as const,
-      properties: {
-        envelope: { type: 'object', description: 'Parsed share envelope object.' },
-        json: { type: 'string', description: 'Share envelope as JSON string.' },
-        save_to_store: { type: 'boolean', description: 'Save memory payload to ~/.rc505mk2/memories/.' },
-        create_rack_preset: { type: 'boolean', description: 'Save rack payload to user store.' },
-        create_fx_module: { type: 'boolean', description: 'Save fx_module payload to user store.' },
-        write_to_exports: { type: 'boolean', description: 'Also write validated envelope to exports dir.' },
-      },
-    },
-  },
-  {
     name: 'export_zip',
     description:
       'Generate a hardware-native RC0 ZIP (MEMORYnnnA/B.RC0) from config, rack_id + slot_number, or device slot. ' +
-      'Returns base64 ZIP. Set write_to_exports: true to save to ~/.rc505mk2/exports/.',
+      'For sharing with hardware-only users. Returns base64 ZIP. ' +
+      'Set write_to_disk: true to save under ~/.rc505mk2/zips/. ' +
+      'MCP users sharing JSON presets should copy files from ~/.rc505mk2/racks/, memories/, or fx-modules/ instead.',
     inputSchema: {
       type: 'object' as const,
       properties: {
@@ -307,7 +266,7 @@ export const PRESET_TOOL_DEFINITIONS = [
         slot_number: { type: 'number', description: 'Slot number for rack or device read.' },
         name: { type: 'string', description: 'Optional name override when using rack_id.' },
         device_path: { type: 'string' },
-        write_to_exports: { type: 'boolean' },
+        write_to_disk: { type: 'boolean', description: 'Write ZIP to ~/.rc505mk2/zips/.' },
       },
     },
   },
@@ -477,7 +436,7 @@ const REFERENCE_AND_DEVICE_TOOLS = [
         },
         backup_dir: {
           type: 'string',
-          description: 'Directory to store backups of existing files. Defaults to "./rc505-backups".',
+          description: 'Directory to store backups of existing files. Defaults to ~/.rc505mk2/backups.',
         },
         skip_backup: {
           type: 'boolean',

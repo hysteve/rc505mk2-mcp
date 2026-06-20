@@ -14,6 +14,23 @@ export {
 export { FxModuleSchema } from './fx-module.js';
 
 export {
+  SavedMemoryConfigSchema,
+} from './saved-memory.js';
+
+export {
+  SCHEMA_VERSIONS,
+  UnsupportedSchemaVersionError,
+  readDocumentVersion,
+  migrateDocument,
+  stampDocument,
+  parseFxModuleDocument,
+  parseRackDocument,
+  parseMemoryConfigDocument,
+  parseSavedMemoryDocument,
+} from './document-version.js';
+export type { DocumentKind } from './document-version.js';
+
+export {
   FxSlotDataSchema,
   TipSchema,
   TrackSettingsSchema,
@@ -46,6 +63,7 @@ export { buildFxParamsSchema, validateFxModuleParams } from './param-validators.
 
 export type { FxSlotId, FxParam } from './fx-param.js';
 export type { FxModule } from './fx-module.js';
+export type { SavedMemoryConfig } from './saved-memory.js';
 
 export type {
   FxSlotData,

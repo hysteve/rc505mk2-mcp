@@ -10,6 +10,11 @@ import { EFFECT_NAME_MAP } from '../params/effect-map.js';
 import type { MemoryConfig, MemoryBank, MemoryFxSlot } from '../schemas/memory-config.js';
 import type { FxSlotId } from '../schemas/fx-param.js';
 import { PresetStore } from '../stores/preset-store.js';
+import {
+  resolveFxModuleFilePath,
+  resolveMemoryFilePath,
+  resolveRackFilePath,
+} from '../stores/paths.js';
 import type { Rack } from '../schemas/rack.js';
 import {
   validateInput,
@@ -152,7 +157,11 @@ export function handleCreateFxModule(args: Record<string, unknown>): object {
 
   try {
     const mod = store.createFxModule(v.data);
-    return { module: mod, message: `FX module "${mod.title}" saved to user store.` };
+    return {
+      module: mod,
+      file_path: resolveFxModuleFilePath(mod),
+      message: `FX module "${mod.title}" saved to user store.`,
+    };
   } catch (err) {
     return { error: err instanceof Error ? err.message : String(err) };
   }
@@ -221,7 +230,11 @@ export function handleCreateRackPreset(args: Record<string, unknown>): object {
 
   try {
     const rack = store.createRack(rackData);
-    return { rack, message: `Rack "${rack.title}" saved to user store.` };
+    return {
+      rack,
+      file_path: resolveRackFilePath(rack.id),
+      message: `Rack "${rack.title}" saved to user store.`,
+    };
   } catch (err) {
     return { error: err instanceof Error ? err.message : String(err) };
   }
@@ -276,7 +289,12 @@ export function handleSaveMemoryConfig(args: Record<string, unknown>): object {
 
   try {
     const saved = store.saveMemoryConfig(v.data.config, { genres: v.data.genres });
-    return { id: saved.id, config: saved.config, message: `Memory config "${saved.config.name}" saved.` };
+    return {
+      id: saved.id,
+      config: saved.config,
+      file_path: resolveMemoryFilePath(saved.id),
+      message: `Memory config "${saved.config.name}" saved.`,
+    };
   } catch (err) {
     return { error: err instanceof Error ? err.message : String(err) };
   }

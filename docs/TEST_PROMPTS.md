@@ -226,16 +226,16 @@ Requires device connected for read/upload paths.
 | 2 | Pull slot 7, tweak only TFX bank A, upload with merge mode. |
 | 3 | Read slot 2 and overwrite it with a cleaned-up version (same name, less FX). |
 
-### Share export/import
+### Share presets
 
 | # | Prompt |
 |---|--------|
-| 1 | Export memory slot 5 as a shareable JSON file. |
-| 2 | Export just the TFX bank A from slot 3 as a rack share. |
-| 3 | Import this share JSON and save it to my user store. |
+| 1 | Save slot 5 to my user store and tell me the file path so I can share it. |
+| 2 | Create a rack from slot 3 TFX bank A and give me the path to copy. |
+| 3 | Import this rack JSON into my user store (paste JSON). |
 | 4 | Export slot 4 as an RC0 ZIP I can copy to USB manually. |
 
-**Pass signals:** uses `read_device_slot` not manual file copy; `export_share` with correct `kind`; merge vs overwrite explained.
+**Pass signals:** uses `read_device_slot` not manual file copy; `save_memory_config` or `create_rack_preset` with `file_path`; `export_zip` for hardware; merge vs overwrite explained.
 
 ---
 

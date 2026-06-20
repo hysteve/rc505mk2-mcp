@@ -26,7 +26,7 @@ TypeScript library for generating, parsing, and managing [Boss RC-505mk2](https:
 ## Installation
 
 ```bash
-npm install @rc505mk2/lib
+npm install rc505mk2-mcp
 ```
 
 ## Core Concepts

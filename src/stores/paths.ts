@@ -53,8 +53,25 @@ export function resolveUserMemoriesDir(): string {
   return join(resolveUserDataDir(), 'memories');
 }
 
-export function resolveUserExportsDir(): string {
-  return join(resolveUserDataDir(), 'exports');
+export function resolveUserZipsDir(): string {
+  return join(resolveUserDataDir(), 'zips');
+}
+
+export function resolveRackFilePath(rackId: string): string {
+  return join(resolveUserRacksDir(), `${rackId}.json`);
+}
+
+export function resolveMemoryFilePath(memoryId: string): string {
+  return join(resolveUserMemoriesDir(), `${memoryId}.json`);
+}
+
+export function resolveFxModuleFilePath(module: { id: string; effect: string }): string {
+  const folder = module.effect.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  return join(resolveUserFxModulesDir(), folder, `${module.id}.json`);
+}
+
+export function resolveUserBackupsDir(): string {
+  return join(resolveUserDataDir(), 'backups');
 }
 
 /** Slugify a title into a kebab-case id. */

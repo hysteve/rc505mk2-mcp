@@ -7,8 +7,6 @@ import type { Rack, FxSlotData } from '../schemas/rack.js';
 import type { FxModule } from '../schemas/fx-module.js';
 import type { FxSlotId } from '../schemas/fx-param.js';
 import { slugifyId } from '../stores/paths.js';
-import type { ShareMeta } from './envelope.js';
-import { buildShareEnvelope } from './envelope.js';
 
 export type FxSectionName = 'inputFx' | 'trackFx';
 
@@ -102,21 +100,4 @@ export function extractFxModuleFromMemory(
     sequencer: slot.sequencer,
     tags: config.genres,
   };
-}
-
-export function memoryConfigToShare(config: MemoryConfig, meta?: ShareMeta) {
-  return buildShareEnvelope('memory', config, {
-    name: config.name,
-    slotNumber: config.slotNumber,
-    source: meta?.source ?? 'device',
-    ...meta,
-  });
-}
-
-export function rackToShare(rack: Rack, meta?: ShareMeta) {
-  return buildShareEnvelope('rack', rack, meta);
-}
-
-export function fxModuleToShare(module: FxModule, meta?: ShareMeta) {
-  return buildShareEnvelope('fx_module', module, meta);
 }

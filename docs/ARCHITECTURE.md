@@ -17,8 +17,8 @@
 │  rc505mk2-mcp  (src/mcp/server.ts)                      │
 │  ├── instructions       (initialize — workflow rules)   │
 │  ├── Reference handlers   (FX types, params)            │
-│  ├── Preset handlers      (browse, CRUD, generate)      │
-│  └── Device handlers      (detect, upload, eject)       │
+│  ├── Preset handlers      (browse, CRUD, generate, zip)    │
+│  └── Device handlers      (detect, read, upload, eject)   │
 └──────┬──────────────────────────────┬───────────────────┘
        │                              │
        ▼                              ▼
@@ -59,7 +59,7 @@ The public repo ships the MCP server, preset library, and bundle metadata (`mcpb
 
 | Layer | Location | Purpose |
 |-------|----------|---------|
-| **MCP server** | `src/mcp/server.ts` | 21 tools — USB, RC0, presets, validation |
+| **MCP server** | `src/mcp/server.ts` | 26 tools — presets, USB, RC0, validation |
 | **MCP instructions** | `src/mcp/instructions.ts` | Adapt vs Build, TFX rules, upload path — sent on initialize |
 
 Claude Desktop users rely on natural language + tools + initialize instructions. No slash commands in the public repo.
@@ -89,9 +89,8 @@ src/
 data/fx-modules/        # Bundled FX module JSON
 mcpb/                   # Claude Desktop bundle metadata (manifest, icon)
 scripts/                # embed-template.ts, pack-mcpb.ts
-skills/                 # Optional agent skills bundled into .mcpb
 test/                   # Vitest
-docs/                   # Public reference (TEST_PROMPTS, UNIFIED_MCP_TOOLS, LIBRARY)
+docs/                   # Public reference (CONCEPTS, TEST_PROMPTS, UNIFIED_MCP_TOOLS, LIBRARY, SHARING)
 ```
 
 ---

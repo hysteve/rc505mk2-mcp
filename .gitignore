@@ -16,6 +16,10 @@ tsconfig.tsbuildinfo
 test-output/
 generated/
 rc505-backups/
+*.tgz
+
+# Experimental agent skills (local only — not shipped; MCP instructions carry workflow rules)
+skills/
 
 # Local IDE & agent config — never commit to main
 # .agents/ and .cursor/ are for repo dev/coding skills (how to work in this codebase).

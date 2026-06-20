@@ -38,13 +38,13 @@ Prefer upload_memory { rack_id, slot_number }. Device must be in USB Storage mod
 ## Read, tweak, and reupload
 
 1. detect_device → read_device_slot { slot_number } (or list_device_slots to browse)
-2. Edit returned config, or export_share for community JSON
+2. Edit returned config, or save_memory_config to persist under ~/.rc505mk2/memories/
 3. upload_memory { config, slot_number, mode: "merge" } to tweak one bank; mode: "overwrite" for full replace
 4. eject_device
 
 ## Sharing
 
-- export_share / import_share — portable .rc505mk2.json (memory, rack, or fx_module scope)
-- export_zip / import_zip — hardware-native RC0 ZIP for manual USB copy
-- write_to_exports: true saves files under ~/.rc505mk2/exports/
+JSON presets (MCP users): copy files from ~/.rc505mk2/racks/, memories/, or fx-modules/. Import = drop file in matching folder, or use create_rack_preset / create_fx_module / save_memory_config. Save tools return file_path when writing to the user store.
+
+Hardware-only users: export_zip / import_zip — RC0 ZIP for manual USB copy. write_to_disk: true saves to ~/.rc505mk2/zips/.
 `.trim();

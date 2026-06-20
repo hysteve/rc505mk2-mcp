@@ -49,15 +49,17 @@ Default: `~/.rc505mk2/` (override via env `RC505MK2_DATA_DIR`).
 │   └── my-vocal-rack.json
 ├── memories/                # saved MemoryConfig snapshots
 │   └── slot-03-vocal.json
-├── exports/                 # optional share JSON / RC0 ZIP exports (write_to_exports)
-│   └── memory-vocal-plate-2026-06-20.rc505mk2.json
-└── meta.json                # optional: schema version, last migration
+├── backups/                 # RC0 A+B copies before upload (timestamped per slot)
+│   └── slot-05_2026-06-20T12-00-00/
+└── meta.json                # storeVersion + updatedAt (touched on user writes)
 ```
 
-### Device backups (existing behavior)
+Each preset file also carries a document-level version — see [CONCEPTS.md](./CONCEPTS.md#schema-versioning).
 
-Default: `./rc505-backups/` relative to cwd when `upload_memory` runs.
-Override via tool arg `backup_dir`. Already gitignored.
+### Device backups
+
+Default: `~/.rc505mk2/backups/` when `upload_memory` runs.
+Override via tool arg `backup_dir`. Raw RC0 files from the device — not MemoryConfig JSON.
 
 ### Generated RC0 output (optional explicit write)
 
@@ -119,16 +121,14 @@ Reuse existing `FxModuleStore` for the fx-modules subtree; add `RackStore` and `
 | `list_memory_configs` | Browse saved memory configs | Filters: genre, slot_number |
 | `get_memory_config` | Fetch saved memory config by id | From `~/.rc505mk2/memories/` |
 
-### Share (community JSON + RC0 ZIP)
+### Hardware sharing (RC0 ZIP)
 
 | Tool | Description | Notes |
 |------|-------------|-------|
-| `export_share` | Build `.rc505mk2.json` envelope | kind: `memory` \| `rack` \| `fx_module`; optional `write_to_exports` |
-| `import_share` | Parse/validate envelope | Optional `save_to_store`, `create_rack_preset`, `create_fx_module` |
-| `export_zip` | RC0 ZIP (MEMORYnnnA/B.RC0) as base64 | From config, rack, or device slot |
+| `export_zip` | RC0 ZIP (MEMORYnnnA/B.RC0) as base64 | From config, rack, or device slot; optional `write_to_disk` → `~/.rc505mk2/zips/` |
 | `import_zip` | Parse RC0 ZIP → MemoryConfig | Optional `save_to_store` |
 
-See [SHARING.md](./SHARING.md) for when to use JSON vs ZIP.
+JSON preset sharing uses store files directly — copy from `~/.rc505mk2/racks/`, `memories/`, or `fx-modules/`. See [SHARING.md](./SHARING.md).
 
 ### Build & generate
 
@@ -142,13 +142,13 @@ See [SHARING.md](./SHARING.md) for when to use JSON vs ZIP.
 
 | Tool | Description | Notes |
 |------|-------------|-------|
-| `create_fx_module` | Save new FX module to `~/.rc505mk2/` | Validates with Zod |
+| `create_fx_module` | Save new FX module to `~/.rc505mk2/` | Returns `file_path` |
 | `update_fx_module` | Update user module | Fails on bundled IDs |
 | `delete_fx_module` | Delete user module | Fails on bundled IDs |
-| `create_rack_preset` | Save new rack | |
+| `create_rack_preset` | Save new rack | Returns `file_path` |
 | `update_rack_preset` | Update user rack | |
 | `delete_rack_preset` | Delete user rack | |
-| `save_memory_config` | Save MemoryConfig snapshot | |
+| `save_memory_config` | Save MemoryConfig snapshot | Returns `file_path` |
 
 ### Device (local USB, macOS primary)
 
@@ -160,7 +160,7 @@ See [SHARING.md](./SHARING.md) for when to use JSON vs ZIP.
 | `upload_memory` | Generate + write RC0 to device slot | `merge` (default) or `overwrite` |
 | `eject_device` | Safe unmount | Call after upload |
 
-**Total: 28 tools** (reference + browse + build + persist + share + device).
+**Total: 26 tools** (reference + browse + build + persist + hardware share + device).
 
 ---
 
@@ -194,7 +194,7 @@ See [SHARING.md](./SHARING.md) for when to use JSON vs ZIP.
 1. detect_device
 2. list_device_slots           → browse occupied slots (optional)
 3. read_device_slot            → { slot_number: 3 } → MemoryConfig
-4. (edit config, or export_share for community)
+4. (edit config, or save_memory_config and share the file_path)
 5. upload_memory               → { config, slot_number, mode: "merge" }  # tweak one bank
    upload_memory               → { config, slot_number, mode: "overwrite" }  # full replace
 6. eject_device
@@ -205,13 +205,12 @@ See [SHARING.md](./SHARING.md) for when to use JSON vs ZIP.
 ### Share a preset with the community
 
 ```
-1. read_device_slot or build_rack_config
-2. export_share                → kind: memory | rack | fx_module, write_to_exports: true
-3. Post the .rc505mk2.json file (GitHub gist, Reddit, etc.)
+1. create_rack_preset / save_memory_config  → note file_path
+2. Copy the JSON from ~/.rc505mk2/racks/ or memories/ (gist, forum, etc.)
 
 Recipient:
-1. import_share                → validate; optional create_rack_preset / save_to_store
-2. upload_memory or export_zip for hardware-native sharing
+1. Drop file into matching ~/.rc505mk2/ subfolder, OR paste JSON → create_rack_preset / save_memory_config
+2. upload_memory, or export_zip for hardware-only users
 ```
 
 ---

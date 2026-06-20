@@ -1,91 +1,38 @@
 # Sharing RC-505mk2 Presets
 
-This project supports two community-facing formats for preset exchange.
-
-## When to use which format
-
-| Format | Extension | Best for |
-|--------|-----------|----------|
-| **Share JSON** | `.rc505mk2.json` | MCP users, partial exports (one rack bank or FX slot), easy diff/review in Git |
-| **RC0 ZIP** | `.zip` | Hardware-only users, full memory slot copy via USB Storage mode |
-
-Both formats round-trip through the MCP tools `export_share` / `import_share` and `export_zip` / `import_zip`.
+Presets use the same JSON schemas everywhere — bundled data, user store, and files you share with others. No separate share format.
 
 ---
 
-## Share JSON (`.rc505mk2.json`)
+## MCP users: copy store files
 
-Portable envelope validated by Zod:
+| Share this | Copy from |
+|------------|-----------|
+| FX module | `~/.rc505mk2/fx-modules/{category}/{id}.json` |
+| Rack | `~/.rc505mk2/racks/{id}.json` |
+| Full memory slot | `~/.rc505mk2/memories/{id}.json` |
 
-```json
-{
-  "format": "rc505mk2-share",
-  "formatVersion": 1,
-  "kind": "memory",
-  "exportedAt": "2026-06-20T12:00:00.000Z",
-  "meta": {
-    "name": "Vocal Plate",
-    "slotNumber": 5,
-    "source": "device"
-  },
-  "payload": { }
-}
-```
+**Export:** After `create_rack_preset`, `create_fx_module`, or `save_memory_config`, the tool response includes `file_path` — copy that file.
 
-### `kind` values
+**Import:** Drop the JSON into the matching folder on the recipient's machine. The next `list_rack_presets` / `list_fx_modules` / `list_memory_configs` picks it up automatically.
 
-| kind | payload | Use case |
-|------|---------|----------|
-| `memory` | Full `MemoryConfig` | Entire memory slot (IFX + TFX + tracks/settings) |
-| `rack` | `Rack` | One bank's FX chain (input or track section) |
-| `fx_module` | `FxModule` | Single IFX/TFX slot |
+Or paste JSON to Claude and ask to create via the appropriate save tool.
 
-### MCP workflow
-
-**Export from device:**
-
-```
-detect_device → read_device_slot { slot_number: 5 }
-export_share { kind: "memory", config: <from read>, write_to_exports: true }
-```
-
-**Export one TFX bank:**
-
-```
-export_share {
-  kind: "rack",
-  config: <MemoryConfig>,
-  section: "trackFx",
-  bank: "A",
-  write_to_exports: true
-}
-```
-
-**Import:**
-
-```
-import_share { json: "<file contents>", create_rack_preset: true }
-```
-
-Set `save_to_store: true` for full memory payloads. Then `upload_memory` to push back to hardware.
-
-Files land in `~/.rc505mk2/exports/` when `write_to_exports: true`.
+Each file carries `schemaVersion` (or `version` for MemoryConfig) for forward compatibility — see [CONCEPTS.md](./CONCEPTS.md#schema-versioning).
 
 ---
 
-## RC0 ZIP
+## Hardware-only users: RC0 ZIP
 
-Contains `MEMORYnnnA.RC0`, `MEMORYnnnB.RC0`, and a short `readme.txt`.
-
-### MCP workflow
+For people without MCP — copy RC0 files via USB Storage mode:
 
 ```
-export_zip { config: <MemoryConfig>, write_to_exports: true }
+export_zip { config, write_to_disk: true }   → ~/.rc505mk2/zips/
 ```
 
-Returns `zip_base64` for agent clients; optional file on disk via `write_to_exports`.
+ZIP contains `MEMORYnnnA.RC0`, `MEMORYnnnB.RC0`, and `readme.txt`.
 
-**Manual USB install (no MCP):**
+**Manual USB install:**
 
 1. Put the loop station in USB Storage mode (MENU → USB → STORAGE → CONNECT).
 2. Copy both RC0 files to `ROLAND/DATA/` on the device volume.
@@ -95,34 +42,42 @@ Returns `zip_base64` for agent clients; optional file on disk via `write_to_expo
 
 ```
 import_zip { zip_base64: "...", save_to_store: true }
-upload_memory { config: <from import>, slot_number: N }
+upload_memory { config, slot_number: N }
 ```
 
 ---
 
-## Tweak / reupload (device round-trip)
+## Extract partial chains from a memory slot
 
-1. `detect_device`
-2. `read_device_slot { slot_number: N }`
-3. Edit the returned `MemoryConfig` (or share via `export_share`)
-4. `upload_memory { config, slot_number: N, mode: "merge" }` — preserves unchanged banks
-5. `eject_device`
+Internal helpers (not MCP tools) can derive a rack or FX module from a saved memory config — useful when building save tools or CLI features:
 
-Use `mode: "overwrite"` only when replacing the entire slot.
+- `extractRackFromMemory(config, section, bank)` → `Rack`
+- `extractFxModuleFromMemory(config, section, bank, slot)` → `FxModule`
 
----
-
-## Posting tips (GitHub, Reddit, forums)
-
-- Prefer **descriptive filenames**: `vocal-plate-slot5.rc505mk2.json`
-- Include **slot number**, **genre**, and **what you changed** in the post text
-- For hardware users, attach the **ZIP** instead of or alongside JSON
-- JSON files are safe to paste in gists; ZIPs are better as release attachments
+Save the result with `create_rack_preset` or `create_fx_module`, then share the store file.
 
 ---
 
-## Limitations
+## Device round-trip
 
-- No automatic `fxModuleId` re-linking on import (flat params only on device read path)
-- Windows eject parity is limited (same as existing `eject_device` behavior)
-- Share JSON does not include the 25k-line RC0 template — only semantic preset data
+```
+detect_device
+read_device_slot { slot_number: N }
+save_memory_config { config }          → file_path under memories/
+upload_memory { config, slot_number: N, mode: "merge" }
+eject_device
+```
+
+- **`merge`** — update only banks/sections in your config; preserve the rest
+- **`overwrite`** — replace the entire slot
+
+Upload backs up existing RC0 files to `~/.rc505mk2/backups/` before writing.
+
+---
+
+## Posting tips
+
+- Use descriptive filenames: `neo-soul-vocal-rack.json`
+- Include slot number, genre, and what changed in the post text
+- For hardware users, attach RC0 ZIP instead of JSON
+- JSON files work well in gists or zip attachments

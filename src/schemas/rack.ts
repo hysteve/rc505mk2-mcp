@@ -28,7 +28,7 @@ export const FxSlotDataSchema = z.object({
 });
 
 export const TipSchema = z.object({
-  type: z.enum(['tip', 'performance', 'how', 'warning']),
+  type: z.enum(['tip', 'performance', 'how', 'warning', 'setup']),
   title: z.string(),
   text: z.string(),
 });
@@ -77,6 +77,7 @@ export const PresetSettingsSchema = z.object({
 });
 
 export const RackSchema = z.object({
+  schemaVersion: z.literal(1).default(1),
   id: z.string().min(1),
   section: z.string(),
   title: z.string().min(1),

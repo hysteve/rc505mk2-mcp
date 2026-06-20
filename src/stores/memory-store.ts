@@ -12,15 +12,18 @@ import {
 } from 'node:fs';
 import { join } from 'node:path';
 import { MemoryConfigSchema, type MemoryConfig } from '../schemas/memory-config.js';
+import {
+  SavedMemoryConfigSchema,
+  type SavedMemoryConfig,
+} from '../schemas/saved-memory.js';
+import {
+  parseSavedMemoryDocument,
+  stampDocument,
+} from '../schemas/document-version.js';
 import { resolveUserMemoriesDir } from './paths.js';
+import { touchUserStoreMeta } from './user-meta.js';
 
-export interface SavedMemoryConfig {
-  id: string;
-  config: MemoryConfig;
-  genres?: string[];
-  sourceRackId?: string;
-  savedAt: string;
-}
+export type { SavedMemoryConfig };
 
 export interface MemoryConfigSummary {
   id: string;
@@ -55,7 +58,7 @@ export class MemoryStore {
     const files = readdirSync(this.dataDir).filter(f => f.endsWith('.json'));
     this.cache = files.map(f => {
       const content = readFileSync(join(this.dataDir, f), 'utf-8');
-      return JSON.parse(content) as SavedMemoryConfig;
+      return parseSavedMemoryDocument(JSON.parse(content));
     });
 
     return this.cache;
@@ -76,17 +79,22 @@ export class MemoryStore {
     const parsed = MemoryConfigSchema.parse(config);
     const id = meta?.id ?? `slot-${String(parsed.slotNumber).padStart(2, '0')}-${slugifyName(parsed.name)}`;
 
-    const saved: SavedMemoryConfig = {
+    const saved = SavedMemoryConfigSchema.parse({
       id,
       config: parsed,
       genres: meta?.genres ?? parsed.genres,
       sourceRackId: parsed.sourceRackId,
       savedAt: new Date().toISOString(),
-    };
+    });
 
     this.ensureDir();
     const filePath = join(this.dataDir, `${id}.json`);
-    writeFileSync(filePath, JSON.stringify(saved, null, 2) + '\n', 'utf-8');
+    writeFileSync(
+      filePath,
+      JSON.stringify(stampDocument('savedMemory', saved as unknown as Record<string, unknown>), null, 2) + '\n',
+      'utf-8',
+    );
+    touchUserStoreMeta();
     this.invalidate();
     return saved;
   }

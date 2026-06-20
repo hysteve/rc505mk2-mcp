@@ -3,8 +3,9 @@
  */
 
 import { existsSync, readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'fs';
-import { join, resolve } from 'path';
+import { join } from 'path';
 import { formatSlotNumber } from '../download/rc0-download.js';
+import { resolveUserBackupsDir } from '../stores/paths.js';
 import { DEVICE_DATA_DIR } from './constants.js';
 import { detectDevice, type DeviceInfo } from './detect.js';
 
@@ -19,7 +20,7 @@ export interface UploadResult {
 export interface UploadOptions {
   /** Explicit device path — skips auto-detection */
   devicePath?: string;
-  /** Directory to store backups (default: ./rc505-backups) */
+  /** Directory to store backups (default: ~/.rc505mk2/backups) */
   backupDir?: string;
   /** Skip the backup step */
   skipBackup?: boolean;
@@ -107,7 +108,7 @@ export function uploadToDevice(
   }
 
   // Backup existing files
-  const backupDir = resolve(options.backupDir ?? './rc505-backups');
+  const backupDir = resolve(options.backupDir ?? resolveUserBackupsDir());
   let backedUp: UploadResult['backedUp'] = null;
   if (!options.skipBackup) {
     backedUp = backupSlotFiles(dataPath, slotNumber, backupDir);

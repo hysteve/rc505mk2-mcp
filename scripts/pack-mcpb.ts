@@ -48,11 +48,6 @@ mkdirSync(staging, { recursive: true });
 cpSync(join(root, 'dist'), join(staging, 'dist'), { recursive: true });
 cpSync(join(root, 'data'), join(staging, 'data'), { recursive: true });
 
-const skillsDir = join(root, 'skills');
-if (existsSync(skillsDir)) {
-  cpSync(skillsDir, join(staging, 'skills'), { recursive: true });
-}
-
 cpSync(join(root, 'package.json'), join(staging, 'package.json'));
 cpSync(join(root, 'package-lock.json'), join(staging, 'package-lock.json'));
 run('npm ci --omit=dev', staging);
@@ -70,16 +65,6 @@ mkdirSync(releasesDir, { recursive: true });
 const mcpbOut = join(releasesDir, `rc505mk2-v${version}.mcpb`);
 run(`npx --yes @anthropic-ai/mcpb pack . "${mcpbOut}"`, staging);
 
-if (existsSync(join(staging, 'skills'))) {
-  const skillZip = join(releasesDir, `rc505mk2-skills-v${version}.zip`);
-  rmSync(skillZip, { force: true });
-  run(
-    `zip -r "${skillZip}" rc505mk2 rc505-upload rc505-build-rack rc505-adapt-rack`,
-    join(staging, 'skills'),
-  );
-  console.log(`\nDone:\n  ${mcpbOut}\n  ${skillZip}`);
-} else {
-  console.log(`\nDone:\n  ${mcpbOut}`);
-}
+console.log(`\nDone:\n  ${mcpbOut}`);
 
 rmSync(staging, { recursive: true, force: true });

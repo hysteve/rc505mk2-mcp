@@ -20,6 +20,7 @@ import { PARAM_MAP } from '../params/param-map.js';
 import { detectDevice } from '../device/detect.js';
 import { uploadToDevice, checkDeviceSlot } from '../device/upload.js';
 import { DEVICE_DATA_DIR } from '../device/constants.js';
+import { resolveUserBackupsDir } from '../stores/paths.js';
 import type { MemoryConfig } from '../types/memory-config.js';
 import { doctorCommand } from './doctor.js';
 
@@ -42,7 +43,7 @@ Options (generate):
 
 Options (upload / generate --upload):
   --device <path>   Explicit device mount path (skips auto-detection)
-  --backup-dir <d>  Backup directory (default: ./rc505-backups)
+  --backup-dir <d>  Backup directory (default: ~/.rc505mk2/backups)
   --no-backup       Skip backing up existing files on device
   --yes             Skip overwrite confirmation
 
@@ -87,7 +88,7 @@ function parseFlags(args: string[], startIndex: number): CliFlags {
   const flags: CliFlags = {
     output: './output',
     upload: false,
-    backupDir: './rc505-backups',
+    backupDir: resolveUserBackupsDir(),
     noBackup: false,
     yes: false,
   };

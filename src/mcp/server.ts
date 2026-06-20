@@ -41,11 +41,9 @@ import {
   handleResolveRack,
 } from './handlers-preset.js';
 import {
-  handleExportShare,
-  handleImportShare,
   handleExportZip,
   handleImportZip,
-} from './handlers-share.js';
+} from './handlers-zip.js';
 
 const server = new Server(
   {
@@ -128,12 +126,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         break;
       case 'generate_memory':
         result = handleGenerateMemory(args ?? {});
-        break;
-      case 'export_share':
-        result = handleExportShare(args ?? {});
-        break;
-      case 'import_share':
-        result = handleImportShare(args ?? {});
         break;
       case 'export_zip':
         result = handleExportZip(args ?? {});

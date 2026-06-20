@@ -8,7 +8,7 @@ import {
   zipToBase64,
   base64ToZip,
 } from '../src/share/zip.js';
-import { handleExportZip, handleImportZip } from '../src/mcp/handlers-share.js';
+import { handleExportZip, handleImportZip } from '../src/mcp/handlers-zip.js';
 import type { MemoryConfig } from '../src/schemas/memory-config.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
