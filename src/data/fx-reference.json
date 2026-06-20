@@ -3,7 +3,10 @@
     "title": "RC-505mk2 Complete FX Parameter Reference",
     "source": "RC-505mk2_Parameter_eng04_W.pdf, pages 34-43",
     "version": "1.0.0",
-    "notes": "All parameter names, value ranges, and options are extracted verbatim from the official Boss documentation. This file serves as the single source of truth for parameter validation."
+    "deviceUrl": "https://www.boss.info/us/products/rc-505mk2/",
+    "ownerManualUrl": "https://static.roland.com/assets/media/pdf/RC-505mk2_eng02_W.pdf",
+    "parameterGuideUrl": "https://static.roland.com/assets/media/pdf/RC-505mk2_Parameter_eng02_W.pdf",
+    "notes": "Parameter names, value ranges, and options are extracted from the official Boss RC-505mk2 Parameter Guide (see parameterGuideUrl). This file serves as the single source of truth for parameter validation."
   },
   "inputAndTrackFx": {
     "LPF": {

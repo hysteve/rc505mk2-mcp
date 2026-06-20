@@ -2,7 +2,9 @@
 
 > **Note (v2):** Package name is `rc505mk2-mcp`. Install via `npx rc505mk2-mcp` or clone this repo for local development.
 
-TypeScript library for generating, parsing, and managing Boss RC-505mk2 loop station memory preset files.
+TypeScript library for generating, parsing, and managing [Boss RC-505mk2](https://www.boss.info/us/products/rc-505mk2/) loop station memory preset files.
+
+**Official hardware docs:** [Owner's Manual](https://static.roland.com/assets/media/pdf/RC-505mk2_eng02_W.pdf) · [Parameter Guide](https://static.roland.com/assets/media/pdf/RC-505mk2_Parameter_eng02_W.pdf)
 
 ## Features
 
