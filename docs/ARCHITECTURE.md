@@ -46,11 +46,11 @@
 
 | Path | Audience | Install |
 |------|----------|---------|
-| **`.mcpb`** | Claude Desktop users | GitHub Release → double-click |
+| **`.mcpb`** | Claude Desktop users | GitHub Release → double-click, or `npm run pack:mcpb` |
 | **`npx rc505mk2-mcp`** | Developers | MCP client JSON config |
 | **Local checkout** | Contributors | `npm run build` → `dist/mcp/server.js` |
 
-The public repo ships the MCP server and preset library. Claude Desktop bundles (`.mcpb`) are built locally and attached to GitHub Releases — not committed to git.
+The public repo ships the MCP server, preset library, and bundle metadata (`mcpb/`). Run `npm run pack:mcpb` to produce `releases/rc505mk2-v{version}.mcpb` — attach to GitHub Releases, do not commit.
 
 ---
 
@@ -86,7 +86,9 @@ src/
 └── node.ts             # Node-only exports (device, file stores)
 
 data/fx-modules/        # Bundled FX module JSON
-scripts/embed-template.ts  # Build-time RC0 template embed
+mcpb/                   # Claude Desktop bundle metadata (manifest, icon)
+scripts/                # embed-template.ts, pack-mcpb.ts
+skills/                 # Optional agent skills bundled into .mcpb
 test/                   # Vitest
 docs/                   # Public reference (TEST_PROMPTS, UNIFIED_MCP_TOOLS, LIBRARY)
 ```
@@ -132,10 +134,11 @@ Primary test platform: macOS (`diskutil` eject, `/Volumes/` scan). Linux/Windows
 | Tool | Purpose |
 |------|---------|
 | **tsup** | Bundle `index`, `node`; ESM bins for CLI + MCP |
-| **tsx** | Run `embed-template` at build time |
+| **tsx** | Run `embed-template`, `pack-mcpb` |
 | **Vitest** | Unit + integration tests |
 
-Build: `npm run build:template` → `tsup` → `dist/mcp/server.js` (MCP bin)
+Build: `npm run build:template` → `tsup` → `dist/mcp/server.js` (MCP bin)  
+Bundle: `npm run pack:mcpb` → `releases/rc505mk2-v{version}.mcpb`
 
 ### 6. Dependencies (runtime)
 

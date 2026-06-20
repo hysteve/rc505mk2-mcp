@@ -29,6 +29,8 @@
   "scripts": {
     "build:template": "tsx scripts/embed-template.ts",
     "build": "npm run build:template && tsup",
+    "pack:mcpb": "tsx scripts/pack-mcpb.ts",
+    "sync:skills": "tsx scripts/sync-skills.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "prepublishOnly": "npm run build"

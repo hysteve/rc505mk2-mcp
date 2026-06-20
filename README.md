@@ -105,7 +105,10 @@ rc505mk2 lookup-fx REVERB
 npm install
 npm run build
 npm test              # 421 tests
+npm run pack:mcpb     # → releases/rc505mk2-v0.2.0.mcpb (Claude Desktop bundle)
 ```
+
+Bundle source: `mcpb/manifest.json` + `mcpb/icon.png`. See [mcpb/README.md](./mcpb/README.md).
 
 | Doc | Description |
 |-----|-------------|

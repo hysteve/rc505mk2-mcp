@@ -25,19 +25,20 @@ rc505-backups/
 .cursor
 .vscode
 
-# RC-505 distribution packaging (local release builds — attach .mcpb via GitHub Releases)
-plugin/
-skills/
-skills-lock.json
-scripts/pack-plugin.ts
-scripts/sync-skills.ts
-scripts/create-icon.ts
+# MCP bundle build output (source lives in mcpb/ + npm run build)
 releases/
+.mcpb-staging/
+
+# Legacy plugin/ layout (replaced by mcpb/) — safe to delete locally
+plugin/
+
+# Optional local skill source (sync:skills → skills/rc505mk2/)
+docs/SKILL.md
+skills-lock.json
 
 # Internal docs (not public)
 docs/archive/
 docs/manual-test/
-docs/SKILL.md
 
 # Legacy / unused
 .next/
