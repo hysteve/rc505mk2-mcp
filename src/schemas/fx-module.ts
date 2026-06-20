@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { FxContextSchema, FxParamSchema } from './fx-param.js';
 
 export const FxModuleSchema = z.object({
+  schemaVersion: z.literal(1).default(1),
   id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
   effect: z.string().min(1),
   title: z.string().min(1),

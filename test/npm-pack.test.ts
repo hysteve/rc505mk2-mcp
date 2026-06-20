@@ -14,9 +14,10 @@ const repoRoot = new URL('..', import.meta.url).pathname;
 describe('npm pack install smoke', () => {
   it('loads bundled FX modules after pack install', () => {
     const tmpInstall = mkdtempSync(join(tmpdir(), 'rc505-pack-'));
+    let packOutput: string | undefined;
 
     try {
-      const packOutput = execSync('npm pack --silent', {
+      packOutput = execSync('npm pack --silent', {
         cwd: repoRoot,
         encoding: 'utf-8',
       }).trim();
@@ -43,8 +44,8 @@ describe('npm pack install smoke', () => {
       expect(parsed.dir).toContain('data/fx-modules');
     } finally {
       rmSync(tmpInstall, { recursive: true, force: true });
-      for (const f of ['rc505mk2-mcp-0.2.1.tgz']) {
-        try { rmSync(join(repoRoot, f)); } catch { /* ignore */ }
+      if (typeof packOutput !== 'undefined') {
+        try { rmSync(join(repoRoot, packOutput)); } catch { /* ignore */ }
       }
     }
   }, 120_000);

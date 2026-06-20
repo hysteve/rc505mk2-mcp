@@ -14,6 +14,8 @@ import {
   resolveBundledFxModulesDir,
   resolveUserDataDir,
 } from '../stores/paths.js';
+import { readUserStoreMeta, USER_STORE_VERSION } from '../stores/user-meta.js';
+import { SCHEMA_VERSIONS } from '../schemas/document-version.js';
 import { loadBundledRacks } from '../data/load-racks.js';
 
 export interface DoctorCheck {
@@ -100,10 +102,14 @@ export function runDoctorChecks(): DoctorCheck[] {
   try {
     mkdirSync(userDir, { recursive: true });
     accessSync(userDir, constants.W_OK);
+    const storeMeta = readUserStoreMeta();
+    const metaDetail = storeMeta
+      ? `${userDir} (writable, store v${storeMeta.storeVersion})`
+      : `${userDir} (writable, no presets saved yet)`;
     checks.push({
       name: 'User data dir',
       ok: true,
-      detail: `${userDir} (writable)`,
+      detail: metaDetail,
     });
   } catch (err) {
     checks.push({
@@ -112,6 +118,14 @@ export function runDoctorChecks(): DoctorCheck[] {
       detail: `${userDir} — ${err instanceof Error ? err.message : String(err)}`,
     });
   }
+
+  checks.push({
+    name: 'Schema versions',
+    ok: true,
+    detail:
+      `fxModule/rack/savedMemory v${SCHEMA_VERSIONS.fxModule}, ` +
+      `memoryConfig v${SCHEMA_VERSIONS.memoryConfig}, store v${USER_STORE_VERSION}`,
+  });
 
   // Device detection (informational — OK if not connected)
   const device = detectDevice();

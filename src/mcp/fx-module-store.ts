@@ -21,7 +21,9 @@
 import { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync, statSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
 import type { FxModule } from '../types/rack.js';
+import { parseFxModuleDocument, stampDocument } from '../schemas/document-version.js';
 import { resolveBundledFxModulesDir } from '../stores/paths.js';
+import { touchUserStoreMeta } from '../stores/user-meta.js';
 
 const META_FILE = '_meta.json';
 
@@ -89,7 +91,7 @@ export class FxModuleStore {
     const files = collectJsonFiles(this.dataDir);
     this.cache = files.map(f => {
       const content = readFileSync(f, 'utf-8');
-      return JSON.parse(content) as FxModule;
+      return parseFxModuleDocument(JSON.parse(content));
     });
 
     return this.cache;
@@ -113,7 +115,12 @@ export class FxModuleStore {
     const folder = join(this.dataDir, this.effectToFolder(mod.effect));
     mkdirSync(folder, { recursive: true });
     const filePath = join(folder, `${mod.id}.json`);
-    writeFileSync(filePath, JSON.stringify(mod, null, 2) + '\n', 'utf-8');
+    writeFileSync(
+      filePath,
+      JSON.stringify(stampDocument('fxModule', mod as unknown as Record<string, unknown>), null, 2) + '\n',
+      'utf-8',
+    );
+    touchUserStoreMeta();
     this.invalidate();
     return filePath;
   }

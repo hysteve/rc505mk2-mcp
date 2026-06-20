@@ -206,6 +206,53 @@ Use `/rc505-upload` or natural language. Prefer `upload_memory { rack_id, slot_n
 
 ---
 
+## 4b. Read, tweak, share
+
+Requires device connected for read/upload paths.
+
+### Read from device
+
+| # | Prompt |
+|---|--------|
+| 1 | What's in memory slot 3 on my 505? |
+| 2 | List all occupied memory slots on my device. |
+| 3 | Read slot 5 and show me the input FX on bank A. |
+
+### Tweak and reupload
+
+| # | Prompt |
+|---|--------|
+| 1 | Read slot 3, change the master tempo to 95, and merge it back. |
+| 2 | Pull slot 7, tweak only TFX bank A, upload with merge mode. |
+| 3 | Read slot 2 and overwrite it with a cleaned-up version (same name, less FX). |
+
+### Share presets
+
+| # | Prompt |
+|---|--------|
+| 1 | Save slot 5 to my user store and tell me the file path so I can share it. |
+| 2 | Create a rack from slot 3 TFX bank A and give me the path to copy. |
+| 3 | Import this rack JSON into my user store (paste JSON). |
+| 4 | Export slot 4 as an RC0 ZIP I can copy to USB manually. |
+
+**Pass signals:** uses `read_device_slot` not manual file copy; `save_memory_config` or `create_rack_preset` with `file_path`; `export_zip` for hardware; merge vs overwrite explained.
+
+### Rack audition (device)
+
+Fill several memory slots with **different bundled racks** so you can recall them on hardware and A/B quickly — one rack per slot (each upload is a full memory preset, not a composite).
+
+| # | Prompt |
+|---|--------|
+| 1 | **Rack audition:** List bundled rack presets. Pick 8 diverse racks (vocals, percussion, transitions, breakdown — not all the same genre). Upload each to memory slots 1–8 with upload_memory (rack_id + slot_number). Eject when done. Give me a slot → rack title cheat sheet. |
+| 2 | Load vocal-warm to slot 1, perc-electronic to slot 2, tfx-dj-filter to slot 3, tfx-beat-mangle to slot 4. Eject and summarize what I should try on each. |
+| 3 | After the audition: read slot 3 and summarize the IFX and TFX chains. |
+
+**Pass signals:** `list_rack_presets` with genre/section/tag diversity before picking; repeated `upload_memory { rack_id, slot_number }` (not rebuild from scratch); `eject_device` at end; cheat sheet with slot numbers; ~3 + N calls for N slots.
+
+**Notes:** Upload backs up existing slot data to `~/.rc505mk2/backups/` first. Use empty slots or slots you are OK overwriting. Preset names truncate to 12 ASCII chars on device.
+
+---
+
 ## 5. Browse & explore
 
 Low-stakes discovery — good for testing list/get tools.
@@ -369,6 +416,7 @@ Paste manually or use as starter prompts in conversation.
 | Adapt genre | Create an RC-505mk2 FX rack for **neo-soul** performance. Use list_rack_presets filtered by genre or tag, adapt if needed, and offer upload. |
 | Build custom | Build a custom RC-505mk2 FX rack from scratch: **R&B vocal chain with performance filter sweep and delay throw**. Use list_fx_modules for IFX and TFX, then create_rack_preset with fxModuleIds. Do not browse bundled rack presets. |
 | Check device | Check if my Boss RC-505mk2 is connected. Use detect_device. Remind me to enable USB Storage mode if not detected. |
+| Rack audition | Rack audition: pick 8 diverse bundled racks and upload to memory slots 1–8. Eject when done and give me a slot → title cheat sheet. |
 
 ---
 
@@ -383,6 +431,7 @@ Use these to compare tool-call count across releases.
 | Adapt + upload | Load the closest bundled vocal rack to memory slot 4 — pick neo-soul or R&B if available. | 3–4 calls with device connected |
 | Build strict | Build a custom modern R&B vocal rack from scratch using FX modules only — do not browse or adapt bundled rack presets. Compose IFX + TFX using fxModuleIds. Save and show slot layout. | No list_rack_presets; ≤ 5 calls |
 | Build titled | Build a custom neo-soul vocal rack from scratch (title: "Neo Soul Live Vox 2026") — modules only. IFX: comp + EQ + short reverb. TFX Bank A: filter sweep + delay throw. Do not call get_rack_preset or list_rack_presets. | Duplicate id → update_rack_preset |
+| Rack audition | List bundled racks, pick 8 diverse presets (vocals, percussion, transitions, breakdown), upload to slots 1–8, eject, slot cheat sheet. | list_rack_presets → N× upload_memory; ≤ 12 calls for 8 slots |
 
 ---
 

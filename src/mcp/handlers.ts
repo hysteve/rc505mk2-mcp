@@ -22,9 +22,12 @@ import { parseRC0, parseRC0PairActive } from '../parser/rc0-parser.js';
 import { getDefaultTemplate } from '../template/template-loader.js';
 import { mergeMemoryConfigs } from '../config/merge.js';
 import { TRANSFORM_META } from './transform-meta.js';
+import { readDeviceSlot, listDeviceSlots } from '../device/read.js';
 import {
   validateInput,
   UploadMemoryInputSchema,
+  ReadDeviceSlotInputSchema,
+  ListDeviceSlotsInputSchema,
 } from './input-schemas.js';
 import { resolveMemoryConfigFromRack } from './handlers-preset.js';
 
@@ -265,6 +268,73 @@ export function handleUploadMemory(args: Record<string, unknown>): object {
       ejected: ejectResult.ejected,
       config: finalConfig,
       message: `${uploadMsg} ${ejectResult.message}`,
+    };
+  } catch (err: unknown) {
+    return { error: err instanceof Error ? err.message : String(err) };
+  }
+}
+
+export function handleReadDeviceSlot(args: Record<string, unknown>): object {
+  const v = validateInput(ReadDeviceSlotInputSchema, args);
+  if (!v.success) return { error: v.error };
+
+  const device = v.data.device_path
+    ? { path: v.data.device_path, volumeName: v.data.device_path }
+    : detectDevice();
+
+  if (!device) {
+    return {
+      error:
+        'RC-505mk2 not detected. Connect the device via USB and enable Storage mode ' +
+        '(MENU > USB > STORAGE > CONNECT). Or provide device_path explicitly.',
+    };
+  }
+
+  try {
+    const read = readDeviceSlot(device.path, v.data.slot_number);
+    return {
+      config: read.config,
+      slot_number: read.slot_number,
+      name: read.name,
+      active_side: read.active_side,
+      device_path: read.device_path,
+      data_dir: read.data_dir,
+      files: read.files,
+      message: `Read memory slot ${read.slot_number} "${read.name}" from device (active side: ${read.active_side}).`,
+    };
+  } catch (err: unknown) {
+    return { error: err instanceof Error ? err.message : String(err) };
+  }
+}
+
+export function handleListDeviceSlots(args: Record<string, unknown>): object {
+  const v = validateInput(ListDeviceSlotsInputSchema, args ?? {});
+  if (!v.success) return { error: v.error };
+
+  const device = v.data.device_path
+    ? { path: v.data.device_path, volumeName: v.data.device_path }
+    : detectDevice();
+
+  if (!device) {
+    return {
+      error:
+        'RC-505mk2 not detected. Connect the device via USB and enable Storage mode ' +
+        '(MENU > USB > STORAGE > CONNECT). Or provide device_path explicitly.',
+    };
+  }
+
+  try {
+    const slots = listDeviceSlots(device.path);
+    return {
+      device_path: device.path,
+      slots: slots.map(s => ({
+        slot_number: s.slot_number,
+        name: s.name,
+        occupied: s.occupied,
+        has_a: s.has_a,
+        has_b: s.has_b,
+      })),
+      count: slots.length,
     };
   } catch (err: unknown) {
     return { error: err instanceof Error ? err.message : String(err) };

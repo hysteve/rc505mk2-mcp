@@ -131,6 +131,33 @@ export const ResolveRackInputSchema = z.object({
   rack_id: z.string().min(1),
 });
 
+export const ReadDeviceSlotInputSchema = z.object({
+  slot_number: z.number().int().min(1).max(99),
+  device_path: z.string().optional(),
+});
+
+export const ListDeviceSlotsInputSchema = z.object({
+  device_path: z.string().optional(),
+});
+
+export const GetMemoryConfigInputSchema = z.object({
+  memory_id: z.string().min(1),
+});
+
+export const ExportZipInputSchema = z.object({
+  config: MemoryConfigSchema.optional(),
+  rack_id: z.string().optional(),
+  slot_number: z.number().int().min(1).max(99).optional(),
+  name: z.string().optional(),
+  device_path: z.string().optional(),
+  write_to_disk: z.boolean().optional(),
+});
+
+export const ImportZipInputSchema = z.object({
+  zip_base64: z.string().min(1),
+  save_to_store: z.boolean().optional(),
+});
+
 // ── Validation helper ───────────────────────────────────────────────
 
 /**

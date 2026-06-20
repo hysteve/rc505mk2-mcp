@@ -19,6 +19,8 @@ import {
   handleDetectDevice,
   handleUploadMemory,
   handleEjectDevice,
+  handleReadDeviceSlot,
+  handleListDeviceSlots,
 } from './handlers.js';
 import {
   handleListFxModules,
@@ -33,15 +35,21 @@ import {
   handleDeleteRackPreset,
   handleSaveMemoryConfig,
   handleListMemoryConfigs,
+  handleGetMemoryConfig,
   handleGenerateMemory,
   handleBuildRackConfig,
   handleResolveRack,
 } from './handlers-preset.js';
+import {
+  handleExportZip,
+  handleImportZip,
+} from './handlers-zip.js';
+import { getPackageVersion } from '../version.js';
 
 const server = new Server(
   {
     name: 'rc505mk2',
-    version: '0.2.1',
+    version: getPackageVersion(),
   },
   {
     capabilities: {
@@ -88,6 +96,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       case 'list_memory_configs':
         result = handleListMemoryConfigs(args ?? {});
         break;
+      case 'get_memory_config':
+        result = handleGetMemoryConfig(args ?? {});
+        break;
       // Preset CRUD
       case 'create_fx_module':
         result = handleCreateFxModule(args ?? {});
@@ -117,6 +128,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       case 'generate_memory':
         result = handleGenerateMemory(args ?? {});
         break;
+      case 'export_zip':
+        result = handleExportZip(args ?? {});
+        break;
+      case 'import_zip':
+        result = handleImportZip(args ?? {});
+        break;
       case 'parse_memory':
         result = handleParseMemory(args as { xml: string; slot_number: number });
         break;
@@ -126,6 +143,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         break;
       case 'upload_memory':
         result = handleUploadMemory(args as Parameters<typeof handleUploadMemory>[0]);
+        break;
+      case 'read_device_slot':
+        result = handleReadDeviceSlot(args ?? {});
+        break;
+      case 'list_device_slots':
+        result = handleListDeviceSlots(args ?? {});
         break;
       case 'eject_device':
         result = handleEjectDevice(args as { device_path?: string });

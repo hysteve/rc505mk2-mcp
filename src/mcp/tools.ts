@@ -162,7 +162,7 @@ export const PRESET_TOOL_DEFINITIONS = [
       'Omit sequencer unless using 16-step seq — never send sequencer as {}. Numeric override values (e.g. TIME: 30) are coerced to strings server-side. ' +
       'IFX slots use slot A-D only (no bank field). ' +
       'BEAT_SCATTER, BEAT_REPEAT, BEAT_SHIFT, VINYL_FLICK must be TFX Slot A only (one per bank). ' +
-      'tips must be objects { type: "tip"|"performance"|"how"|"warning", title, text } — not strings. ' +
+      'tips must be objects { type: "tip"|"performance"|"how"|"warning"|"setup", title, text } — not strings. ' +
       'Prefer fxModuleId from list_fx_modules with overrides; skip lookup_fx_params when using fxModuleId (params: [] is enough). ' +
       'After saving, use build_rack_config with rack_id to generate MemoryConfig for upload.',
     inputSchema: {
@@ -187,7 +187,7 @@ export const PRESET_TOOL_DEFINITIONS = [
         tips: {
           type: 'array',
           description:
-            'Usage tips. Each item: { type: "tip"|"performance"|"how"|"warning", title: string, text: string }.',
+            'Usage tips. Each item: { type: "tip"|"performance"|"how"|"warning"|"setup", title: string, text: string }.',
         },
         tags: { type: 'array', items: { type: 'string' }, description: 'Tags.' },
       },
@@ -238,6 +238,49 @@ export const PRESET_TOOL_DEFINITIONS = [
         genre: { type: 'string', description: 'Filter by genre.' },
         slot_number: { type: 'number', description: 'Filter by slot number.' },
       },
+    },
+  },
+  {
+    name: 'get_memory_config',
+    description: 'Get a saved MemoryConfig snapshot by id from ~/.rc505mk2/memories/.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        memory_id: { type: 'string', description: 'Saved memory config id from list_memory_configs.' },
+      },
+      required: ['memory_id'],
+    },
+  },
+  {
+    name: 'export_zip',
+    description:
+      'Generate a hardware-native RC0 ZIP (MEMORYnnnA/B.RC0) from config, rack_id + slot_number, or device slot. ' +
+      'For sharing with hardware-only users. Returns base64 ZIP. ' +
+      'Set write_to_disk: true to save under ~/.rc505mk2/zips/. ' +
+      'MCP users sharing JSON presets should copy files from ~/.rc505mk2/racks/, memories/, or fx-modules/ instead.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        config: { type: 'object', description: 'MemoryConfig to pack.' },
+        rack_id: { type: 'string', description: 'Build from rack preset + slot_number.' },
+        slot_number: { type: 'number', description: 'Slot number for rack or device read.' },
+        name: { type: 'string', description: 'Optional name override when using rack_id.' },
+        device_path: { type: 'string' },
+        write_to_disk: { type: 'boolean', description: 'Write ZIP to ~/.rc505mk2/zips/.' },
+      },
+    },
+  },
+  {
+    name: 'import_zip',
+    description:
+      'Import RC0 ZIP (base64) and parse to MemoryConfig. Optional save_to_store writes to ~/.rc505mk2/memories/.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        zip_base64: { type: 'string', description: 'Base64-encoded RC0 ZIP file.' },
+        save_to_store: { type: 'boolean' },
+      },
+      required: ['zip_base64'],
     },
   },
   {
@@ -393,7 +436,7 @@ const REFERENCE_AND_DEVICE_TOOLS = [
         },
         backup_dir: {
           type: 'string',
-          description: 'Directory to store backups of existing files. Defaults to "./rc505-backups".',
+          description: 'Directory to store backups of existing files. Defaults to ~/.rc505mk2/backups.',
         },
         skip_backup: {
           type: 'boolean',
@@ -410,6 +453,31 @@ const REFERENCE_AND_DEVICE_TOOLS = [
         },
       },
       required: [],
+    },
+  },
+  {
+    name: 'read_device_slot',
+    description:
+      'Read a memory slot from a connected RC-505mk2 device. Parses both MEMORYnnnA/B.RC0 files ' +
+      'and returns the active-side MemoryConfig. Use for tweak/reupload workflows.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        slot_number: { type: 'number', description: 'Memory slot number (1-99).' },
+        device_path: { type: 'string', description: 'Optional device mount path from detect_device.' },
+      },
+      required: ['slot_number'],
+    },
+  },
+  {
+    name: 'list_device_slots',
+    description:
+      'List occupied memory slots on a connected RC-505mk2 device with optional preset names.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        device_path: { type: 'string', description: 'Optional device mount path from detect_device.' },
+      },
     },
   },
   {
@@ -430,5 +498,5 @@ const REFERENCE_AND_DEVICE_TOOLS = [
   },
 ];
 
-/** All 20 unified MCP tools — preset browse/CRUD/generate + reference + device. */
+/** All unified MCP tools — preset browse/CRUD/generate + share + reference + device. */
 export const TOOL_DEFINITIONS = [...PRESET_TOOL_DEFINITIONS, ...REFERENCE_AND_DEVICE_TOOLS];

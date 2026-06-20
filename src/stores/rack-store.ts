@@ -13,7 +13,9 @@ import {
 } from 'node:fs';
 import { join } from 'node:path';
 import { RackSchema, type Rack } from '../schemas/rack.js';
+import { parseRackDocument, stampDocument } from '../schemas/document-version.js';
 import { resolveUserRacksDir } from './paths.js';
+import { touchUserStoreMeta } from './user-meta.js';
 
 export class RackStore {
   private dataDir: string;
@@ -40,7 +42,7 @@ export class RackStore {
     const files = readdirSync(this.dataDir).filter(f => f.endsWith('.json'));
     this.cache = files.map(f => {
       const content = readFileSync(join(this.dataDir, f), 'utf-8');
-      return JSON.parse(content) as Rack;
+      return parseRackDocument(JSON.parse(content));
     });
 
     return this.cache;
@@ -58,7 +60,12 @@ export class RackStore {
     const parsed = RackSchema.parse(rack);
     this.ensureDir();
     const filePath = join(this.dataDir, `${parsed.id}.json`);
-    writeFileSync(filePath, JSON.stringify(parsed, null, 2) + '\n', 'utf-8');
+    writeFileSync(
+      filePath,
+      JSON.stringify(stampDocument('rack', parsed as unknown as Record<string, unknown>), null, 2) + '\n',
+      'utf-8',
+    );
+    touchUserStoreMeta();
     this.invalidate();
     return filePath;
   }

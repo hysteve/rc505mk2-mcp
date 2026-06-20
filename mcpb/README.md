@@ -15,4 +15,4 @@ npm run pack:mcpb
 # → releases/rc505mk2-v{version}.mcpb
 ```
 
-The pack script stages `dist/`, `data/`, and optional `skills/`, then runs `@anthropic-ai/mcpb pack`. Output in `releases/` is gitignored — attach to GitHub Releases.
+The pack script stages `dist/` and `data/`, then runs `@anthropic-ai/mcpb pack`. Output in `releases/` is gitignored — attach the `.mcpb` to GitHub Releases.

@@ -1,6 +1,6 @@
 {
   "name": "rc505mk2-mcp",
-  "version": "0.2.1",
+  "version": "0.4.0",
   "description": "Local MCP server for the Boss RC-505mk2 — FX presets, RC0 generation, and USB upload",
   "type": "module",
   "license": "MIT",
@@ -11,12 +11,17 @@
     "rc505",
     "rc505mk2",
     "roland",
-    "loop-station",
+    "boss",
+    "loopstation",
     "mcp",
     "model-context-protocol",
     "audio",
     "fx",
-    "presets"
+    "presets",
+    "music",
+    "music production",
+    "music performance",
+    "audio hardware"
   ],
   "repository": {
     "type": "git",
@@ -30,6 +35,8 @@
     "build:template": "tsx scripts/embed-template.ts",
     "build": "npm run build:template && tsup",
     "pack:mcpb": "tsx scripts/pack-mcpb.ts",
+    "prep:release": "tsx scripts/prep-release.ts",
+    "prep:release:check": "tsx scripts/prep-release.ts --check-only",
     "sync:skills": "tsx scripts/sync-skills.ts",
     "test": "vitest run",
     "test:watch": "vitest",
