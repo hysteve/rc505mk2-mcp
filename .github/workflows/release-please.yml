@@ -35,6 +35,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         run: |
           npm ci
+          npm run build
           npm test
           npm run pack:mcpb
 
