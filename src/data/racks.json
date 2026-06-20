@@ -3,7 +3,7 @@
     "title": "RC-505mk2 FX Rack Guide",
     "subtitle": "Signal chains, FX racks & workflows for real-world looping",
     "version": "1.3.0",
-    "device": "Roland RC-505mk2",
+    "device": "Boss RC-505mk2",
     "lastUpdated": "2026-02-16"
   },
   "racks": [
@@ -6869,7 +6869,7 @@
         "affiliateUrl": "#"
       },
       {
-        "name": "Roland RC-505mk2",
+        "name": "Boss RC-505mk2",
         "desc": "Loop station",
         "affiliateUrl": "#"
       },
@@ -6891,7 +6891,7 @@
         "affiliateUrl": "#"
       },
       {
-        "name": "Roland RC-505mk2",
+        "name": "Boss RC-505mk2",
         "desc": "Loop station",
         "affiliateUrl": "#"
       }
@@ -6908,7 +6908,7 @@
         "affiliateUrl": "#"
       },
       {
-        "name": "Roland RC-505mk2",
+        "name": "Boss RC-505mk2",
         "desc": "Loop station",
         "affiliateUrl": "#"
       }
@@ -6920,7 +6920,7 @@
         "affiliateUrl": "#"
       },
       {
-        "name": "Roland RC-505mk2",
+        "name": "Boss RC-505mk2",
         "desc": "Loop station",
         "affiliateUrl": "#"
       },
@@ -6937,7 +6937,7 @@
         "affiliateUrl": "#"
       },
       {
-        "name": "Roland RC-505mk2",
+        "name": "Boss RC-505mk2",
         "desc": "Loop station",
         "affiliateUrl": "#"
       },
@@ -6973,7 +6973,7 @@
     ],
     "checkPrice": [
       {
-        "headline": "Roland RC-505mk2",
+        "headline": "Boss RC-505mk2",
         "subtext": "The loop station this guide is built for. 5 tracks, 4 FX slots, 99 memories.",
         "cta": "Check Price \u2192",
         "url": "#"

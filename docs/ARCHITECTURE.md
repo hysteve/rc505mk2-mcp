@@ -1,6 +1,6 @@
 # Architecture — RC-505mk2 MCP Server
 
-> Local-first MCP server for the Roland RC-505mk2 — preset library, RC0 generation, USB upload.
+> Local-first MCP server for the Boss RC-505mk2 — preset library, RC0 generation, USB upload.
 
 ---
 

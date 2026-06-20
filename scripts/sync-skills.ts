@@ -15,7 +15,7 @@ const target = join(targetDir, 'SKILL.md');
 const frontmatter = `---
 name: rc505mk2
 description: >-
-  Use the rc505mk2 MCP server for Roland RC-505mk2 loop station workflows —
+  Use the rc505mk2 MCP server for Boss RC-505mk2 loop station workflows —
   browse FX modules and rack presets, build memory configs, generate RC0 files,
   and upload to USB. Use when the user mentions RC-505, loop station, FX racks,
   IFX/TFX, beat scatter, memory slots, or RC0 upload.

@@ -368,7 +368,7 @@ Paste manually or use as starter prompts in conversation.
 | Load rack to slot | Load an RC-505mk2 FX rack to memory slot **5**. Use list_rack_presets to find a match, then upload_memory with rack_id. |
 | Adapt genre | Create an RC-505mk2 FX rack for **neo-soul** performance. Use list_rack_presets filtered by genre or tag, adapt if needed, and offer upload. |
 | Build custom | Build a custom RC-505mk2 FX rack from scratch: **R&B vocal chain with performance filter sweep and delay throw**. Use list_fx_modules for IFX and TFX, then create_rack_preset with fxModuleIds. Do not browse bundled rack presets. |
-| Check device | Check if my Roland RC-505mk2 is connected. Use detect_device. Remind me to enable USB Storage mode if not detected. |
+| Check device | Check if my Boss RC-505mk2 is connected. Use detect_device. Remind me to enable USB Storage mode if not detected. |
 
 ---
 

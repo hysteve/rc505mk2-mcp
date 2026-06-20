@@ -3,8 +3,8 @@
   "name": "rc505mk2",
   "display_name": "RC-505mk2 Assistant",
   "version": "0.2.0",
-  "description": "Browse FX racks, build memory configs, and upload to your Roland RC-505mk2 via USB.",
-  "long_description": "Local assistant for the Roland RC-505mk2 loop station. Browse bundled FX modules and rack presets, compose custom racks, generate RC0 memory files, and upload directly to your device — no cloud, no API keys.\n\nConnect your RC-505 in USB Storage mode (MENU → USB → STORAGE → CONNECT) before using device tools.",
+  "description": "Browse FX racks, build memory configs, and upload to your Boss RC-505mk2 via USB.",
+  "long_description": "Local assistant for the Boss RC-505mk2 loop station. Browse bundled FX modules and rack presets, compose custom racks, generate RC0 memory files, and upload directly to your device — no cloud, no API keys.\n\nConnect your RC-505 in USB Storage mode (MENU → USB → STORAGE → CONNECT) before using device tools.",
   "author": {
     "name": "Steve Mason",
     "url": "https://github.com/hysteve"
@@ -47,10 +47,10 @@
     {
       "name": "check-device",
       "description": "Check if the RC-505mk2 is connected via USB",
-      "text": "Check if my Roland RC-505mk2 is connected. Use detect_device. Remind me to enable USB Storage mode if not detected."
+      "text": "Check if my Boss RC-505mk2 is connected. Use detect_device. Remind me to enable USB Storage mode if not detected."
     }
   ],
-  "keywords": ["rc505", "roland", "loop-station", "fx", "audio", "mcp"],
+  "keywords": ["rc505", "boss", "roland", "loop-station", "fx", "audio", "mcp"],
   "license": "MIT",
   "compatibility": {
     "claude_desktop": ">=0.10.0",

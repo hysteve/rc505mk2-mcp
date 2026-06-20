@@ -2,7 +2,7 @@
 
 **Describe the FX rack you want. Claude builds it and uploads it to your loop station.**
 
-A free, local Claude Desktop extension for the Roland RC-505mk2. Talk in plain language — *"neo-soul vocal rack"*, *"DnB drum processing"*, *"breakdown with HPF sweep and reverse reverb"* — and get a real memory preset on your device over USB. No menu diving, no hand-editing RC0 files, no cloud account.
+A free, local Claude Desktop extension for the Boss RC-505mk2. Talk in plain language — *"neo-soul vocal rack"*, *"DnB drum processing"*, *"breakdown with HPF sweep and reverse reverb"* — and get a real memory preset on your device over USB. No menu diving, no hand-editing RC0 files, no cloud account.
 
 > **Beta** — download the `.mcpb` from [GitHub Releases](https://github.com/hysteve/rc505mk2-mcp/releases). Feedback via [Issues](https://github.com/hysteve/rc505mk2-mcp/issues).
 
@@ -31,7 +31,7 @@ A free, local Claude Desktop extension for the Roland RC-505mk2. Talk in plain l
 3. Connect RC-505mk2 via USB → **MENU → USB → STORAGE → CONNECT**
 4. Try: *"List bundled rack presets"* or *"Load the vocal plate rack to slot 5"*
 
-**Requirements:** Claude Desktop (with extensions), Roland RC-505mk2, USB cable. macOS best tested; Windows/Linux welcome — please report issues.
+**Requirements:** Claude Desktop (with extensions), Boss RC-505mk2, USB cable. macOS best tested; Windows/Linux welcome — please report issues.
 
 ### From source (MCP config)
 
@@ -125,4 +125,4 @@ Workflow rules for the MCP server live in `src/mcp/instructions.ts` (returned on
 
 MIT — see [LICENSE](./LICENSE). Free to use, modify, and share; keep the copyright notice.
 
-Not affiliated with Roland or Anthropic.
+Not affiliated with Boss or Anthropic.

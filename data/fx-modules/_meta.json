@@ -2,7 +2,7 @@
   "title": "RC-505mk2 FX Module Presets",
   "description": "Individual FX module presets — purpose-driven single-FX configurations for assembling custom racks. Each module is a ready-to-use FX with dialed-in parameters for a specific sonic purpose. Use these as building blocks: chain them in slots A→D for cumulative processing, or load them into separate banks for on-demand switching during performance.",
   "version": "1.0.0",
-  "device": "Roland RC-505mk2",
+  "device": "Boss RC-505mk2",
   "lastUpdated": "2026-03-13",
   "usagePatterns": {
     "chain": "Multiple FX in series (slots A→B→C→D) for cumulative signal processing. Common for Input FX — e.g., a dynamics module in slot A tightening transients, followed by an EQ module in slot B shaping tone, then a reverb module in slot D adding space. Each module processes the output of the previous one.",
