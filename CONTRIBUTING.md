@@ -75,12 +75,22 @@ Releases are automated with [release-please](https://github.com/googleapis/relea
 
 ### One-time bootstrap (maintainers)
 
-If `v0.4.0` is not already tagged on GitHub, create it once so release-please knows where history starts:
+Release tags must point at a commit on **`main`**. List tags with:
 
 ```bash
+git tag -l 'v*'
+git ls-remote --tags origin
+```
+
+If `v0.4.0` is not on `main` yet (or was tagged on the wrong branch), create or move it on the current `main` HEAD:
+
+```bash
+git checkout main && git pull
 git tag -a v0.4.0 -m "v0.4.0"
 git push origin v0.4.0
 ```
+
+To replace a tag that pointed at the wrong commit: delete it on GitHub first (`git push origin :refs/tags/v0.4.0`), then re-tag `main` as above.
 
 ### Version source of truth
 
