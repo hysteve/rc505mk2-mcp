@@ -8,6 +8,13 @@ A free, local Claude Desktop extension for the [Boss RC-505mk2](https://www.boss
 
 ---
 
+Like this project? Fuel more loopstation hacking with a coffee!
+
+<a href="https://www.buymeacoffee.com/hysteve" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+
+---
+
 ## What you can do
 
 | Task | Example prompt |
@@ -33,7 +40,7 @@ New to the terminology? Start with **[docs/CONCEPTS.md](./docs/CONCEPTS.md)** �
 1. Download `rc505mk2-v{version}.mcpb` from [Releases](https://github.com/hysteve/rc505mk2-mcp/releases/latest)
 2. Double-click → **Install** in Claude Desktop
 3. Connect RC-505mk2 via USB → **MENU → USB → STORAGE → CONNECT**
-4. Try: *"List bundled rack presets"* or *"Load the vocal plate rack to slot 5"*
+4. Try: *"Is my rc505 connected?"*, *"List bundled rack presets"* or *"Load the vocal plate rack to slot 5"*
 
 **Requirements:** Claude Desktop (with extensions), [Boss RC-505mk2](https://www.boss.info/us/products/rc-505mk2/), USB cable. macOS best tested; Windows/Linux welcome — please report issues.
 
