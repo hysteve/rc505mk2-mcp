@@ -100,4 +100,51 @@ describe('listDeviceSlots', () => {
     expect(slots[0]!.has_a).toBe(true);
     expect(slots[0]!.has_b).toBe(true);
   });
+
+  it('marks is_likely_default true for factory-default slots', () => {
+    const config: MemoryConfig = {
+      version: 1,
+      slotNumber: 12,
+      name: 'Memory12',
+      inputFx: { banks: [] },
+      trackFx: { banks: [] },
+      master: { tempo: 120 },
+    };
+    const { xmlA, xmlB } = memoryConfigToRc0Pair(template, config);
+    const dataPath = join(deviceRoot, DEVICE_DATA_DIR);
+    writeFileSync(join(dataPath, 'MEMORY012A.RC0'), xmlA);
+    writeFileSync(join(dataPath, 'MEMORY012B.RC0'), xmlB);
+
+    const slots = listDeviceSlots(deviceRoot);
+    expect(slots[0]!.is_likely_default).toBe(true);
+  });
+
+  it('marks is_likely_default false for user-customized slots', () => {
+    const config = makeConfig({ slotNumber: 7, name: 'MY BEAT' });
+    const { xmlA, xmlB } = memoryConfigToRc0Pair(template, config);
+    const dataPath = join(deviceRoot, DEVICE_DATA_DIR);
+    writeFileSync(join(dataPath, 'MEMORY007A.RC0'), xmlA);
+    writeFileSync(join(dataPath, 'MEMORY007B.RC0'), xmlB);
+
+    const slots = listDeviceSlots(deviceRoot);
+    expect(slots[0]!.is_likely_default).toBe(false);
+  });
+
+  it('marks is_likely_default false when tempo is non-default', () => {
+    const config: MemoryConfig = {
+      version: 1,
+      slotNumber: 5,
+      name: 'Memory5',
+      inputFx: { banks: [] },
+      trackFx: { banks: [] },
+      master: { tempo: 140 },
+    };
+    const { xmlA, xmlB } = memoryConfigToRc0Pair(template, config);
+    const dataPath = join(deviceRoot, DEVICE_DATA_DIR);
+    writeFileSync(join(dataPath, 'MEMORY005A.RC0'), xmlA);
+    writeFileSync(join(dataPath, 'MEMORY005B.RC0'), xmlB);
+
+    const slots = listDeviceSlots(deviceRoot);
+    expect(slots[0]!.is_likely_default).toBe(false);
+  });
 });

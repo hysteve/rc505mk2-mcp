@@ -337,6 +337,7 @@ export function handleListDeviceSlots(args: Record<string, unknown>): object {
         occupied: s.occupied,
         has_a: s.has_a,
         has_b: s.has_b,
+        is_likely_default: s.is_likely_default,
       })),
       count: slots.length,
     };

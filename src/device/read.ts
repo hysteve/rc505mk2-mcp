@@ -16,6 +16,7 @@ export interface DeviceSlotSummary {
   occupied: boolean;
   has_a: boolean;
   has_b: boolean;
+  is_likely_default: boolean;
 }
 
 export interface ReadDeviceSlotResult {
@@ -29,6 +30,17 @@ export interface ReadDeviceSlotResult {
 }
 
 const MEMORY_FILE_RE = /^MEMORY(\d{3})([AB])\.RC0$/i;
+
+const DEFAULT_NAME_RE = /^Memory\d{1,2}$/;
+
+function isLikelyDefault(config: MemoryConfig): boolean {
+  return (
+    DEFAULT_NAME_RE.test(config.name) &&
+    config.inputFx.banks.length === 0 &&
+    config.trackFx.banks.length === 0 &&
+    (config.master?.tempo === undefined || config.master.tempo === 120)
+  );
+}
 
 function slotFiles(dataPath: string, slotNumber: number) {
   const slot = formatSlotNumber(slotNumber);
@@ -116,9 +128,11 @@ export function listDeviceSlots(devicePath: string): DeviceSlotSummary[] {
     if (!hasA && !hasB) continue;
 
     let name: string | undefined;
+    let likelyDefault = false;
     try {
       const read = readDeviceSlot(devicePath, slotNumber);
       name = read.name || undefined;
+      likelyDefault = isLikelyDefault(read.config);
     } catch {
       name = undefined;
     }
@@ -129,6 +143,7 @@ export function listDeviceSlots(devicePath: string): DeviceSlotSummary[] {
       occupied: true,
       has_a: hasA,
       has_b: hasB,
+      is_likely_default: likelyDefault,
     });
   }
 

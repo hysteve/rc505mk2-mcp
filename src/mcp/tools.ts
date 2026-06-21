@@ -481,7 +481,10 @@ const REFERENCE_AND_DEVICE_TOOLS = [
   {
     name: 'list_device_slots',
     description:
-      'List occupied memory slots on a connected RC-505mk2 device with optional preset names.',
+      'List occupied memory slots on a connected RC-505mk2 device with optional preset names. ' +
+      'Each slot includes is_likely_default: true when the slot appears factory-fresh ' +
+      '(default MemoryNN name, no FX banks, 120 BPM tempo) — use this to find free slots ' +
+      'without calling read_device_slot on every one of the 99 slots.',
     inputSchema: {
       type: 'object' as const,
       properties: {
