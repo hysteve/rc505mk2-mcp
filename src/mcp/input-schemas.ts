@@ -20,6 +20,7 @@ export const UploadMemoryInputSchema = z
     backup_dir: z.string().optional(),
     skip_backup: z.boolean().optional(),
     mode: z.enum(['merge', 'overwrite']).optional(),
+    eject_after: z.boolean().optional(),
   })
   .superRefine((data, ctx) => {
     const hasConfig = data.config != null;

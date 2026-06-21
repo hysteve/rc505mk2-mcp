@@ -410,7 +410,9 @@ const REFERENCE_AND_DEVICE_TOOLS = [
       'Alternatively pass a full MemoryConfig in config (from build_rack_config). ' +
       'Automatically detects the device, backs up existing slot files, and writes new files. ' +
       'Device must be in USB Storage mode (MENU > USB > STORAGE > CONNECT). ' +
-      'Default mode "merge" preserves unchanged banks/sections; use "overwrite" for full slot replacement.',
+      'Default mode "merge" preserves unchanged banks/sections; use "overwrite" for full slot replacement. ' +
+      'Does NOT eject the device by default — set eject_after: true for the final upload in a session, ' +
+      'or call eject_device separately when the batch is complete.',
     inputSchema: {
       type: 'object' as const,
       properties: {
@@ -451,6 +453,13 @@ const REFERENCE_AND_DEVICE_TOOLS = [
             'all other existing banks/settings are preserved. ' +
             '"overwrite": completely replaces the slot with the provided config.',
         },
+        eject_after: {
+          type: 'boolean',
+          description:
+            'Eject the device after a successful upload. Defaults to false. ' +
+            'Set to true only on the final upload in a session. ' +
+            'For batch uploads (multiple slots), leave false and call eject_device once at the end.',
+        },
       },
       required: [],
     },
@@ -485,7 +494,8 @@ const REFERENCE_AND_DEVICE_TOOLS = [
     description:
       'Safely eject a connected RC-505mk2 device. ' +
       'On macOS, unmounts all volumes and ejects the disk. On Linux, unmounts the volume. ' +
-      'Use after upload_memory to safely disconnect the device.',
+      'Call this once at the end of a batch upload session. ' +
+      'For single uploads, prefer eject_after: true on the upload_memory call instead.',
     inputSchema: {
       type: 'object' as const,
       properties: {
