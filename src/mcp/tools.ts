@@ -124,7 +124,11 @@ export const PRESET_TOOL_DEFINITIONS = [
   {
     name: 'list_rack_presets',
     description:
-      'Browse bundled and user rack presets. Each result includes title, genres, section, description, and tags. ' +
+      'Browse bundled and user rack presets. Each result includes title, genres, section, description, tags, ' +
+      'has_ifx (true when inputFx is populated), has_tfx (true when trackFx is populated), ' +
+      'ifx_slot_count (number of IFX slots used), and tfx_bank_count (number of distinct TFX banks, max 2). ' +
+      'Use fx_type: "tfx" to filter to racks with TFX content before selecting racks for TFX-placement workflows — ' +
+      'this avoids discovering incompatibility only after calling get_rack_preset on each candidate. ' +
       'Call directly for Adapt mode when the user wants a genre/style rack (e.g. R&B, DnB, vocals) — filter by genre, tag, or section. ' +
       'Skip this when the user asks for from-scratch / custom / greenfield — use list_fx_modules instead.',
     inputSchema: {
@@ -133,6 +137,11 @@ export const PRESET_TOOL_DEFINITIONS = [
         genre: { type: 'string', description: 'Filter by genre.' },
         tag: { type: 'string', description: 'Filter by tag.' },
         section: { type: 'string', description: 'Filter by section (e.g., "percussion", "vocals").' },
+        fx_type: {
+          type: 'string',
+          enum: ['ifx', 'tfx'],
+          description: 'Filter to racks that have content in the specified FX section: "ifx" (has inputFx slots) or "tfx" (has trackFx slots).',
+        },
       },
     },
   },
