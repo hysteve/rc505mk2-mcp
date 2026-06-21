@@ -245,8 +245,12 @@ export function handleUploadMemory(args: Record<string, unknown>): object {
       skipBackup: v.data.skip_backup,
     });
 
-    // Auto-eject the device after successful upload
-    const ejectResult = ejectDevice(result.devicePath);
+    // Eject the device only when explicitly requested (eject_after: true).
+    // Defaults to false so batch uploads can write multiple slots without reconnecting.
+    const shouldEject = v.data.eject_after === true;
+    const ejectResult = shouldEject
+      ? ejectDevice(result.devicePath)
+      : { ejected: false, message: 'Device not ejected. Call eject_device when done.' };
 
     const uploadMsg = merged
       ? `Preset "${finalConfig.name}" merged and uploaded to slot ${result.slot} on ${result.volumeName}. Existing settings preserved for unchanged banks/sections.`

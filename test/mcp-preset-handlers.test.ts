@@ -251,4 +251,34 @@ describe('preset MCP handlers', () => {
     const parsed = validateInput(UploadMemoryInputSchema, { rack_id: 'perc-acoustic' });
     expect(parsed.success).toBe(false);
   });
+
+  it('upload_memory accepts eject_after: false for batch workflows', () => {
+    const parsed = validateInput(UploadMemoryInputSchema, {
+      rack_id: 'perc-acoustic',
+      slot_number: 5,
+      eject_after: false,
+    });
+    expect(parsed.success).toBe(true);
+    if (parsed.success) expect(parsed.data.eject_after).toBe(false);
+  });
+
+  it('upload_memory accepts eject_after: true for single-shot uploads', () => {
+    const parsed = validateInput(UploadMemoryInputSchema, {
+      rack_id: 'perc-acoustic',
+      slot_number: 5,
+      eject_after: true,
+    });
+    expect(parsed.success).toBe(true);
+    if (parsed.success) expect(parsed.data.eject_after).toBe(true);
+  });
+
+  it('upload_memory omits eject by default when no device connected', () => {
+    const result = handleUploadMemory({
+      rack_id: 'perc-acoustic',
+      slot_number: 5,
+    }) as { error?: string; ejected?: boolean };
+    // No device in CI — hits the device-not-detected path before eject logic
+    expect(result.error).toBeDefined();
+    expect(result.ejected).toBeUndefined();
+  });
 });
