@@ -198,7 +198,11 @@ export function handleListRackPresets(args: Record<string, unknown>): object {
   if (!v.success) return { error: v.error };
 
   const presets = store.listRacks(v.data);
-  return { presets, count: presets.length };
+  return {
+    presets,
+    count: presets.length,
+    note: 'has_ifx/has_tfx indicate which FX sections are populated. Use fx_type filter to narrow to racks with IFX or TFX content.',
+  };
 }
 
 export function handleGetRackPreset(args: Record<string, unknown>): object {

@@ -76,6 +76,7 @@ export const ListRackPresetsInputSchema = z.object({
   genre: z.string().optional(),
   tag: z.string().optional(),
   section: z.string().optional(),
+  fx_type: z.enum(['ifx', 'tfx']).optional(),
 });
 
 export const GetRackPresetInputSchema = z.object({

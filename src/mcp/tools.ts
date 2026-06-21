@@ -124,7 +124,11 @@ export const PRESET_TOOL_DEFINITIONS = [
   {
     name: 'list_rack_presets',
     description:
-      'Browse bundled and user rack presets. Each result includes title, genres, section, description, and tags. ' +
+      'Browse bundled and user rack presets. Each result includes title, genres, section, description, tags, ' +
+      'has_ifx (true when inputFx is populated), has_tfx (true when trackFx is populated), ' +
+      'ifx_slot_count (number of IFX slots used), and tfx_bank_count (number of distinct TFX banks, max 2). ' +
+      'Use fx_type: "tfx" to filter to racks with TFX content before selecting racks for TFX-placement workflows — ' +
+      'this avoids discovering incompatibility only after calling get_rack_preset on each candidate. ' +
       'Call directly for Adapt mode when the user wants a genre/style rack (e.g. R&B, DnB, vocals) — filter by genre, tag, or section. ' +
       'Skip this when the user asks for from-scratch / custom / greenfield — use list_fx_modules instead.',
     inputSchema: {
@@ -133,6 +137,11 @@ export const PRESET_TOOL_DEFINITIONS = [
         genre: { type: 'string', description: 'Filter by genre.' },
         tag: { type: 'string', description: 'Filter by tag.' },
         section: { type: 'string', description: 'Filter by section (e.g., "percussion", "vocals").' },
+        fx_type: {
+          type: 'string',
+          enum: ['ifx', 'tfx'],
+          description: 'Filter to racks that have content in the specified FX section: "ifx" (has inputFx slots) or "tfx" (has trackFx slots).',
+        },
       },
     },
   },
@@ -390,6 +399,19 @@ const REFERENCE_AND_DEVICE_TOOLS = [
         },
       },
       required: ['xml', 'slot_number'],
+    },
+  },
+  {
+    name: 'get_device_schema',
+    description:
+      'Return the RC-505mk2 structural constants: memory slot count, IFX/TFX bank layout, ' +
+      'slots per bank, and MCP constraints. ' +
+      'Call this before building multi-bank configurations so you have an authoritative answer ' +
+      'to "how many banks/slots does each FX section have?" instead of guessing or asking the user. ' +
+      'Each memory slot has 2 FX sections × 4 banks × 4 slots = 32 FX positions.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {},
     },
   },
   {

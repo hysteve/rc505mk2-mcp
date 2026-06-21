@@ -44,6 +44,7 @@ export interface RackFilters {
   genre?: string;
   tag?: string;
   section?: string;
+  fx_type?: 'ifx' | 'tfx';
 }
 
 export interface RackSummary {
@@ -53,6 +54,10 @@ export interface RackSummary {
   genres: string[];
   description: string;
   tags?: string[];
+  has_ifx: boolean;
+  has_tfx: boolean;
+  ifx_slot_count: number;
+  tfx_bank_count: number;
   source: 'bundled' | 'user';
 }
 
@@ -180,18 +185,29 @@ export class PresetStore {
       if (filters.section && rack.section !== filters.section) return false;
       if (filters.genre && !rack.genres.some(g => g.toLowerCase() === filters.genre!.toLowerCase())) return false;
       if (filters.tag && !rack.tags?.some(t => t.toLowerCase() === filters.tag!.toLowerCase())) return false;
+      if (filters.fx_type === 'ifx' && rack.inputFx.length === 0) return false;
+      if (filters.fx_type === 'tfx' && rack.trackFx.length === 0) return false;
       return true;
     });
 
-    return filtered.map(({ rack, source }) => ({
-      id: rack.id,
-      title: rack.title,
-      section: rack.section,
-      genres: rack.genres,
-      description: rack.description,
-      tags: rack.tags,
-      source,
-    }));
+    return filtered.map(({ rack, source }) => {
+      const has_ifx = rack.inputFx.length > 0;
+      const has_tfx = rack.trackFx.length > 0;
+      const tfxBanks = new Set(rack.trackFx.map(fx => fx.bank ?? 'A'));
+      return {
+        id: rack.id,
+        title: rack.title,
+        section: rack.section,
+        genres: rack.genres,
+        description: rack.description,
+        tags: rack.tags,
+        has_ifx,
+        has_tfx,
+        ifx_slot_count: rack.inputFx.length,
+        tfx_bank_count: tfxBanks.size,
+        source,
+      };
+    });
   }
 
   getRack(id: string): (Rack & { source: 'bundled' | 'user' }) | null {

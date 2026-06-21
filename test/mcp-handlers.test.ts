@@ -4,6 +4,7 @@ import {
   handleLookupFxParams,
   handleDetectDevice,
   handleEjectDevice,
+  handleGetDeviceSchema,
   handleParseMemory,
 } from '../src/mcp/handlers.js';
 
@@ -133,6 +134,36 @@ describe('handleDetectDevice', () => {
     if (!result.mounted) {
       expect(result.message).toContain('not detected');
     }
+  });
+});
+
+describe('handleGetDeviceSchema', () => {
+  it('returns memory_slots = 99', () => {
+    const result = handleGetDeviceSchema() as { memory_slots: number };
+    expect(result.memory_slots).toBe(99);
+  });
+
+  it('returns both IFX and TFX sections with 4 banks each', () => {
+    const result = handleGetDeviceSchema() as {
+      fx_sections: {
+        inputFx: { banks: string[] };
+        trackFx: { banks: string[] };
+      };
+    };
+    expect(result.fx_sections.inputFx.banks).toEqual(['A', 'B', 'C', 'D']);
+    expect(result.fx_sections.trackFx.banks).toEqual(['A', 'B', 'C', 'D']);
+  });
+
+  it('reports 32 total FX positions per slot', () => {
+    const result = handleGetDeviceSchema() as { total_fx_positions_per_slot: number };
+    expect(result.total_fx_positions_per_slot).toBe(32);
+  });
+
+  it('includes mcp_constraints documenting supported banks', () => {
+    const result = handleGetDeviceSchema() as {
+      mcp_constraints: { tfx_banks_supported: string[] };
+    };
+    expect(result.mcp_constraints.tfx_banks_supported).toEqual(['A', 'B']);
   });
 });
 

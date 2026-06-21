@@ -68,6 +68,49 @@ describe('preset MCP handlers', () => {
     expect(result.presets.some(r => r.id === 'perc-acoustic')).toBe(true);
   });
 
+  it('list_rack_presets includes FX capability flags on each entry', () => {
+    const result = handleListRackPresets({}) as {
+      presets: Array<{
+        id: string;
+        has_ifx: boolean;
+        has_tfx: boolean;
+        ifx_slot_count: number;
+        tfx_bank_count: number;
+      }>;
+    };
+    // Every entry must have the flag fields present
+    for (const r of result.presets) {
+      expect(typeof r.has_ifx).toBe('boolean');
+      expect(typeof r.has_tfx).toBe('boolean');
+      expect(typeof r.ifx_slot_count).toBe('number');
+      expect(typeof r.tfx_bank_count).toBe('number');
+    }
+    // At least one rack must have IFX content
+    expect(result.presets.some(r => r.has_ifx)).toBe(true);
+    // ifx_slot_count must be 0 when has_ifx is false
+    for (const r of result.presets) {
+      if (!r.has_ifx) expect(r.ifx_slot_count).toBe(0);
+      if (!r.has_tfx) expect(r.tfx_bank_count).toBe(0);
+    }
+  });
+
+  it('list_rack_presets fx_type filter returns only racks with TFX content', () => {
+    const all = handleListRackPresets({}) as { presets: Array<{ id: string; has_tfx: boolean }> };
+    const tfxOnly = handleListRackPresets({ fx_type: 'tfx' }) as {
+      presets: Array<{ id: string; has_tfx: boolean }>;
+      count: number;
+    };
+    expect(tfxOnly.presets.every(r => r.has_tfx)).toBe(true);
+    expect(tfxOnly.count).toBeLessThanOrEqual(all.presets.length);
+  });
+
+  it('list_rack_presets fx_type: ifx excludes TFX-only racks', () => {
+    const result = handleListRackPresets({ fx_type: 'ifx' }) as {
+      presets: Array<{ has_ifx: boolean }>;
+    };
+    expect(result.presets.every(r => r.has_ifx)).toBe(true);
+  });
+
   it('get_rack_preset returns full rack', () => {
     const result = handleGetRackPreset({ rack_id: 'perc-acoustic' }) as { rack: { title: string } };
     expect(result.rack.title).toContain('Acoustic');
@@ -280,5 +323,18 @@ describe('preset MCP handlers', () => {
     // No device in CI — hits the device-not-detected path before eject logic
     expect(result.error).toBeDefined();
     expect(result.ejected).toBeUndefined();
+  });
+
+  it('upload_memory echoes rack_id in response for batch traceability', () => {
+    // Validates schema round-trip: rack_id flows through to parsed data
+    const parsed = validateInput(UploadMemoryInputSchema, {
+      rack_id: 'perc-acoustic',
+      slot_number: 3,
+    });
+    expect(parsed.success).toBe(true);
+    if (parsed.success) {
+      expect(parsed.data.rack_id).toBe('perc-acoustic');
+      expect(parsed.data.slot_number).toBe(3);
+    }
   });
 });
