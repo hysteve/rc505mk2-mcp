@@ -17,6 +17,7 @@ import {
   handleLookupFxParams,
   handleParseMemory,
   handleDetectDevice,
+  handleGetDeviceSchema,
   handleUploadMemory,
   handleEjectDevice,
   handleReadDeviceSlot,
@@ -138,6 +139,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         result = handleParseMemory(args as { xml: string; slot_number: number });
         break;
       // Device
+      case 'get_device_schema':
+        result = handleGetDeviceSchema();
+        break;
       case 'detect_device':
         result = handleDetectDevice();
         break;

@@ -347,6 +347,41 @@ export function handleListDeviceSlots(args: Record<string, unknown>): object {
   }
 }
 
+export function handleGetDeviceSchema(): object {
+  return {
+    memory_slots: 99,
+    fx_sections: {
+      inputFx: {
+        label: 'Input FX (IFX)',
+        description: 'Applied live to mic/instrument input before recording.',
+        banks: ['A', 'B', 'C', 'D'],
+        slots_per_bank: ['A', 'B', 'C', 'D'],
+        bank_note: 'IFX has one logical bank; slots A–D are the 4 chain positions within it.',
+        mcp_bank_field: false,
+      },
+      trackFx: {
+        label: 'Track FX (TFX)',
+        description: 'Applied to already-recorded loops during playback — ideal for DJ-style performance.',
+        banks: ['A', 'B', 'C', 'D'],
+        slots_per_bank: ['A', 'B', 'C', 'D'],
+        bank_note: 'TFX banks A–D are independent performance banks selectable live. ' +
+          'Special effects (BEAT_SCATTER, BEAT_REPEAT, BEAT_SHIFT, VINYL_FLICK) must be in Slot A of their bank.',
+        mcp_bank_field: true,
+      },
+    },
+    total_fx_positions_per_slot: 32,
+    description:
+      'Each RC-505mk2 memory slot (1–99) contains two FX sections: Input FX (IFX) and Track FX (TFX). ' +
+      'Each section has 4 banks (A–D) and each bank holds up to 4 FX slots (A–D). ' +
+      'Total: 2 sections × 4 banks × 4 slots = 32 FX positions per memory slot.',
+    mcp_constraints: {
+      tfx_banks_supported: ['A', 'B'],
+      ifx_bank_field: 'omit — IFX slots use slot A–D only, no bank field',
+      special_tfx_slot: 'BEAT_SCATTER / BEAT_REPEAT / BEAT_SHIFT / VINYL_FLICK must be Slot A in their bank',
+    },
+  };
+}
+
 export function handleEjectDevice(args: { device_path?: string }): object {
   // Resolve device
   const device = args.device_path

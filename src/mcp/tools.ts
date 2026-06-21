@@ -402,6 +402,19 @@ const REFERENCE_AND_DEVICE_TOOLS = [
     },
   },
   {
+    name: 'get_device_schema',
+    description:
+      'Return the RC-505mk2 structural constants: memory slot count, IFX/TFX bank layout, ' +
+      'slots per bank, and MCP constraints. ' +
+      'Call this before building multi-bank configurations so you have an authoritative answer ' +
+      'to "how many banks/slots does each FX section have?" instead of guessing or asking the user. ' +
+      'Each memory slot has 2 FX sections × 4 banks × 4 slots = 32 FX positions.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {},
+    },
+  },
+  {
     name: 'detect_device',
     description:
       'Detect a connected RC-505mk2 device. Scans mounted volumes for the ROLAND/DATA signature. ' +
