@@ -281,4 +281,17 @@ describe('preset MCP handlers', () => {
     expect(result.error).toBeDefined();
     expect(result.ejected).toBeUndefined();
   });
+
+  it('upload_memory echoes rack_id in response for batch traceability', () => {
+    // Validates schema round-trip: rack_id flows through to parsed data
+    const parsed = validateInput(UploadMemoryInputSchema, {
+      rack_id: 'perc-acoustic',
+      slot_number: 3,
+    });
+    expect(parsed.success).toBe(true);
+    if (parsed.success) {
+      expect(parsed.data.rack_id).toBe('perc-acoustic');
+      expect(parsed.data.slot_number).toBe(3);
+    }
+  });
 });

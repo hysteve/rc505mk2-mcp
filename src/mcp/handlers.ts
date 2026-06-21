@@ -260,6 +260,7 @@ export function handleUploadMemory(args: Record<string, unknown>): object {
     return {
       slot_number: result.slot,
       name: finalConfig.name,
+      rack_id: v.data.rack_id ?? null,
       device_path: result.devicePath,
       volume_name: result.volumeName,
       mode,
