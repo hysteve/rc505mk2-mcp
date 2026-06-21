@@ -1,6 +1,6 @@
 {
   "name": "rc505mk2-mcp",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Local MCP server for the Boss RC-505mk2 — FX presets, RC0 generation, and USB upload",
   "type": "module",
   "license": "MIT",
