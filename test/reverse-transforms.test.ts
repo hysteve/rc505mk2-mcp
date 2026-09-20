@@ -6,7 +6,7 @@ import {
   reverseReverbTime, reverseGateTime, reverseInitPhase,
   reverseDelayTime, reverseRollTime,
   reverseLowCut, reverseHighCut, reverseEqFreq, reverseEqQ,
-  reverseDynamicsType, reverseReverbType, reversePreampType, reverseSpkType,
+  reverseDynamicsType, reversePreampType, reverseSpkType,
   reverseMicType, reverseMicDis, reverseDistType, reverseNoteValue,
   reverseKeyValue, reversePhaserStage, reverseAlgoMode, reverseOnOff,
   reverseOscVocOctave, reverseTwistRelease, reverseRollSplit,
@@ -201,14 +201,6 @@ describe('reverseDynamicsType', () => {
   });
 });
 
-describe('reverseReverbType', () => {
-  it('reverses reverb type enums', () => {
-    expect(reverseReverbType(0)).toBe('AMBIENCE');
-    expect(reverseReverbType(2)).toBe('HALL1');
-    expect(reverseReverbType(6)).toBe('MODULATE');
-  });
-});
-
 describe('reversePreampType', () => {
   it('reverses preamp type enums', () => {
     expect(reversePreampType(0)).toBe('JC-120');
@@ -360,7 +352,7 @@ import {
   compThreshold, density, duty, radioLoFi, seqMax,
   reverbTime, gateTime, initPhase, delayTime, rollTime,
   lowCut, highCut, eqFreq, eqQ,
-  dynamicsType, reverbType, preampType, distType, noteValue,
+  dynamicsType, preampType, distType, noteValue,
   keyValue, phaserStage, algoMode, onOff, lofiBitDepth,
   lofiSampleRate, oscBotNote, pattern20, phrase30, micPos,
   electricScale, oscWaveform, vocCarrier, hrmManualVoice,
@@ -388,7 +380,6 @@ describe('round-trip: forward → reverse', () => {
     ['eqFreq', eqFreq, reverseEqFreq, ['20.0 Hz', '500 Hz', '10.0 kHz']],
     ['eqQ', eqQ, reverseEqQ, ['0.5', '1', '4', '16']],
     ['dynamicsType', dynamicsType, reverseDynamicsType, ['NATURAL COMP', 'HARD LIM', 'BRIGHTEN']],
-    ['reverbType', reverbType, reverseReverbType, ['AMBIENCE', 'HALL1', 'MODULATE']],
     ['preampType', preampType, reversePreampType, ['JC-120', 'COMBO CRUNCH', 'CORE METAL']],
     ['distType', distType, reverseDistType, ['VOCAL', 'OD', 'FUZZ']],
     ['noteValue', noteValue, reverseNoteValue, ['C', 'C#', 'E', 'B']],

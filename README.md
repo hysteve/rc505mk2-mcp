@@ -149,6 +149,9 @@ Bundle source: `mcpb/manifest.json` + `mcpb/icon.png`. See [mcpb/README.md](./mc
 | [SHARING.md](./docs/SHARING.md) | Share JSON and RC0 ZIP exchange |
 | [TEST_PROMPTS.md](./docs/TEST_PROMPTS.md) | Copy-paste test prompts by workflow |
 | [LIBRARY.md](./docs/LIBRARY.md) | TypeScript library API |
+| [ROADMAP.md](./docs/ROADMAP.md) | Current refresh: code review, epics, stories, progress log |
+| [PRESET_CATALOG.md](./docs/PRESET_CATALOG.md) | Audit of every bundled preset (`npm run catalog:presets`) |
+| [QA_GRID.md](./docs/QA_GRID.md) | On-device verification checklist — encodings first, then presets |
 
 Workflow rules for the MCP server live in `src/mcp/instructions.ts` (returned on initialize to Claude Desktop).
 

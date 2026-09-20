@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  num, eqGain, dynamicsType, reverbType, preampType, spkType, micType,
+  num, eqGain, dynamicsType, preampType, spkType, micType,
   micDis, distType, noteValue, keyValue, phaserStage, algoMode,
   twistRelease, rollSplit, octaveMode, isolatorBand, isolatorWave,
   oscWaveform, vocCarrier, hrmManualVoice, hrmAutoVoice, hrmAutoMode,
@@ -40,15 +40,6 @@ describe('dynamicsType', () => {
 
   it('falls back to num for unknown', () => {
     expect(dynamicsType('5')).toBe(5);
-  });
-});
-
-describe('reverbType', () => {
-  it('maps reverb algorithms', () => {
-    expect(reverbType('AMBIENCE')).toBe(0);
-    expect(reverbType('HALL1')).toBe(2);
-    expect(reverbType('PLATE')).toBe(4);
-    expect(reverbType('MODULATE')).toBe(6);
   });
 });
 

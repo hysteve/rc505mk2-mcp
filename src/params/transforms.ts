@@ -45,15 +45,6 @@ export const dynamicsType = (v: string): number => {
   return map[v.toUpperCase()] ?? num(v);
 };
 
-/** REVERB TYPE — 7 reverb algorithms */
-export const reverbType = (v: string): number => {
-  const map: Record<string, number> = {
-    AMBIENCE: 0, ROOM: 1, HALL1: 2, HALL2: 3,
-    PLATE: 4, SPRING: 5, MODULATE: 6,
-  };
-  return map[v.toUpperCase()] ?? num(v);
-};
-
 /** PREAMP AMP TYPE — 9 amplifier models */
 export const preampType = (v: string): number => {
   const map: Record<string, number> = {
@@ -357,8 +348,10 @@ export const radioLoFi = (v: string): number => {
 
 /** ELECTRIC SCALE — CHROMATIC or musical key */
 export const electricScale = (v: string): number => {
-  if (v.toUpperCase() === "CHROMATIC") return 0;
-  return 1 + keyValue(v);
+  // Parameter guide lists keys as "C (Am)" … "B (G#m)"; accept with or without the relative minor
+  const key = v.toUpperCase().replace(/\s*\(.*\)\s*$/, '').trim();
+  if (key === "CHROMATIC") return 0;
+  return 1 + keyValue(key);
 };
 
 /** RATE value — tempo-synced rate parameter */
@@ -389,9 +382,49 @@ function normalizeFreq(s: string): string {
 /** FREQ_RANGE normalized for matching */
 const FREQ_NORMALIZED = FREQ_RANGE.map(normalizeFreq);
 
+/** Hz value of each FREQ_RANGE entry, for nearest-step snapping. */
+const FREQ_HZ = FREQ_RANGE.map(f => parseFreqHz(f)!);
+
+/**
+ * Parse a human frequency string to Hz. Accepts "2.5 kHz", "2.50k Hz", "2500",
+ * "2.5k", "150 Hz", "1k". Returns null when the string is not a frequency.
+ */
+export function parseFreqHz(v: string): number | null {
+  const m = /^\s*(\d+(?:\.\d+)?)\s*(K)?\s*(?:HZ)?\s*$/i.exec(v);
+  if (!m) return null;
+  const n = parseFloat(m[1]);
+  return m[2] ? n * 1000 : n;
+}
+
+/** Index into FREQ_RANGE of the step nearest (log-distance) to the given Hz. */
+export function nearestFreqIndex(hz: number): number {
+  let best = 0;
+  let bestDist = Infinity;
+  for (let i = 0; i < FREQ_HZ.length; i++) {
+    const d = Math.abs(Math.log(FREQ_HZ[i]) - Math.log(hz));
+    if (d < bestDist) { bestDist = d; best = i; }
+  }
+  return best;
+}
+
+/** Display string of the FREQ_RANGE step nearest to a human frequency string, or null. */
+export function snapFreq(v: string): string | null {
+  const hz = parseFreqHz(v);
+  if (hz === null || hz <= 0) return null;
+  return FREQ_RANGE[nearestFreqIndex(hz)];
+}
+
 function freqIndex(v: string): number {
   const idx = FREQ_NORMALIZED.indexOf(normalizeFreq(v));
   if (idx !== -1) return idx;
+  // Bare numbers are ambiguous: "200" could be 200 Hz or a raw index. Treat
+  // values with a unit (Hz/k) as frequencies and snap; treat bare integers
+  // <= 29 as raw indices for backwards compatibility, larger ones as Hz.
+  const hz = parseFreqHz(v);
+  if (hz !== null && hz > 0) {
+    const bare = /^\s*\d+\s*$/.test(v);
+    if (!bare || hz > 29) return nearestFreqIndex(hz);
+  }
   return num(v);
 }
 

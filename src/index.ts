@@ -33,15 +33,18 @@ export type { FxValueType } from './fx/fx-values.js';
 
 // ── Parameter Transforms & Maps ────────────────────────────────────
 export {
-  num, eqGain, dynamicsType, reverbType, preampType, spkType, micType, micDis,
+  num, eqGain, dynamicsType, preampType, spkType, micType, micDis,
   distType, noteValue, keyValue, phaserStage, algoMode, twistRelease, rollSplit,
   octaveMode, isolatorBand, isolatorWave, oscWaveform, vocCarrier,
   hrmManualVoice, hrmAutoVoice, hrmAutoMode,
   beatScatterType, beatRepeatType, beatShiftType,
   onOff, lofiBitDepth, radioLoFi, electricScale,
   rateValue, stepRateValue, seqRate, seqMax,
-  RATE_NOTE_DISPLAY,
+  RATE_NOTE_DISPLAY, parseFreqHz, nearestFreqIndex, snapFreq,
 } from './params/transforms.js';
+export { PARAM_ALIASES, resolveParamName } from './params/param-aliases.js';
+export { validateSlotParams, resolveEffectName } from './params/validate-params.js';
+export type { ParamIssue, ParamValidation } from './params/validate-params.js';
 
 export { PARAM_MAP, SEQ_TARGETS } from './params/param-map.js';
 export type { ParamDef } from './params/param-map.js';

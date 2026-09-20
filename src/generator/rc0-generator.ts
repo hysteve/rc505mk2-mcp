@@ -11,6 +11,7 @@ import type { MemoryConfig, MemoryFxSection, MemoryBank, MemoryFxSlot } from '..
 import { EFFECT_NAME_MAP } from '../params/effect-map.js';
 import { PARAM_MAP, SEQ_TARGETS } from '../params/param-map.js';
 import { num } from '../params/transforms.js';
+import { resolveParamName } from '../params/param-aliases.js';
 import { resolveFxIndex, SPECIAL_TRACK_FX, RC0_SEQ_FX_MAP } from '../fx/index.js';
 import type { FxContext } from '../fx/index.js';
 import { findSection, queueEdit, applyEdits } from './xml-ops.js';
@@ -78,7 +79,7 @@ function collectFxEdits(
     if (!paramDefs) continue;
 
     for (const param of fx.params) {
-      const def = paramDefs[param.name.toUpperCase()];
+      const def = paramDefs[resolveParamName(rc0FxName, param.name)];
       if (!def) continue;
 
       const value = def.transform
