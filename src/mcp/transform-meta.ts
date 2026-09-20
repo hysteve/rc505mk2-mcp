@@ -5,7 +5,7 @@
 
 import {
   num, eqGain, rateValue, stepRateValue, seqRate, seqMax,
-  dynamicsType, reverbType, preampType, spkType, micType, micDis,
+  dynamicsType, preampType, spkType, micType, micDis,
   distType, noteValue, keyValue, phaserStage, algoMode, transposeSemi, pitchBendOct,
   centered50, centered10, compThreshold, compGain20, preampGainValue,
   oscVocOctave, duty, initPhase,
@@ -18,10 +18,14 @@ import {
   beatScatterType, beatRepeatType, beatShiftType, electricScale,
   onOff, lofiBitDepth, radioLoFi,
 } from '../params/transforms.js';
+import { FREQ_RANGE } from '../fx/fx-values.js';
 
 export interface TransformMetaEnum {
   type: 'enum';
+  /** Accepted values in RC0 index order — values[i] is stored as i. */
   values: string[];
+  /** Additional spellings the transform accepts (not stored; normalized to values[]). */
+  aliases?: string[];
   description?: string;
 }
 
@@ -77,17 +81,20 @@ export const TRANSFORM_META = new Map<((v: string) => number) | undefined, Trans
   // ── Frequency/filter enums ──────────────────────────────────────
   [lowCut, {
     type: 'enum',
-    values: ['FLAT', '20.0 Hz', '25.0 Hz', '31.5 Hz', '40.0 Hz', '50.0 Hz', '63.0 Hz', '80.0 Hz', '100 Hz', '125 Hz', '160 Hz', '200 Hz', '250 Hz', '315 Hz', '400 Hz', '500 Hz', '630 Hz', '800 Hz', '1.00k Hz', '1.25k Hz', '1.60k Hz', '2.00k Hz', '2.50k Hz', '3.15k Hz', '4.00k Hz', '5.00k Hz', '6.30k Hz', '8.00k Hz', '10.0k Hz', '12.5k Hz'],
+    values: ['FLAT', ...FREQ_RANGE],
+    aliases: ['2.5 kHz', '2500', '2.5k', '150 Hz — any Hz/kHz value snaps to the nearest step'],
     description: 'Low cut filter frequency (FLAT = no filter)',
   }],
   [highCut, {
     type: 'enum',
-    values: ['20.0 Hz', '25.0 Hz', '31.5 Hz', '40.0 Hz', '50.0 Hz', '63.0 Hz', '80.0 Hz', '100 Hz', '125 Hz', '160 Hz', '200 Hz', '250 Hz', '315 Hz', '400 Hz', '500 Hz', '630 Hz', '800 Hz', '1.00k Hz', '1.25k Hz', '1.60k Hz', '2.00k Hz', '2.50k Hz', '3.15k Hz', '4.00k Hz', '5.00k Hz', '6.30k Hz', '8.00k Hz', '10.0k Hz', '12.5k Hz', 'FLAT'],
+    values: [...FREQ_RANGE, 'FLAT'],
+    aliases: ['any Hz/kHz value snaps to the nearest step'],
     description: 'High cut filter frequency (FLAT = no filter)',
   }],
   [eqFreq, {
     type: 'enum',
-    values: ['20.0 Hz', '25.0 Hz', '31.5 Hz', '40.0 Hz', '50.0 Hz', '63.0 Hz', '80.0 Hz', '100 Hz', '125 Hz', '160 Hz', '200 Hz', '250 Hz', '315 Hz', '400 Hz', '500 Hz', '630 Hz', '800 Hz', '1.00k Hz', '1.25k Hz', '1.60k Hz', '2.00k Hz', '2.50k Hz', '3.15k Hz', '4.00k Hz', '5.00k Hz', '6.30k Hz', '8.00k Hz', '10.0k Hz', '12.5k Hz'],
+    values: [...FREQ_RANGE],
+    aliases: ['any Hz/kHz value snaps to the nearest step'],
     description: 'EQ center frequency',
   }],
   [eqQ, {
@@ -100,16 +107,13 @@ export const TRANSFORM_META = new Map<((v: string) => number) | undefined, Trans
   [dynamicsType, {
     type: 'enum',
     values: ['NATURAL COMP', 'MIXER COMP', 'LIVE COMP', 'NATURAL LIM', 'HARD LIM', 'JINGL COMP', 'HARD COMP', 'SOFT COMP', 'CLEAN COMP', 'DANCE COMP', 'ORCH COMP', 'VOCAL COMP', 'ACOUSTIC', 'ROCK BAND', 'ORCHESTRA', 'LOW BOOST', 'BRIGHTEN', 'DJS VOICE', 'PHONE VOX'],
+    aliases: ['NATURALCOMP', 'COMP'],
     description: 'Compressor/limiter algorithm',
-  }],
-  [reverbType, {
-    type: 'enum',
-    values: ['AMBIENCE', 'ROOM', 'HALL1', 'HALL2', 'PLATE', 'SPRING', 'MODULATE'],
-    description: 'Reverb algorithm',
   }],
   [preampType, {
     type: 'enum',
     values: ['JC-120', 'NATURAL CLEAN', 'FULL RANGE', 'COMBO CRUNCH', 'STACK CRUNCH', 'HIGAIN STACK', 'POWER DRIVE', 'EXTREM LEAD', 'CORE METAL'],
+    aliases: ['JC120', 'NATURAL', 'JC CLEAN', 'COMBO CRN', 'STACK CRN', 'HI GAIN', 'METAL', 'BASS AMP'],
     description: 'Amplifier model',
   }],
   [spkType, {
@@ -120,7 +124,8 @@ export const TRANSFORM_META = new Map<((v: string) => number) | undefined, Trans
   [micType, {
     type: 'enum',
     values: ['DYN ST', 'DYN 421', 'CND 451', 'CND 87', 'FLAT'],
-    description: 'Microphone model',
+    aliases: ['DYN57', 'DYN 57', 'DYN421', 'CND451', 'CND87'],
+    description: 'Microphone model (device labels; parameter guide spells them DYN57/DYN421/CND451/CND87)',
   }],
   [micDis, {
     type: 'enum',
@@ -135,6 +140,7 @@ export const TRANSFORM_META = new Map<((v: string) => number) | undefined, Trans
   [distType, {
     type: 'enum',
     values: ['VOCAL', 'BOOST', 'OD', 'DS', 'METAL', 'FUZZ'],
+    aliases: ['OVERDRIVE', 'DISTORTION'],
     description: 'Distortion algorithm',
   }],
   [noteValue, {
@@ -253,6 +259,7 @@ export const TRANSFORM_META = new Map<((v: string) => number) | undefined, Trans
   [electricScale, {
     type: 'enum',
     values: ['CHROMATIC', 'C', 'C#', 'D', 'EB', 'E', 'F', 'F#', 'G', 'AB', 'A', 'BB', 'B'],
+    aliases: ['C (Am)', 'C# (A#m)', 'D (Bm)', 'EB (Cm)', 'E (C#m)', 'F (Dm)', 'F# (D#m)', 'G (Em)', 'AB (Fm)', 'A (F#m)', 'BB (Gm)', 'B (G#m)'],
     description: 'Electric scale (chromatic or key-locked)',
   }],
 ]);

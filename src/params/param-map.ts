@@ -8,7 +8,7 @@
 
 import {
   num, eqGain, rateValue, stepRateValue, seqRate, seqMax,
-  dynamicsType, reverbType, preampType, spkType, micType, micDis,
+  dynamicsType, preampType, spkType, micType, micDis,
   distType, noteValue, keyValue, phaserStage, algoMode, transposeSemi, pitchBendOct,
   centered50, centered10, compThreshold, compGain20, preampGainValue,
   oscVocOctave, duty, initPhase,
@@ -24,7 +24,7 @@ import {
 import {
   reverseNum, reverseEqGain, reverseRateValue, reverseStepRateValue,
   reverseSeqRate, reverseSeqMax,
-  reverseDynamicsType, reverseReverbType, reversePreampType, reverseSpkType,
+  reverseDynamicsType, reversePreampType, reverseSpkType,
   reverseMicType, reverseMicDis, reverseDistType, reverseNoteValue,
   reverseKeyValue, reversePhaserStage, reverseAlgoMode, reverseTransposeSemi,
   reversePitchBendOct, reverseCentered50, reverseCentered10,
@@ -301,10 +301,10 @@ export const PARAM_MAP: Record<string, Record<string, ParamDef>> = {
 
   // ── EQ ───────────────────────────────────────────────────────────
   EQ: {
-    "LO GAIN": { tag: "A", transform: eqGain, reverse: reverseEqGain },
+    LO: { tag: "A", transform: eqGain, reverse: reverseEqGain },
     "LO-MID GAIN": { tag: "B", transform: eqGain, reverse: reverseEqGain },
     "HI-MID GAIN": { tag: "C", transform: eqGain, reverse: reverseEqGain },
-    "HI GAIN": { tag: "D", transform: eqGain, reverse: reverseEqGain },
+    HIGH: { tag: "D", transform: eqGain, reverse: reverseEqGain },
     LEVEL: { tag: "E", transform: eqGain, reverse: reverseEqGain },
     "LO-MID FREQ": { tag: "F", transform: eqFreq, reverse: reverseEqFreq },
     "LO-MID Q": { tag: "G", transform: eqQ, reverse: reverseEqQ },

@@ -166,10 +166,10 @@ describe('round-trip: generate → parse', () => {
       inputFx: [{
         slot: 'A', bank: 'A', effect: 'EQ',
         params: [
-          { name: 'LO GAIN', value: '-5' },
+          { name: 'LO', value: '-5' },
           { name: 'LO-MID GAIN', value: '3' },
           { name: 'HI-MID GAIN', value: '0' },
-          { name: 'HI GAIN', value: '10' },
+          { name: 'HIGH', value: '10' },
           { name: 'LEVEL', value: '-2' },
           { name: 'LO-MID FREQ', value: '500 HZ' },
           { name: 'LO-MID Q', value: '4' },
@@ -187,10 +187,10 @@ describe('round-trip: generate → parse', () => {
     expect(slot).toBeDefined();
 
     const paramMap = new Map(slot!.params.map(p => [p.name, p.value]));
-    expect(paramMap.get('LO GAIN')).toBe('-5');
+    expect(paramMap.get('LO')).toBe('-5');
     expect(paramMap.get('LO-MID GAIN')).toBe('3');
     expect(paramMap.get('HI-MID GAIN')).toBe('0');
-    expect(paramMap.get('HI GAIN')).toBe('10');
+    expect(paramMap.get('HIGH')).toBe('10');
     expect(paramMap.get('LEVEL')).toBe('-2');
     expect(paramMap.get('LO-MID FREQ')).toBe('500 Hz');
     expect(paramMap.get('LO-MID Q')).toBe('4');

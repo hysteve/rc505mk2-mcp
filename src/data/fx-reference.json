@@ -770,7 +770,8 @@
           "description": "Adjusts the high frequency range tone."
         },
         "LEVEL": {
-          "range": "0-50-100",
+          "range": "-20 to +20 dB",
+     "note": "Guide extraction said 0-50-100; the factory template stores tag E as 20 in a 0-40 field (centred, like the gains). Treated as -20..+20 dB. Confirm on device (QA grid).",
           "default": 50,
           "description": "Sets the overall volume of the equalizer."
         }

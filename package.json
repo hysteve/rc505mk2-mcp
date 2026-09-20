@@ -39,6 +39,8 @@
     "prep:release:check": "tsx scripts/prep-release.ts --check-only",
     "sync:skills": "tsx scripts/sync-skills.ts",
     "test": "vitest run",
+    "audit:presets": "tsx scripts/audit-presets.ts",
+    "catalog:presets": "tsx scripts/audit-presets.ts --markdown docs/PRESET_CATALOG.md",
     "test:watch": "vitest",
     "prepublishOnly": "npm run build"
   },

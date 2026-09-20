@@ -1,5 +1,5 @@
 export {
-  num, eqGain, dynamicsType, reverbType, preampType, spkType, micType, micDis,
+  num, eqGain, dynamicsType, preampType, spkType, micType, micDis,
   distType, noteValue, keyValue, phaserStage, algoMode, twistRelease, rollSplit,
   octaveMode, isolatorBand, isolatorWave, oscWaveform, vocCarrier,
   hrmManualVoice, hrmAutoVoice, hrmAutoMode,

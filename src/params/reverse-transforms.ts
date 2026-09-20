@@ -143,10 +143,6 @@ export const reverseDynamicsType = reverseEnum([
   'LOW BOOST', 'BRIGHTEN', 'DJS VOICE', 'PHONE VOX',
 ]);
 
-/** reverbType: 7 reverb algorithms */
-export const reverseReverbType = reverseEnum([
-  'AMBIENCE', 'ROOM', 'HALL1', 'HALL2', 'PLATE', 'SPRING', 'MODULATE',
-]);
 
 /** preampType: 9 amp models */
 export const reversePreampType = reverseEnum([
