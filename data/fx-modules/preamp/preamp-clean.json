@@ -10,8 +10,12 @@
   "description": "Clean amp modeling for guitar or bass input. Adds amp-like character and response without distortion — a foundation module for instrument players using the RC-505mk2.",
   "params": [
     {
-      "name": "TYPE",
+      "name": "AMP TYPE",
       "value": "JC-120"
+    },
+    {
+      "name": "SPK TYPE",
+      "value": "ORIGINAL"
     },
     {
       "name": "GAIN",
@@ -34,16 +38,8 @@
       "value": "50"
     },
     {
-      "name": "LEVEL",
+      "name": "E.LEVEL",
       "value": "50"
-    },
-    {
-      "name": "BRIGHT",
-      "value": "OFF"
-    },
-    {
-      "name": "SP TYPE",
-      "value": "JC-120"
     }
   ],
   "tags": [

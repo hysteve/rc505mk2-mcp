@@ -2,10 +2,13 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { generatePresetXml, encodePresetName, memoryConfigToRc0, memoryConfigToRc0Pair } from '../src/generator/rc0-generator.js';
+import { generatePresetXml, encodePresetName, memoryConfigToRc0, memoryConfigToRc0Pair, rackToMemoryConfig } from '../src/generator/rc0-generator.js';
 import type { Rack } from '../src/types/rack.js';
 import type { MemoryConfig } from '../src/types/memory-config.js';
+import type { FxModule } from '../src/schemas/fx-module.js';
 import { extractCount } from '../src/parser/hex-count.js';
+import { parseRC0 } from '../src/parser/rc0-parser.js';
+import { resolveMemoryConfig } from '../src/config/resolve.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const template = readFileSync(resolve(__dirname, 'fixtures/default.rc0'), 'utf-8');
@@ -252,5 +255,44 @@ describe('memoryConfigToRc0Pair', () => {
     const countB = extractCount(xmlB);
     expect(countA).toBe('0064'); // 100 in hex
     expect(countB).toBe('0065'); // 101 in hex
+  });
+});
+
+describe('rackToMemoryConfig fxModuleId inheritance', () => {
+  const preampClean: FxModule = JSON.parse(
+    readFileSync(resolve(__dirname, '../data/fx-modules/preamp/preamp-clean.json'), 'utf-8'),
+  );
+  const getModule = (id: string) => (id === preampClean.id ? preampClean : undefined);
+
+  function moduleRack(params: { name: string; value: string }[]): Rack {
+    return {
+      id: 'module-rack', section: '', title: 'MODULE RACK', icon: '',
+      genres: [], inputType: '', description: '',
+      inputFx: [{ slot: 'A', effect: 'PREAMP', fxModuleId: 'preamp-clean', params }],
+      trackFx: [], tips: [],
+    };
+  }
+
+  it('resolves module params for a slot with only fxModuleId', () => {
+    const config = resolveMemoryConfig(rackToMemoryConfig(moduleRack([]), 5), getModule);
+    expect(config.inputFx.banks[0].slots[0].params).toEqual(preampClean.params);
+  });
+
+  it('treats explicit slot params as overrides of the module', () => {
+    const config = resolveMemoryConfig(
+      rackToMemoryConfig(moduleRack([{ name: 'GAIN', value: '70' }]), 5),
+      getModule,
+    );
+    const params = config.inputFx.banks[0].slots[0].params;
+    expect(params.find(p => p.name === 'GAIN')?.value).toBe('70');
+    expect(params.find(p => p.name === 'AMP TYPE')?.value).toBe('JC-120');
+  });
+
+  it('writes inherited module params to the generated RC0', () => {
+    const config = resolveMemoryConfig(rackToMemoryConfig(moduleRack([]), 5), getModule);
+    const parsed = parseRC0(memoryConfigToRc0(template, config), 5);
+    const params = parsed.inputFx.banks[0].slots.find(s => s.slot === 'A')!.params;
+    expect(params.find(p => p.name === 'AMP TYPE')?.value).toBe('JC-120');
+    expect(params.find(p => p.name === 'GAIN')?.value).toBe('30');
   });
 });

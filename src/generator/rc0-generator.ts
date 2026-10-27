@@ -217,6 +217,12 @@ function fxSlotsToSection(slots: FxSlotData[]): MemoryFxSection {
       enabled: true,
       params: fx.params.map(p => ({ name: p.name, value: p.value })),
     };
+    // Keep the module reference so resolveMemoryConfig can expand inherited params.
+    // Without explicit overrides, slot params act as overrides so they still win.
+    if (fx.fxModuleId) {
+      memSlot.fxModuleId = fx.fxModuleId;
+      memSlot.overrides = (fx.overrides ?? fx.params).map(p => ({ name: p.name, value: p.value }));
+    }
     if (fx.sequencer?.length) {
       memSlot.sequencer = fx.sequencer.map(p => ({ name: p.name, value: p.value }));
     }
